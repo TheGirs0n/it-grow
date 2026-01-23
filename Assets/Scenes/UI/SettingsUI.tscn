@@ -1,0 +1,286 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhtubvp72xrii"]
+
+[ext_resource type="Script" uid="uid://c8gnkfeny44cs" path="res://Assets/Scripts/UI/SettingsUi.gd" id="1_4ci2s"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4ci2s"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yu3g8"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2mbtb"]
+
+[node name="SettingsUi" type="Control" node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider", "master_volume_text", "sfx_volume_text", "music_volume_text", "current_window_mode_text", "current_resolution_mode_text", "apply_button", "restore_defaults_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ci2s")
+master_slider = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer/MasterSlider")
+sfx_slider = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2/SFXSlider")
+music_slider = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3/MusicSlider")
+master_volume_text = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer/RichTextLabel2")
+sfx_volume_text = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2/RichTextLabel2")
+music_volume_text = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3/RichTextLabel2")
+current_window_mode_text = NodePath("TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode/CurrentMode")
+current_resolution_mode_text = NodePath("TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode/CurrentMode")
+array_window_mode = Array[String](["ПОЛНЫЙ ЭКРАН", "В ОКНЕ"])
+array_resolution_mode = Array[String](["1280 x 720", "1366 x 768", "1600 x 900", "1920 x 1080"])
+apply_button = NodePath("ButtonsContainer/ApplySettings")
+restore_defaults_button = NodePath("ButtonsContainer/RestoreDefaults")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.8
+tab_alignment = 1
+current_tab = 0
+
+[node name="АУДИО" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/АУДИО"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/АУДИО/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="MasterBoxContainer" type="HBoxContainer" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+text = "ОБЩАЯ ГРОМКОСТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MasterSlider" type="HSlider" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXBoxContainer2" type="HBoxContainer" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+text = "ЗВУКОВЫЕ ЭФФЕКТЫ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 3
+stretch_mode = 5
+
+[node name="SFXSlider" type="HSlider" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicBoxContainer3" type="HBoxContainer" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+text = "ГРОМКОСТЬ МУЗЫКИ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MusicSlider" type="HSlider" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ЭКРАН" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/ЭКРАН"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/ЭКРАН/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="WindowMode" type="HBoxContainer" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+text = "РЕЖИМ ОКНА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftButton" type="TextureButton" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+texture_normal = SubResource("PlaceholderTexture2D_4ci2s")
+stretch_mode = 5
+
+[node name="CurrentMode" type="RichTextLabel" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightButton" type="TextureButton" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+texture_normal = SubResource("PlaceholderTexture2D_4ci2s")
+stretch_mode = 5
+
+[node name="ResolutionMode" type="HBoxContainer" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+text = "РАЗРЕШЕНИЕ ЭКРАНА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftButton" type="TextureButton" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+texture_normal = SubResource("PlaceholderTexture2D_yu3g8")
+stretch_mode = 5
+
+[node name="CurrentMode" type="RichTextLabel" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightButton" type="TextureButton" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+texture_normal = SubResource("PlaceholderTexture2D_2mbtb")
+stretch_mode = 5
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.85
+anchor_right = 0.65
+anchor_bottom = 0.95
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="ApplySettings" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+text = "ПРИМЕНИТЬ"
+
+[node name="RestoreDefaults" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+text = "ПО УМОЛЧАНИЮ"
+
+[connection signal="value_changed" from="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer/MasterSlider" to="." method="on_value_text_update"]
+[connection signal="value_changed" from="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2/SFXSlider" to="." method="on_value_text_update"]
+[connection signal="value_changed" from="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3/MusicSlider" to="." method="on_value_text_update"]
+[connection signal="pressed" from="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode/LeftButton" to="." method="on_decrease_window_mode"]
+[connection signal="pressed" from="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode/RightButton" to="." method="on_increase_window_mode"]
+[connection signal="pressed" from="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode/LeftButton" to="." method="on_decrease_resolution_mode"]
+[connection signal="pressed" from="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode/RightButton" to="." method="on_increase_resolution_mode"]
+[connection signal="pressed" from="ButtonsContainer/ApplySettings" to="." method="apply_and_save_settings"]
+[connection signal="pressed" from="ButtonsContainer/RestoreDefaults" to="." method="restore_defaults"]

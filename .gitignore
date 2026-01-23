@@ -1,0 +1,28 @@
+# Godot 4+ specific ignores
+*.godot/
+.godot/
+export.cfg
+export_presets.cfg
+
+# Build artifacts
+bin/
+obj/
+*.csproj
+*.sln
+*.csproj.user
+*.sln.user
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+*.csproj.iml
+*.unityproj.iml
+
+# Godot export directories
+build/
+exports/
+
+# Editor temporary files
+*.tmp
+*.bak
+.editorconfig

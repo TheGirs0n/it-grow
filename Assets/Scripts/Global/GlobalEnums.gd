@@ -1,0 +1,23 @@
+extends Node
+
+enum PLANT_SMELL{
+	
+}
+
+enum PLANT_LEAF{
+	
+}
+
+enum PLANT_JUICE_DENSITY{
+	
+}
+
+enum PLANT_JUICE_COLOR{
+	
+}
+
+enum PLANT_CARE_TYPE{
+	WATERING_CAN,
+	RAKE,
+	FERTILIZER
+}
