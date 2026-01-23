@@ -18,6 +18,7 @@ class_name GameOverMiniGameUI
 
 @export_group("Balance Things")
 @export var max_round_for_win : int = 3
+@export var timer : Timer
 
 enum MINI_GAME_MODE{
 	MORE_THAN,
@@ -53,7 +54,7 @@ func prepare_mini_game():
 	current_round = 1
 
 func reset_mini_game():
-	current_number = randi_range(5, 9)
+	current_number = randi_range(5, 9) # подкрутить вероятности
 	number_next.text = str(current_number)
 	current_round += 1
 	dice_number_text.text = ""
@@ -130,23 +131,27 @@ func roll_dice():
 	check_win()
 
 func increase_score(incoming_score : int):
-	if incoming_score == 3:
-		return
-	
 	current_score += incoming_score
 
-
 func check_win():
+	if current_round == 3:
+		container.hide()
+		timer.start()
+	else:
+		next_stage.show()
+		
 	if current_score >= 2:
+		container.hide()
+		next_stage.hide()
+		timer.start()
 		print("WIN")
 	else: 
 		print("CHECK")
 		
-	if current_round == 3:
-		container.hide()
-		print("LOSE")
-	else:
-		next_stage.show()
 
 func _on_next_stage_pressed() -> void:
 	reset_mini_game()
+
+
+func _on_timer_timeout() -> void:
+	queue_free()

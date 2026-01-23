@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgg30oyjhveym"]
+[gd_scene load_steps=6 format=3 uid="uid://dgg30oyjhveym"]
 
 [ext_resource type="Script" uid="uid://cmn6s8mt2nrhe" path="res://Assets/Scripts/Main/GameOverMiniGameUi.gd" id="1_p3f5u"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rptop"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yb5e4"]
 
@@ -8,7 +10,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p3f5u"]
 
-[node name="GameOverMiniGameUi" type="Control" node_paths=PackedStringArray("container", "number_next", "more_than_button", "equal_button", "less_than_button", "next_stage", "dice_number_text")]
+[node name="GameOverMiniGameUi" type="Control" node_paths=PackedStringArray("container", "number_next", "more_than_button", "equal_button", "less_than_button", "next_stage", "dice_number_text", "timer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,6 +25,18 @@ equal_button = NodePath("HBoxContainer/EqualButton")
 less_than_button = NodePath("HBoxContainer/LessButton")
 next_stage = NodePath("NextStage")
 dice_number_text = NodePath("DiceTable/VBoxContainer/NumberText")
+timer = NodePath("Timer")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.333333)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_rptop")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -114,7 +128,12 @@ offset_bottom = 8.0
 action_mode = 0
 text = "ДАЛЬШЕ"
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="pressed" from="HBoxContainer/MoreButton" to="." method="_on_more_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/EqualButton" to="." method="_on_equal_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/LessButton" to="." method="_on_less_button_pressed"]
 [connection signal="pressed" from="NextStage" to="." method="_on_next_stage_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

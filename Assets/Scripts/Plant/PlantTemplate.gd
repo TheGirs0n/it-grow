@@ -1,31 +1,48 @@
 extends Control
 class_name PlantTemplate
 
-@export_multiline var plant_name : String
-@export_multiline var plant_description : String
-@export var plant_grow_stage_textures : Array[CompressedTexture2D]
-@export var plant_smell : GlobalEnums.PLANT_SMELL
-@export var plant_leaf : GlobalEnums.PLANT_LEAF
-@export var plant_juice_density : GlobalEnums.PLANT_JUICE_DENSITY
-@export var plant_juice_color : GlobalEnums.PLANT_JUICE_COLOR
-@export var plant_care_stages : Array[GlobalEnums.PLANT_CARE_TYPE]
+@export var plant_texture : TextureRect
+
+var plant_name : String
+var plant_energy : GlobalEnums.PLANT_ENERGY
+var plant_description : String
+var plant_grow_stage_textures : Array[CompressedTexture2D]
+var plant_smell : GlobalEnums.PLANT_SMELL
+var plant_leaf : GlobalEnums.PLANT_LEAF
+var plant_juice_density : GlobalEnums.PLANT_JUICE_DENSITY
+var plant_juice_color : GlobalEnums.PLANT_JUICE_COLOR
+var plant_care_stages : Array[GlobalEnums.PLANT_CARE_TYPE]
 
 var plant_care_stages_complete : Array[bool]
+var plant_care_stages_index = 0
 
 func _ready() -> void:
 	load_data_from_resource(PlantResourceFabric.get_random_plant_resource())
 
 func load_data_from_resource(new_resouce : PlantResource):
 	plant_name = new_resouce.plant_name
+	plant_energy = new_resouce.plant_energy
 	plant_description = new_resouce.plant_description
 	plant_grow_stage_textures = new_resouce.plant_grow_stage_textures
 	plant_smell = new_resouce.plant_smell
 	plant_leaf = new_resouce.plant_leaf
 	plant_juice_density = new_resouce.plant_juice_density
 	plant_juice_color = new_resouce.plant_juice_color
+	plant_care_stages = new_resouce.plant_care_stages
 	
 	for i in new_resouce.plant_care_stages:
 		plant_care_stages_complete.append(false)
+	
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.is_pressed():
+				if GlobalContext.main_ui_instance.care_box_ui.current_care_box_item == null:
+					print("NO ITEM")
+				else:
+					try_caring_plant(GlobalContext.main_ui_instance.care_box_ui.current_care_box_item)
+					GlobalContext.main_ui_instance.care_box_ui.clear_current_care_box_item()
 	
 	
 func reset_care_routine():
@@ -34,12 +51,12 @@ func reset_care_routine():
 
 func try_caring_plant(care_item : CareBoxItem):
 	if plant_care_stages_complete.find(false) == -1:
-		print("ПОПЫТКА ПЕРЕУХОДА ЗА ЦВЕТКОМ")
+		increase_grow_stage()
 		return
 	
 	if !plant_care_stages.has(care_item.plant_care_type):
 		print("НЕТ ТАКОГО В ИНСТРУКЦИИ")
-		GlobalContext.game_manager_instance.increase_current_attempts()
+		decrease_grow_stage()
 		return
 	
 	var current_stage = plant_care_stages_complete.find(false)
@@ -48,6 +65,23 @@ func try_caring_plant(care_item : CareBoxItem):
 		print("ОТЛИЧНЫЙ УХОД")
 	else:
 		print("ОШИБКА УХОДА")
+		decrease_grow_stage()
+
+func increase_grow_stage():
+	if plant_care_stages_index < plant_care_stages.size():
+		plant_care_stages_index += 1
+		plant_texture.texture = plant_grow_stage_textures[plant_care_stages_index]
+	else:
+		print("ЦВЕТКУ БОЛЬШЕ НЕКУДА РАСТИ")
+
+func decrease_grow_stage():
+	if plant_care_stages_index > 0:
+		plant_care_stages_index -= 1
+		plant_texture.texture = plant_grow_stage_textures[plant_care_stages_index]
+		GlobalContext.game_manager_instance.increase_current_attempts()
+	elif plant_care_stages_index == 0:
+		plant_care_stages_index = 0
+		#plant_texture.texture = plant_grow_stage_textures[0]
 		GlobalContext.game_manager_instance.increase_current_attempts()
 
 func get_plant_name() -> String:

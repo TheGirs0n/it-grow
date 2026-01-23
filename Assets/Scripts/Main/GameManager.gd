@@ -27,9 +27,10 @@ func pause_game():
 func increase_current_attempts():
 	if current_attempts < max_attempts:
 		current_attempts += 1
+		print(current_attempts)
 	else:
-		pass
-		# вызываем мини-игру
+		GlobalContext.main_ui_instance.open_minigame()
 	
 func decrease_current_attempts():
 	current_attempts -= 1
+	

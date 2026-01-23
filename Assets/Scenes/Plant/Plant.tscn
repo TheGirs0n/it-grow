@@ -4,7 +4,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_obxvn"]
 
-[node name="Plant" type="Control"]
+[node name="Plant" type="Control" node_paths=PackedStringArray("plant_texture")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_obxvn")
+plant_texture = NodePath("TextureRect")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 self_modulate = Color(0.196078, 0.211765, 0.247059, 0.666667)
@@ -22,3 +23,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_obxvn")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -1,15 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwig7ecv7xeop"]
+[gd_scene load_steps=2 format=3 uid="uid://dwig7ecv7xeop"]
 
 [ext_resource type="PackedScene" uid="uid://dwge7iku0cbsp" path="res://Assets/Scenes/UI/MainUI/MainUI.tscn" id="1_dufu2"]
-[ext_resource type="PackedScene" uid="uid://ba25ifuiwotpe" path="res://Assets/Scenes/Plant/Plant.tscn" id="2_etuvg"]
 
 [node name="Test" type="Node"]
 
 [node name="MainUi" parent="." instance=ExtResource("1_dufu2")]
-
-[node name="Plant" parent="." instance=ExtResource("2_etuvg")]
-offset_left = 114.0
-offset_top = 373.0
-offset_right = 114.0
-offset_bottom = 373.0
-scale = Vector2(0.27937, 0.403428)

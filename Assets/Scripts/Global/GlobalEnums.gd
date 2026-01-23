@@ -4,6 +4,10 @@ enum PLANT_SMELL{
 	
 }
 
+enum PLANT_ENERGY{
+	
+}
+
 enum PLANT_LEAF{
 	
 }
