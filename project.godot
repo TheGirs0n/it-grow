@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 GlobalContext="*res://Assets/Scripts/Global/GlobalContext.gd"
 SettingManager="*res://Assets/Scripts/Global/SettingManager.gd"
 GlobalEnums="*res://Assets/Scripts/Global/GlobalEnums.gd"
+PlantResourceFabric="*res://Assets/Scenes/Globals/PlantResourceFabric.tscn"
 
 [file_customization]
 

@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhtubvp72xrii"]
+[gd_scene load_steps=6 format=3 uid="uid://bhtubvp72xrii"]
 
-[ext_resource type="Script" uid="uid://c8gnkfeny44cs" path="res://Assets/Scripts/UI/SettingsUi.gd" id="1_4ci2s"]
+[ext_resource type="Script" uid="uid://c8gnkfeny44cs" path="res://Assets/Scripts/UI/Menus/SettingsUi.gd" id="1_1ii1u"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1ii1u"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4ci2s"]
 
@@ -15,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4ci2s")
+script = ExtResource("1_1ii1u")
 master_slider = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer/MasterSlider")
 sfx_slider = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2/SFXSlider")
 music_slider = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3/MusicSlider")
@@ -28,6 +30,17 @@ array_window_mode = Array[String](["ПОЛНЫЙ ЭКРАН", "В ОКНЕ"])
 array_resolution_mode = Array[String](["1280 x 720", "1366 x 768", "1600 x 900", "1920 x 1080"])
 apply_button = NodePath("ButtonsContainer/ApplySettings")
 restore_defaults_button = NodePath("ButtonsContainer/RestoreDefaults")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.333333)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_1ii1u")
 
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 1
@@ -53,7 +66,7 @@ grow_vertical = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/АУДИО/MarginContainer"]
 layout_mode = 2
@@ -257,9 +270,9 @@ stretch_mode = 5
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.35
-anchor_top = 0.85
+anchor_top = 0.725
 anchor_right = 0.65
-anchor_bottom = 0.95
+anchor_bottom = 0.775
 theme_override_constants/separation = 25
 alignment = 1
 
@@ -275,6 +288,16 @@ size_flags_horizontal = 3
 action_mode = 0
 text = "ПО УМОЛЧАНИЮ"
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.825
+anchor_right = 0.6
+anchor_bottom = 0.925
+action_mode = 0
+text = "ВЫХОД"
+
 [connection signal="value_changed" from="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer/MasterSlider" to="." method="on_value_text_update"]
 [connection signal="value_changed" from="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2/SFXSlider" to="." method="on_value_text_update"]
 [connection signal="value_changed" from="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3/MusicSlider" to="." method="on_value_text_update"]
@@ -284,3 +307,4 @@ text = "ПО УМОЛЧАНИЮ"
 [connection signal="pressed" from="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode/RightButton" to="." method="on_increase_resolution_mode"]
 [connection signal="pressed" from="ButtonsContainer/ApplySettings" to="." method="apply_and_save_settings"]
 [connection signal="pressed" from="ButtonsContainer/RestoreDefaults" to="." method="restore_defaults"]
+[connection signal="pressed" from="Button" to="." method="_on_close_button_pressed"]

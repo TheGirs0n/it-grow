@@ -78,7 +78,7 @@ func load_display_settings():
 	set_window_text(window_mode)
 	set_resolution_text(resolution)
 
-func on_value_text_update(value: float) -> void:
+func on_value_text_update(_value: float) -> void:
 	update_volume_text()
 
 
@@ -113,3 +113,8 @@ func on_increase_resolution_mode() -> void:
 	if current_resolution_mode_index < 3:
 		current_resolution_mode_index += 1
 		set_resolution_text(current_resolution_mode_index)
+
+
+func _on_close_button_pressed() -> void:
+	GlobalContext.main_ui_instance.open_pause()
+	queue_free()

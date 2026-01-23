@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://df4il6aelqnrl"]
+[gd_scene load_steps=5 format=3 uid="uid://df4il6aelqnrl"]
+
+[ext_resource type="Script" uid="uid://bf3f2nnlu632u" path="res://Assets/Scripts/UI/Main/CareBoxUi.gd" id="1_guj6r"]
+[ext_resource type="PackedScene" uid="uid://df7tedm3meajx" path="res://Assets/Scenes/UI/MainUI/CareBox/FertilizerUI.tscn" id="1_l2i4k"]
+[ext_resource type="PackedScene" uid="uid://dwna4qi6grgnw" path="res://Assets/Scenes/UI/MainUI/CareBox/RakeUI.tscn" id="2_guj6r"]
+[ext_resource type="PackedScene" uid="uid://ca1c40tdy3kxw" path="res://Assets/Scenes/UI/MainUI/CareBox/WateringCanUI.tscn" id="3_oxrnt"]
 
 [node name="CareBoxUi" type="Control"]
 layout_mode = 3
@@ -7,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_guj6r")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -15,3 +21,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="RakeUi" parent="TextureRect" instance=ExtResource("2_guj6r")]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.262
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.501963, 0.409486)
+
+[node name="FertilizerUi" parent="TextureRect" instance=ExtResource("1_l2i4k")]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.295
+offset_left = 411.0
+offset_top = 107.0
+offset_right = 411.0
+offset_bottom = 107.0
+scale = Vector2(0.303187, 0.277058)
+
+[node name="WateringCanUi" parent="TextureRect" instance=ExtResource("3_oxrnt")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.739
+offset_left = -6.32806
+offset_top = 1.0
+offset_right = -6.32813
+offset_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.460109, 0.699833)
+
+[connection signal="item_picked" from="TextureRect/RakeUi" to="." method="set_current_care_box_item"]
+[connection signal="item_picked" from="TextureRect/FertilizerUi" to="." method="set_current_care_box_item"]
+[connection signal="item_picked" from="TextureRect/WateringCanUi" to="." method="set_current_care_box_item"]

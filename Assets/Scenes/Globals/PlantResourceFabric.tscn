@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr6kf58hbkyf1"]
+
+[ext_resource type="Script" uid="uid://0bw4oil4re32" path="res://Assets/Scripts/Global/PlantResourceFabric.gd" id="1_60my2"]
+[ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="2_mt1ab"]
+[ext_resource type="Resource" uid="uid://ddfvhojprscbe" path="res://Assets/Resources/Plants/TestPlants/PlantTest.tres" id="3_denjl"]
+
+[node name="PlantResourceFabric" type="Node"]
+script = ExtResource("1_60my2")
+plant_resources = Array[ExtResource("2_mt1ab")]([ExtResource("3_denjl")])

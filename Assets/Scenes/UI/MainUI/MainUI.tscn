@@ -1,9 +1,16 @@
-[gd_scene format=3 uid="uid://dwge7iku0cbsp"]
+[gd_scene load_steps=4 format=3 uid="uid://dwge7iku0cbsp"]
 
-[node name="MainUi" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Script" uid="uid://dhwkacn5w1smw" path="res://Assets/Scripts/UI/Main/MainUi.gd" id="1_sm6gl"]
+[ext_resource type="PackedScene" uid="uid://df4il6aelqnrl" path="res://Assets/Scenes/UI/MainUI/CareBox/CareBoxUI.tscn" id="2_gc7u3"]
+[ext_resource type="PackedScene" uid="uid://cmj4af8vp5kwj" path="res://Assets/Scenes/UI/Menus/PauseMenu.tscn" id="3_gc7u3"]
+
+[node name="MainUi" type="CanvasLayer" node_paths=PackedStringArray("care_box_ui", "pause_menu_ui")]
+script = ExtResource("1_sm6gl")
+care_box_ui = NodePath("CareBoxUi")
+pause_menu_ui = NodePath("PauseMenu")
+
+[node name="CareBoxUi" parent="." instance=ExtResource("2_gc7u3")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_gc7u3")]
+process_mode = 3
+visible = false

@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmj4af8vp5kwj"]
+
+[ext_resource type="Script" uid="uid://dwfi7vmh70uhp" path="res://Assets/Scripts/UI/Menus/PauseMenuUI.gd" id="1_ev6ws"]
+[ext_resource type="PackedScene" uid="uid://bhtubvp72xrii" path="res://Assets/Scenes/UI/Menus/SettingsUI.tscn" id="2_aq7i4"]
+[ext_resource type="PackedScene" uid="uid://coa4eapun1x1n" path="res://Assets/Scenes/UI/Menus/MainMenuUI.tscn" id="3_wkqc4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7m3tv"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ev6ws")
+setting_scene = ExtResource("2_aq7i4")
+main_menu_scene = ExtResource("3_wkqc4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.333333)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_7m3tv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueGame" type="Button" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "ПРОДОЛЖИТЬ"
+
+[node name="Setting" type="Button" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "НАСТРОЙКИ"
+
+[node name="Exit" type="Button" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "ГЛАВНОЕ МЕНЮ"
+
+[connection signal="pressed" from="TextureRect/VBoxContainer/ContinueGame" to="." method="continue_button_game"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/Setting" to="." method="settings_button_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/Exit" to="." method="exit_button_pressed"]

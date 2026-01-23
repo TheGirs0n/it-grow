@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgg30oyjhveym"]
+
+[ext_resource type="Script" uid="uid://cmn6s8mt2nrhe" path="res://Assets/Scripts/Main/GameOverMiniGameUi.gd" id="1_p3f5u"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yb5e4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sg2kt"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p3f5u"]
+
+[node name="GameOverMiniGameUi" type="Control" node_paths=PackedStringArray("container", "number_next", "more_than_button", "equal_button", "less_than_button", "next_stage", "dice_number_text")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p3f5u")
+container = NodePath("HBoxContainer")
+number_next = NodePath("HBoxContainer/RichTextLabel")
+more_than_button = NodePath("HBoxContainer/MoreButton")
+equal_button = NodePath("HBoxContainer/EqualButton")
+less_than_button = NodePath("HBoxContainer/LessButton")
+next_stage = NodePath("NextStage")
+dice_number_text = NodePath("DiceTable/VBoxContainer/NumberText")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.05
+anchor_right = 0.75
+anchor_bottom = 0.15
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoreButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+texture_normal = SubResource("PlaceholderTexture2D_yb5e4")
+stretch_mode = 5
+
+[node name="EqualButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+texture_normal = SubResource("PlaceholderTexture2D_yb5e4")
+stretch_mode = 5
+
+[node name="LessButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+texture_normal = SubResource("PlaceholderTexture2D_yb5e4")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("PlaceholderTexture2D_sg2kt")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="DiceTable" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+texture = SubResource("PlaceholderTexture2D_p3f5u")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DiceTable"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.05
+anchor_right = 0.7
+anchor_bottom = 0.25
+alignment = 1
+
+[node name="SumText" type="RichTextLabel" parent="DiceTable/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "ВЫПАЛО"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NumberText" type="RichTextLabel" parent="DiceTable/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextStage" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.85
+anchor_right = 0.6
+anchor_bottom = 0.95
+offset_right = 8.0
+offset_bottom = 8.0
+action_mode = 0
+text = "ДАЛЬШЕ"
+
+[connection signal="pressed" from="HBoxContainer/MoreButton" to="." method="_on_more_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/EqualButton" to="." method="_on_equal_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/LessButton" to="." method="_on_less_button_pressed"]
+[connection signal="pressed" from="NextStage" to="." method="_on_next_stage_pressed"]
