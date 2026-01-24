@@ -41,10 +41,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.is_pressed():
-				if plant_circle.visible == false:
-					plant_circle.show()
-					return
-				
+			
 				if GlobalContext.main_ui_instance.care_box_ui.current_care_box_item == null:
 					print("NO ITEM") # Уход
 				else:
@@ -58,7 +55,11 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 					try_find_item(GlobalContext.main_ui_instance.find_box_ui.current_find_box_item)
 					GlobalContext.main_ui_instance.find_box_ui.clear_current_find_box_item()
 					return
-	
+				
+				if plant_circle.visible == false:
+					plant_circle.show()
+					return
+				
 	
 func reset_care_routine():
 	plant_care_stages_complete.fill(false)

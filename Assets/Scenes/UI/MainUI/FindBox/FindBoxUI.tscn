@@ -56,7 +56,6 @@ offset_top = 423.448
 offset_right = 306.207
 offset_bottom = 759.448
 scale = Vector2(0.4, 0.4)
-mouse_filter = 2
 
 [node name="MagnifierUi" parent="TextureRect" instance=ExtResource("2_5n07k")]
 layout_mode = 2
@@ -68,7 +67,6 @@ offset_top = 354.483
 offset_right = 372.414
 offset_bottom = 690.483
 scale = Vector2(0.4, 0.4)
-mouse_filter = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
