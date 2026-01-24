@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5ik6i28dk71g"]
 
-[ext_resource type="Script" uid="uid://3yvxpr7ga3rp" path="res://Assets/Scenes/UI/MainUI/FindBoxCircleCenterUI.gd" id="1_dkdlt"]
+[ext_resource type="Script" uid="uid://3yvxpr7ga3rp" path="res://Assets/Scripts/UI/Main/FindBoxCircleCenterUI.gd" id="1_dkdlt"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dkdlt"]
 
@@ -23,28 +23,24 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_dkdlt")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="PlantTexture" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.4
+anchor_left = 0.45
 anchor_top = 0.2
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_right = 0.65
+anchor_bottom = 0.7
 expand_mode = 3
 stretch_mode = 5
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="EffectTexture" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.4
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+anchor_bottom = 0.7
+offset_right = 40.0
+offset_bottom = 40.0
 expand_mode = 3
 stretch_mode = 5
