@@ -1,17 +1,18 @@
 extends Area2D
 class_name PlantTemplate
 
-@export var plant_texture : TextureRect
+@export var plant_texture : Sprite2D
 @export var plant_circle : FindBoxCircleUI
 
 var plant_name : String
 var plant_energy : GlobalEnums.PLANT_ENERGY
 var plant_description : String
 var plant_grow_stage_textures : Array[CompressedTexture2D]
-var plant_smell : GlobalEnums.PLANT_SMELL
-var plant_leaf : GlobalEnums.PLANT_LEAF
-var plant_juice_density : GlobalEnums.PLANT_JUICE_DENSITY
-var plant_juice_color : GlobalEnums.PLANT_JUICE_COLOR
+var plant_smell : String
+var plant_leaf : CompressedTexture2D
+var plant_juice_density : CompressedTexture2D
+var plant_juice_color : String
+var plant_additional_propety : String
 var plant_care_stages : Array[GlobalEnums.PLANT_CARE_TYPE]
 
 var plant_care_stages_complete : Array[bool]
@@ -29,18 +30,20 @@ func load_data_from_resource(new_resouce : PlantResource):
 	plant_leaf = new_resouce.plant_leaf
 	plant_juice_density = new_resouce.plant_juice_density
 	plant_juice_color = new_resouce.plant_juice_color
+	plant_additional_propety = new_resouce.plant_additional_property
 	plant_care_stages = new_resouce.plant_care_stages
 	
 	for i in new_resouce.plant_care_stages:
 		plant_care_stages_complete.append(false)
 	
 
-func _on_gui_input(event: InputEvent) -> void:
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.is_pressed():
 				if plant_circle.visible == false:
 					plant_circle.show()
+					return
 				
 				if GlobalContext.main_ui_instance.care_box_ui.current_care_box_item == null:
 					print("NO ITEM") # Уход
@@ -84,13 +87,15 @@ func try_caring_plant(care_item : CareBoxItem):
 func try_find_item(find_item : FindBoxItem):
 	match find_item:
 		Nose:
-			pass
+			GlobalContext.main_ui_instance.show_tooltip(plant_smell)
 		Brain:
-			pass
+			GlobalContext.main_ui_instance.show_tooltip(plant_additional_propety)
 		Knife:
-			pass
+			GlobalContext.main_ui_instance.show_tooltip(str(plant_juice_density))
+			# Спрайт сока
 		Magnifier:
 			pass
+			# Спрайт листьев
 
 func increase_grow_stage():
 	if plant_care_stages_index < plant_care_stages.size():
@@ -116,17 +121,18 @@ func get_plant_name() -> String:
 func get_plant_description() -> String:
 	return plant_description
 	
-func get_plant_smell() -> GlobalEnums.PLANT_SMELL:
+func get_plant_smell() -> String:
 	return plant_smell
 	
-func get_plant_leaf() -> GlobalEnums.PLANT_LEAF:
+func get_plant_leaf() -> CompressedTexture2D:
 	return plant_leaf
 	
-func get_plant_juice_density() -> GlobalEnums.PLANT_JUICE_DENSITY:
+func get_plant_juice_density() -> CompressedTexture2D:
 	return plant_juice_density
 	
-func get_plant_juice_color() -> GlobalEnums.PLANT_JUICE_COLOR:
+func get_plant_juice_color() -> String:
 	return plant_juice_color
+
 	
 func get_plant_care_stages() -> Array[GlobalEnums.PLANT_CARE_TYPE]:
 	return plant_care_stages

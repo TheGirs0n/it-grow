@@ -1,4 +1,4 @@
-extends Control
+extends Area2D
 class_name CareBoxItem
 
 @export var plant_care_type : GlobalEnums.PLANT_CARE_TYPE
@@ -6,7 +6,7 @@ class_name CareBoxItem
 
 signal item_picked(item : CareBoxItem)
 
-func _gui_input(event: InputEvent) -> void:
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.is_pressed():

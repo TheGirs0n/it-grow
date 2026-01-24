@@ -13,13 +13,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_piumh")
 
-[node name="MagnifierUi" parent="." instance=ExtResource("2_5n07k")]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-find_box_type = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="KnifeUi" parent="." instance=ExtResource("3_01a3r")]
+[node name="KnifeUi" parent="TextureRect" instance=ExtResource("3_01a3r")]
 layout_mode = 1
-find_box_type = 3
 
-[connection signal="item_picked" from="MagnifierUi" to="." method="set_current_find_box_item"]
-[connection signal="item_picked" from="KnifeUi" to="." method="set_current_find_box_item"]
+[node name="MagnifierUi" parent="TextureRect" instance=ExtResource("2_5n07k")]
+layout_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+action_mode = 0
+
+[connection signal="item_picked" from="TextureRect/KnifeUi" to="." method="set_current_find_box_item"]
+[connection signal="item_picked" from="TextureRect/MagnifierUi" to="." method="set_current_find_box_item"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

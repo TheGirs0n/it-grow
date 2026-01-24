@@ -7,6 +7,7 @@ class_name MainUI
 @export var pause_menu_ui : PauseMenuUI
 @export var day_counter_ui : DayCounterUI
 @export var attempts_ui : AttemptsUI
+@export var info_tooltip_ui : InfoTooltip
 
 @export_group("Packed Scenes")
 @export var plant_scene : PackedScene
@@ -47,6 +48,13 @@ func open_lose_screen():
 	var scene = lose_screen.instantiate() as LoseScreen
 	get_tree().root.add_child(scene)
 	GlobalContext.game_manager_instance.queue_free()
+
+func show_tooltip(text_in_tooltip : String):
+	info_tooltip_ui.change_text(text_in_tooltip)
+	info_tooltip_ui.show_tooltip()
+
+func hide_tooltip():
+	info_tooltip_ui.hide_tooltip()
 
 func open_pause():
 	pause_menu_ui.show()

@@ -1,16 +1,21 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwge7iku0cbsp"]
+[gd_scene load_steps=17 format=3 uid="uid://dwge7iku0cbsp"]
 
 [ext_resource type="Script" uid="uid://dhwkacn5w1smw" path="res://Assets/Scripts/UI/Main/MainUi.gd" id="1_sm6gl"]
 [ext_resource type="PackedScene" uid="uid://df4il6aelqnrl" path="res://Assets/Scenes/UI/MainUI/CareBox/CareBoxUI.tscn" id="2_gc7u3"]
 [ext_resource type="PackedScene" uid="uid://cmj4af8vp5kwj" path="res://Assets/Scenes/UI/Menus/PauseMenu.tscn" id="3_gc7u3"]
-[ext_resource type="Texture2D" uid="uid://vdjp4ynqg5f" path="res://фон_.png" id="3_hilo2"]
 [ext_resource type="PackedScene" uid="uid://bsibl1xbekom5" path="res://Assets/Scenes/UI/MainUI/Main/DaySwitcher.tscn" id="4_n00om"]
 [ext_resource type="PackedScene" uid="uid://ba25ifuiwotpe" path="res://Assets/Scenes/Plant/Plant.tscn" id="4_vn8su"]
 [ext_resource type="PackedScene" uid="uid://dgg30oyjhveym" path="res://Assets/Scenes/UI/MainUI/Main/GameOverMiniGameUI.tscn" id="5_6205g"]
 [ext_resource type="PackedScene" uid="uid://cfho24p8x2acw" path="res://Assets/Scenes/UI/Screens/VictoryScreen.tscn" id="5_ct2kh"]
 [ext_resource type="PackedScene" uid="uid://b8dx17jlh8o45" path="res://Assets/Scenes/UI/MainUI/FindBox/FindBoxUI.tscn" id="5_np7rl"]
 [ext_resource type="PackedScene" uid="uid://bi47kswhi8d0c" path="res://Assets/Scenes/UI/MainUI/Main/DayCounterUI.tscn" id="6_hc1y4"]
+[ext_resource type="Texture2D" uid="uid://cmsr8gxs62yky" path="res://Assets/Sprites/фон пустой.png" id="6_je6g4"]
+[ext_resource type="Texture2D" uid="uid://c64caftn2ytl0" path="res://Assets/Sprites/верхние левые растения.png" id="7_drnm5"]
+[ext_resource type="Texture2D" uid="uid://dxkbg1xb788yo" path="res://Assets/Sprites/растения правый верхний.png" id="8_i5g6b"]
+[ext_resource type="Texture2D" uid="uid://cdg4nkktgm2l4" path="res://Assets/Sprites/растение левый нижний.png" id="9_4r6ek"]
+[ext_resource type="Texture2D" uid="uid://c4kntb3xq6ht1" path="res://Assets/Sprites/растение правый нижний.png" id="10_qxc7r"]
 [ext_resource type="PackedScene" uid="uid://brroeoa27ev13" path="res://Assets/Scenes/UI/MainUI/Main/AttemptsUi.tscn" id="11_06u7b"]
+[ext_resource type="PackedScene" uid="uid://dhgdvrtlwo6cp" path="res://Assets/Scenes/UI/MainUI/InfoTooltip.tscn" id="11_drnm5"]
 
 [node name="MainUi" type="CanvasLayer" node_paths=PackedStringArray("care_box_ui", "find_box_ui", "pause_menu_ui", "day_counter_ui", "attempts_ui")]
 script = ExtResource("1_sm6gl")
@@ -31,9 +36,41 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("3_hilo2")
+texture = ExtResource("6_je6g4")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="UpLeft" type="TextureRect" parent="."]
+offset_right = 1379.0
+offset_bottom = 579.0
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("7_drnm5")
+
+[node name="UpRight" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -256.0
+offset_right = 749.0
+offset_bottom = 536.0
+grow_horizontal = 0
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("8_i5g6b")
+
+[node name="DownLeft" type="TextureRect" parent="."]
+offset_top = 462.0
+offset_right = 719.0
+offset_bottom = 1166.0
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("9_4r6ek")
+
+[node name="DownRight" type="TextureRect" parent="."]
+offset_left = 878.0
+offset_top = 470.0
+offset_right = 1938.0
+offset_bottom = 1143.0
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("10_qxc7r")
 
 [node name="DayCounter" parent="." instance=ExtResource("6_hc1y4")]
 anchors_preset = -1
@@ -45,14 +82,29 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="CareBoxUi" parent="." instance=ExtResource("2_gc7u3")]
+anchors_preset = -1
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="FindBoxUi" parent="." instance=ExtResource("5_np7rl")]
+anchors_preset = -1
+anchor_left = -0.25
+anchor_top = 0.55
+anchor_right = 0.1
+anchor_bottom = 0.9
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="InfoTooltip" parent="." instance=ExtResource("11_drnm5")]
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.8
+anchor_right = 0.8
+anchor_bottom = 0.95
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Plant" parent="." instance=ExtResource("4_vn8su")]
-offset_left = 265.0
-offset_top = 332.0
-offset_right = 265.0
-offset_bottom = 332.0
 scale = Vector2(0.36899, 0.554682)
 
 [node name="AttemptsUI" parent="." instance=ExtResource("11_06u7b")]

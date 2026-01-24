@@ -23,35 +23,16 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="RakeUi" parent="TextureRect" instance=ExtResource("2_guj6r")]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.262
-grow_horizontal = 1
-grow_vertical = 1
+visible = false
 scale = Vector2(0.501963, 0.409486)
 
 [node name="FertilizerUi" parent="TextureRect" instance=ExtResource("1_l2i4k")]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.295
-offset_left = 411.0
-offset_top = 107.0
-offset_right = 411.0
-offset_bottom = 107.0
+visible = false
 scale = Vector2(0.303187, 0.277058)
 
 [node name="WateringCanUi" parent="TextureRect" instance=ExtResource("3_oxrnt")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.739
-offset_left = -6.32806
-offset_top = 1.0
-offset_right = -6.32813
-offset_bottom = 1.0
-grow_horizontal = 1
-grow_vertical = 1
+visible = false
 scale = Vector2(0.460109, 0.699833)
 
 [connection signal="item_picked" from="TextureRect/RakeUi" to="." method="set_current_care_box_item"]
-[connection signal="item_picked" from="TextureRect/FertilizerUi" to="." method="set_current_care_box_item"]
 [connection signal="item_picked" from="TextureRect/WateringCanUi" to="." method="set_current_care_box_item"]

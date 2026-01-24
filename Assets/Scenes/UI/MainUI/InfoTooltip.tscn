@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhgdvrtlwo6cp"]
+
+[ext_resource type="Script" uid="uid://dfok6n7flxk7r" path="res://Assets/Scripts/UI/Main/InfoTooltip.gd" id="1_rh8pd"]
+
+[node name="InfoTooltip" type="Control" node_paths=PackedStringArray("info_text")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rh8pd")
+info_text = NodePath("TextureRect/RichTextLabel")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1

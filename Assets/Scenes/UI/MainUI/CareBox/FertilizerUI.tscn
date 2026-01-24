@@ -1,28 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://df7tedm3meajx"]
 
 [ext_resource type="Script" uid="uid://rtd7rktwbi8s" path="res://Assets/Scripts/CareBox/Fertilizer.gd" id="1_2oqmk"]
+[ext_resource type="Texture2D" uid="uid://7uil7tkr85io" path="res://Assets/Sprites/удобрение.png" id="2_jxct1"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2oqmk"]
-
-[node name="FertilizerUi" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="FertilizerUi" type="Area2D"]
 script = ExtResource("1_2oqmk")
 plant_care_type = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
-self_modulate = Color(0, 1, 1, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_2oqmk")
-expand_mode = 3
+[node name="TextureRect" type="Sprite2D" parent="."]
+texture = ExtResource("2_jxct1")
 
-[connection signal="mouse_entered" from="." to="." method="mouse_entered"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(520, 493, 4, 609, -534, 498, -265, -240, -423, -504, -119, -613, 303, -606, 218, -334)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

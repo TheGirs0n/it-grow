@@ -20,6 +20,7 @@ GlobalContext="*res://Assets/Scripts/Global/GlobalContext.gd"
 SettingManager="*res://Assets/Scripts/Global/SettingManager.gd"
 GlobalEnums="*res://Assets/Scripts/Global/GlobalEnums.gd"
 PlantResourceFabric="*res://Assets/Scenes/Globals/PlantResourceFabric.tscn"
+GlobalAudio="*res://Assets/Scenes/Globals/GlobalAudio.tscn"
 
 [file_customization]
 

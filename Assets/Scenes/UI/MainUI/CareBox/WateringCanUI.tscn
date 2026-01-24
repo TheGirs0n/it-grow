@@ -1,27 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://ca1c40tdy3kxw"]
 
 [ext_resource type="Script" uid="uid://v6im6v7hpl5w" path="res://Assets/Scripts/CareBox/WateringCan.gd" id="1_go6kh"]
+[ext_resource type="Texture2D" uid="uid://61y4hpmu1nu0" path="res://Assets/Sprites/лейка.png" id="2_pdfpj"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_go6kh"]
-
-[node name="WateringCanUi" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="WateringCanUi" type="Area2D"]
 script = ExtResource("1_go6kh")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-self_modulate = Color(1, 1, 0, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_go6kh")
-expand_mode = 3
+[node name="TextureRect" type="Sprite2D" parent="."]
+texture = ExtResource("2_pdfpj")
 
-[connection signal="mouse_entered" from="." to="." method="mouse_entered"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-118, -120, -255, 476, -18, 566, 264, 566, 475, 478, 407, -66, 284, -175, -52, -249)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -5,8 +5,9 @@ class_name PlantResource
 @export var plant_energy : GlobalEnums.PLANT_ENERGY
 @export_multiline var plant_description : String
 @export var plant_grow_stage_textures : Array[CompressedTexture2D]
-@export var plant_smell : GlobalEnums.PLANT_SMELL
-@export var plant_leaf : GlobalEnums.PLANT_LEAF
-@export var plant_juice_density : GlobalEnums.PLANT_JUICE_DENSITY
-@export var plant_juice_color : GlobalEnums.PLANT_JUICE_COLOR
+@export_multiline var plant_smell : String
+@export var plant_leaf : CompressedTexture2D
+@export var plant_juice_density : CompressedTexture2D
+@export var plant_juice_color : String
+@export_multiline var plant_additional_property : String
 @export var plant_care_stages : Array[GlobalEnums.PLANT_CARE_TYPE]

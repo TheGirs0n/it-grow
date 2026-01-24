@@ -1,24 +1,31 @@
 [gd_scene load_steps=4 format=3 uid="uid://ba25ifuiwotpe"]
 
 [ext_resource type="Script" uid="uid://bgcqyeqf4w6no" path="res://Assets/Scripts/Plant/PlantTemplate.gd" id="1_obxvn"]
+[ext_resource type="Texture2D" uid="uid://b3r7qvyuioc2" path="res://icon.svg" id="2_ij5uu"]
 [ext_resource type="PackedScene" uid="uid://cjw7mh2670qkx" path="res://Assets/Scenes/UI/MainUI/FindBox/FindBoxCircleUI.tscn" id="2_xrxix"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_obxvn"]
 
 [node name="Plant" type="Area2D" node_paths=PackedStringArray("plant_texture", "plant_circle")]
 script = ExtResource("1_obxvn")
 plant_texture = NodePath("TextureRect")
 plant_circle = NodePath("FindBoxCircleUi")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-self_modulate = Color(0.196078, 0.211765, 0.247059, 0.666667)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_obxvn")
-
-[node name="FindBoxCircleUi" parent="." instance=ExtResource("2_xrxix")]
+[node name="TextureRect" type="Sprite2D" parent="."]
+texture = ExtResource("2_ij5uu")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(56, -62, 57, 58, -61, 59, -58, -59)
+
+[node name="FindBoxCircleUi" parent="." instance=ExtResource("2_xrxix")]
+visible = false
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
