@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8dx17jlh8o45"]
+
+[ext_resource type="Script" uid="uid://c2cuq1cwjhk5f" path="res://Assets/Scripts/UI/Main/FindBoxUi.gd" id="1_piumh"]
+[ext_resource type="PackedScene" uid="uid://docjwe2mqn3sw" path="res://Assets/Scenes/UI/MainUI/FindBox/MagnifierUI.tscn" id="2_5n07k"]
+[ext_resource type="PackedScene" uid="uid://bi6mvswmjxjah" path="res://Assets/Scenes/UI/MainUI/FindBox/KnifeUI.tscn" id="3_01a3r"]
+
+[node name="FindBoxUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_piumh")
+
+[node name="MagnifierUi" parent="." instance=ExtResource("2_5n07k")]
+layout_mode = 1
+find_box_type = 2
+
+[node name="KnifeUi" parent="." instance=ExtResource("3_01a3r")]
+layout_mode = 1
+find_box_type = 3
+
+[connection signal="item_picked" from="MagnifierUi" to="." method="set_current_find_box_item"]
+[connection signal="item_picked" from="KnifeUi" to="." method="set_current_find_box_item"]

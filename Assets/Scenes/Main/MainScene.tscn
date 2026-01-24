@@ -3,7 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://dwge7iku0cbsp" path="res://Assets/Scenes/UI/MainUI/MainUI.tscn" id="1_mkk7x"]
 [ext_resource type="Script" uid="uid://dypvbsnr1qo6f" path="res://Assets/Scripts/Main/GameManager.gd" id="1_rqquv"]
 
-[node name="MainScene" type="Node"]
+[node name="MainScene" type="Node" node_paths=PackedStringArray("day_timer")]
+process_mode = 1
 script = ExtResource("1_rqquv")
+day_timer = NodePath("Timer")
 
 [node name="MainUi" parent="." instance=ExtResource("1_mkk7x")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="day_timer_end"]

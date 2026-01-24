@@ -1,7 +1,8 @@
-extends Control
+extends Area2D
 class_name PlantTemplate
 
 @export var plant_texture : TextureRect
+@export var plant_circle : FindBoxCircleUI
 
 var plant_name : String
 var plant_energy : GlobalEnums.PLANT_ENERGY
@@ -38,11 +39,24 @@ func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.is_pressed():
+				if plant_circle.visible == false:
+					plant_circle.show()
+				
 				if GlobalContext.main_ui_instance.care_box_ui.current_care_box_item == null:
-					print("NO ITEM")
+					print("NO ITEM") # Уход
+					return
 				else:
 					try_caring_plant(GlobalContext.main_ui_instance.care_box_ui.current_care_box_item)
 					GlobalContext.main_ui_instance.care_box_ui.clear_current_care_box_item()
+					return
+				
+				if GlobalContext.main_ui_instance.find_box_ui.current_find_box_item == null:
+					print("NO FIND ITEM") # Распознавание
+					return
+				else:
+					try_find_item(GlobalContext.main_ui_instance.find_box_ui.current_find_box_item)
+					GlobalContext.main_ui_instance.find_box_ui.clear_current_find_box_item()
+					return
 	
 	
 func reset_care_routine():
@@ -67,10 +81,22 @@ func try_caring_plant(care_item : CareBoxItem):
 		print("ОШИБКА УХОДА")
 		decrease_grow_stage()
 
+func try_find_item(find_item : FindBoxItem):
+	match find_item:
+		Nose:
+			pass
+		Brain:
+			pass
+		Knife:
+			pass
+		Magnifier:
+			pass
+
 func increase_grow_stage():
 	if plant_care_stages_index < plant_care_stages.size():
 		plant_care_stages_index += 1
 		plant_texture.texture = plant_grow_stage_textures[plant_care_stages_index]
+		reset_care_routine()
 	else:
 		print("ЦВЕТКУ БОЛЬШЕ НЕКУДА РАСТИ")
 

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc3g8h6t1jh5o"]
+
+[ext_resource type="Script" uid="uid://cji8rubysqkms" path="res://Assets/Scripts/UI/Screens/LoseScreen.gd" id="1_pdjom"]
+
+[node name="LoseScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pdjom")

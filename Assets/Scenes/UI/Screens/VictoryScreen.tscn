@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfho24p8x2acw"]
+
+[ext_resource type="Script" uid="uid://chr7abqfio5b3" path="res://Assets/Scripts/UI/Screens/VictoryScreenUI.gd" id="1_lab0t"]
+
+[node name="VictoryScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lab0t")

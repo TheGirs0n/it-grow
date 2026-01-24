@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dgg30oyjhveym"]
 
-[ext_resource type="Script" uid="uid://cmn6s8mt2nrhe" path="res://Assets/Scripts/Main/GameOverMiniGameUi.gd" id="1_p3f5u"]
+[ext_resource type="Script" uid="uid://cmn6s8mt2nrhe" path="res://Assets/Scripts/Main/GameOverMiniGameUi.gd" id="1_7u46b"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rptop"]
 
@@ -17,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_p3f5u")
+script = ExtResource("1_7u46b")
 container = NodePath("HBoxContainer")
 number_next = NodePath("HBoxContainer/RichTextLabel")
 more_than_button = NodePath("HBoxContainer/MoreButton")

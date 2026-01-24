@@ -11,6 +11,7 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2mbtb"]
 
 [node name="SettingsUi" type="Control" node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider", "master_volume_text", "sfx_volume_text", "music_volume_text", "current_window_mode_text", "current_resolution_mode_text", "apply_button", "restore_defaults_button")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
