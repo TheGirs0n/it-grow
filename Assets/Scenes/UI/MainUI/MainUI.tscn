@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dwge7iku0cbsp"]
+[gd_scene load_steps=18 format=3 uid="uid://dwge7iku0cbsp"]
 
 [ext_resource type="Script" uid="uid://dhwkacn5w1smw" path="res://Assets/Scripts/UI/Main/MainUi.gd" id="1_sm6gl"]
 [ext_resource type="PackedScene" uid="uid://df4il6aelqnrl" path="res://Assets/Scenes/UI/MainUI/CareBox/CareBoxUI.tscn" id="2_gc7u3"]
@@ -16,14 +16,17 @@
 [ext_resource type="Texture2D" uid="uid://c4kntb3xq6ht1" path="res://Assets/Sprites/растение правый нижний.png" id="10_qxc7r"]
 [ext_resource type="PackedScene" uid="uid://brroeoa27ev13" path="res://Assets/Scenes/UI/MainUI/Main/AttemptsUi.tscn" id="11_06u7b"]
 [ext_resource type="PackedScene" uid="uid://dhgdvrtlwo6cp" path="res://Assets/Scenes/UI/MainUI/InfoTooltip.tscn" id="11_drnm5"]
+[ext_resource type="PackedScene" uid="uid://c5ik6i28dk71g" path="res://Assets/Scenes/UI/FindBoxCircleCenterUI.tscn" id="16_i5g6b"]
 
-[node name="MainUi" type="CanvasLayer" node_paths=PackedStringArray("care_box_ui", "find_box_ui", "pause_menu_ui", "day_counter_ui", "attempts_ui")]
+[node name="MainUi" type="CanvasLayer" node_paths=PackedStringArray("care_box_ui", "find_box_ui", "pause_menu_ui", "day_counter_ui", "attempts_ui", "info_tooltip_ui", "find_box_circle_center")]
 script = ExtResource("1_sm6gl")
 care_box_ui = NodePath("CareBoxUi")
 find_box_ui = NodePath("FindBoxUi")
 pause_menu_ui = NodePath("PauseMenu")
 day_counter_ui = NodePath("DayCounter")
 attempts_ui = NodePath("AttemptsUI")
+info_tooltip_ui = NodePath("InfoTooltip")
+find_box_circle_center = NodePath("FindBoxCircleCenter")
 plant_scene = ExtResource("4_vn8su")
 game_over_mini_game_ui = ExtResource("5_6205g")
 day_switcher_ui = ExtResource("4_n00om")
@@ -83,17 +86,19 @@ grow_vertical = 1
 
 [node name="CareBoxUi" parent="." instance=ExtResource("2_gc7u3")]
 anchors_preset = -1
+anchor_right = 0.763
+offset_left = 125.0
+offset_top = 427.0
+offset_right = 125.0
+offset_bottom = 427.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.275, 0.275)
 
 [node name="FindBoxUi" parent="." instance=ExtResource("5_np7rl")]
-anchors_preset = -1
-anchor_left = -0.25
-anchor_top = 0.55
-anchor_right = 0.1
-anchor_bottom = 0.9
-grow_horizontal = 1
-grow_vertical = 0
+offset_left = 0.0
+offset_right = 0.0
+scale = Vector2(0.995, 0.995)
 
 [node name="InfoTooltip" parent="." instance=ExtResource("11_drnm5")]
 anchors_preset = -1
@@ -105,9 +110,23 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Plant" parent="." instance=ExtResource("4_vn8su")]
+position = Vector2(620, 406)
 scale = Vector2(0.36899, 0.554682)
 
 [node name="AttemptsUI" parent="." instance=ExtResource("11_06u7b")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+grow_vertical = 1
+
+[node name="FindBoxCircleCenter" parent="." instance=ExtResource("16_i5g6b")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_gc7u3")]
 visible = false

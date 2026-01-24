@@ -8,6 +8,7 @@ class_name MainUI
 @export var day_counter_ui : DayCounterUI
 @export var attempts_ui : AttemptsUI
 @export var info_tooltip_ui : InfoTooltip
+@export var find_box_circle_center : FindBoxCircleCenter
 
 @export_group("Packed Scenes")
 @export var plant_scene : PackedScene
@@ -55,6 +56,9 @@ func show_tooltip(text_in_tooltip : String):
 
 func hide_tooltip():
 	info_tooltip_ui.hide_tooltip()
+
+func open_find_box_center(new_plant_texture : CompressedTexture2D, new_effect_texture : CompressedTexture2D):
+	find_box_circle_center.show_circle(new_plant_texture, new_effect_texture)
 
 func open_pause():
 	pause_menu_ui.show()

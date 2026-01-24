@@ -47,7 +47,6 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 				
 				if GlobalContext.main_ui_instance.care_box_ui.current_care_box_item == null:
 					print("NO ITEM") # Уход
-					return
 				else:
 					try_caring_plant(GlobalContext.main_ui_instance.care_box_ui.current_care_box_item)
 					GlobalContext.main_ui_instance.care_box_ui.clear_current_care_box_item()
@@ -55,7 +54,6 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 				
 				if GlobalContext.main_ui_instance.find_box_ui.current_find_box_item == null:
 					print("NO FIND ITEM") # Распознавание
-					return
 				else:
 					try_find_item(GlobalContext.main_ui_instance.find_box_ui.current_find_box_item)
 					GlobalContext.main_ui_instance.find_box_ui.clear_current_find_box_item()
@@ -85,17 +83,23 @@ func try_caring_plant(care_item : CareBoxItem):
 		decrease_grow_stage()
 
 func try_find_item(find_item : FindBoxItem):
-	match find_item:
-		Nose:
+	match find_item.find_box_type:
+		GlobalEnums.PLANT_FIND_TYPE.NOSE:
 			GlobalContext.main_ui_instance.show_tooltip(plant_smell)
-		Brain:
+			plant_circle.hide()
+			print("SMELL")
+		GlobalEnums.PLANT_FIND_TYPE.BRAIN:
 			GlobalContext.main_ui_instance.show_tooltip(plant_additional_propety)
-		Knife:
+			plant_circle.hide()
+			print("PROP")
+		GlobalEnums.PLANT_FIND_TYPE.KNIFE:
 			GlobalContext.main_ui_instance.show_tooltip(str(plant_juice_density))
-			# Спрайт сока
-		Magnifier:
-			pass
-			# Спрайт листьев
+			GlobalContext.main_ui_instance.open_find_box_center(plant_grow_stage_textures[plant_care_stages_index], plant_juice_density)
+			print("JUICE")
+		GlobalEnums.PLANT_FIND_TYPE.MAGNIFIER:
+			GlobalContext.main_ui_instance.open_find_box_center(plant_grow_stage_textures[plant_care_stages_index], plant_leaf)
+			print("GROW")
+
 
 func increase_grow_stage():
 	if plant_care_stages_index < plant_care_stages.size():

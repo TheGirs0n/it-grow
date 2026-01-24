@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpqkura5d3dq3"]
+[gd_scene load_steps=3 format=3 uid="uid://cpqkura5d3dq3"]
 
 [ext_resource type="Script" uid="uid://1s2tj1qeojvf" path="res://Assets/Scripts/FindBox/Nose.gd" id="1_56unq"]
+[ext_resource type="Texture2D" uid="uid://blpk5n3na148p" path="res://Assets/Sprites/нос.png" id="2_pnoiy"]
 
 [node name="NoseUi" type="Control"]
 layout_mode = 3
@@ -12,8 +13,12 @@ grow_vertical = 2
 script = ExtResource("1_56unq")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pnoiy")
 expand_mode = 3
 stretch_mode = 5

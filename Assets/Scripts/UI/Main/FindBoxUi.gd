@@ -16,15 +16,19 @@ func clear_current_find_box_item():
 
 
 func _on_button_pressed() -> void:
-	if is_open:
+	print(is_open)
+	print(global_position)
+	if !is_open:
 		if simple_tween:
 			simple_tween.kill()
 		
 		simple_tween = create_tween()
 		simple_tween.tween_property(self, "global_position", global_position + position_change, 0.3)
+		is_open = true
 	else:
 		if simple_tween:
 			simple_tween.kill()
 			
 		simple_tween = create_tween()
 		simple_tween.tween_property(self, "global_position", global_position - position_change, 0.3)
+		is_open = false

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cjw7mh2670qkx" path="res://Assets/Scenes/UI/MainUI/FindBox/FindBoxCircleUI.tscn" id="2_xrxix"]
 
 [node name="Plant" type="Area2D" node_paths=PackedStringArray("plant_texture", "plant_circle")]
+position = Vector2(559, 291)
 script = ExtResource("1_obxvn")
 plant_texture = NodePath("TextureRect")
 plant_circle = NodePath("FindBoxCircleUi")
@@ -18,14 +19,14 @@ polygon = PackedVector2Array(56, -62, 57, 58, -61, 59, -58, -59)
 [node name="FindBoxCircleUi" parent="." instance=ExtResource("2_xrxix")]
 visible = false
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
+offset_left = -180.0
+offset_top = -184.0
+offset_right = 1022.0
+offset_bottom = 1018.0
+scale = Vector2(0.3, 0.3)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="item_picked" from="FindBoxCircleUi/BrainUi" to="." method="try_find_item"]
+[connection signal="item_picked" from="FindBoxCircleUi/NoseUi" to="." method="try_find_item"]
+
+[editable path="FindBoxCircleUi"]

@@ -1,37 +1,89 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8dx17jlh8o45"]
+[gd_scene load_steps=11 format=3 uid="uid://b8dx17jlh8o45"]
 
 [ext_resource type="Script" uid="uid://c2cuq1cwjhk5f" path="res://Assets/Scripts/UI/Main/FindBoxUi.gd" id="1_piumh"]
 [ext_resource type="PackedScene" uid="uid://docjwe2mqn3sw" path="res://Assets/Scenes/UI/MainUI/FindBox/MagnifierUI.tscn" id="2_5n07k"]
+[ext_resource type="Texture2D" uid="uid://i53nmv00gts5" path="res://Assets/Sprites/ящик.png" id="2_mx07m"]
 [ext_resource type="PackedScene" uid="uid://bi6mvswmjxjah" path="res://Assets/Scenes/UI/MainUI/FindBox/KnifeUI.tscn" id="3_01a3r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lm1jn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pq046"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxyva"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rh74t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mx07m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cj7kh"]
 
 [node name="FindBoxUi" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = -3.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_piumh")
+position_change = Vector2(300, 0)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -580.0
+offset_top = -24.0
+offset_right = -580.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_mx07m")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="KnifeUi" parent="TextureRect" instance=ExtResource("3_01a3r")]
-layout_mode = 1
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 306.207
+offset_top = 423.448
+offset_right = 306.207
+offset_bottom = 759.448
+scale = Vector2(0.4, 0.4)
+mouse_filter = 2
 
 [node name="MagnifierUi" parent="TextureRect" instance=ExtResource("2_5n07k")]
-layout_mode = 1
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 372.414
+offset_top = 354.483
+offset_right = 372.414
+offset_bottom = 690.483
+scale = Vector2(0.4, 0.4)
+mouse_filter = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 1.0
+offset_top = 366.0
+offset_right = 31.0
+offset_bottom = 504.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lm1jn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pq046")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uxyva")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rh74t")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mx07m")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cj7kh")
 action_mode = 0
+flat = true
 
 [connection signal="item_picked" from="TextureRect/KnifeUi" to="." method="set_current_find_box_item"]
 [connection signal="item_picked" from="TextureRect/MagnifierUi" to="." method="set_current_find_box_item"]

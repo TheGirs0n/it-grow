@@ -3,30 +3,31 @@
 [ext_resource type="Script" uid="uid://cvg5c68rdo8nh" path="res://Assets/Scripts/FindBox/FindBoxCircleUi.gd" id="1_7k6u0"]
 [ext_resource type="PackedScene" uid="uid://cp36a7wv64vnd" path="res://Assets/Scenes/UI/MainUI/FindBox/BrainUI.tscn" id="1_u5o2k"]
 [ext_resource type="PackedScene" uid="uid://cpqkura5d3dq3" path="res://Assets/Scenes/UI/MainUI/FindBox/NoseUI.tscn" id="2_7k6u0"]
+[ext_resource type="Texture2D" uid="uid://1hu77ui7wol0" path="res://Assets/Sprites/круг.png" id="2_87cwq"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7k6u0"]
-
-[node name="FindBoxCircleUi" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="FindBoxCircleUi" type="TextureRect"]
+offset_left = -327.0
+offset_top = -330.0
+offset_right = 875.0
+offset_bottom = 872.0
+texture = ExtResource("2_87cwq")
+expand_mode = 2
+stretch_mode = 5
 script = ExtResource("1_7k6u0")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-self_modulate = Color(0.345098, 0.737255, 0.113725, 1)
+[node name="BrainUi" parent="." instance=ExtResource("1_u5o2k")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_7k6u0")
+offset_left = 768.0
+offset_top = 654.0
+offset_right = 768.0
+offset_bottom = 654.0
+scale = Vector2(0.4, 0.4)
 
-[node name="BrainUi" parent="TextureRect" instance=ExtResource("1_u5o2k")]
+[node name="NoseUi" parent="." instance=ExtResource("2_7k6u0")]
 layout_mode = 1
-
-[node name="NoseUi" parent="TextureRect" instance=ExtResource("2_7k6u0")]
-layout_mode = 1
+anchors_preset = -1
+offset_left = 840.0
+offset_top = 115.0
+offset_right = 840.0
+offset_bottom = 115.0
+scale = Vector2(0.4, 0.4)

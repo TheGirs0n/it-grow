@@ -4,7 +4,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dkdlt"]
 
-[node name="FindBoxCircleCenter" type="Control"]
+[node name="FindBoxCircleCenter" type="Control" node_paths=PackedStringArray("plant_texture", "effect_texture", "timer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,9 +12,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dkdlt")
+plant_texture = NodePath("PlantTexture")
+effect_texture = NodePath("EffectTexture")
+timer = NodePath("Timer")
 
 [node name="BackgroundText" type="TextureRect" parent="."]
-self_modulate = Color(0, 0, 0, 0.333333)
+self_modulate = Color(0, 0, 0, 0.490196)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,3 +47,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 expand_mode = 3
 stretch_mode = 5
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="hide_circle"]
