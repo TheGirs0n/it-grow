@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://docjwe2mqn3sw"]
+[gd_scene load_steps=3 format=3 uid="uid://docjwe2mqn3sw"]
 
 [ext_resource type="Script" uid="uid://bu81m7kmqen2n" path="res://Assets/Scripts/FindBox/Magnifier.gd" id="1_vqps2"]
+[ext_resource type="Texture2D" uid="uid://vjun7roamyla" path="res://Assets/Sprites/лупа.png" id="2_vf84w"]
 
 [node name="MagnifierUi" type="Control"]
 layout_mode = 3
@@ -13,8 +14,12 @@ script = ExtResource("1_vqps2")
 find_box_type = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vf84w")
 expand_mode = 3
 stretch_mode = 5

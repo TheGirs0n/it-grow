@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi6mvswmjxjah"]
+[gd_scene load_steps=3 format=3 uid="uid://bi6mvswmjxjah"]
 
 [ext_resource type="Script" uid="uid://dfy8ot4pj162" path="res://Assets/Scripts/FindBox/Knife.gd" id="1_m217t"]
+[ext_resource type="Texture2D" uid="uid://cbu7lpyu147wq" path="res://Assets/Sprites/нож.png" id="2_e2kvb"]
 
 [node name="KnifeUi" type="Control"]
 layout_mode = 3
@@ -13,8 +14,12 @@ script = ExtResource("1_m217t")
 find_box_type = 3
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e2kvb")
 expand_mode = 3
 stretch_mode = 5
