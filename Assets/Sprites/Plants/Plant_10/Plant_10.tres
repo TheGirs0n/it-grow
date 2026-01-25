@@ -4,12 +4,13 @@
 
 [resource]
 script = ExtResource("1_14ldw")
-plant_name = ""
-plant_energy = ""
-plant_description = ""
 plant_grow_stage_textures = Array[CompressedTexture2D]([])
+plant_name = ""
+plant_cool_name = ""
+plant_description = ""
+plant_cool_description = ""
 plant_smell = ""
+plant_energy = ""
 plant_juice_color = ""
-plant_additional_property = ""
 plant_care_stages = Array[int]([])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"

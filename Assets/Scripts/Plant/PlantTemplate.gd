@@ -8,12 +8,12 @@ var plant_name : String
 var plant_cool_name : String
 var plant_energy : String
 var plant_description : String
+var plant_cool_description : String
 var plant_grow_stage_textures : Array[CompressedTexture2D]
 var plant_smell : String
 var plant_leaf : CompressedTexture2D
 var plant_juice_density : CompressedTexture2D
 var plant_juice_color : String
-var plant_additional_propety : String
 var plant_care_stages : Array[GlobalEnums.PLANT_CARE_TYPE]
 
 var plant_care_stages_complete : Array[bool]
@@ -26,12 +26,12 @@ func load_data_from_resource(new_resouce : PlantResource):
 	plant_name = new_resouce.plant_name
 	plant_energy = new_resouce.plant_energy
 	plant_description = new_resouce.plant_description
+	plant_cool_description = new_resouce.plant_cool_description
 	plant_grow_stage_textures = new_resouce.plant_grow_stage_textures
 	plant_smell = new_resouce.plant_smell
 	plant_leaf = new_resouce.plant_leaf
 	plant_juice_density = new_resouce.plant_juice_density
 	plant_juice_color = new_resouce.plant_juice_color
-	plant_additional_propety = new_resouce.plant_additional_property
 	plant_care_stages = new_resouce.plant_care_stages
 	
 	for i in new_resouce.plant_care_stages:
@@ -91,7 +91,7 @@ func try_find_item(find_item : FindBoxItem):
 			plant_circle.hide()
 			print("SMELL")
 		GlobalEnums.PLANT_FIND_TYPE.BRAIN:
-			GlobalContext.main_ui_instance.show_tooltip(plant_additional_propety)
+			GlobalContext.main_ui_instance.show_tooltip(plant_energy)
 			plant_circle.hide()
 			print("PROP")
 		GlobalEnums.PLANT_FIND_TYPE.KNIFE:
@@ -126,6 +126,9 @@ func get_plant_name() -> String:
 	
 func get_plant_description() -> String:
 	return plant_description
+	
+func get_plant_cool_description() -> String:
+	return plant_cool_description
 	
 func get_plant_smell() -> String:
 	return plant_smell
