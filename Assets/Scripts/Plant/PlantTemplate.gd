@@ -76,7 +76,7 @@ func try_caring_plant(care_item : CareBoxItem):
 		return
 	
 	if !plant_care_stages.has(care_item.plant_care_type):
-		print("НЕТ ТАКОГО В ИНСТРУКЦИИ")
+		GlobalContext.main_ui_instance.show_tooltip("НЕТ ТАКОГО В ИНСТРУКЦИИ")
 		decrease_grow_stage()
 		return
 	
@@ -85,11 +85,11 @@ func try_caring_plant(care_item : CareBoxItem):
 	if plant_care_stages[current_stage] == care_item.plant_care_type:
 		plant_care_stages_complete[current_stage] = true
 		plant_goal_container.set_done_circle(current_stage)
-		plant_goal_container.show_all_circles(plant_care_stages.size()) #
-		print("ОТЛИЧНЫЙ УХОД")
+		plant_goal_container.show_all_circles(plant_care_stages.size())
+		GlobalContext.main_ui_instance.show_tooltip("ОТЛИЧНЫЙ УХОД")
 	else:
 		decrease_grow_stage()
-		print("ОШИБКА УХОДА")
+		GlobalContext.main_ui_instance.show_tooltip("ОШИБКА УХОДА")
 
 func try_find_item(find_item : FindBoxItem):
 	match find_item.find_box_type:

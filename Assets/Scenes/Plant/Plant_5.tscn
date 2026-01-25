@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ynuj3wck013m"]
+[gd_scene load_steps=8 format=3 uid="uid://ynuj3wck013m"]
 
 [ext_resource type="Script" uid="uid://byj86hj40u15q" path="res://Assets/Scripts/Plant/Plants/Plant_5.gd" id="1_ubaqk"]
 [ext_resource type="Resource" uid="uid://chbma6xr3y0kg" path="res://Assets/Sprites/Plants/Plant_5/Plant_5.tres" id="2_ubaqk"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cjw7mh2670qkx" path="res://Assets/Scenes/UI/MainUI/FindBox/FindBoxCircleUI.tscn" id="4_75njh"]
 [ext_resource type="Script" uid="uid://ct0y602syert8" path="res://Assets/Scripts/Plant/PlantGoalContainer.gd" id="5_v6vod"]
 [ext_resource type="Texture2D" uid="uid://doijt2c3637fp" path="res://Assets/Sprites/кружочек для растения.png" id="6_ubaqk"]
+[ext_resource type="Texture2D" uid="uid://c54yprq3of0vk" path="res://Assets/Sprites/кружок с галочкой.png" id="7_d5dt0"]
 
 [node name="Plant_5" type="Area2D" node_paths=PackedStringArray("plant_texture", "plant_circle", "plant_goal_container")]
 scale = Vector2(0.3, 0.3)
@@ -34,7 +35,7 @@ offset_right = 937.0
 offset_bottom = 781.0
 scale = Vector2(0.45, 0.45)
 
-[node name="GoalPlantContainer" type="HBoxContainer" parent="." node_paths=PackedStringArray("textures")]
+[node name="GoalPlantContainer" type="HBoxContainer" parent="." node_paths=PackedStringArray("textures", "timer")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -50,6 +51,9 @@ theme_override_constants/separation = 15
 alignment = 1
 script = ExtResource("5_v6vod")
 textures = [NodePath("TextureRect"), NodePath("TextureRect2"), NodePath("TextureRect3"), NodePath("TextureRect4"), NodePath("TextureRect5"), NodePath("TextureRect6"), NodePath("TextureRect7")]
+hollow_circle = ExtResource("6_ubaqk")
+done_circle = ExtResource("7_d5dt0")
+timer = NodePath("Timer")
 
 [node name="TextureRect" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
@@ -100,8 +104,12 @@ texture = ExtResource("6_ubaqk")
 expand_mode = 2
 stretch_mode = 5
 
+[node name="Timer" type="Timer" parent="GoalPlantContainer"]
+wait_time = 3.0
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="item_picked" from="FindBoxCircleUi/BrainUi" to="." method="try_find_item"]
 [connection signal="item_picked" from="FindBoxCircleUi/NoseUi" to="." method="try_find_item"]
+[connection signal="timeout" from="GoalPlantContainer/Timer" to="GoalPlantContainer" method="_on_timer_timeout"]
 
 [editable path="FindBoxCircleUi"]

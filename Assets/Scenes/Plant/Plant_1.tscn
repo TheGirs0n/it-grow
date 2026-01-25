@@ -31,7 +31,7 @@ offset_right = 1022.0
 offset_bottom = 1018.0
 scale = Vector2(0.3, 0.3)
 
-[node name="GoalPlantContainer" type="HBoxContainer" parent="." node_paths=PackedStringArray("textures")]
+[node name="GoalPlantContainer" type="HBoxContainer" parent="." node_paths=PackedStringArray("textures", "timer")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -49,6 +49,7 @@ script = ExtResource("4_5rjpm")
 textures = [NodePath("TextureRect"), NodePath("TextureRect2"), NodePath("TextureRect3"), NodePath("TextureRect4"), NodePath("TextureRect5"), NodePath("TextureRect6"), NodePath("TextureRect7")]
 hollow_circle = ExtResource("6_k4cdj")
 done_circle = ExtResource("7_5rjpm")
+timer = NodePath("Timer")
 
 [node name="TextureRect" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
@@ -99,8 +100,12 @@ texture = ExtResource("6_k4cdj")
 expand_mode = 2
 stretch_mode = 5
 
+[node name="Timer" type="Timer" parent="GoalPlantContainer"]
+wait_time = 3.0
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="item_picked" from="FindBoxCircleUi/BrainUi" to="." method="try_find_item"]
 [connection signal="item_picked" from="FindBoxCircleUi/NoseUi" to="." method="try_find_item"]
+[connection signal="timeout" from="GoalPlantContainer/Timer" to="GoalPlantContainer" method="_on_timer_timeout"]
 
 [editable path="FindBoxCircleUi"]

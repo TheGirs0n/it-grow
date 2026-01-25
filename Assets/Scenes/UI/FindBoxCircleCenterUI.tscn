@@ -4,7 +4,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dkdlt"]
 
-[node name="FindBoxCircleCenter" type="Control" node_paths=PackedStringArray("plant_texture", "effect_texture", "timer")]
+[node name="FindBoxCircleCenter" type="Control" node_paths=PackedStringArray("plant_texture", "effect_texture")]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
@@ -15,7 +15,6 @@ grow_vertical = 2
 script = ExtResource("1_dkdlt")
 plant_texture = NodePath("PlantTexture")
 effect_texture = NodePath("EffectTexture")
-timer = NodePath("Timer")
 
 [node name="BackgroundText" type="TextureRect" parent="."]
 self_modulate = Color(0, 0, 0, 0.490196)
@@ -30,26 +29,21 @@ texture = SubResource("PlaceholderTexture2D_dkdlt")
 [node name="PlantTexture" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.45
-anchor_top = 0.2
-anchor_right = 0.65
-anchor_bottom = 0.7
+anchor_left = 0.35
+anchor_top = 0.05
+anchor_right = 0.8
+anchor_bottom = 0.8
 expand_mode = 3
 stretch_mode = 5
 
 [node name="EffectTexture" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.4
-anchor_right = 0.5
-anchor_bottom = 0.7
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_left = 0.35
+anchor_top = 0.5
+anchor_right = 0.6
+anchor_bottom = 0.8
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-
-[connection signal="timeout" from="Timer" to="." method="hide_circle"]
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
