@@ -30,3 +30,11 @@ func _on_button_pressed() -> void:
 		simple_tween = create_tween()
 		simple_tween.tween_property(self, "global_position", global_position - position_change, 0.3)
 		is_open = false
+
+
+func _on_care_book_pressed() -> void:
+	GlobalContext.main_ui_instance.open_care_manual()
+
+
+func _on_find_book_pressed() -> void:
+	GlobalContext.main_ui_instance.open_find_manual()

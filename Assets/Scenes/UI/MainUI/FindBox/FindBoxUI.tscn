@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://docjwe2mqn3sw" path="res://Assets/Scenes/UI/MainUI/FindBox/MagnifierUI.tscn" id="2_5n07k"]
 [ext_resource type="Texture2D" uid="uid://i53nmv00gts5" path="res://Assets/Sprites/ящик.png" id="2_mx07m"]
 [ext_resource type="PackedScene" uid="uid://bi6mvswmjxjah" path="res://Assets/Scenes/UI/MainUI/FindBox/KnifeUI.tscn" id="3_01a3r"]
-[ext_resource type="PackedScene" uid="uid://cw4xgpqcoxxr6" path="res://Assets/Scenes/UI/MainUI/FindBox/CareManual.tscn" id="5_pq046"]
-[ext_resource type="PackedScene" uid="uid://cm8s1aof64fo3" path="res://Assets/Scenes/UI/MainUI/FindBox/FindManual.tscn" id="6_uxyva"]
+[ext_resource type="Texture2D" uid="uid://biuaqxpajjie" path="res://Assets/Sprites/дневник бабушки.png" id="5_pq046"]
+[ext_resource type="Texture2D" uid="uid://cv212jhvn244h" path="res://Assets/Sprites/атлас.png" id="6_uxyva"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lm1jn"]
 
@@ -67,29 +67,27 @@ offset_bottom = 446.0
 rotation = 1.5708
 scale = Vector2(0.8, 0.8)
 
-[node name="CareManual" parent="TextureRect" instance=ExtResource("5_pq046")]
-layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 495.0
-offset_top = 388.0
-offset_right = 495.0
-offset_bottom = 388.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 280.0
+offset_right = 922.0
+offset_bottom = 1061.0
+scale = Vector2(0.3, 0.3)
+action_mode = 0
+icon = ExtResource("5_pq046")
+flat = true
 
-[node name="FindManual" parent="TextureRect" instance=ExtResource("6_uxyva")]
-layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 492.0
-offset_top = 495.0
-offset_right = 492.0
-offset_bottom = 495.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="Button2" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 280.0
+offset_right = 1189.0
+offset_bottom = 1061.0
+scale = Vector2(0.3, 0.3)
+action_mode = 0
+icon = ExtResource("6_uxyva")
+flat = true
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -109,4 +107,6 @@ flat = true
 
 [connection signal="item_picked" from="TextureRect/KnifeUi" to="." method="set_current_find_box_item"]
 [connection signal="item_picked" from="TextureRect/MagnifierUi" to="." method="set_current_find_box_item"]
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_care_book_pressed"]
+[connection signal="pressed" from="TextureRect/Button2" to="." method="_on_find_book_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

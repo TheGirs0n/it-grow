@@ -14,7 +14,7 @@ class_name FindManual
 var current_first_page = 0
 var current_second_page = 1
 
-func open_care_manual():
+func open_start():
 	change_text(start_first_page, start_second_page)
 
 func _on_prev_pressed() -> void:
@@ -32,5 +32,9 @@ func _on_next_pressed() -> void:
 	change_text(current_first_page, current_second_page)
 
 func change_text(new_first_page_id : int, new_second_page_id : int):
-	first_text.text = plant_description[new_first_page_id].plant_description
-	second_text.text = plant_description[new_second_page_id].plant_description
+	first_text.text = plant_description[new_first_page_id].plant_cool_description
+	second_text.text = plant_description[new_second_page_id].plant_cool_description
+
+
+func _on_close_pressed() -> void:
+	hide()

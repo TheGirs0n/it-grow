@@ -12,6 +12,10 @@ class_name MainUI
 @export var plant_spawn_location : PlantSpawnLocation
 @export var pause_menu_ui : PauseMenuUI
 
+@export_group("Manuals")
+@export var care_manual : CareManual
+@export var find_manual : FindManual
+
 @export_group("Packed Scenes")
 @export var plant_scene : PackedScene
 @export var game_over_mini_game_ui : PackedScene
@@ -35,6 +39,8 @@ func open_day_switcher(current_day : int):
 	var scene = day_switcher_ui.instantiate() as DaySwitcherUI
 	scene.prepare_text(current_day)
 	self.add_child(scene)
+	care_manual.hide()
+	find_manual.hide()
 
 func open_minigame():
 	var scene = game_over_mini_game_ui.instantiate() as GameOverMiniGameUI
@@ -61,6 +67,14 @@ func open_find_box_center(new_plant_texture : CompressedTexture2D, new_effect_te
 
 func open_find_box_center_add(new_plant_template : PlantTemplate):
 	find_box_circle_center_add.set_new_plant(new_plant_template)
+
+func open_care_manual():
+	care_manual.show()
+	care_manual.open_start()
+	
+func open_find_manual():
+	find_manual.show()
+	find_manual.open_start()
 
 func open_pause():
 	pause_menu_ui.show()

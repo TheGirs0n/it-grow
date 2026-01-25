@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dwge7iku0cbsp"]
+[gd_scene load_steps=35 format=3 uid="uid://dwge7iku0cbsp"]
 
 [ext_resource type="Script" uid="uid://dhwkacn5w1smw" path="res://Assets/Scripts/UI/Main/MainUi.gd" id="1_sm6gl"]
 [ext_resource type="PackedScene" uid="uid://df4il6aelqnrl" path="res://Assets/Scenes/UI/MainUI/CareBox/CareBoxUI.tscn" id="2_gc7u3"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://c5ik6i28dk71g" path="res://Assets/Scenes/UI/FindBoxCircleCenterUI.tscn" id="16_i5g6b"]
 [ext_resource type="PackedScene" uid="uid://cf30ri6xtr4af" path="res://Assets/Scenes/UI/PlantSpawnLocationUI.tscn" id="18_qxc7r"]
 [ext_resource type="PackedScene" uid="uid://cfcirxr5b62wf" path="res://Assets/Scenes/UI/FindBoxCircleCenterAdd.tscn" id="23_ns3i1"]
+[ext_resource type="PackedScene" uid="uid://cw4xgpqcoxxr6" path="res://Assets/Scenes/UI/MainUI/FindBox/CareManual.tscn" id="24_okv1g"]
+[ext_resource type="PackedScene" uid="uid://br0k6xa3yuvwy" path="res://Assets/Scenes/UI/MainUI/FindBox/FINDManualUI.tscn" id="25_4pgat"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_geo4o"]
 shader = ExtResource("8_f6fh2")
@@ -68,7 +70,7 @@ scale_min = 2.0
 scale_max = 5.0
 alpha_curve = SubResource("CurveTexture_g35pu")
 
-[node name="MainUi" type="CanvasLayer" node_paths=PackedStringArray("day_counter_ui", "attempts_ui", "care_box_ui", "find_box_ui", "info_tooltip_ui", "find_box_circle_center", "find_box_circle_center_add", "plant_spawn_location", "pause_menu_ui")]
+[node name="MainUi" type="CanvasLayer" node_paths=PackedStringArray("day_counter_ui", "attempts_ui", "care_box_ui", "find_box_ui", "info_tooltip_ui", "find_box_circle_center", "find_box_circle_center_add", "plant_spawn_location", "pause_menu_ui", "care_manual", "find_manual")]
 script = ExtResource("1_sm6gl")
 day_counter_ui = NodePath("DayCounter")
 attempts_ui = NodePath("AttemptsUI")
@@ -79,6 +81,8 @@ find_box_circle_center = NodePath("FindBoxCircleCenter")
 find_box_circle_center_add = NodePath("FindBoxCircleCenterAdd")
 plant_spawn_location = NodePath("PlantSpawnLocation")
 pause_menu_ui = NodePath("PauseMenu")
+care_manual = NodePath("CareManual")
+find_manual = NodePath("FINDManualUI")
 plant_scene = ExtResource("4_vn8su")
 game_over_mini_game_ui = ExtResource("5_6205g")
 day_switcher_ui = ExtResource("4_n00om")
@@ -215,6 +219,12 @@ mouse_filter = 2
 [node name="FindBoxCircleCenterAdd" parent="." instance=ExtResource("23_ns3i1")]
 visible = false
 mouse_filter = 2
+
+[node name="CareManual" parent="." instance=ExtResource("24_okv1g")]
+visible = false
+
+[node name="FINDManualUI" parent="." instance=ExtResource("25_4pgat")]
+visible = false
 
 [node name="InfoTooltip" parent="." instance=ExtResource("11_drnm5")]
 modulate = Color(1, 1, 1, 0)

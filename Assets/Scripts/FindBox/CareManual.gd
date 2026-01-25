@@ -1,6 +1,7 @@
 extends Control
 class_name CareManual
 
+
 @export var plant_description : Array[PlantResource]
 
 @export_group("Texts")
@@ -14,7 +15,7 @@ class_name CareManual
 var current_first_page = 0
 var current_second_page = 1
 
-func open_care_manual():
+func open_start():
 	change_text(start_first_page, start_second_page)
 
 func _on_prev_pressed() -> void:
@@ -34,3 +35,7 @@ func _on_next_pressed() -> void:
 func change_text(new_first_page_id : int, new_second_page_id : int):
 	first_text.text = plant_description[new_first_page_id].plant_description
 	second_text.text = plant_description[new_second_page_id].plant_description
+
+
+func _on_close_pressed() -> void:
+	hide()
