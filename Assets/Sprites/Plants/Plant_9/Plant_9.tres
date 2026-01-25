@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PlantResource" load_steps=2 format=3 uid="uid://cb8mrihu2wb45"]
+
+[ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="1_1r2h8"]
+
+[resource]
+script = ExtResource("1_1r2h8")
+plant_name = ""
+plant_energy = ""
+plant_description = ""
+plant_grow_stage_textures = Array[CompressedTexture2D]([])
+plant_smell = ""
+plant_juice_color = ""
+plant_additional_property = ""
+plant_care_stages = Array[int]([])
+metadata/_custom_type_script = "uid://yxbu7vekeegj"
