@@ -66,9 +66,9 @@ func load_audio_settings():
 	music_slider.value = SettingManager.get_music_volume()
 
 func update_volume_text():
-	master_volume_text.text = str(round(master_slider.value))
-	sfx_volume_text.text = str(round(sfx_slider.value))
-	music_volume_text.text = str(round(music_slider.value))
+	master_volume_text.text = str(round(master_slider.value)) + "%"
+	sfx_volume_text.text = str(round(sfx_slider.value)) + "%"
+	music_volume_text.text = str(round(music_slider.value)) + "%"
 
 
 func load_display_settings():
