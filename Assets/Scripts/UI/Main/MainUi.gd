@@ -55,12 +55,10 @@ func show_tooltip(text_in_tooltip : String):
 	info_tooltip_ui.change_text(text_in_tooltip)
 	info_tooltip_ui.show_tooltip()
 
-func hide_tooltip():
-	info_tooltip_ui.hide_tooltip()
-
 func open_find_box_center(new_plant_texture : CompressedTexture2D, new_effect_texture : CompressedTexture2D):
 	find_box_circle_center.show_circle(new_plant_texture, new_effect_texture)
-
+	print("OPEN CENTER")
+	
 func open_pause():
 	pause_menu_ui.show()
 	

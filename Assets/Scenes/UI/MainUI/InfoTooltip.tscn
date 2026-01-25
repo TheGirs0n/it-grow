@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dfok6n7flxk7r" path="res://Assets/Scripts/UI/Main/InfoTooltip.gd" id="1_rh8pd"]
 
-[node name="InfoTooltip" type="Control" node_paths=PackedStringArray("info_text")]
+[node name="InfoTooltip" type="Control" node_paths=PackedStringArray("info_text", "tooltip_timer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rh8pd")
 info_text = NodePath("TextureRect/RichTextLabel")
+tooltip_timer = NodePath("Timer")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -30,3 +31,8 @@ grow_vertical = 2
 bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="hide_tooltip"]

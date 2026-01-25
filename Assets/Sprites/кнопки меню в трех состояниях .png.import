@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chdelncc81kwg"
-path="res://.godot/imported/лупа.png-3edd86e08201de22f3f826c43c86c4b2.ctex"
+uid="uid://bmrpl0lkmqa5q"
+path="res://.godot/imported/кнопки меню в трех состояниях .png-6551aefc8b86354afc80796064846b32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Plants/Plant_3/лупа.png"
-dest_files=["res://.godot/imported/лупа.png-3edd86e08201de22f3f826c43c86c4b2.ctex"]
+source_file="res://Assets/Sprites/кнопки меню в трех состояниях .png"
+dest_files=["res://.godot/imported/кнопки меню в трех состояниях .png-6551aefc8b86354afc80796064846b32.ctex"]
 
 [params]
 

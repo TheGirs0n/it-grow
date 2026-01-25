@@ -11,6 +11,7 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p3f5u"]
 
 [node name="GameOverMiniGameUi" type="Control" node_paths=PackedStringArray("container", "number_next", "more_than_button", "equal_button", "less_than_button", "next_stage", "dice_number_text", "timer")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

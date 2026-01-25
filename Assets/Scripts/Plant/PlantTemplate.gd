@@ -102,7 +102,7 @@ func try_find_item(find_item : FindBoxItem):
 			plant_circle.hide()
 			print("PROP")
 		GlobalEnums.PLANT_FIND_TYPE.KNIFE:
-			GlobalContext.main_ui_instance.show_tooltip(str(plant_juice_density))
+			#GlobalContext.main_ui_instance.show_tooltip(str(plant_juice_density))
 			GlobalContext.main_ui_instance.open_find_box_center(plant_grow_stage_textures[plant_care_stages_index], plant_juice_density)
 			print("JUICE")
 		GlobalEnums.PLANT_FIND_TYPE.MAGNIFIER:
@@ -111,7 +111,7 @@ func try_find_item(find_item : FindBoxItem):
 
 
 func increase_grow_stage():
-	if plant_care_stages_index < plant_care_stages.size():
+	if plant_care_stages_index < plant_grow_stage_textures.size():
 		plant_care_stages_index += 1
 		plant_texture.texture = plant_grow_stage_textures[plant_care_stages_index]
 		reset_care_routine()

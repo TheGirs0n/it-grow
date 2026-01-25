@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chdelncc81kwg"
-path="res://.godot/imported/лупа.png-3edd86e08201de22f3f826c43c86c4b2.ctex"
+uid="uid://dnfh6ekacht88"
+path="res://.godot/imported/нож.png-c6c7a1abe2df026c7dc0a85b9c26e535.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Plants/Plant_3/лупа.png"
-dest_files=["res://.godot/imported/лупа.png-3edd86e08201de22f3f826c43c86c4b2.ctex"]
+source_file="res://Assets/Sprites/Plants/Plant_5/нож.png"
+dest_files=["res://.godot/imported/нож.png-c6c7a1abe2df026c7dc0a85b9c26e535.ctex"]
 
 [params]
 

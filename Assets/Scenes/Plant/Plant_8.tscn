@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://g8e12bnyklah" path="res://Assets/Sprites/кружок.png" id="6_kw7t2"]
 
 [node name="Plant_8" type="Area2D" node_paths=PackedStringArray("plant_texture", "plant_circle", "plant_goal_container")]
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_agptj")
 plant_resource = ExtResource("2_agptj")
 plant_texture = NodePath("TextureRect")
@@ -25,6 +26,7 @@ scale = Vector2(4.26907, 4.14256)
 polygon = PackedVector2Array(89.3548, -173.616, 71.5523, 95.3, -62.2005, 93.6102, -73.2099, -173.616)
 
 [node name="FindBoxCircleUi" parent="." instance=ExtResource("4_gyyno")]
+visible = false
 z_index = 1
 offset_left = -265.0
 offset_top = -421.0

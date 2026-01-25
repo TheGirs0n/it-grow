@@ -1,10 +1,15 @@
-[gd_resource type="Resource" script_class="PlantResource" load_steps=2 format=3 uid="uid://chbma6xr3y0kg"]
+[gd_resource type="Resource" script_class="PlantResource" load_steps=7 format=3 uid="uid://chbma6xr3y0kg"]
 
+[ext_resource type="Texture2D" uid="uid://bx7apy7h5o6uu" path="res://Assets/Sprites/Plants/Plant_5/1.png" id="1_dls71"]
 [ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="1_vbrlj"]
+[ext_resource type="Texture2D" uid="uid://bcegra2fulwnw" path="res://Assets/Sprites/Plants/Plant_5/2.png" id="2_6x1tm"]
+[ext_resource type="Texture2D" uid="uid://bla0hb0vqkseh" path="res://Assets/Sprites/Plants/Plant_5/3.png" id="3_1pcld"]
+[ext_resource type="Texture2D" uid="uid://dnfh6ekacht88" path="res://Assets/Sprites/Plants/Plant_5/нож.png" id="4_f8onf"]
+[ext_resource type="Texture2D" uid="uid://x4ham667oqe2" path="res://Assets/Sprites/Plants/Plant_5/лупа.png" id="5_fmus1"]
 
 [resource]
 script = ExtResource("1_vbrlj")
-plant_grow_stage_textures = Array[CompressedTexture2D]([])
+plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_dls71"), ExtResource("2_6x1tm"), ExtResource("3_1pcld")])
 plant_name = "Малокровник"
 plant_cool_name = "Скандия Темная (Skandia Obscurus) она же Малокровник"
 plant_description = "Ночное растение, с очень красивыми крупными бутонами. Чтоб правильно вырастить их здоровыми, обязатиельно требуется отсаживать их от земляных растений. Так как Малокровник не любит никакого воздействия на энергию земли.
@@ -15,6 +20,8 @@ plant_cool_description = "многолетний тип цветка. Созре
 Сок растения густой, белесого цвета, похож на клей, большая часть которого содержится в ягоде. "
 plant_smell = "Совершенно не имеет запаха. Даже удивительно!"
 plant_energy = "Липкая энергия. Обволакивающая, будто затягивающая в болото."
+plant_leaf = ExtResource("5_fmus1")
+plant_juice_density = ExtResource("4_f8onf")
 plant_juice_color = ""
 plant_care_stages = Array[int]([0, 1, 2, 2])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"
