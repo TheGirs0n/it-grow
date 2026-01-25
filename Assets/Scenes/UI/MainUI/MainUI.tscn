@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dwge7iku0cbsp"]
+[gd_scene load_steps=30 format=3 uid="uid://dwge7iku0cbsp"]
 
 [ext_resource type="Script" uid="uid://dhwkacn5w1smw" path="res://Assets/Scripts/UI/Main/MainUi.gd" id="1_sm6gl"]
 [ext_resource type="PackedScene" uid="uid://df4il6aelqnrl" path="res://Assets/Scenes/UI/MainUI/CareBox/CareBoxUI.tscn" id="2_gc7u3"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bi47kswhi8d0c" path="res://Assets/Scenes/UI/MainUI/Main/DayCounterUI.tscn" id="6_hc1y4"]
 [ext_resource type="Texture2D" uid="uid://cmsr8gxs62yky" path="res://Assets/Sprites/фон пустой.png" id="6_je6g4"]
 [ext_resource type="Texture2D" uid="uid://c64caftn2ytl0" path="res://Assets/Sprites/верхние левые растения.png" id="7_drnm5"]
+[ext_resource type="Shader" uid="uid://ces6d4ejda5ya" path="res://Assets/Sprites/Shaders/GrassShader.tres" id="8_f6fh2"]
 [ext_resource type="Texture2D" uid="uid://dxkbg1xb788yo" path="res://Assets/Sprites/растения правый верхний.png" id="8_i5g6b"]
 [ext_resource type="Texture2D" uid="uid://cdg4nkktgm2l4" path="res://Assets/Sprites/растение левый нижний.png" id="9_4r6ek"]
 [ext_resource type="Texture2D" uid="uid://c4kntb3xq6ht1" path="res://Assets/Sprites/растение правый нижний.png" id="10_qxc7r"]
@@ -21,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://c5ik6i28dk71g" path="res://Assets/Scenes/UI/FindBoxCircleCenterUI.tscn" id="16_i5g6b"]
 [ext_resource type="PackedScene" uid="uid://cf30ri6xtr4af" path="res://Assets/Scenes/UI/PlantSpawnLocationUI.tscn" id="18_qxc7r"]
 [ext_resource type="Texture2D" uid="uid://brad21elftpcv" path="res://Assets/Sprites/ParticleCircle.png" id="20_gqojn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g35pu"]
+shader = ExtResource("8_f6fh2")
 
 [sub_resource type="Curve" id="Curve_krt8c"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -107,6 +111,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="UpLeft" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_g35pu")
 offset_right = 1379.0
 offset_bottom = 579.0
 scale = Vector2(0.255, 0.255)
@@ -114,6 +119,7 @@ mouse_filter = 2
 texture = ExtResource("7_drnm5")
 
 [node name="UpRight" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_g35pu")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -126,6 +132,7 @@ mouse_filter = 2
 texture = ExtResource("8_i5g6b")
 
 [node name="DownLeft" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_g35pu")
 offset_top = 462.0
 offset_right = 719.0
 offset_bottom = 1166.0
@@ -134,6 +141,7 @@ mouse_filter = 2
 texture = ExtResource("9_4r6ek")
 
 [node name="DownRight" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_g35pu")
 offset_left = 878.0
 offset_top = 470.0
 offset_right = 1938.0
