@@ -28,7 +28,6 @@ offset_left = -3.0
 offset_right = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 script = ExtResource("1_piumh")
 position_change = Vector2(300, 0)
 
@@ -96,6 +95,7 @@ offset_left = 579.0
 offset_top = 389.0
 offset_right = 609.0
 offset_bottom = 527.0
+mouse_filter = 1
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lm1jn")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_pq046")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uxyva")

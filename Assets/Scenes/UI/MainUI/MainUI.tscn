@@ -22,6 +22,33 @@
 [ext_resource type="PackedScene" uid="uid://cf30ri6xtr4af" path="res://Assets/Scenes/UI/PlantSpawnLocationUI.tscn" id="18_qxc7r"]
 [ext_resource type="Texture2D" uid="uid://brad21elftpcv" path="res://Assets/Sprites/ParticleCircle.png" id="20_gqojn"]
 
+[sub_resource type="Curve" id="Curve_krt8c"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ns3i1"]
+curve = SubResource("Curve_krt8c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_281o3"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector3(0, -1, 0)
+initial_velocity_max = 5.0
+radial_velocity_min = 1.99998
+radial_velocity_max = 1.99998
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -1.0
+radial_accel_max = 0.999998
+tangential_accel_min = -1.0
+tangential_accel_max = 0.999998
+scale_min = 0.0
+alpha_curve = SubResource("CurveTexture_ns3i1")
+hue_variation_min = -2.23517e-08
+hue_variation_max = 0.15
+anim_speed_max = 0.18
+anim_offset_max = 0.04
+
 [sub_resource type="Curve" id="Curve_f6fh2"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -51,33 +78,6 @@ damping_max = 5.143
 scale_min = 2.0
 scale_max = 5.0
 alpha_curve = SubResource("CurveTexture_g35pu")
-
-[sub_resource type="Curve" id="Curve_krt8c"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_ns3i1"]
-curve = SubResource("Curve_krt8c")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_281o3"]
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 15.0
-direction = Vector3(0, -1, 0)
-initial_velocity_max = 5.0
-radial_velocity_min = 1.99998
-radial_velocity_max = 1.99998
-gravity = Vector3(0, 0, 0)
-radial_accel_min = -1.0
-radial_accel_max = 0.999998
-tangential_accel_min = -1.0
-tangential_accel_max = 0.999998
-scale_min = 0.0
-alpha_curve = SubResource("CurveTexture_ns3i1")
-hue_variation_min = -2.23517e-08
-hue_variation_max = 0.15
-anim_speed_max = 0.18
-anim_offset_max = 0.04
 
 [node name="MainUi" type="CanvasLayer" node_paths=PackedStringArray("care_box_ui", "find_box_ui", "pause_menu_ui", "day_counter_ui", "attempts_ui", "info_tooltip_ui", "find_box_circle_center")]
 script = ExtResource("1_sm6gl")
@@ -164,17 +164,38 @@ position = Vector2(160, 275)
 position = Vector2(308, 538)
 rotation = -3.18914
 
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+self_modulate = Color(1, 0.36, 0.2, 1)
+position = Vector2(414, 406)
+amount = 24
+texture = ExtResource("20_gqojn")
+lifetime = 3.0
+preprocess = 10.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_281o3")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+self_modulate = Color(1, 0.36, 0.2, 1)
+position = Vector2(473, 456)
+amount = 24
+texture = ExtResource("20_gqojn")
+lifetime = 3.0
+preprocess = 10.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_281o3")
+
 [node name="FindBoxUi" parent="." instance=ExtResource("5_np7rl")]
-offset_left = -554.0
-offset_right = -554.0
+offset_left = -552.0
+offset_top = -32.0
+offset_right = -552.0
+offset_bottom = -32.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 9
-anchor_bottom = 1.0
-grow_vertical = 2
+offset_right = 648.0
+offset_bottom = 648.0
 mouse_filter = 2
 texture = ExtResource("14_spanf")
-expand_mode = 2
+expand_mode = 4
 stretch_mode = 6
 
 [node name="InfoTooltip" parent="." instance=ExtResource("11_drnm5")]
@@ -209,6 +230,10 @@ anchor_bottom = 0.5
 mouse_filter = 2
 
 [node name="PlantSpawnLocation" parent="." instance=ExtResource("18_qxc7r")]
+offset_left = 793.0
+offset_top = 416.0
+offset_right = 793.0
+offset_bottom = 416.0
 mouse_filter = 2
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
@@ -220,26 +245,6 @@ lifetime = 10.0
 preprocess = 10.0
 randomness = 0.5
 process_material = SubResource("ParticleProcessMaterial_4r6ek")
-
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
-self_modulate = Color(1, 0.36, 0.2, 1)
-position = Vector2(414, 406)
-amount = 24
-texture = ExtResource("20_gqojn")
-lifetime = 3.0
-preprocess = 10.0
-randomness = 1.0
-process_material = SubResource("ParticleProcessMaterial_281o3")
-
-[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
-self_modulate = Color(1, 0.36, 0.2, 1)
-position = Vector2(473, 456)
-amount = 24
-texture = ExtResource("20_gqojn")
-lifetime = 3.0
-preprocess = 10.0
-randomness = 1.0
-process_material = SubResource("ParticleProcessMaterial_281o3")
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_gc7u3")]
 visible = false
