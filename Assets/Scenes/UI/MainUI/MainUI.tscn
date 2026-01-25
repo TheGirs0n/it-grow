@@ -229,5 +229,7 @@ mouse_filter = 2
 [node name="PauseMenu" parent="." instance=ExtResource("3_gc7u3")]
 visible = false
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+
 [editable path="CareBoxUi"]
 [editable path="PlantSpawnLocation"]

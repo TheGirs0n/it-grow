@@ -85,7 +85,7 @@ func try_caring_plant(care_item : CareBoxItem):
 	if plant_care_stages[current_stage] == care_item.plant_care_type:
 		plant_care_stages_complete[current_stage] = true
 		plant_goal_container.set_done_circle(current_stage)
-		plant_goal_container.show_all_circles(plant_care_stages.size())
+		plant_goal_container.show_all_circles(plant_care_stages.size()) #
 		print("ОТЛИЧНЫЙ УХОД")
 	else:
 		decrease_grow_stage()
