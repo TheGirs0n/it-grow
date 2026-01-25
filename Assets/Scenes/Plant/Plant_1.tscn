@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ba25ifuiwotpe"]
+[gd_scene load_steps=8 format=3 uid="uid://ba25ifuiwotpe"]
 
 [ext_resource type="Script" uid="uid://b4mdt74hf8tgl" path="res://Assets/Scripts/Plant/Plants/Plant_1.gd" id="1_wabln"]
 [ext_resource type="Resource" uid="uid://b2u68r8wlyy4c" path="res://Assets/Sprites/Plants/Plant_1/Plant_1.tres" id="2_k4cdj"]
 [ext_resource type="Texture2D" uid="uid://b74oxsklcerln" path="res://Assets/Sprites/Plants/Plant_1/пузырчатка.png" id="2_wabln"]
 [ext_resource type="PackedScene" uid="uid://cjw7mh2670qkx" path="res://Assets/Scenes/UI/MainUI/FindBox/FindBoxCircleUI.tscn" id="3_k4cdj"]
 [ext_resource type="Script" uid="uid://ct0y602syert8" path="res://Assets/Scripts/Plant/PlantGoalContainer.gd" id="4_5rjpm"]
-[ext_resource type="Texture2D" uid="uid://g8e12bnyklah" path="res://Assets/Sprites/кружок.png" id="5_b2nxg"]
+[ext_resource type="Texture2D" uid="uid://doijt2c3637fp" path="res://Assets/Sprites/кружочек для растения.png" id="6_k4cdj"]
+[ext_resource type="Texture2D" uid="uid://c54yprq3of0vk" path="res://Assets/Sprites/кружок с галочкой.png" id="7_5rjpm"]
 
 [node name="Plant_1" type="Area2D" node_paths=PackedStringArray("plant_texture", "plant_circle", "plant_goal_container")]
 scale = Vector2(0.3, 0.3)
@@ -46,53 +47,55 @@ theme_override_constants/separation = 15
 alignment = 1
 script = ExtResource("4_5rjpm")
 textures = [NodePath("TextureRect"), NodePath("TextureRect2"), NodePath("TextureRect3"), NodePath("TextureRect4"), NodePath("TextureRect5"), NodePath("TextureRect6"), NodePath("TextureRect7")]
+hollow_circle = ExtResource("6_k4cdj")
+done_circle = ExtResource("7_5rjpm")
 
 [node name="TextureRect" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_b2nxg")
+texture = ExtResource("6_k4cdj")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_b2nxg")
+texture = ExtResource("6_k4cdj")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="TextureRect3" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_b2nxg")
+texture = ExtResource("6_k4cdj")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="TextureRect4" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_b2nxg")
+texture = ExtResource("6_k4cdj")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="TextureRect5" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_b2nxg")
+texture = ExtResource("6_k4cdj")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="TextureRect6" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_b2nxg")
+texture = ExtResource("6_k4cdj")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="TextureRect7" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_b2nxg")
+texture = ExtResource("6_k4cdj")
 expand_mode = 2
 stretch_mode = 5
 

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dj5w37wicfs7c" path="res://Assets/Sprites/Plants/Plant_2/1 стадия.png" id="3_88pp7"]
 [ext_resource type="PackedScene" uid="uid://cjw7mh2670qkx" path="res://Assets/Scenes/UI/MainUI/FindBox/FindBoxCircleUI.tscn" id="3_dt4o6"]
 [ext_resource type="Script" uid="uid://ct0y602syert8" path="res://Assets/Scripts/Plant/PlantGoalContainer.gd" id="4_il5gk"]
-[ext_resource type="Texture2D" uid="uid://g8e12bnyklah" path="res://Assets/Sprites/кружок.png" id="5_r0qvg"]
+[ext_resource type="Texture2D" uid="uid://doijt2c3637fp" path="res://Assets/Sprites/кружочек для растения.png" id="6_88pp7"]
 
 [node name="Plant_2" type="Area2D" node_paths=PackedStringArray("plant_texture", "plant_circle", "plant_goal_container")]
 scale = Vector2(0.3, 0.3)
@@ -54,49 +54,49 @@ textures = [NodePath("TextureRect"), NodePath("TextureRect2"), NodePath("Texture
 [node name="TextureRect" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_r0qvg")
+texture = ExtResource("6_88pp7")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_r0qvg")
+texture = ExtResource("6_88pp7")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="TextureRect3" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_r0qvg")
+texture = ExtResource("6_88pp7")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="TextureRect4" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_r0qvg")
+texture = ExtResource("6_88pp7")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="TextureRect5" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_r0qvg")
+texture = ExtResource("6_88pp7")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="TextureRect6" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_r0qvg")
+texture = ExtResource("6_88pp7")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="TextureRect7" type="TextureRect" parent="GoalPlantContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_r0qvg")
+texture = ExtResource("6_88pp7")
 expand_mode = 2
 stretch_mode = 5
 
