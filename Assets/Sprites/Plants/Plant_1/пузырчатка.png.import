@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csds71xpm012c"
-path="res://.godot/imported/пузырчатка_нож.png-0385a787708dd13c1be6c7201fc4d36a.ctex"
+uid="uid://b74oxsklcerln"
+path="res://.godot/imported/пузырчатка.png-8cd95e84a98e8cdac7efdbe99a1b72ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/пузырчатка_нож.png"
-dest_files=["res://.godot/imported/пузырчатка_нож.png-0385a787708dd13c1be6c7201fc4d36a.ctex"]
+source_file="res://Assets/Sprites/Plants/Plant_1/пузырчатка.png"
+dest_files=["res://.godot/imported/пузырчатка.png-8cd95e84a98e8cdac7efdbe99a1b72ba.ctex"]
 
 [params]
 

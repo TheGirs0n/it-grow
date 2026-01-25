@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="PlantResource" load_steps=2 format=3 uid="uid://b2u68r8wlyy4c"]
+[gd_resource type="Resource" script_class="PlantResource" load_steps=5 format=3 uid="uid://b2u68r8wlyy4c"]
 
+[ext_resource type="Texture2D" uid="uid://b74oxsklcerln" path="res://Assets/Sprites/Plants/Plant_1/пузырчатка.png" id="1_5srp3"]
 [ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="1_8ng64"]
+[ext_resource type="Texture2D" uid="uid://csds71xpm012c" path="res://Assets/Sprites/Plants/Plant_1/пузырчатка_нож.png" id="2_ndmkg"]
+[ext_resource type="Texture2D" uid="uid://cecl55t2j7ik" path="res://Assets/Sprites/Plants/Plant_1/пузырчатка_лупа.png" id="3_2akv8"]
 
 [resource]
 script = ExtResource("1_8ng64")
-plant_grow_stage_textures = Array[CompressedTexture2D]([])
+plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_5srp3")])
 plant_name = "Медовичка"
 plant_cool_name = "Медовичка Целебная (Melrotundum officinalis)"
 plant_description = "Неприхотливое растение. Крайне прост в уходе но очень любит воду. 
@@ -19,6 +22,8 @@ plant_cool_description = "Неприхотливое растение, рода 
 "
 plant_smell = "Имеет древесный тонкий аромат, бабушка всегда говорила ..."
 plant_energy = "Источает нежную энергию схожую с движением ручья. Я будто слышу капли воды."
+plant_leaf = ExtResource("3_2akv8")
+plant_juice_density = ExtResource("2_ndmkg")
 plant_juice_color = ""
 plant_care_stages = Array[int]([0, 0, 1])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"

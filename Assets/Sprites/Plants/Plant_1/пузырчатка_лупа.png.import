@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cecl55t2j7ik"
-path="res://.godot/imported/пузырчатка_лупа.png-12edabc11906da8ad34c8c0cdd684727.ctex"
+path="res://.godot/imported/пузырчатка_лупа.png-44adfda16723eb33586d77066483e87d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/пузырчатка_лупа.png"
-dest_files=["res://.godot/imported/пузырчатка_лупа.png-12edabc11906da8ad34c8c0cdd684727.ctex"]
+source_file="res://Assets/Sprites/Plants/Plant_1/пузырчатка_лупа.png"
+dest_files=["res://.godot/imported/пузырчатка_лупа.png-44adfda16723eb33586d77066483e87d.ctex"]
 
 [params]
 
