@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi6mvswmjxjah"]
+[gd_scene load_steps=4 format=3 uid="uid://bi6mvswmjxjah"]
 
 [ext_resource type="Script" uid="uid://dfy8ot4pj162" path="res://Assets/Scripts/FindBox/Knife.gd" id="1_m217t"]
+[ext_resource type="Texture2D" uid="uid://fsag6nfay4xe" path="res://Assets/Sprites/нож_кдик.png" id="2_655gx"]
 [ext_resource type="Texture2D" uid="uid://cbu7lpyu147wq" path="res://Assets/Sprites/нож.png" id="2_e2kvb"]
 
 [node name="KnifeUi" type="Control" node_paths=PackedStringArray("texture")]
@@ -13,7 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_m217t")
 find_box_type = 3
 texture = NodePath("TextureRect")
-clicked_item_icon = ExtResource("2_e2kvb")
+clicked_item_icon = ExtResource("2_655gx")
 normal_item_icon = ExtResource("2_e2kvb")
 
 [node name="TextureRect" type="TextureRect" parent="."]

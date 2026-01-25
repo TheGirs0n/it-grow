@@ -6,10 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://1hu77ui7wol0" path="res://Assets/Sprites/круг.png" id="2_87cwq"]
 
 [node name="FindBoxCircleUi" type="TextureRect"]
-offset_left = -327.0
-offset_top = -330.0
-offset_right = 875.0
-offset_bottom = 872.0
+offset_right = 1202.0
+offset_bottom = 1202.0
 texture = ExtResource("2_87cwq")
 expand_mode = 2
 stretch_mode = 5
