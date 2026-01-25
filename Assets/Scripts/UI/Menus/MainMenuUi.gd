@@ -9,7 +9,8 @@ func _on_start_game_pressed() -> void:
 	pass
 
 func _on_settings_pressed() -> void:
-	pass
+	var scene = settings_scene.instantiate() as SettingsUI
+	add_child(scene)
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

@@ -116,5 +116,6 @@ func on_increase_resolution_mode() -> void:
 
 
 func _on_close_button_pressed() -> void:
-	GlobalContext.main_ui_instance.open_pause()
+	if GlobalContext.main_ui_instance != null:
+		GlobalContext.main_ui_instance.open_pause()
 	queue_free()

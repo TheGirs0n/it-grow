@@ -8,7 +8,4 @@ class_name AttemptsUI
 @export var attempts_textures : Array[CompressedTexture2D]
 
 func set_attempt_texture(current_attempts : int):
-	if texture_rect.visible == false:
-		texture_rect.visible = true
-		
 	texture_rect.texture = attempts_textures[current_attempts]
