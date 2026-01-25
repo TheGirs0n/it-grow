@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dwge7iku0cbsp"]
+[gd_scene load_steps=34 format=3 uid="uid://dwge7iku0cbsp"]
 
 [ext_resource type="Script" uid="uid://dhwkacn5w1smw" path="res://Assets/Scripts/UI/Main/MainUi.gd" id="1_sm6gl"]
 [ext_resource type="PackedScene" uid="uid://df4il6aelqnrl" path="res://Assets/Scenes/UI/MainUI/CareBox/CareBoxUI.tscn" id="2_gc7u3"]
@@ -12,50 +12,32 @@
 [ext_resource type="PackedScene" uid="uid://bi47kswhi8d0c" path="res://Assets/Scenes/UI/MainUI/Main/DayCounterUI.tscn" id="6_hc1y4"]
 [ext_resource type="Texture2D" uid="uid://cmsr8gxs62yky" path="res://Assets/Sprites/фон пустой.png" id="6_je6g4"]
 [ext_resource type="Texture2D" uid="uid://c64caftn2ytl0" path="res://Assets/Sprites/верхние левые растения.png" id="7_drnm5"]
-[ext_resource type="Shader" uid="uid://doj24ha0xkt51" path="res://Assets/Sprites/Shaders/GrassUpShader.tres" id="8_f6fh2"]
+[ext_resource type="Shader" uid="uid://doj24ha0xkt51" path="res://Assets/Sprites/Shaders/GrassUpLeftShader.tres" id="8_f6fh2"]
 [ext_resource type="Texture2D" uid="uid://dxkbg1xb788yo" path="res://Assets/Sprites/растения правый верхний.png" id="8_i5g6b"]
 [ext_resource type="Texture2D" uid="uid://cdg4nkktgm2l4" path="res://Assets/Sprites/растение левый нижний.png" id="9_4r6ek"]
+[ext_resource type="Shader" uid="uid://dnqpenwykt6gf" path="res://Assets/Sprites/Shaders/GrassUpRightShader.tres" id="10_281o3"]
 [ext_resource type="Texture2D" uid="uid://c4kntb3xq6ht1" path="res://Assets/Sprites/растение правый нижний.png" id="10_qxc7r"]
 [ext_resource type="PackedScene" uid="uid://brroeoa27ev13" path="res://Assets/Scenes/UI/MainUI/Main/AttemptsUi.tscn" id="11_06u7b"]
 [ext_resource type="PackedScene" uid="uid://dhgdvrtlwo6cp" path="res://Assets/Scenes/UI/MainUI/InfoTooltip.tscn" id="11_drnm5"]
-[ext_resource type="Shader" uid="uid://ces6d4ejda5ya" path="res://Assets/Sprites/Shaders/GrassDownShader.tres" id="11_g35pu"]
+[ext_resource type="Shader" uid="uid://ces6d4ejda5ya" path="res://Assets/Sprites/Shaders/GrassDownLeftShader.tres" id="11_g35pu"]
+[ext_resource type="Shader" uid="uid://dgxqu5k2jbi1j" path="res://Assets/Sprites/Shaders/GrassDownRightShader.tres" id="14_okv1g"]
 [ext_resource type="Texture2D" uid="uid://cr6nvfeaj83" path="res://Assets/Sprites/стенка.png" id="14_spanf"]
 [ext_resource type="PackedScene" uid="uid://c5ik6i28dk71g" path="res://Assets/Scenes/UI/FindBoxCircleCenterUI.tscn" id="16_i5g6b"]
 [ext_resource type="PackedScene" uid="uid://cf30ri6xtr4af" path="res://Assets/Scenes/UI/PlantSpawnLocationUI.tscn" id="18_qxc7r"]
+[ext_resource type="Material" uid="uid://ve5p7qfar1m7" path="res://Assets/Resources/Particles/LightCandleProcessMaterial.tres" id="19_4pgat"]
 [ext_resource type="Texture2D" uid="uid://brad21elftpcv" path="res://Assets/Sprites/ParticleCircle.png" id="20_gqojn"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g35pu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_geo4o"]
 shader = ExtResource("8_f6fh2")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_krt8c"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6gnt"]
+shader = ExtResource("10_281o3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mxj8y"]
 shader = ExtResource("11_g35pu")
 
-[sub_resource type="Curve" id="Curve_krt8c"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_ns3i1"]
-curve = SubResource("Curve_krt8c")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_281o3"]
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 15.0
-direction = Vector3(0, -1, 0)
-initial_velocity_max = 5.0
-radial_velocity_min = 1.99998
-radial_velocity_max = 1.99998
-gravity = Vector3(0, 0, 0)
-radial_accel_min = -1.0
-radial_accel_max = 0.999998
-tangential_accel_min = -1.0
-tangential_accel_max = 0.999998
-scale_min = 0.0
-alpha_curve = SubResource("CurveTexture_ns3i1")
-hue_variation_min = -2.23517e-08
-hue_variation_max = 0.15
-anim_speed_max = 0.18
-anim_offset_max = 0.04
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cl3s6"]
+shader = ExtResource("14_okv1g")
 
 [sub_resource type="Curve" id="Curve_f6fh2"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -115,40 +97,40 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="UpLeft" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_g35pu")
-offset_left = 10.0
-offset_top = -4.99999
-offset_right = 1389.0
-offset_bottom = 574.0
+material = SubResource("ShaderMaterial_geo4o")
+offset_left = 5.0
+offset_top = -10.0
+offset_right = 1384.0
+offset_bottom = 569.0
 scale = Vector2(0.255, 0.255)
 texture = ExtResource("7_drnm5")
 
 [node name="UpRight" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_g35pu")
+material = SubResource("ShaderMaterial_q6gnt")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -235.0
-offset_top = 2.0
-offset_right = 770.0
-offset_bottom = 538.0
+offset_left = -232.0
+offset_top = -7.0
+offset_right = 773.0
+offset_bottom = 529.0
 grow_horizontal = 0
 scale = Vector2(0.255, 0.255)
 mouse_filter = 2
 texture = ExtResource("8_i5g6b")
 
 [node name="DownLeft" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_krt8c")
-offset_left = 9.0
-offset_top = 460.0
-offset_right = 728.0
-offset_bottom = 1164.0
+material = SubResource("ShaderMaterial_mxj8y")
+offset_left = 5.0
+offset_top = 464.0
+offset_right = 724.0
+offset_bottom = 1168.0
 scale = Vector2(0.265, 0.265)
 mouse_filter = 2
 texture = ExtResource("9_4r6ek")
 
 [node name="DownRight" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_krt8c")
+material = SubResource("ShaderMaterial_cl3s6")
 offset_left = 902.0
 offset_top = 479.0
 offset_right = 1962.0
@@ -187,7 +169,7 @@ texture = ExtResource("20_gqojn")
 lifetime = 3.0
 preprocess = 10.0
 randomness = 1.0
-process_material = SubResource("ParticleProcessMaterial_281o3")
+process_material = ExtResource("19_4pgat")
 
 [node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
 self_modulate = Color(1, 0.36, 0.2, 1)
@@ -197,7 +179,7 @@ texture = ExtResource("20_gqojn")
 lifetime = 3.0
 preprocess = 10.0
 randomness = 1.0
-process_material = SubResource("ParticleProcessMaterial_281o3")
+process_material = ExtResource("19_4pgat")
 
 [node name="FindBoxUi" parent="." instance=ExtResource("5_np7rl")]
 offset_left = -419.0

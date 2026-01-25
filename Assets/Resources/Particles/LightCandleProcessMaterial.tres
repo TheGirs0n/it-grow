@@ -1,0 +1,28 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://ve5p7qfar1m7"]
+
+[sub_resource type="Curve" id="Curve_krt8c"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ns3i1"]
+curve = SubResource("Curve_krt8c")
+
+[resource]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector3(0, -1, 0)
+initial_velocity_max = 5.0
+radial_velocity_min = 1.99998
+radial_velocity_max = 1.99998
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -1.0
+radial_accel_max = 0.999998
+tangential_accel_min = -1.0
+tangential_accel_max = 0.999998
+scale_min = 0.0
+alpha_curve = SubResource("CurveTexture_ns3i1")
+hue_variation_min = -2.23517e-08
+hue_variation_max = 0.15
+anim_speed_max = 0.18
+anim_offset_max = 0.04

@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=15 format=3 uid="uid://doj24ha0xkt51"]
+[gd_resource type="VisualShader" load_steps=15 format=3 uid="uid://dnqpenwykt6gf"]
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_62iwc"]
 default_input_values = [0, 0.0, 1, 1.25]
@@ -42,7 +42,7 @@ function = 1
 input_name = "time"
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_n778y"]
-default_input_values = [0, 0.0, 1, 1.25]
+default_input_values = [0, 0.0, 1, 0.75]
 operator = 2
 
 [resource]
@@ -63,7 +63,7 @@ void vertex() {
 
 
 // FloatOp:9
-	float n_in9p1 = 1.25000;
+	float n_in9p1 = 0.75000;
 	float n_out9p0 = n_out8p0 * n_in9p1;
 
 
@@ -112,7 +112,7 @@ void vertex() {
 
 }
 "
-graph_offset = Vector2(-641.739, 175.062)
+graph_offset = Vector2(-1180.37, 438.419)
 mode = 1
 flags/light_only = false
 nodes/vertex/0/position = Vector2(480, 100)
