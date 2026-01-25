@@ -12,7 +12,7 @@ var start_day : int = 1
 var current_day : int = 1
 
 var current_attempts : int = 0
-var start_attempts : int = 0 
+var start_attempts : int = 4 
 
 func _ready() -> void:
 	GlobalContext.game_manager_instance = self
@@ -54,16 +54,17 @@ func pause_game():
 	GlobalContext.main_ui_instance.open_pause()
 	
 func increase_current_attempts():
-	if current_attempts < max_attempts:
+	current_attempts += 1
+	GlobalContext.main_ui_instance.attempts_ui.set_attempt_texture(current_attempts)
+	
+	
+func decrease_current_attempts():
+	if current_attempts > 0:
+		current_attempts -= 1
 		GlobalContext.main_ui_instance.attempts_ui.set_attempt_texture(current_attempts)
-		current_attempts += 1
 	else:
 		get_tree().paused = true
 		GlobalContext.main_ui_instance.open_minigame()
-	
-func decrease_current_attempts():
-	current_attempts -= 1
-	GlobalContext.main_ui_instance.attempts_ui.set_attempt_texture(current_attempts)
 
 func day_timer_end() -> void:
 	if current_day < max_day:

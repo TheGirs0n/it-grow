@@ -1,19 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://dti6spgcc3ln"]
+[gd_scene load_steps=7 format=3 uid="uid://dti6spgcc3ln"]
 
 [ext_resource type="Script" uid="uid://du4rv5hyoe4bh" path="res://Assets/Scripts/Plant/Plants/Plant_2.gd" id="1_88pp7"]
 [ext_resource type="Resource" uid="uid://cnw54jlm1xx4f" path="res://Assets/Sprites/Plants/Plant_2/Plant_2.tres" id="2_88pp7"]
 [ext_resource type="Texture2D" uid="uid://dj5w37wicfs7c" path="res://Assets/Sprites/Plants/Plant_2/1 стадия.png" id="3_88pp7"]
-[ext_resource type="PackedScene" uid="uid://cjw7mh2670qkx" path="res://Assets/Scenes/UI/MainUI/FindBox/FindBoxCircleUI.tscn" id="3_dt4o6"]
 [ext_resource type="Script" uid="uid://ct0y602syert8" path="res://Assets/Scripts/Plant/PlantGoalContainer.gd" id="4_il5gk"]
 [ext_resource type="Texture2D" uid="uid://doijt2c3637fp" path="res://Assets/Sprites/кружочек для растения.png" id="6_88pp7"]
 [ext_resource type="Texture2D" uid="uid://c54yprq3of0vk" path="res://Assets/Sprites/кружок с галочкой.png" id="7_qvkxd"]
 
-[node name="Plant_2" type="Area2D" node_paths=PackedStringArray("plant_texture", "plant_circle", "plant_goal_container")]
+[node name="Plant_2" type="Area2D" node_paths=PackedStringArray("plant_texture", "plant_goal_container")]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_88pp7")
 plant_resource = ExtResource("2_88pp7")
 plant_texture = NodePath("TextureRect")
-plant_circle = NodePath("FindBoxCircleUi")
 plant_goal_container = NodePath("GoalPlantContainer")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
@@ -24,16 +22,7 @@ texture = ExtResource("3_88pp7")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-33.4619, 215.214)
 scale = Vector2(4.26907, 4.14256)
-polygon = PackedVector2Array(74.129, -85.506, 63.8223, 70.6776, -51.1911, 69.4706, -58.6868, -87.1958)
-
-[node name="FindBoxCircleUi" parent="." instance=ExtResource("3_dt4o6")]
-visible = false
-z_index = 1
-offset_left = -264.0
-offset_top = -410.0
-offset_right = 938.0
-offset_bottom = 792.0
-scale = Vector2(0.45, 0.45)
+polygon = PackedVector2Array(74.129, -85.506, 50.7828, 62.3091, -34.3255, 64.7231, -63.9963, -84.1381)
 
 [node name="GoalPlantContainer" type="HBoxContainer" parent="." node_paths=PackedStringArray("textures", "timer")]
 anchors_preset = 7
@@ -108,8 +97,4 @@ stretch_mode = 5
 wait_time = 3.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
-[connection signal="item_picked" from="FindBoxCircleUi/BrainUi" to="." method="try_find_item"]
-[connection signal="item_picked" from="FindBoxCircleUi/NoseUi" to="." method="try_find_item"]
 [connection signal="timeout" from="GoalPlantContainer/Timer" to="GoalPlantContainer" method="_on_timer_timeout"]
-
-[editable path="FindBoxCircleUi"]

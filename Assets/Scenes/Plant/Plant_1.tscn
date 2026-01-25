@@ -1,19 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://ba25ifuiwotpe"]
+[gd_scene load_steps=7 format=3 uid="uid://ba25ifuiwotpe"]
 
 [ext_resource type="Script" uid="uid://b4mdt74hf8tgl" path="res://Assets/Scripts/Plant/Plants/Plant_1.gd" id="1_wabln"]
 [ext_resource type="Resource" uid="uid://b2u68r8wlyy4c" path="res://Assets/Sprites/Plants/Plant_1/Plant_1.tres" id="2_k4cdj"]
 [ext_resource type="Texture2D" uid="uid://b74oxsklcerln" path="res://Assets/Sprites/Plants/Plant_1/пузырчатка.png" id="2_wabln"]
-[ext_resource type="PackedScene" uid="uid://cjw7mh2670qkx" path="res://Assets/Scenes/UI/MainUI/FindBox/FindBoxCircleUI.tscn" id="3_k4cdj"]
 [ext_resource type="Script" uid="uid://ct0y602syert8" path="res://Assets/Scripts/Plant/PlantGoalContainer.gd" id="4_5rjpm"]
 [ext_resource type="Texture2D" uid="uid://doijt2c3637fp" path="res://Assets/Sprites/кружочек для растения.png" id="6_k4cdj"]
 [ext_resource type="Texture2D" uid="uid://c54yprq3of0vk" path="res://Assets/Sprites/кружок с галочкой.png" id="7_5rjpm"]
 
-[node name="Plant_1" type="Area2D" node_paths=PackedStringArray("plant_texture", "plant_circle", "plant_goal_container")]
+[node name="Plant_1" type="Area2D" node_paths=PackedStringArray("plant_texture", "plant_goal_container")]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_wabln")
 plant_resource = ExtResource("2_k4cdj")
 plant_texture = NodePath("TextureRect")
-plant_circle = NodePath("FindBoxCircleUi")
 plant_goal_container = NodePath("GoalPlantContainer")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
@@ -21,15 +19,6 @@ texture = ExtResource("2_wabln")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(228, -417, 136, 490, -136, 490, -214, -415)
-
-[node name="FindBoxCircleUi" parent="." instance=ExtResource("3_k4cdj")]
-visible = false
-z_index = 1
-offset_left = -180.0
-offset_top = -184.0
-offset_right = 1022.0
-offset_bottom = 1018.0
-scale = Vector2(0.3, 0.3)
 
 [node name="GoalPlantContainer" type="HBoxContainer" parent="." node_paths=PackedStringArray("textures", "timer")]
 anchors_preset = 7
@@ -104,8 +93,4 @@ stretch_mode = 5
 wait_time = 3.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
-[connection signal="item_picked" from="FindBoxCircleUi/BrainUi" to="." method="try_find_item"]
-[connection signal="item_picked" from="FindBoxCircleUi/NoseUi" to="." method="try_find_item"]
 [connection signal="timeout" from="GoalPlantContainer/Timer" to="GoalPlantContainer" method="_on_timer_timeout"]
-
-[editable path="FindBoxCircleUi"]

@@ -8,6 +8,7 @@ class_name MainUI
 @export var find_box_ui : FindBoxUI
 @export var info_tooltip_ui : InfoTooltip
 @export var find_box_circle_center : FindBoxCircleCenter
+@export var find_box_circle_center_add : FindBoxCircleCenterAdd
 @export var plant_spawn_location : PlantSpawnLocation
 @export var pause_menu_ui : PauseMenuUI
 
@@ -27,8 +28,8 @@ func _exit_tree() -> void:
 func settings_scene_open():
 	hide_pause()
 
-func spawn_plant_on_new_day(plant_scene : PlantTemplate):
-	plant_spawn_location.set_plant_on_first_enable(plant_scene)
+func spawn_plant_on_new_day(new_plant_scene : PlantTemplate):
+	plant_spawn_location.set_plant_on_first_enable(new_plant_scene)
 
 func open_day_switcher(current_day : int):
 	var scene = day_switcher_ui.instantiate() as DaySwitcherUI
@@ -57,8 +58,10 @@ func show_tooltip(text_in_tooltip : String):
 
 func open_find_box_center(new_plant_texture : CompressedTexture2D, new_effect_texture : CompressedTexture2D):
 	find_box_circle_center.show_circle(new_plant_texture, new_effect_texture)
-	print("OPEN CENTER")
-	
+
+func open_find_box_center_add(new_plant_template : PlantTemplate):
+	find_box_circle_center_add.set_new_plant(new_plant_template)
+
 func open_pause():
 	pause_menu_ui.show()
 	

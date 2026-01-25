@@ -136,19 +136,20 @@ func increase_score(incoming_score : int):
 	current_score += incoming_score
 
 func check_win():
-	if current_round == 3:
-		win_game()
-		return
-	else:
-		next_stage.show()
-		
 	if current_score >= 2:
 		win_game()
 		return
 	else: 
 		print("CHECK")
-		
-	lose_game()
+	
+	if current_round == 3 and is_win:
+		win_game()
+		return
+	elif current_round == 3 and !is_win:
+		lose_game()
+		return
+	else:
+		next_stage.show()
 	
 	
 func lose_game():
@@ -165,7 +166,8 @@ func win_game():
 	container.hide()
 	next_stage.hide()
 	timer.start()
-	GlobalContext.game_manager_instance.decrease_current_attempts()
+	GlobalContext.game_manager_instance.continue_game()
+	GlobalContext.game_manager_instance.increase_current_attempts()
 
 func _on_next_stage_pressed() -> void:
 	reset_mini_game()
