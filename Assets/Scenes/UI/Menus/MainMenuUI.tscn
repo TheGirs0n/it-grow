@@ -45,6 +45,19 @@ texture_hover = ExtResource("5_scatc")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/StartGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Начать игру"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Settings" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -55,6 +68,19 @@ texture_hover = ExtResource("5_scatc")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Настройки"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Exit" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -64,6 +90,19 @@ texture_pressed = ExtResource("4_sokgu")
 texture_hover = ExtResource("5_scatc")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="VBoxContainer/Exit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Выход"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]

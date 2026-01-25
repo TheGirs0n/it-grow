@@ -62,6 +62,7 @@ mouse_filter = 2
 expand_mode = 3
 stretch_mode = 5
 
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="item_picked" from="FindBoxCircleUi/BrainUi" to="." method="_on_item_picked"]
 [connection signal="item_picked" from="FindBoxCircleUi/NoseUi" to="." method="_on_item_picked"]
 

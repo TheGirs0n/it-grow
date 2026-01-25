@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1mfgg")
 texture_rect = NodePath("AttemptsText")
-attempts_textures = Array[CompressedTexture2D]([ExtResource("4_okoe6"), ExtResource("3_5taqc"), ExtResource("4_7i8ug"), ExtResource("5_0yh4q")])
+attempts_textures = Array[CompressedTexture2D]([ExtResource("3_okoe6"), ExtResource("4_okoe6"), ExtResource("3_5taqc"), ExtResource("4_7i8ug"), ExtResource("5_0yh4q")])
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

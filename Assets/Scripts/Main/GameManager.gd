@@ -59,7 +59,6 @@ func increase_current_attempts():
 	
 	
 func decrease_current_attempts():
-	print(current_attempts)
 	if current_attempts > 0:
 		current_attempts -= 1
 		GlobalContext.main_ui_instance.attempts_ui.set_attempt_texture(current_attempts)

@@ -40,6 +40,11 @@ func load_data_from_resource():
 	for i in plant_resource.plant_care_stages:
 		plant_care_stages_complete.append(false)
 
+func _process(_delta: float) -> void:
+	if plant_care_stages_complete.find(false) == -1:
+		increase_grow_stage()
+		return
+	
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton:
@@ -61,15 +66,13 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 	
 func reset_care_routine():
 	plant_care_stages_complete.fill(false)
+	plant_goal_container.reset_all_circle()
 
 
 func try_caring_plant(care_item : CareBoxItem):
-	if plant_care_stages_complete.find(false) == -1:
-		increase_grow_stage()
-		return
 	
 	if !plant_care_stages.has(care_item.plant_care_type):
-		GlobalContext.main_ui_instance.show_tooltip("НЕТ ТАКОГО В ИНСТРУКЦИИ")
+		GlobalContext.main_ui_instance.show_tooltip("Кажется нужно попробовать что-то другое...")
 		decrease_grow_stage()
 		return
 	
@@ -79,10 +82,10 @@ func try_caring_plant(care_item : CareBoxItem):
 		plant_care_stages_complete[current_stage] = true
 		plant_goal_container.set_done_circle(current_stage)
 		plant_goal_container.show_all_circles(plant_care_stages.size())
-		GlobalContext.main_ui_instance.show_tooltip("ОТЛИЧНЫЙ УХОД")
+		GlobalContext.main_ui_instance.show_tooltip("Цветок растет прям на глазах!")
 	else:
 		decrease_grow_stage()
-		GlobalContext.main_ui_instance.show_tooltip("ОШИБКА УХОДА")
+		GlobalContext.main_ui_instance.show_tooltip("Навредила я цветку...")
 
 func try_find_item(find_item : FindBoxItem):
 	match find_item.find_box_type:
@@ -98,11 +101,11 @@ func try_find_item(find_item : FindBoxItem):
 
 func increase_grow_stage():
 	if plant_care_stages_index < plant_grow_stage_textures.size():
-		plant_texture.texture = plant_grow_stage_textures[plant_care_stages_index]
 		plant_care_stages_index += 1
+		plant_texture.texture = plant_grow_stage_textures[plant_care_stages_index]
 		reset_care_routine()
 	else:
-		GlobalContext.main_ui_instance.show_tooltip("ЦВЕТКУ БОЛЬШЕ НЕКУДА РАСТИ")
+		GlobalContext.main_ui_instance.show_tooltip("Цветок достиг своей абсолютной красоты!")
 
 func decrease_grow_stage():
 	if plant_care_stages_index > 0:
@@ -110,7 +113,9 @@ func decrease_grow_stage():
 		plant_texture.texture = plant_grow_stage_textures[plant_care_stages_index]
 		GlobalContext.game_manager_instance.decrease_current_attempts()
 		plant_goal_container.reset_all_circle()
+		reset_care_routine()
 	elif plant_care_stages_index == 0:
 		plant_care_stages_index = 0
 		plant_texture.texture = plant_grow_stage_textures[0]
 		GlobalContext.game_manager_instance.decrease_current_attempts()
+		reset_care_routine()

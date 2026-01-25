@@ -2,11 +2,12 @@ extends Control
 class_name MainMenuUI
 
 @export_group("Packed Scenes")
-@export var game_start : PackedScene
 @export var settings_scene : PackedScene
 
 func _on_start_game_pressed() -> void:
-	pass
+	var start_game = ResourceLoader.load("res://Assets/Scenes/Main/MainScene.tscn").instantiate() as GameManager
+	get_tree().root.add_child(start_game)
+	self.queue_free()
 
 func _on_settings_pressed() -> void:
 	var scene = settings_scene.instantiate() as SettingsUI

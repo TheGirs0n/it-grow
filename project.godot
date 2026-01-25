@@ -23,6 +23,11 @@ GlobalEnums="*res://Assets/Scripts/Global/GlobalEnums.gd"
 PlantResourceFabric="*res://Assets/Scenes/Globals/PlantResourceFabric.tscn"
 GlobalAudio="*res://Assets/Scenes/Globals/GlobalAudio.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [file_customization]
 
 folder_colors={

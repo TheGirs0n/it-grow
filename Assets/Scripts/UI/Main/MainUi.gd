@@ -39,13 +39,15 @@ func open_day_switcher(current_day : int):
 	var scene = day_switcher_ui.instantiate() as DaySwitcherUI
 	scene.prepare_text(current_day)
 	self.add_child(scene)
+	
 	care_manual.hide()
 	find_manual.hide()
+	find_box_circle_center.hide()
+	find_box_circle_center_add.hide()
+	info_tooltip_ui.hide_tooltip()
 
 func open_minigame():
-	var scene = game_over_mini_game_ui.instantiate() as GameOverMiniGameUI
-	scene.prepare_mini_game()
-	self.add_child(scene)
+	open_lose_screen()
 
 func open_victory_screen():
 	var scene = victory_screen.instantiate() as VictoryScreen
