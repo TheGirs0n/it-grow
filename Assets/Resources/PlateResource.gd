@@ -2,7 +2,7 @@ extends Resource
 class_name PlantResource
 
 @export_multiline var plant_name : String
-@export var plant_energy : GlobalEnums.PLANT_ENERGY
+@export var plant_energy : String
 @export_multiline var plant_description : String
 @export var plant_grow_stage_textures : Array[CompressedTexture2D]
 @export_multiline var plant_smell : String

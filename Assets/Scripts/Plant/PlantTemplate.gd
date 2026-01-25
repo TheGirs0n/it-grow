@@ -5,7 +5,7 @@ class_name PlantTemplate
 @export var plant_circle : FindBoxCircleUI
 
 var plant_name : String
-var plant_energy : GlobalEnums.PLANT_ENERGY
+var plant_energy : String
 var plant_description : String
 var plant_grow_stage_textures : Array[CompressedTexture2D]
 var plant_smell : String

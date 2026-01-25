@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8dx17jlh8o45"]
+[gd_scene load_steps=13 format=3 uid="uid://b8dx17jlh8o45"]
 
 [ext_resource type="Script" uid="uid://c2cuq1cwjhk5f" path="res://Assets/Scripts/UI/Main/FindBoxUi.gd" id="1_piumh"]
 [ext_resource type="PackedScene" uid="uid://docjwe2mqn3sw" path="res://Assets/Scenes/UI/MainUI/FindBox/MagnifierUI.tscn" id="2_5n07k"]
 [ext_resource type="Texture2D" uid="uid://i53nmv00gts5" path="res://Assets/Sprites/ящик.png" id="2_mx07m"]
 [ext_resource type="PackedScene" uid="uid://bi6mvswmjxjah" path="res://Assets/Scenes/UI/MainUI/FindBox/KnifeUI.tscn" id="3_01a3r"]
+[ext_resource type="PackedScene" uid="uid://cw4xgpqcoxxr6" path="res://Assets/Scenes/UI/MainUI/FindBox/CareManual.tscn" id="5_pq046"]
+[ext_resource type="PackedScene" uid="uid://cm8s1aof64fo3" path="res://Assets/Scenes/UI/MainUI/FindBox/FindManual.tscn" id="6_uxyva"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lm1jn"]
 
@@ -35,10 +37,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -580.0
-offset_top = -24.0
-offset_right = -580.0
-offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -68,12 +66,36 @@ offset_right = 372.414
 offset_bottom = 690.483
 scale = Vector2(0.4, 0.4)
 
+[node name="CareManual" parent="TextureRect" instance=ExtResource("5_pq046")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 495.0
+offset_top = 388.0
+offset_right = 495.0
+offset_bottom = 388.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="FindManual" parent="TextureRect" instance=ExtResource("6_uxyva")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 492.0
+offset_top = 495.0
+offset_right = 492.0
+offset_bottom = 495.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 366.0
-offset_right = 31.0
-offset_bottom = 504.0
+offset_left = 579.0
+offset_top = 389.0
+offset_right = 609.0
+offset_bottom = 527.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lm1jn")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_pq046")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uxyva")

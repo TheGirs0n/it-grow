@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhtubvp72xrii"]
+[gd_scene load_steps=9 format=3 uid="uid://bhtubvp72xrii"]
 
 [ext_resource type="Script" uid="uid://c8gnkfeny44cs" path="res://Assets/Scripts/UI/Menus/SettingsUi.gd" id="1_1ii1u"]
+[ext_resource type="Texture2D" uid="uid://c0wstkykacoaq" path="res://Assets/Sprites/звук вкл.png" id="2_pcxia"]
+[ext_resource type="Texture2D" uid="uid://batbb7jisf60y" path="res://Assets/Sprites/ползунок.png" id="3_ik26v"]
+[ext_resource type="Texture2D" uid="uid://c7m6vqq2t5ran" path="res://Assets/Sprites/линия.png" id="4_68i8b"]
+[ext_resource type="Texture2D" uid="uid://cnoi8o1hex3np" path="res://Assets/Sprites/стрелочка.png" id="5_68i8b"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1ii1u"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4ci2s"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lcmdv"]
+texture = ExtResource("4_68i8b")
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yu3g8"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2mbtb"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_68i8b"]
+draw_center = false
 
 [node name="SettingsUi" type="Control" node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider", "master_volume_text", "sfx_volume_text", "music_volume_text", "current_window_mode_text", "current_resolution_mode_text", "apply_button", "restore_defaults_button")]
 process_mode = 3
@@ -46,9 +50,9 @@ texture = SubResource("PlaceholderTexture2D_1ii1u")
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.2
-anchor_right = 0.7
+anchor_left = 0.15
+anchor_top = 0.1
+anchor_right = 0.85
 anchor_bottom = 0.8
 tab_alignment = 1
 current_tab = 0
@@ -88,20 +92,27 @@ text = "ОБЩАЯ ГРОМКОСТЬ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer"]
+[node name="TextureRect" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-expand_mode = 3
+size_flags_stretch_ratio = 0.5
+action_mode = 0
+texture_normal = ExtResource("2_pcxia")
+ignore_texture_size = true
 stretch_mode = 5
 
 [node name="MasterSlider" type="HSlider" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme_override_icons/grabber = ExtResource("3_ik26v")
+theme_override_styles/slider = SubResource("StyleBoxTexture_lcmdv")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
 bbcode_enabled = true
 text = "0%"
 horizontal_alignment = 1
@@ -121,20 +132,27 @@ text = "ЗВУКОВЫЕ ЭФФЕКТЫ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2"]
+[node name="TextureRect" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-expand_mode = 3
+size_flags_stretch_ratio = 0.5
+action_mode = 0
+texture_normal = ExtResource("2_pcxia")
+ignore_texture_size = true
 stretch_mode = 5
 
 [node name="SFXSlider" type="HSlider" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme_override_icons/grabber = ExtResource("3_ik26v")
+theme_override_styles/slider = SubResource("StyleBoxTexture_68i8b")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
 bbcode_enabled = true
 text = "0%"
 horizontal_alignment = 1
@@ -154,20 +172,27 @@ text = "ГРОМКОСТЬ МУЗЫКИ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3"]
+[node name="TextureRect" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
-expand_mode = 3
+size_flags_stretch_ratio = 0.5
+action_mode = 0
+texture_normal = ExtResource("2_pcxia")
+ignore_texture_size = true
 stretch_mode = 5
 
 [node name="MusicSlider" type="HSlider" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme_override_icons/grabber = ExtResource("3_ik26v")
+theme_override_styles/slider = SubResource("StyleBoxTexture_68i8b")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
 bbcode_enabled = true
 text = "0%"
 horizontal_alignment = 1
@@ -212,9 +237,12 @@ vertical_alignment = 1
 [node name="LeftButton" type="TextureButton" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
 action_mode = 0
-texture_normal = SubResource("PlaceholderTexture2D_4ci2s")
+texture_normal = ExtResource("5_68i8b")
+ignore_texture_size = true
 stretch_mode = 5
+flip_h = true
 
 [node name="CurrentMode" type="RichTextLabel" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode"]
 layout_mode = 2
@@ -227,8 +255,10 @@ vertical_alignment = 1
 [node name="RightButton" type="TextureButton" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
 action_mode = 0
-texture_normal = SubResource("PlaceholderTexture2D_4ci2s")
+texture_normal = ExtResource("5_68i8b")
+ignore_texture_size = true
 stretch_mode = 5
 
 [node name="ResolutionMode" type="HBoxContainer" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer"]
@@ -248,9 +278,12 @@ vertical_alignment = 1
 [node name="LeftButton" type="TextureButton" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
 action_mode = 0
-texture_normal = SubResource("PlaceholderTexture2D_yu3g8")
+texture_normal = ExtResource("5_68i8b")
+ignore_texture_size = true
 stretch_mode = 5
+flip_h = true
 
 [node name="CurrentMode" type="RichTextLabel" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode"]
 layout_mode = 2
@@ -263,8 +296,10 @@ vertical_alignment = 1
 [node name="RightButton" type="TextureButton" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
 action_mode = 0
-texture_normal = SubResource("PlaceholderTexture2D_2mbtb")
+texture_normal = ExtResource("5_68i8b")
+ignore_texture_size = true
 stretch_mode = 5
 
 [node name="ButtonsContainer" type="HBoxContainer" parent="."]

@@ -16,8 +16,6 @@ func clear_current_find_box_item():
 
 
 func _on_button_pressed() -> void:
-	print(is_open)
-	print(global_position)
 	if !is_open:
 		if simple_tween:
 			simple_tween.kill()
