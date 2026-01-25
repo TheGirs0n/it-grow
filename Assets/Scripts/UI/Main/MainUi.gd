@@ -2,13 +2,14 @@ extends CanvasLayer
 class_name MainUI
 
 @export_group("Main UI")
-@export var care_box_ui : CareBoxUI
-@export var find_box_ui : FindBoxUI
-@export var pause_menu_ui : PauseMenuUI
 @export var day_counter_ui : DayCounterUI
 @export var attempts_ui : AttemptsUI
+@export var care_box_ui : CareBoxUI
+@export var find_box_ui : FindBoxUI
 @export var info_tooltip_ui : InfoTooltip
 @export var find_box_circle_center : FindBoxCircleCenter
+@export var plant_spawn_location : PlantSpawnLocation
+@export var pause_menu_ui : PauseMenuUI
 
 @export_group("Packed Scenes")
 @export var plant_scene : PackedScene
@@ -26,8 +27,8 @@ func _exit_tree() -> void:
 func settings_scene_open():
 	hide_pause()
 
-func spawn_plant_on_new_day():
-	pass
+func spawn_plant_on_new_day(plant_scene : PlantTemplate):
+	plant_spawn_location.set_plant_on_first_enable(plant_scene)
 
 func open_day_switcher(current_day : int):
 	var scene = day_switcher_ui.instantiate() as DaySwitcherUI

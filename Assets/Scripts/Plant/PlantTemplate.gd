@@ -1,6 +1,7 @@
 extends Area2D
 class_name PlantTemplate
 
+@export var plant_resource : PlantResource
 @export var plant_texture : Sprite2D
 @export var plant_circle : FindBoxCircleUI
 @export var plant_goal_container : PlantGoalContainer
@@ -21,24 +22,25 @@ var plant_care_stages_complete : Array[bool]
 var plant_care_stages_index = 0
 
 func _ready() -> void:
-	load_data_from_resource(PlantResourceFabric.get_random_plant_resource())
+	load_data_from_resource()
 
-func load_data_from_resource(new_resouce : PlantResource):
-	plant_name = new_resouce.plant_name
-	plant_energy = new_resouce.plant_energy
-	plant_description = new_resouce.plant_description
-	plant_cool_description = new_resouce.plant_cool_description
-	plant_grow_stage_textures = new_resouce.plant_grow_stage_textures
-	plant_smell = new_resouce.plant_smell
-	plant_leaf = new_resouce.plant_leaf
-	plant_juice_density = new_resouce.plant_juice_density
-	plant_juice_color = new_resouce.plant_juice_color
-	plant_care_stages = new_resouce.plant_care_stages
+func load_data_from_resource():
+	plant_name = plant_resource.plant_name
+	plant_energy = plant_resource.plant_energy
+	plant_description = plant_resource.plant_description
+	plant_cool_description = plant_resource.plant_cool_description
+	plant_grow_stage_textures = plant_resource.plant_grow_stage_textures
+	plant_smell = plant_resource.plant_smell
+	plant_leaf = plant_resource.plant_leaf
+	plant_juice_density = plant_resource.plant_juice_density
+	plant_juice_color = plant_resource.plant_juice_color
+	plant_care_stages = plant_resource.plant_care_stages
 	
-	for i in new_resouce.plant_care_stages:
+	plant_texture.texture = plant_grow_stage_textures[plant_care_stages_index]
+	
+	for i in plant_resource.plant_care_stages:
 		plant_care_stages_complete.append(false)
-	
-	plant_goal_container.show_all_circles(plant_care_stages.size())
+
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton:
@@ -83,6 +85,7 @@ func try_caring_plant(care_item : CareBoxItem):
 	if plant_care_stages[current_stage] == care_item.plant_care_type:
 		plant_care_stages_complete[current_stage] = true
 		plant_goal_container.set_done_circle(current_stage)
+		plant_goal_container.show_all_circles(plant_care_stages.size())
 		print("ОТЛИЧНЫЙ УХОД")
 	else:
 		decrease_grow_stage()

@@ -1,0 +1,2 @@
+extends PlantTemplate
+class_name Plant_1

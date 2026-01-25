@@ -30,11 +30,19 @@ func _process(_delta: float) -> void:
 func first_entry():
 	current_attempts = start_attempts
 	current_day = start_day
-	new_day_parameters()
+	
+	var plant = PlantResourceFabric.get_first()
+	
+	day_timer.start()
+	GlobalContext.main_ui_instance.spawn_plant_on_new_day(plant)
+	GlobalContext.main_ui_instance.day_counter_ui.set_day_counter_text(current_day)
+	GlobalContext.main_ui_instance.day_counter_ui.set_day_counter_number(day_timer.time_left)
 
 func new_day_parameters():
+	var new_plant = PlantResourceFabric.get_random_plant_resource()
+	
 	day_timer.start()
-	GlobalContext.main_ui_instance.spawn_plant_on_new_day()
+	GlobalContext.main_ui_instance.spawn_plant_on_new_day(new_plant)
 	GlobalContext.main_ui_instance.day_counter_ui.set_day_counter_text(current_day)
 	GlobalContext.main_ui_instance.day_counter_ui.set_day_counter_number(day_timer.time_left)
 

@@ -2,20 +2,16 @@
 
 [ext_resource type="Script" uid="uid://n6mg4a1vqfhs" path="res://Assets/Scripts/UI/Main/PlantSpawnLocationUI.gd" id="1_x5vce"]
 
-[node name="PlantSpawnLocation" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PlantSpawnLocation" type="Node2D" node_paths=PackedStringArray("plant_location")]
 script = ExtResource("1_x5vce")
+plant_location = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3"), NodePath("Marker2D4"), NodePath("Marker2D5")]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+
+[node name="Marker2D5" type="Marker2D" parent="."]

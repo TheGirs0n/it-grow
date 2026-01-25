@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="PlantResource" load_steps=5 format=3 uid="uid://ccc8retawxsrb"]
+[gd_resource type="Resource" script_class="PlantResource" load_steps=7 format=3 uid="uid://ccc8retawxsrb"]
 
 [ext_resource type="Texture2D" uid="uid://bavpyoidf3hs" path="res://Assets/Sprites/Plants/Plant_3/1.png" id="1_2o5ui"]
 [ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="1_55rn8"]
 [ext_resource type="Texture2D" uid="uid://cqte1rrn60765" path="res://Assets/Sprites/Plants/Plant_3/2.png" id="2_4hqqv"]
 [ext_resource type="Texture2D" uid="uid://dtk1ft1cl7lhh" path="res://Assets/Sprites/Plants/Plant_3/3.png" id="3_61fao"]
+[ext_resource type="Texture2D" uid="uid://cx6h4hohtji3g" path="res://Assets/Sprites/Plants/Plant_3/нож.png" id="4_61fao"]
+[ext_resource type="Texture2D" uid="uid://cuge6xsuu0em5" path="res://Assets/Sprites/Plants/Plant_3/лупа.png" id="5_36wk0"]
 
 [resource]
 script = ExtResource("1_55rn8")
@@ -20,6 +22,8 @@ plant_cool_description = "пустынное кустарниковое раст
 В простонородии известна как Скорпионник, Хвостушка горькая или Хвостатка Сизая"
 plant_smell = "Горький, пыльный запах, от которого я чувствую себя умиротворенно. "
 plant_energy = "Камни поющие под луной, шепот песчинок. Хочется спать."
+plant_leaf = ExtResource("5_36wk0")
+plant_juice_density = ExtResource("4_61fao")
 plant_juice_color = ""
 plant_care_stages = Array[int]([1, 1, 2, 1])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"

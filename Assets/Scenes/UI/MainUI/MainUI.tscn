@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://df4il6aelqnrl" path="res://Assets/Scenes/UI/MainUI/CareBox/CareBoxUI.tscn" id="2_gc7u3"]
 [ext_resource type="PackedScene" uid="uid://cmj4af8vp5kwj" path="res://Assets/Scenes/UI/Menus/PauseMenu.tscn" id="3_gc7u3"]
 [ext_resource type="PackedScene" uid="uid://bsibl1xbekom5" path="res://Assets/Scenes/UI/MainUI/Main/DaySwitcher.tscn" id="4_n00om"]
-[ext_resource type="PackedScene" uid="uid://ba25ifuiwotpe" path="res://Assets/Scenes/Plant/Plant.tscn" id="4_vn8su"]
+[ext_resource type="PackedScene" uid="uid://ba25ifuiwotpe" path="res://Assets/Scenes/Plant/Plant_1.tscn" id="4_vn8su"]
 [ext_resource type="PackedScene" uid="uid://dgg30oyjhveym" path="res://Assets/Scenes/UI/MainUI/Main/GameOverMiniGameUI.tscn" id="5_6205g"]
 [ext_resource type="PackedScene" uid="uid://cfho24p8x2acw" path="res://Assets/Scenes/UI/Screens/VictoryScreen.tscn" id="5_ct2kh"]
 [ext_resource type="PackedScene" uid="uid://b8dx17jlh8o45" path="res://Assets/Scenes/UI/MainUI/FindBox/FindBoxUI.tscn" id="5_np7rl"]
@@ -67,15 +67,16 @@ scale_min = 2.0
 scale_max = 5.0
 alpha_curve = SubResource("CurveTexture_g35pu")
 
-[node name="MainUi" type="CanvasLayer" node_paths=PackedStringArray("care_box_ui", "find_box_ui", "pause_menu_ui", "day_counter_ui", "attempts_ui", "info_tooltip_ui", "find_box_circle_center")]
+[node name="MainUi" type="CanvasLayer" node_paths=PackedStringArray("day_counter_ui", "attempts_ui", "care_box_ui", "find_box_ui", "info_tooltip_ui", "find_box_circle_center", "plant_spawn_location", "pause_menu_ui")]
 script = ExtResource("1_sm6gl")
-care_box_ui = NodePath("CareBoxUi")
-find_box_ui = NodePath("FindBoxUi")
-pause_menu_ui = NodePath("PauseMenu")
 day_counter_ui = NodePath("DayCounter")
 attempts_ui = NodePath("AttemptsUI")
+care_box_ui = NodePath("CareBoxUi")
+find_box_ui = NodePath("FindBoxUi")
 info_tooltip_ui = NodePath("InfoTooltip")
 find_box_circle_center = NodePath("FindBoxCircleCenter")
+plant_spawn_location = NodePath("PlantSpawnLocation")
+pause_menu_ui = NodePath("PauseMenu")
 plant_scene = ExtResource("4_vn8su")
 game_over_mini_game_ui = ExtResource("5_6205g")
 day_switcher_ui = ExtResource("4_n00om")
@@ -203,11 +204,22 @@ anchor_bottom = 0.5
 mouse_filter = 2
 
 [node name="PlantSpawnLocation" parent="." instance=ExtResource("18_qxc7r")]
-offset_left = 793.0
-offset_top = 416.0
-offset_right = 793.0
-offset_bottom = 416.0
-mouse_filter = 2
+position = Vector2(811, 538)
+
+[node name="Marker2D" parent="PlantSpawnLocation" index="0"]
+position = Vector2(-193, -41)
+
+[node name="Marker2D2" parent="PlantSpawnLocation" index="1"]
+position = Vector2(-117, 51)
+
+[node name="Marker2D3" parent="PlantSpawnLocation" index="2"]
+position = Vector2(2, -39)
+
+[node name="Marker2D4" parent="PlantSpawnLocation" index="3"]
+position = Vector2(87, 51)
+
+[node name="Marker2D5" parent="PlantSpawnLocation" index="4"]
+position = Vector2(177, -35)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 self_modulate = Color(1, 0.898039, 0.72549, 1)
@@ -223,3 +235,4 @@ process_material = SubResource("ParticleProcessMaterial_4r6ek")
 visible = false
 
 [editable path="CareBoxUi"]
+[editable path="PlantSpawnLocation"]

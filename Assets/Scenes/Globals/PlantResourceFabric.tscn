@@ -1,11 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr6kf58hbkyf1"]
+[gd_scene load_steps=12 format=3 uid="uid://cr6kf58hbkyf1"]
 
 [ext_resource type="Script" uid="uid://0bw4oil4re32" path="res://Assets/Scripts/Global/PlantResourceFabric.gd" id="1_60my2"]
-[ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="2_mt1ab"]
-[ext_resource type="Resource" uid="uid://cnw54jlm1xx4f" path="res://Assets/Sprites/Plants/Plant_2/Plant_2.tres" id="4_qrisb"]
-[ext_resource type="Resource" uid="uid://ccc8retawxsrb" path="res://Assets/Sprites/Plants/Plant_3/Plant_3.tres" id="5_fcmte"]
-[ext_resource type="Resource" uid="uid://bmfv0yyraceee" path="res://Assets/Sprites/Plants/Plant_4/Plant_4.tres" id="6_e1aqd"]
+[ext_resource type="PackedScene" uid="uid://ba25ifuiwotpe" path="res://Assets/Scenes/Plant/Plant_1.tscn" id="2_kq01u"]
+[ext_resource type="PackedScene" uid="uid://dti6spgcc3ln" path="res://Assets/Scenes/Plant/Plant_2.tscn" id="3_bhw6e"]
+[ext_resource type="PackedScene" uid="uid://dpqcob5snn0rg" path="res://Assets/Scenes/Plant/Plant_3.tscn" id="4_qrisb"]
+[ext_resource type="PackedScene" uid="uid://kd6wfuppq852" path="res://Assets/Scenes/Plant/Plant_4.tscn" id="5_fcmte"]
+[ext_resource type="PackedScene" uid="uid://ynuj3wck013m" path="res://Assets/Scenes/Plant/Plant_5.tscn" id="6_e1aqd"]
+[ext_resource type="PackedScene" uid="uid://d1hniy1uy60ww" path="res://Assets/Scenes/Plant/Plant_6.tscn" id="7_srxcx"]
+[ext_resource type="PackedScene" uid="uid://x5vj8sx3avy1" path="res://Assets/Scenes/Plant/Plant_7.tscn" id="8_568r2"]
+[ext_resource type="PackedScene" uid="uid://7pyejqgneefr" path="res://Assets/Scenes/Plant/Plant_8.tscn" id="9_ywsyn"]
+[ext_resource type="PackedScene" uid="uid://clxggf31u4i1m" path="res://Assets/Scenes/Plant/Plant_9.tscn" id="10_xgsjg"]
+[ext_resource type="PackedScene" uid="uid://bpq37r1s8hfv" path="res://Assets/Scenes/Plant/Plant_10.tscn" id="11_aq636"]
 
 [node name="PlantResourceFabric" type="Node"]
 script = ExtResource("1_60my2")
-plant_resources = Array[ExtResource("2_mt1ab")]([ExtResource("4_qrisb"), ExtResource("5_fcmte"), ExtResource("6_e1aqd")])
+plant_resources = Array[PackedScene]([ExtResource("2_kq01u"), ExtResource("3_bhw6e"), ExtResource("4_qrisb"), ExtResource("5_fcmte"), ExtResource("6_e1aqd"), ExtResource("7_srxcx"), ExtResource("8_568r2"), ExtResource("9_ywsyn"), ExtResource("10_xgsjg"), ExtResource("11_aq636")])
