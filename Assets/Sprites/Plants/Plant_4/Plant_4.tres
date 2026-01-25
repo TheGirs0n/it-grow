@@ -1,10 +1,15 @@
-[gd_resource type="Resource" script_class="PlantResource" load_steps=2 format=3 uid="uid://bmfv0yyraceee"]
+[gd_resource type="Resource" script_class="PlantResource" load_steps=7 format=3 uid="uid://bmfv0yyraceee"]
 
 [ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="1_31iqq"]
+[ext_resource type="Texture2D" uid="uid://dafatrs8kr0pd" path="res://Assets/Sprites/Plants/Plant_4/1.png" id="1_rimto"]
+[ext_resource type="Texture2D" uid="uid://demp04v8il7i4" path="res://Assets/Sprites/Plants/Plant_4/2.png" id="2_xk3xt"]
+[ext_resource type="Texture2D" uid="uid://bm273b1ve82tx" path="res://Assets/Sprites/Plants/Plant_4/3.png" id="3_r2kfn"]
+[ext_resource type="Texture2D" uid="uid://ccbp3502h6fi" path="res://Assets/Sprites/Plants/Plant_4/нож.png" id="4_xtg7w"]
+[ext_resource type="Texture2D" uid="uid://cvr8dfunjflya" path="res://Assets/Sprites/Plants/Plant_4/лупа.png" id="5_x8caf"]
 
 [resource]
 script = ExtResource("1_31iqq")
-plant_grow_stage_textures = Array[CompressedTexture2D]([])
+plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_rimto"), ExtResource("2_xk3xt"), ExtResource("3_r2kfn")])
 plant_name = "\"Мадам Шарлотта\""
 plant_cool_name = "Ариадисия Глянцевая (Aryidáceae splendora)"
 plant_description = "Моя любимица. Мне ее подарила леди Элеодора на выставке в Брештене. Пусть у нее и нет целебных свойств, зато она приятно пахнет. Твой дедушка, наоборот ненавидел его. Постоянно говорил что я вожусь с ним.
@@ -13,6 +18,8 @@ plant_cool_description = "один из самых уникальных цвет
 plant_smell = "Бабушка очень любила что \"Мадам Шарлота\" напоминает ей о  офисе Леди Стейн. Тот-же утонченный аромат с нотками лилий. Но как по мне он пахнет смерью."
 plant_energy = "Не могу понять что источает цветок. Будто он вытягивает из меня силы, а не отдает.
 Эй, что там шевельнулось???"
+plant_leaf = ExtResource("5_x8caf")
+plant_juice_density = ExtResource("4_xtg7w")
 plant_juice_color = ""
 plant_care_stages = Array[int]([2, 1, 0, 2, 2, 0, 1])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"

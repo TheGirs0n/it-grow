@@ -1,18 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cr6kf58hbkyf1"]
+[gd_scene load_steps=6 format=3 uid="uid://cr6kf58hbkyf1"]
 
 [ext_resource type="Script" uid="uid://0bw4oil4re32" path="res://Assets/Scripts/Global/PlantResourceFabric.gd" id="1_60my2"]
 [ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="2_mt1ab"]
-[ext_resource type="Resource" uid="uid://b2u68r8wlyy4c" path="res://Assets/Sprites/Plants/Plant_1/Plant_1.tres" id="3_bhw6e"]
 [ext_resource type="Resource" uid="uid://cnw54jlm1xx4f" path="res://Assets/Sprites/Plants/Plant_2/Plant_2.tres" id="4_qrisb"]
 [ext_resource type="Resource" uid="uid://ccc8retawxsrb" path="res://Assets/Sprites/Plants/Plant_3/Plant_3.tres" id="5_fcmte"]
 [ext_resource type="Resource" uid="uid://bmfv0yyraceee" path="res://Assets/Sprites/Plants/Plant_4/Plant_4.tres" id="6_e1aqd"]
-[ext_resource type="Resource" uid="uid://chbma6xr3y0kg" path="res://Assets/Sprites/Plants/Plant_5/Plant_5.tres" id="7_srxcx"]
-[ext_resource type="Resource" uid="uid://df3nl5youoy3h" path="res://Assets/Sprites/Plants/Plant_6/Plant_6.tres" id="8_568r2"]
-[ext_resource type="Resource" uid="uid://bx538d5ydjea6" path="res://Assets/Sprites/Plants/Plant_7/Plant_7.tres" id="9_ywsyn"]
-[ext_resource type="Resource" uid="uid://16gs04dc6ukl" path="res://Assets/Sprites/Plants/Plant_8/Plant_8.tres" id="10_xgsjg"]
-[ext_resource type="Resource" uid="uid://cb8mrihu2wb45" path="res://Assets/Sprites/Plants/Plant_9/Plant_9.tres" id="11_aq636"]
-[ext_resource type="Resource" uid="uid://b4ap30fuu8y71" path="res://Assets/Sprites/Plants/Plant_10/Plant_10.tres" id="12_y5t5i"]
 
 [node name="PlantResourceFabric" type="Node"]
 script = ExtResource("1_60my2")
-plant_resources = Array[ExtResource("2_mt1ab")]([ExtResource("3_bhw6e"), ExtResource("4_qrisb"), ExtResource("5_fcmte"), ExtResource("6_e1aqd"), ExtResource("7_srxcx"), ExtResource("8_568r2"), ExtResource("9_ywsyn"), ExtResource("10_xgsjg"), ExtResource("11_aq636"), ExtResource("12_y5t5i")])
+plant_resources = Array[ExtResource("2_mt1ab")]([ExtResource("4_qrisb"), ExtResource("5_fcmte"), ExtResource("6_e1aqd")])

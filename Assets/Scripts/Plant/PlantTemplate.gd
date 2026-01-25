@@ -3,6 +3,7 @@ class_name PlantTemplate
 
 @export var plant_texture : Sprite2D
 @export var plant_circle : FindBoxCircleUI
+@export var plant_goal_container : PlantGoalContainer
 
 var plant_name : String
 var plant_cool_name : String
@@ -37,6 +38,7 @@ func load_data_from_resource(new_resouce : PlantResource):
 	for i in new_resouce.plant_care_stages:
 		plant_care_stages_complete.append(false)
 	
+	plant_goal_container.show_all_circles(plant_care_stages.size())
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton:
@@ -77,12 +79,14 @@ func try_caring_plant(care_item : CareBoxItem):
 		return
 	
 	var current_stage = plant_care_stages_complete.find(false)
+	
 	if plant_care_stages[current_stage] == care_item.plant_care_type:
 		plant_care_stages_complete[current_stage] = true
+		plant_goal_container.set_done_circle(current_stage)
 		print("ОТЛИЧНЫЙ УХОД")
 	else:
-		print("ОШИБКА УХОДА")
 		decrease_grow_stage()
+		print("ОШИБКА УХОДА")
 
 func try_find_item(find_item : FindBoxItem):
 	match find_item.find_box_type:
@@ -116,9 +120,10 @@ func decrease_grow_stage():
 		plant_care_stages_index -= 1
 		plant_texture.texture = plant_grow_stage_textures[plant_care_stages_index]
 		GlobalContext.game_manager_instance.increase_current_attempts()
+		plant_goal_container.reset_all_circle()
 	elif plant_care_stages_index == 0:
 		plant_care_stages_index = 0
-		#plant_texture.texture = plant_grow_stage_textures[0]
+		plant_texture.texture = plant_grow_stage_textures[0]
 		GlobalContext.game_manager_instance.increase_current_attempts()
 
 func get_plant_name() -> String:
