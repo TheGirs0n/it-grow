@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://brroeoa27ev13"]
+[gd_scene load_steps=8 format=3 uid="uid://brroeoa27ev13"]
 
 [ext_resource type="Script" uid="uid://eakpr2frawmm" path="res://Assets/Scripts/UI/Main/AttemptsUi.gd" id="1_1mfgg"]
+[ext_resource type="Texture2D" uid="uid://b1whuiapdhjyj" path="res://Assets/Sprites/HP_Sectors/подложка.png" id="2_drf6g"]
+[ext_resource type="Texture2D" uid="uid://co7lqcty2hfs" path="res://Assets/Sprites/HP_Sectors/2 хп.png" id="3_5taqc"]
+[ext_resource type="Texture2D" uid="uid://8v3sp0ggg0kr" path="res://Assets/Sprites/HP_Sectors/верхушка.png" id="3_okoe6"]
+[ext_resource type="Texture2D" uid="uid://bjotm5stgn7uc" path="res://Assets/Sprites/HP_Sectors/3хп.png" id="4_7i8ug"]
+[ext_resource type="Texture2D" uid="uid://dmu00dit7t1qm" path="res://Assets/Sprites/HP_Sectors/1 хп.png" id="4_okoe6"]
+[ext_resource type="Texture2D" uid="uid://b6b4bjdhgwn21" path="res://Assets/Sprites/HP_Sectors/4 хп.png" id="5_0yh4q"]
 
 [node name="AttemptsUI" type="Control" node_paths=PackedStringArray("texture_rect")]
 layout_mode = 3
@@ -10,8 +16,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1mfgg")
-texture_rect = NodePath("TextureRect")
-attempts_textures = Array[CompressedTexture2D]([null, null, null, null, null])
+texture_rect = NodePath("AttemptsText")
+attempts_textures = Array[CompressedTexture2D]([ExtResource("4_okoe6"), ExtResource("3_5taqc"), ExtResource("4_7i8ug"), ExtResource("5_0yh4q")])
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -20,5 +26,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_drf6g")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_okoe6")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="AttemptsText" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_okoe6")
 expand_mode = 3
 stretch_mode = 5
