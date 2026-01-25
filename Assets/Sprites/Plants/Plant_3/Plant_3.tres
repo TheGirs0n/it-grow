@@ -1,13 +1,16 @@
-[gd_resource type="Resource" script_class="PlantResource" load_steps=2 format=3 uid="uid://ccc8retawxsrb"]
+[gd_resource type="Resource" script_class="PlantResource" load_steps=5 format=3 uid="uid://ccc8retawxsrb"]
 
+[ext_resource type="Texture2D" uid="uid://bavpyoidf3hs" path="res://Assets/Sprites/Plants/Plant_3/1.png" id="1_2o5ui"]
 [ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="1_55rn8"]
+[ext_resource type="Texture2D" uid="uid://cqte1rrn60765" path="res://Assets/Sprites/Plants/Plant_3/2.png" id="2_4hqqv"]
+[ext_resource type="Texture2D" uid="uid://dtk1ft1cl7lhh" path="res://Assets/Sprites/Plants/Plant_3/3.png" id="3_61fao"]
 
 [resource]
 script = ExtResource("1_55rn8")
 plant_name = ""
 plant_energy = ""
 plant_description = ""
-plant_grow_stage_textures = Array[CompressedTexture2D]([])
+plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_2o5ui"), ExtResource("2_4hqqv"), ExtResource("3_61fao")])
 plant_smell = ""
 plant_juice_color = ""
 plant_additional_property = ""

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_8ng64")
-plant_name = ""
+plant_name = "Медовичка"
 plant_energy = ""
 plant_description = ""
 plant_grow_stage_textures = Array[CompressedTexture2D]([])

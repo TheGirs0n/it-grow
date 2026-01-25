@@ -12,6 +12,7 @@
 texture = ExtResource("4_68i8b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_68i8b"]
+texture = ExtResource("4_68i8b")
 draw_center = false
 
 [node name="SettingsUi" type="Control" node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider", "master_volume_text", "sfx_volume_text", "music_volume_text", "current_window_mode_text", "current_resolution_mode_text", "apply_button", "restore_defaults_button")]
@@ -55,9 +56,10 @@ anchor_top = 0.1
 anchor_right = 0.85
 anchor_bottom = 0.8
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 
 [node name="АУДИО" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -199,7 +201,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ЭКРАН" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 

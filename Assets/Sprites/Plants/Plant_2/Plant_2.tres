@@ -1,14 +1,21 @@
-[gd_resource type="Resource" script_class="PlantResource" load_steps=2 format=3 uid="uid://cnw54jlm1xx4f"]
+[gd_resource type="Resource" script_class="PlantResource" load_steps=7 format=3 uid="uid://cnw54jlm1xx4f"]
 
 [ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="1_5nf5c"]
+[ext_resource type="Texture2D" uid="uid://dj5w37wicfs7c" path="res://Assets/Sprites/Plants/Plant_2/1 стадия.png" id="1_uhi7o"]
+[ext_resource type="Texture2D" uid="uid://byahjbcww1c6" path="res://Assets/Sprites/Plants/Plant_2/2 стадия.png" id="2_pn1px"]
+[ext_resource type="Texture2D" uid="uid://4fcj54454cra" path="res://Assets/Sprites/Plants/Plant_2/3 стадия.png" id="3_p2o3t"]
+[ext_resource type="Texture2D" uid="uid://ns0k6qq0dkkf" path="res://Assets/Sprites/Plants/Plant_2/нож.png" id="4_oab0u"]
+[ext_resource type="Texture2D" uid="uid://cmechhalxy22g" path="res://Assets/Sprites/Plants/Plant_2/лупа.png" id="5_oj35h"]
 
 [resource]
 script = ExtResource("1_5nf5c")
 plant_name = ""
 plant_energy = ""
 plant_description = ""
-plant_grow_stage_textures = Array[CompressedTexture2D]([])
+plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_uhi7o"), ExtResource("2_pn1px"), ExtResource("3_p2o3t")])
 plant_smell = ""
+plant_leaf = ExtResource("5_oj35h")
+plant_juice_density = ExtResource("4_oab0u")
 plant_juice_color = ""
 plant_additional_property = ""
 plant_care_stages = Array[int]([])

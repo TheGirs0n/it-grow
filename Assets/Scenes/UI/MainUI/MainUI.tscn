@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dwge7iku0cbsp"]
+[gd_scene load_steps=32 format=3 uid="uid://dwge7iku0cbsp"]
 
 [ext_resource type="Script" uid="uid://dhwkacn5w1smw" path="res://Assets/Scripts/UI/Main/MainUi.gd" id="1_sm6gl"]
 [ext_resource type="PackedScene" uid="uid://df4il6aelqnrl" path="res://Assets/Scenes/UI/MainUI/CareBox/CareBoxUI.tscn" id="2_gc7u3"]
@@ -24,8 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://cr6nvfeaj83" path="res://Assets/Sprites/стенка.png" id="14_spanf"]
 [ext_resource type="PackedScene" uid="uid://c5ik6i28dk71g" path="res://Assets/Scenes/UI/FindBoxCircleCenterUI.tscn" id="16_i5g6b"]
 [ext_resource type="PackedScene" uid="uid://cf30ri6xtr4af" path="res://Assets/Scenes/UI/PlantSpawnLocationUI.tscn" id="18_qxc7r"]
-[ext_resource type="Material" uid="uid://ve5p7qfar1m7" path="res://Assets/Resources/Particles/LightCandleProcessMaterial.tres" id="19_4pgat"]
-[ext_resource type="Texture2D" uid="uid://brad21elftpcv" path="res://Assets/Sprites/ParticleCircle.png" id="20_gqojn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_geo4o"]
 shader = ExtResource("8_f6fh2")
@@ -161,26 +159,6 @@ position = Vector2(160, 275)
 position = Vector2(308, 538)
 rotation = -3.18914
 
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
-self_modulate = Color(1, 0.36, 0.2, 1)
-position = Vector2(414, 406)
-amount = 24
-texture = ExtResource("20_gqojn")
-lifetime = 3.0
-preprocess = 10.0
-randomness = 1.0
-process_material = ExtResource("19_4pgat")
-
-[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
-self_modulate = Color(1, 0.36, 0.2, 1)
-position = Vector2(473, 456)
-amount = 24
-texture = ExtResource("20_gqojn")
-lifetime = 3.0
-preprocess = 10.0
-randomness = 1.0
-process_material = ExtResource("19_4pgat")
-
 [node name="FindBoxUi" parent="." instance=ExtResource("5_np7rl")]
 offset_left = -419.0
 offset_top = 296.0
@@ -207,10 +185,6 @@ grow_horizontal = 1
 grow_vertical = 1
 mouse_filter = 2
 
-[node name="Plant" parent="." instance=ExtResource("4_vn8su")]
-position = Vector2(620, 406)
-scale = Vector2(0.36899, 0.554682)
-
 [node name="AttemptsUI" parent="." instance=ExtResource("11_06u7b")]
 anchors_preset = 5
 anchor_left = 0.5
@@ -236,7 +210,7 @@ offset_bottom = 416.0
 mouse_filter = 2
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-self_modulate = Color(0.325441, 0.325441, 0.325441, 1)
+self_modulate = Color(1, 0.898039, 0.72549, 1)
 z_index = 11
 position = Vector2(574, 317)
 amount = 20

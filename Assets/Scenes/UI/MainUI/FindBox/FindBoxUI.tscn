@@ -48,20 +48,24 @@ layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 301.0
-offset_top = 270.0
-offset_right = 301.0
-offset_bottom = 606.0
+offset_left = 852.0
+offset_top = 110.0
+offset_right = 852.0
+offset_bottom = 446.0
+rotation = 1.5708
+scale = Vector2(0.8, 0.8)
 
 [node name="MagnifierUi" parent="TextureRect" instance=ExtResource("2_5n07k")]
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 424.0
-offset_top = 74.0
-offset_right = 424.0
-offset_bottom = 410.0
+offset_left = 538.0
+offset_top = 110.0
+offset_right = 538.0
+offset_bottom = 446.0
+rotation = 1.5708
+scale = Vector2(0.8, 0.8)
 
 [node name="CareManual" parent="TextureRect" instance=ExtResource("5_pq046")]
 layout_mode = 1
