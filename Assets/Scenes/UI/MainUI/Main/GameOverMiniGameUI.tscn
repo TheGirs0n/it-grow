@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgg30oyjhveym"]
+[gd_scene load_steps=8 format=3 uid="uid://dgg30oyjhveym"]
 
 [ext_resource type="Script" uid="uid://cmn6s8mt2nrhe" path="res://Assets/Scripts/Main/GameOverMiniGameUi.gd" id="1_7u46b"]
+[ext_resource type="Texture2D" uid="uid://2vpl4s2bod25" path="res://Assets/Sprites/галочка.png" id="2_4stnu"]
+[ext_resource type="Texture2D" uid="uid://jaudryer8x0g" path="res://Assets/Sprites/подложка под кубики.png" id="2_elna4"]
+[ext_resource type="Texture2D" uid="uid://de17e3iq8v2jk" path="res://Assets/Sprites/крестик.png" id="3_ifmuy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rptop"]
 
@@ -8,9 +11,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sg2kt"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p3f5u"]
-
-[node name="GameOverMiniGameUi" type="Control" node_paths=PackedStringArray("container", "number_next", "more_than_button", "equal_button", "less_than_button", "next_stage", "dice_number_text", "timer")]
+[node name="GameOverMiniGameUi" type="Control" node_paths=PackedStringArray("container", "dice_rounds", "number_next", "more_than_button", "equal_button", "less_than_button", "next_stage", "dice_number_text", "timer")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -20,6 +21,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7u46b")
 container = NodePath("HBoxContainer")
+dice_rounds = [NodePath("DiceTable/TextureRect"), NodePath("DiceTable/TextureRect2"), NodePath("DiceTable/TextureRect3")]
+win_round_texture = ExtResource("2_4stnu")
+lose_round_texture = ExtResource("3_ifmuy")
 number_next = NodePath("HBoxContainer/RichTextLabel")
 more_than_button = NodePath("HBoxContainer/MoreButton")
 equal_button = NodePath("HBoxContainer/EqualButton")
@@ -89,7 +93,8 @@ anchor_left = 0.2
 anchor_top = 0.2
 anchor_right = 0.8
 anchor_bottom = 0.8
-texture = SubResource("PlaceholderTexture2D_p3f5u")
+texture = ExtResource("2_elna4")
+expand_mode = 2
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DiceTable"]
@@ -115,6 +120,33 @@ size_flags_vertical = 3
 bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="DiceTable"]
+layout_mode = 0
+offset_left = 173.6
+offset_top = 53.4
+offset_right = 213.6
+offset_bottom = 93.4
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="DiceTable"]
+layout_mode = 0
+offset_left = 134.6
+offset_top = 156.4
+offset_right = 174.6
+offset_bottom = 196.4
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="DiceTable"]
+layout_mode = 0
+offset_left = 174.6
+offset_top = 259.4
+offset_right = 214.6
+offset_bottom = 299.4
+expand_mode = 2
+stretch_mode = 5
 
 [node name="NextStage" type="Button" parent="."]
 visible = false

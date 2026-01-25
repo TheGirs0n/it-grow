@@ -4,6 +4,11 @@ class_name GameOverMiniGameUI
 @export_group("Container")
 @export var container : HBoxContainer
 
+@export_group("Dice Rounds")
+@export var dice_rounds : Array[TextureRect]
+@export var win_round_texture : CompressedTexture2D
+@export var lose_round_texture : CompressedTexture2D
+
 @export_group("Text Group")
 @export var number_next : RichTextLabel
 @export var more_than_button : TextureButton
@@ -111,23 +116,23 @@ func roll_dice():
 	match mini_game_mode:
 		MINI_GAME_MODE.MORE_THAN:
 			if sum > current_number:
-				print("WIN")
+				dice_rounds[current_round].texture = win_round_texture
 				increase_score(1)
 			else:
-				print("LOSE")
+				dice_rounds[current_round].texture = lose_round_texture
 		MINI_GAME_MODE.LESS_THAN:
 			if sum < current_number:
-				print("WIN")
+				dice_rounds[current_round].texture = win_round_texture
 				increase_score(1)
 			else:
-				print("LOSE")
+				dice_rounds[current_round].texture = lose_round_texture
 			pass
 		MINI_GAME_MODE.EQUAL:
 			if sum == current_number:
-				print("WIN")
+				dice_rounds[current_round].texture = win_round_texture
 				increase_score(3)
 			else:
-				print("LOSE")
+				dice_rounds[current_round].texture = lose_round_texture
 			pass
 	
 	check_win()
@@ -139,8 +144,6 @@ func check_win():
 	if current_score >= 2:
 		win_game()
 		return
-	else: 
-		print("CHECK")
 	
 	if current_round == 3 and is_win:
 		win_game()

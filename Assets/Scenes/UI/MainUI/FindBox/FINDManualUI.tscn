@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw4xgpqcoxxr6"]
+[gd_scene load_steps=4 format=3 uid="uid://br0k6xa3yuvwy"]
 
-[ext_resource type="Script" uid="uid://bfy5ychnpf3s2" path="res://Assets/Scripts/FindBox/CareManual.gd" id="1_tfqx4"]
-[ext_resource type="Texture2D" uid="uid://tn4atwc63mf6" path="res://Assets/Sprites/открытый дневник бабушки.png" id="2_1mv47"]
-[ext_resource type="Texture2D" uid="uid://dld61efm1wtlx" path="res://Assets/Sprites/стрелочка для книги.png" id="3_e6hu1"]
+[ext_resource type="Script" uid="uid://nwegp5j100kc" path="res://Assets/Scripts/FindBox/FindManualUI.gd" id="1_s75hp"]
+[ext_resource type="Texture2D" uid="uid://bmh54u8etih78" path="res://Assets/Sprites/открытый атлас.png" id="2_0lc3r"]
+[ext_resource type="Texture2D" uid="uid://dld61efm1wtlx" path="res://Assets/Sprites/стрелочка для книги.png" id="3_5ihha"]
 
-[node name="CareManual" type="Control" node_paths=PackedStringArray("first_text", "second_text")]
+[node name="FINDManualUI" type="Control" node_paths=PackedStringArray("first_text", "second_text")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tfqx4")
+script = ExtResource("1_s75hp")
 first_text = NodePath("RichTextLabel")
 second_text = NodePath("RichTextLabel2")
 
@@ -23,7 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_1mv47")
+texture = ExtResource("2_0lc3r")
 expand_mode = 3
 stretch_mode = 5
 
@@ -34,7 +34,7 @@ offset_top = 505.0
 offset_right = 1070.0
 offset_bottom = 666.0
 scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("3_e6hu1")
+texture_normal = ExtResource("3_5ihha")
 
 [node name="Button2" type="TextureButton" parent="."]
 layout_mode = 0
@@ -43,7 +43,7 @@ offset_top = 502.0
 offset_right = 383.0
 offset_bottom = 663.0
 scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("3_e6hu1")
+texture_normal = ExtResource("3_5ihha")
 flip_h = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
