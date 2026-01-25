@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh4q757x6ikpm"
-path="res://.godot/imported/меню_покой.png-95aed0ed37d6df2c5c046a492ad1a9d9.ctex"
+uid="uid://dr8m1tac3sjlt"
+path="res://.godot/imported/ночь фон.png-67d8a62f6714f19bc5fcdbb9d83681b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/меню_покой.png"
-dest_files=["res://.godot/imported/меню_покой.png-95aed0ed37d6df2c5c046a492ad1a9d9.ctex"]
+source_file="res://Assets/Sprites/ночь фон.png"
+dest_files=["res://.godot/imported/ночь фон.png-67d8a62f6714f19bc5fcdbb9d83681b7.ctex"]
 
 [params]
 

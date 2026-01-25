@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cmn6s8mt2nrhe" path="res://Assets/Scripts/Main/GameOverMiniGameUi.gd" id="1_7u46b"]
 [ext_resource type="Texture2D" uid="uid://2vpl4s2bod25" path="res://Assets/Sprites/галочка.png" id="2_4stnu"]
-[ext_resource type="Texture2D" uid="uid://jaudryer8x0g" path="res://Assets/Sprites/подложка под кубики.png" id="2_elna4"]
+[ext_resource type="Texture2D" uid="uid://bxsx8sm4isqrd" path="res://Assets/Sprites/подложка под кубики.png" id="2_elna4"]
 [ext_resource type="Texture2D" uid="uid://de17e3iq8v2jk" path="res://Assets/Sprites/крестик.png" id="3_ifmuy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rptop"]
