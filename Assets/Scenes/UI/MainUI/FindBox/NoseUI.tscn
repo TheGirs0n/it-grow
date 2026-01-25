@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://1s2tj1qeojvf" path="res://Assets/Scripts/FindBox/Nose.gd" id="1_56unq"]
 [ext_resource type="Texture2D" uid="uid://blpk5n3na148p" path="res://Assets/Sprites/нос.png" id="2_pnoiy"]
 
-[node name="NoseUi" type="Control"]
+[node name="NoseUi" type="Control" node_paths=PackedStringArray("texture")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +11,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_56unq")
+texture = NodePath("TextureRect")
+clicked_item_icon = ExtResource("2_pnoiy")
+normal_item_icon = ExtResource("2_pnoiy")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

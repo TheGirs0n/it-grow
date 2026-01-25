@@ -1,16 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwna4qi6grgnw"]
+[gd_scene load_steps=4 format=3 uid="uid://dwna4qi6grgnw"]
 
 [ext_resource type="Script" uid="uid://bqw1es38vuhte" path="res://Assets/Scripts/CareBox/Rake.gd" id="1_81jx0"]
+[ext_resource type="Texture2D" uid="uid://bbwuv0pomk87e" path="res://Assets/Sprites/грабли_клик.png" id="2_0b5si"]
 [ext_resource type="Texture2D" uid="uid://b0s01ir3xxak1" path="res://Assets/Sprites/грабли.png" id="2_bontv"]
 
-[node name="RakeUi" type="Area2D"]
+[node name="RakeUi" type="Area2D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_81jx0")
 plant_care_type = 1
+sprite = NodePath("TextureRect")
+clicked_item_icon = ExtResource("2_0b5si")
+normal_item_icon = ExtResource("2_bontv")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
 texture = ExtResource("2_bontv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-40, 91, -136, 140, -7, 265, -114, 485, -641, 243, -668, 105, -525, 25, -332, 80, -29, -84, 551, -373, 595, -350, 570, -286, 7, 58)
+polygon = PackedVector2Array(-114, 485, -766, 126, 475, -432, 697, -300)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

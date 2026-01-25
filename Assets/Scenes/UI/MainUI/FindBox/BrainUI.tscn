@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dxvifmhqjse2u" path="res://Assets/Scripts/FindBox/Brain.gd" id="1_odwbv"]
 [ext_resource type="Texture2D" uid="uid://dd6sdiq16i5k5" path="res://Assets/Sprites/мозг.png" id="2_43hso"]
 
-[node name="BrainUi" type="Control"]
+[node name="BrainUi" type="Control" node_paths=PackedStringArray("texture")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_odwbv")
 find_box_type = 1
+texture = NodePath("TextureRect")
+clicked_item_icon = ExtResource("2_43hso")
+normal_item_icon = ExtResource("2_43hso")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dfy8ot4pj162" path="res://Assets/Scripts/FindBox/Knife.gd" id="1_m217t"]
 [ext_resource type="Texture2D" uid="uid://cbu7lpyu147wq" path="res://Assets/Sprites/нож.png" id="2_e2kvb"]
 
-[node name="KnifeUi" type="Control"]
+[node name="KnifeUi" type="Control" node_paths=PackedStringArray("texture")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m217t")
 find_box_type = 3
+texture = NodePath("TextureRect")
+clicked_item_icon = ExtResource("2_e2kvb")
+normal_item_icon = ExtResource("2_e2kvb")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

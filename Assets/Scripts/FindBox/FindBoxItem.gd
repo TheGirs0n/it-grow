@@ -2,7 +2,9 @@ extends Node
 class_name FindBoxItem
 
 @export var find_box_type : GlobalEnums.PLANT_FIND_TYPE
-@export var find_box_item_icon : CompressedTexture2D
+@export var texture : TextureRect
+@export var clicked_item_icon : CompressedTexture2D
+@export var normal_item_icon : CompressedTexture2D
 
 signal item_picked(item : FindBoxItem)
 
@@ -15,7 +17,7 @@ func _gui_input(event: InputEvent) -> void:
 				change_mouse_on_item()
 
 func change_mouse_on_item():
-	Input.set_custom_mouse_cursor(find_box_item_icon)
-
+	texture.texture = clicked_item_icon
+	
 func set_default_mouse_on_item():
-	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+	texture.texture = normal_item_icon

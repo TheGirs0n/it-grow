@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dwge7iku0cbsp"]
+[gd_scene load_steps=20 format=3 uid="uid://dwge7iku0cbsp"]
 
 [ext_resource type="Script" uid="uid://dhwkacn5w1smw" path="res://Assets/Scripts/UI/Main/MainUi.gd" id="1_sm6gl"]
 [ext_resource type="PackedScene" uid="uid://df4il6aelqnrl" path="res://Assets/Scenes/UI/MainUI/CareBox/CareBoxUI.tscn" id="2_gc7u3"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dgg30oyjhveym" path="res://Assets/Scenes/UI/MainUI/Main/GameOverMiniGameUI.tscn" id="5_6205g"]
 [ext_resource type="PackedScene" uid="uid://cfho24p8x2acw" path="res://Assets/Scenes/UI/Screens/VictoryScreen.tscn" id="5_ct2kh"]
 [ext_resource type="PackedScene" uid="uid://b8dx17jlh8o45" path="res://Assets/Scenes/UI/MainUI/FindBox/FindBoxUI.tscn" id="5_np7rl"]
+[ext_resource type="PackedScene" uid="uid://dc3g8h6t1jh5o" path="res://Assets/Scenes/UI/Screens/LoseScreen.tscn" id="6_4r6ek"]
 [ext_resource type="PackedScene" uid="uid://bi47kswhi8d0c" path="res://Assets/Scenes/UI/MainUI/Main/DayCounterUI.tscn" id="6_hc1y4"]
 [ext_resource type="Texture2D" uid="uid://cmsr8gxs62yky" path="res://Assets/Sprites/фон пустой.png" id="6_je6g4"]
 [ext_resource type="Texture2D" uid="uid://c64caftn2ytl0" path="res://Assets/Sprites/верхние левые растения.png" id="7_drnm5"]
@@ -17,6 +18,28 @@
 [ext_resource type="PackedScene" uid="uid://brroeoa27ev13" path="res://Assets/Scenes/UI/MainUI/Main/AttemptsUi.tscn" id="11_06u7b"]
 [ext_resource type="PackedScene" uid="uid://dhgdvrtlwo6cp" path="res://Assets/Scenes/UI/MainUI/InfoTooltip.tscn" id="11_drnm5"]
 [ext_resource type="PackedScene" uid="uid://c5ik6i28dk71g" path="res://Assets/Scenes/UI/FindBoxCircleCenterUI.tscn" id="16_i5g6b"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4r6ek"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(20, 20, 1)
+emission_shape = 3
+emission_box_extents = Vector3(20, 20, 1)
+angular_velocity_min = -15.0
+angular_velocity_max = 15.0
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+radial_velocity_min = -5.00002
+radial_velocity_max = 4.99998
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -5.0
+linear_accel_max = 5.0
+radial_accel_min = -5.0
+radial_accel_max = 5.0
+tangential_accel_min = -5.0
+tangential_accel_max = 10.0
+damping_max = 5.143
+scale_min = 2.0
+scale_max = 5.0
 
 [node name="MainUi" type="CanvasLayer" node_paths=PackedStringArray("care_box_ui", "find_box_ui", "pause_menu_ui", "day_counter_ui", "attempts_ui", "info_tooltip_ui", "find_box_circle_center")]
 script = ExtResource("1_sm6gl")
@@ -31,11 +54,13 @@ plant_scene = ExtResource("4_vn8su")
 game_over_mini_game_ui = ExtResource("5_6205g")
 day_switcher_ui = ExtResource("4_n00om")
 victory_screen = ExtResource("5_ct2kh")
+lose_screen = ExtResource("6_4r6ek")
 
 [node name="BackgroundTexture" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 0.11377
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -85,15 +110,16 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="CareBoxUi" parent="." instance=ExtResource("2_gc7u3")]
-anchors_preset = -1
-anchor_right = 0.763
-offset_left = 125.0
-offset_top = 427.0
-offset_right = 125.0
-offset_bottom = 427.0
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.275, 0.275)
+
+[node name="FertilizerUi" parent="CareBoxUi" index="0"]
+position = Vector2(188, 520)
+
+[node name="WateringCanUi" parent="CareBoxUi" index="1"]
+position = Vector2(160, 275)
+
+[node name="RakeUi" parent="CareBoxUi" index="2"]
+position = Vector2(308, 538)
+rotation = -3.18914
 
 [node name="FindBoxUi" parent="." instance=ExtResource("5_np7rl")]
 offset_left = 0.0
@@ -130,3 +156,15 @@ anchor_bottom = 0.5
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_gc7u3")]
 visible = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+self_modulate = Color(0.325441, 0.325441, 0.325441, 1)
+z_index = 11
+position = Vector2(574, 317)
+amount = 20
+lifetime = 10.0
+preprocess = 10.0
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_4r6ek")
+
+[editable path="CareBoxUi"]

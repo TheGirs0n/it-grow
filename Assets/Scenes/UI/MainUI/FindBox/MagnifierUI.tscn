@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bu81m7kmqen2n" path="res://Assets/Scripts/FindBox/Magnifier.gd" id="1_vqps2"]
 [ext_resource type="Texture2D" uid="uid://vjun7roamyla" path="res://Assets/Sprites/лупа.png" id="2_vf84w"]
 
-[node name="MagnifierUi" type="Control"]
+[node name="MagnifierUi" type="Control" node_paths=PackedStringArray("texture")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vqps2")
 find_box_type = 2
+texture = NodePath("TextureRect")
+clicked_item_icon = ExtResource("2_vf84w")
+normal_item_icon = ExtResource("2_vf84w")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

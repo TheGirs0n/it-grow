@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca1c40tdy3kxw"]
+[gd_scene load_steps=4 format=3 uid="uid://ca1c40tdy3kxw"]
 
 [ext_resource type="Script" uid="uid://v6im6v7hpl5w" path="res://Assets/Scripts/CareBox/WateringCan.gd" id="1_go6kh"]
+[ext_resource type="Texture2D" uid="uid://cf10npgqmr4hs" path="res://Assets/Sprites/лейка_клик.png" id="2_j6jq6"]
 [ext_resource type="Texture2D" uid="uid://61y4hpmu1nu0" path="res://Assets/Sprites/лейка.png" id="2_pdfpj"]
 
-[node name="WateringCanUi" type="Area2D"]
+[node name="WateringCanUi" type="Area2D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_go6kh")
+sprite = NodePath("TextureRect")
+clicked_item_icon = ExtResource("2_j6jq6")
+normal_item_icon = ExtResource("2_pdfpj")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
 texture = ExtResource("2_pdfpj")
