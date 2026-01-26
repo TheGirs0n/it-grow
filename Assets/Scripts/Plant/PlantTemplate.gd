@@ -44,6 +44,13 @@ func _process(_delta: float) -> void:
 	if plant_care_stages_complete.find(false) == -1:
 		increase_grow_stage()
 		return
+		
+	if input_pickable == true:
+		if plant_care_stages_index == plant_grow_stage_textures.size() - 1:
+			GlobalContext.main_ui_instance.show_tooltip("Цветок достиг своей абсолютной красоты!")
+			GlobalContext.game_manager_instance.set_plant_full(self)
+			input_pickable = false
+			return
 	
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
@@ -80,9 +87,13 @@ func try_caring_plant(care_item : CareBoxItem):
 	if plant_care_stages[current_stage] == care_item.plant_care_type:
 		plant_care_stages_complete[current_stage] = true
 		
-		match care_item:
-			Rake:
+		match care_item.plant_care_type:
+			GlobalEnums.PLANT_CARE_TYPE.FERTILIZER:
+				GlobalAudio.play_bag_sound()
+			GlobalEnums.PLANT_CARE_TYPE.RAKE:
 				GlobalAudio.play_rake_use()
+			GlobalEnums.PLANT_CARE_TYPE.WATERING_CAN:
+				GlobalAudio.play_watering_can_use()
 		
 		plant_goal_container.set_done_circle(current_stage)
 		plant_goal_container.show_all_circles(plant_care_stages.size())
@@ -116,6 +127,7 @@ func increase_grow_stage():
 		return
 	
 	if plant_care_stages_index < plant_grow_stage_textures.size():
+		GlobalAudio.play_plants_grow()
 		plant_care_stages_index += 1
 		plant_texture.texture = plant_grow_stage_textures[plant_care_stages_index]
 		reset_care_routine()

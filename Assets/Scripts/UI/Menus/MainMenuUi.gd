@@ -5,6 +5,10 @@ class_name MainMenuUI
 @export var settings_scene : PackedScene
 
 func _on_start_game_pressed() -> void:
+	print(GlobalContext.game_manager_instance)
+	if GlobalContext.game_manager_instance != null:
+		GlobalContext.game_manager_instance.queue_free()
+	
 	var start_game = ResourceLoader.load("res://Assets/Scenes/Main/MainScene.tscn").instantiate() as GameManager
 	get_tree().root.add_child(start_game)
 	self.queue_free()

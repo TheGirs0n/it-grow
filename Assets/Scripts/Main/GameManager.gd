@@ -14,6 +14,8 @@ var current_day : int = 1
 var current_attempts : int = 0
 var start_attempts : int = 4 
 
+var plants_in_game : Dictionary[PlantTemplate, bool]
+
 func _ready() -> void:
 	GlobalContext.game_manager_instance = self
 	first_entry()
@@ -27,10 +29,31 @@ func _process(_delta: float) -> void:
 	
 	GlobalContext.main_ui_instance.day_counter_ui.set_day_counter_number(day_timer.time_left)
 	
+
+func add_plant(new_plant : PlantTemplate):
+	plants_in_game[new_plant] = false
+
+func set_plant_full(plant_to_set : PlantTemplate):
+	plants_in_game[plant_to_set] = true
+	check_plants_grow()
+
+func check_plants_grow():
+	var all_true = true
+	
+	for plant in plants_in_game:
+		if plants_in_game[plant] == false:  # или просто if not plants_in_game[plant]
+			all_true = false
+			break
+			
+	if all_true:
+		day_timer_end()
+
 func first_entry():
 	current_attempts = start_attempts
 	current_day = start_day
 	
+	continue_game()
+	PlantResourceFabric.reset_fabric()
 	var plant = PlantResourceFabric.get_first()
 	
 	day_timer.start()

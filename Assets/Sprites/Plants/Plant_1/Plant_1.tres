@@ -1,21 +1,22 @@
-[gd_resource type="Resource" script_class="PlantResource" load_steps=5 format=3 uid="uid://b2u68r8wlyy4c"]
+[gd_resource type="Resource" script_class="PlantResource" load_steps=6 format=3 uid="uid://b2u68r8wlyy4c"]
 
 [ext_resource type="Texture2D" uid="uid://b74oxsklcerln" path="res://Assets/Sprites/Plants/Plant_1/пузырчатка.png" id="1_5srp3"]
 [ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="1_8ng64"]
+[ext_resource type="Texture2D" uid="uid://drk51a2dj6s2m" path="res://Assets/Sprites/Plants/Plant_1/медовичка 2 стадия.png" id="2_2akv8"]
 [ext_resource type="Texture2D" uid="uid://csds71xpm012c" path="res://Assets/Sprites/Plants/Plant_1/пузырчатка_нож.png" id="2_ndmkg"]
 [ext_resource type="Texture2D" uid="uid://cecl55t2j7ik" path="res://Assets/Sprites/Plants/Plant_1/пузырчатка_лупа.png" id="3_2akv8"]
 
 [resource]
 script = ExtResource("1_8ng64")
-plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_5srp3")])
-plant_name = "Медовичка"
-plant_cool_name = "Медовичка Целебная (Melrotundum officinalis)"
-plant_description = "Медовичка - Неприхотливое растение. Крайне прост в уходе но очень любит воду. 
+plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_5srp3"), ExtResource("2_2akv8")])
+plant_name = "[b]Медовичка[/b]"
+plant_cool_name = "[b]Медовичка Целебная (Melrotundum officinalis)[/b]"
+plant_description = "[b]Медовичка[/b] - Неприхотливое растение. Крайне прост в уходе но очень любит воду. 
 Помогает от ран и ожогах. Сок ягод обладает заживляющими и противовосполительными свойствами. Собирать ее лучше в начале сентября. Кора не дымит и очень плохо горит. Компонент для зелий с активным элементом воды! Не смешивать с натриевыми солями!!!
 Чем чаще поливаешь, тем лучше вырастит.
 Цветок Медовички вплетенные в косы роженицы, помогут родить здорового и крепкого ребенка, которому в жизни никогда не придется сталкнутся с пожарами.
 "
-plant_cool_description = "Медовичка Целебная (Melrotundum officinalis)
+plant_cool_description = "[b]Медовичка Целебная (Melrotundum officinalis)[/b]
 Неприхотливое растение, рода Булиальбовых. Крайне прост в уходе, очень часто используется как декоративное растение. 
 Все семейство Булиальбовых чаще всего распространены среди заболоченых районов. Ствол растения очень быстро деревенеет, уже к появлению первых завезей. 
 Цветки мелкие голубого цвета быстро опадают. После созревания образуют белые сладкие плоды, пригодые в пищу.

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi47kswhi8d0c"]
+[gd_scene load_steps=3 format=3 uid="uid://bi47kswhi8d0c"]
 
 [ext_resource type="Script" uid="uid://c5h6bvmsom8it" path="res://Assets/Scripts/UI/Main/DayCounterUI.gd" id="1_niyed"]
+[ext_resource type="FontFile" uid="uid://bt1h3mvmsd3o1" path="res://Assets/Fonts/ofont.ru_Gnocchi.ttf" id="2_6e3cy"]
 
 [node name="DayCounter" type="Control" node_paths=PackedStringArray("day_counter_text", "day_counter_number")]
 layout_mode = 3
@@ -25,13 +26,19 @@ alignment = 1
 [node name="DayCounterText" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_6e3cy")
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
+text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DayCounterNumber" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_6e3cy")
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
+text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1

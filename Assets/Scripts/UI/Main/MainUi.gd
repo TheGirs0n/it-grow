@@ -33,6 +33,8 @@ func settings_scene_open():
 	hide_pause()
 
 func spawn_plant_on_new_day(new_plant_scene : PlantTemplate):
+	GlobalAudio.play_new_plant()
+	GlobalContext.game_manager_instance.add_plant(new_plant_scene)
 	plant_spawn_location.set_plant_on_first_enable(new_plant_scene)
 
 func open_day_switcher(current_day : int):
@@ -53,14 +55,11 @@ func open_minigame():
 
 func open_victory_screen():
 	var scene = victory_screen.instantiate() as VictoryScreen
-	# статистику добавить
-	get_tree().root.add_child(scene)
-	GlobalContext.game_manager_instance.queue_free()
+	self.add_child(scene)
 
 func open_lose_screen():
 	var scene = lose_screen.instantiate() as LoseScreen
-	get_tree().root.add_child(scene)
-	GlobalContext.game_manager_instance.queue_free()
+	self.add_child(scene)
 
 func show_tooltip(text_in_tooltip : String):
 	info_tooltip_ui.change_text(text_in_tooltip)

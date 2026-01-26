@@ -1,14 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr18log2dheqo"]
+[gd_scene load_steps=18 format=3 uid="uid://dr18log2dheqo"]
 
 [ext_resource type="Script" uid="uid://d2xluoqmeqmiw" path="res://Assets/Scripts/Global/GlobalAudio.gd" id="1_3g6yn"]
 [ext_resource type="AudioStream" uid="uid://de3r0ymyy2ys0" path="res://Assets/Audio/bag.mp3" id="2_irnhi"]
 [ext_resource type="AudioStream" uid="uid://bbbvkl54rlqh6" path="res://Assets/Audio/bookclose.mp3" id="3_axgxb"]
 [ext_resource type="AudioStream" uid="uid://ce11xq4ps52l1" path="res://Assets/Audio/bookopen.mp3" id="4_1ppbi"]
+[ext_resource type="AudioStream" uid="uid://cv7sv5tur6en7" path="res://Assets/Audio/btn_next.mp3" id="5_kwe0o"]
 [ext_resource type="AudioStream" uid="uid://d68euroh5ovp" path="res://Assets/Audio/knife.mp3" id="5_p5r6p"]
 [ext_resource type="AudioStream" uid="uid://bgmw38ni3wjll" path="res://Assets/Audio/lose2.mp3" id="6_1vbdh"]
+[ext_resource type="AudioStream" uid="uid://ddlvc21d5cgnv" path="res://Assets/Audio/btn_prev.mp3" id="6_lm2kk"]
 [ext_resource type="AudioStream" uid="uid://dtyc1o2t647us" path="res://Assets/Audio/rake_take.mp3" id="7_2wj07"]
+[ext_resource type="AudioStream" uid="uid://ydo1rwge4nkb" path="res://Assets/Audio/leafs2.mp3" id="7_5mxfw"]
 [ext_resource type="AudioStream" uid="uid://l5duvcskq82l" path="res://Assets/Audio/rake_use.mp3" id="8_b0u5p"]
 [ext_resource type="AudioStream" uid="uid://cn0tk3pv50ysk" path="res://Assets/Audio/win.mp3" id="9_ddi1i"]
+[ext_resource type="AudioStream" uid="uid://ciwpiitnav671" path="res://Assets/Audio/magnifier_put.mp3" id="10_og11w"]
+[ext_resource type="AudioStream" uid="uid://d1cgseno3h41t" path="res://Assets/Audio/new_plants.mp3" id="11_hgb2n"]
+[ext_resource type="AudioStream" uid="uid://c0xegs2b3au2u" path="res://Assets/Audio/plants_grow.mp3" id="12_ggals"]
+[ext_resource type="AudioStream" uid="uid://d1eid8y5l0xdl" path="res://Assets/Audio/watering_use2.mp3" id="15_i0owu"]
+[ext_resource type="AudioStream" uid="uid://dnrc34h16uv8l" path="res://Assets/Audio/watering_take2.mp3" id="16_l68bw"]
 
 [node name="GlobalAudio" type="Node"]
 script = ExtResource("1_3g6yn")
@@ -25,6 +33,18 @@ bus = &"SFX"
 stream = ExtResource("4_1ppbi")
 bus = &"SFX"
 
+[node name="PageNext" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_kwe0o")
+bus = &"SFX"
+
+[node name="PagePrev" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_lm2kk")
+bus = &"SFX"
+
+[node name="Leafs" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_5mxfw")
+bus = &"SFX"
+
 [node name="Knife" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_p5r6p")
 bus = &"SFX"
@@ -33,12 +53,36 @@ bus = &"SFX"
 stream = ExtResource("6_1vbdh")
 bus = &"Music"
 
+[node name="MagnifierUse" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_og11w")
+bus = &"Music"
+
+[node name="MagnifierTake" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_og11w")
+bus = &"Music"
+
+[node name="NewPlants" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_hgb2n")
+bus = &"Music"
+
+[node name="PlantsGrow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ggals")
+bus = &"Music"
+
 [node name="RakeTake" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_2wj07")
 bus = &"SFX"
 
 [node name="RakeUse" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_b0u5p")
+bus = &"SFX"
+
+[node name="WateringCanUse" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_i0owu")
+bus = &"SFX"
+
+[node name="WateringCanTake" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_l68bw")
 bus = &"SFX"
 
 [node name="Win" type="AudioStreamPlayer" parent="."]

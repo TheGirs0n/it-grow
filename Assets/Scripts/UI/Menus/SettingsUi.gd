@@ -21,8 +21,8 @@ var current_window_mode_index : int = 0
 var current_resolution_mode_index : int = 0
 
 @export_group("Control Buttons")
-@export var apply_button : Button
-@export var restore_defaults_button : Button
+@export var apply_button : TextureButton
+@export var restore_defaults_button : TextureButton
 
 func _ready() -> void:
 	load_all_user_settings()

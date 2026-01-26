@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cw4xgpqcoxxr6"]
+[gd_scene load_steps=18 format=3 uid="uid://cw4xgpqcoxxr6"]
 
 [ext_resource type="Script" uid="uid://bfy5ychnpf3s2" path="res://Assets/Scripts/FindBox/CareManual.gd" id="1_tfqx4"]
 [ext_resource type="Texture2D" uid="uid://tn4atwc63mf6" path="res://Assets/Sprites/открытый дневник бабушки.png" id="2_1mv47"]
@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://16gs04dc6ukl" path="res://Assets/Sprites/Plants/Plant_8/Plant_8.tres" id="10_j54jv"]
 [ext_resource type="Resource" uid="uid://cb8mrihu2wb45" path="res://Assets/Sprites/Plants/Plant_9/Plant_9.tres" id="11_pt782"]
 [ext_resource type="Resource" uid="uid://b4ap30fuu8y71" path="res://Assets/Sprites/Plants/Plant_10/Plant_10.tres" id="12_4pn5w"]
+[ext_resource type="FontFile" uid="uid://ypccknk0h50v" path="res://Assets/Fonts/ofont.ru_Daneehand.ttf" id="14_qp4ki"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pdst6"]
 
@@ -52,20 +53,28 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+self_modulate = Color(0.168627, 0.152941, 0.137255, 1)
 layout_mode = 0
 offset_left = 201.0
 offset_top = 51.0
 offset_right = 569.0
 offset_bottom = 487.0
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("14_qp4ki")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+self_modulate = Color(0.168627, 0.152941, 0.137255, 1)
 layout_mode = 0
 offset_left = 598.0
 offset_top = 51.0
 offset_right = 966.0
 offset_bottom = 487.0
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("14_qp4ki")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
 
 [node name="Button" type="Button" parent="."]
 process_mode = 3

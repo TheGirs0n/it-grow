@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhtubvp72xrii"]
+[gd_scene load_steps=13 format=3 uid="uid://bhtubvp72xrii"]
 
 [ext_resource type="Script" uid="uid://c8gnkfeny44cs" path="res://Assets/Scripts/UI/Menus/SettingsUi.gd" id="1_1ii1u"]
+[ext_resource type="FontFile" uid="uid://bt1h3mvmsd3o1" path="res://Assets/Fonts/ofont.ru_Gnocchi.ttf" id="2_lcmdv"]
 [ext_resource type="Texture2D" uid="uid://c0wstkykacoaq" path="res://Assets/Sprites/звук вкл.png" id="2_pcxia"]
 [ext_resource type="Texture2D" uid="uid://batbb7jisf60y" path="res://Assets/Sprites/ползунок.png" id="3_ik26v"]
 [ext_resource type="Texture2D" uid="uid://c7m6vqq2t5ran" path="res://Assets/Sprites/линия.png" id="4_68i8b"]
 [ext_resource type="Texture2D" uid="uid://cnoi8o1hex3np" path="res://Assets/Sprites/стрелочка.png" id="5_68i8b"]
+[ext_resource type="Texture2D" uid="uid://dh4q757x6ikpm" path="res://Assets/Sprites/меню_покой.png" id="7_fv6cf"]
+[ext_resource type="Texture2D" uid="uid://c04mjfdh1u00p" path="res://Assets/Sprites/меню_нажата.png" id="8_ea1xn"]
+[ext_resource type="Texture2D" uid="uid://cnocbo04bj5yx" path="res://Assets/Sprites/меню_наведение.png" id="9_165ny"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1ii1u"]
 
@@ -53,11 +57,13 @@ anchors_preset = -1
 anchor_left = 0.15
 anchor_top = 0.1
 anchor_right = 0.85
-anchor_bottom = 0.8
+anchor_bottom = 0.7
+theme_override_fonts/font = ExtResource("2_lcmdv")
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 
 [node name="АУДИО" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -87,6 +93,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
 text = "ОБЩАЯ ГРОМКОСТЬ"
 horizontal_alignment = 1
@@ -116,6 +123,7 @@ theme_override_styles/slider = SubResource("StyleBoxTexture_lcmdv")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
+theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
 text = "0%"
 horizontal_alignment = 1
@@ -130,6 +138,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
 text = "ЗВУКОВЫЕ ЭФФЕКТЫ"
 horizontal_alignment = 1
@@ -159,6 +168,7 @@ theme_override_styles/slider = SubResource("StyleBoxTexture_68i8b")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
+theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
 text = "0%"
 horizontal_alignment = 1
@@ -173,6 +183,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
 text = "ГРОМКОСТЬ МУЗЫКИ"
 horizontal_alignment = 1
@@ -202,13 +213,13 @@ theme_override_styles/slider = SubResource("StyleBoxTexture_68i8b")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
+theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
 text = "0%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ЭКРАН" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -238,6 +249,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
 text = "РЕЖИМ ОКНА"
 horizontal_alignment = 1
@@ -257,6 +269,7 @@ flip_h = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -279,6 +292,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
 text = "РАЗРЕШЕНИЕ ЭКРАНА"
 horizontal_alignment = 1
@@ -298,6 +312,7 @@ flip_h = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -314,34 +329,105 @@ stretch_mode = 5
 [node name="ButtonsContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.35
-anchor_top = 0.725
-anchor_right = 0.65
+anchor_left = 0.25
+anchor_top = 0.65
+anchor_right = 0.75
 anchor_bottom = 0.775
+offset_top = 28.8
+offset_bottom = 28.8
 theme_override_constants/separation = 25
 alignment = 1
 
-[node name="ApplySettings" type="Button" parent="ButtonsContainer"]
+[node name="ApplySettings" type="TextureButton" parent="ButtonsContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 action_mode = 0
-text = "ПРИМЕНИТЬ"
+texture_normal = ExtResource("7_fv6cf")
+texture_pressed = ExtResource("8_ea1xn")
+texture_hover = ExtResource("9_165ny")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="RestoreDefaults" type="Button" parent="ButtonsContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="ButtonsContainer/ApplySettings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.5
+offset_top = -25.5
+offset_right = 86.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_lcmdv")
+bbcode_enabled = true
+text = "Применить"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestoreDefaults" type="TextureButton" parent="ButtonsContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 action_mode = 0
-text = "ПО УМОЛЧАНИЮ"
+texture_normal = ExtResource("7_fv6cf")
+texture_pressed = ExtResource("8_ea1xn")
+texture_hover = ExtResource("9_165ny")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Button" type="Button" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="ButtonsContainer/RestoreDefaults"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -27.0
+offset_right = 87.5
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_lcmdv")
+bbcode_enabled = true
+text = "По умолчанию"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4
 anchor_top = 0.825
 anchor_right = 0.6
-anchor_bottom = 0.925
+anchor_bottom = 0.95
 action_mode = 0
-text = "ВЫХОД"
+texture_normal = ExtResource("7_fv6cf")
+texture_pressed = ExtResource("8_ea1xn")
+texture_hover = ExtResource("9_165ny")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -26.0
+offset_right = 86.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_lcmdv")
+bbcode_enabled = true
+text = "Выход"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="value_changed" from="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer/MasterSlider" to="." method="on_value_text_update"]
 [connection signal="value_changed" from="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2/SFXSlider" to="." method="on_value_text_update"]

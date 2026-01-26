@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://coa4eapun1x1n"]
+[gd_scene load_steps=7 format=3 uid="uid://coa4eapun1x1n"]
 
 [ext_resource type="Script" uid="uid://ojaos2rqb4u3" path="res://Assets/Scripts/UI/Menus/MainMenuUi.gd" id="1_hias0"]
 [ext_resource type="PackedScene" uid="uid://bhtubvp72xrii" path="res://Assets/Scenes/UI/Menus/SettingsUI.tscn" id="2_1qjtm"]
 [ext_resource type="Texture2D" uid="uid://dh4q757x6ikpm" path="res://Assets/Sprites/меню_покой.png" id="3_v0qps"]
 [ext_resource type="Texture2D" uid="uid://c04mjfdh1u00p" path="res://Assets/Sprites/меню_нажата.png" id="4_sokgu"]
 [ext_resource type="Texture2D" uid="uid://cnocbo04bj5yx" path="res://Assets/Sprites/меню_наведение.png" id="5_scatc"]
+[ext_resource type="FontFile" uid="uid://bt1h3mvmsd3o1" path="res://Assets/Fonts/ofont.ru_Gnocchi.ttf" id="6_sokgu"]
 
 [node name="MainMenuUi" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 expand_mode = 3
 stretch_mode = 5
 
@@ -53,6 +56,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_sokgu")
 bbcode_enabled = true
 text = "Начать игру"
 horizontal_alignment = 1
@@ -76,6 +80,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_sokgu")
 bbcode_enabled = true
 text = "Настройки"
 horizontal_alignment = 1
@@ -99,6 +104,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_sokgu")
 bbcode_enabled = true
 text = "Выход"
 horizontal_alignment = 1

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsibl1xbekom5"]
+[gd_scene load_steps=4 format=3 uid="uid://bsibl1xbekom5"]
 
 [ext_resource type="Script" uid="uid://dr8kw344yfqim" path="res://Assets/Scripts/UI/Main/DaySwitcherUI.gd" id="1_i43ed"]
+[ext_resource type="FontFile" uid="uid://bt1h3mvmsd3o1" path="res://Assets/Fonts/ofont.ru_Gnocchi.ttf" id="2_7bwro"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0cfgj"]
 
@@ -38,6 +39,8 @@ alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_7bwro")
+theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "ДЕНЬ"
 horizontal_alignment = 1
@@ -50,21 +53,30 @@ size_flags_vertical = 3
 [node name="CurrentDay" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_7bwro")
+theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
+text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Arrow" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_7bwro")
+theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
+text = "->"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NextDay" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_7bwro")
+theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
+text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 

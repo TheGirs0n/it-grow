@@ -22,13 +22,15 @@ func _on_prev_pressed() -> void:
 		current_first_page -= 2
 		current_second_page -= 2
 	
+	GlobalAudio.play_page_prev()
 	change_text(current_first_page, current_second_page)
 
 func _on_next_pressed() -> void:
 	if current_second_page != plant_description.size() - 1:
 		current_first_page += 2
 		current_second_page += 2
-
+	
+	GlobalAudio.play_page_next()
 	change_text(current_first_page, current_second_page)
 
 func change_text(new_first_page_id : int, new_second_page_id : int):

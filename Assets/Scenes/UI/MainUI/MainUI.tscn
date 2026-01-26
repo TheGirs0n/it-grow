@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dwge7iku0cbsp"]
+[gd_scene load_steps=36 format=3 uid="uid://dwge7iku0cbsp"]
 
 [ext_resource type="Script" uid="uid://dhwkacn5w1smw" path="res://Assets/Scripts/UI/Main/MainUi.gd" id="1_sm6gl"]
 [ext_resource type="PackedScene" uid="uid://df4il6aelqnrl" path="res://Assets/Scenes/UI/MainUI/CareBox/CareBoxUI.tscn" id="2_gc7u3"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bi47kswhi8d0c" path="res://Assets/Scenes/UI/MainUI/Main/DayCounterUI.tscn" id="6_hc1y4"]
 [ext_resource type="Texture2D" uid="uid://cmsr8gxs62yky" path="res://Assets/Sprites/фон пустой.png" id="6_je6g4"]
 [ext_resource type="Texture2D" uid="uid://c64caftn2ytl0" path="res://Assets/Sprites/верхние левые растения.png" id="7_drnm5"]
+[ext_resource type="Script" uid="uid://dugccqtkvbf45" path="res://Assets/Scripts/UI/Main/BackgroundTextureUI.gd" id="8_4pgat"]
 [ext_resource type="Shader" uid="uid://doj24ha0xkt51" path="res://Assets/Sprites/Shaders/GrassUpLeftShader.tres" id="8_f6fh2"]
 [ext_resource type="Texture2D" uid="uid://dxkbg1xb788yo" path="res://Assets/Sprites/растения правый верхний.png" id="8_i5g6b"]
 [ext_resource type="Texture2D" uid="uid://cdg4nkktgm2l4" path="res://Assets/Sprites/растение левый нижний.png" id="9_4r6ek"]
@@ -96,10 +97,10 @@ anchor_bottom = 1.0
 offset_right = 0.11377
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("6_je6g4")
 expand_mode = 3
 stretch_mode = 5
+script = ExtResource("8_4pgat")
 
 [node name="UpLeft" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_geo4o")
@@ -220,12 +221,6 @@ mouse_filter = 2
 visible = false
 mouse_filter = 2
 
-[node name="CareManual" parent="." instance=ExtResource("24_okv1g")]
-visible = false
-
-[node name="FINDManualUI" parent="." instance=ExtResource("25_4pgat")]
-visible = false
-
 [node name="InfoTooltip" parent="." instance=ExtResource("11_drnm5")]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
@@ -233,6 +228,12 @@ anchor_left = 0.1
 anchor_top = 0.8
 anchor_right = 0.9
 mouse_filter = 2
+
+[node name="CareManual" parent="." instance=ExtResource("24_okv1g")]
+visible = false
+
+[node name="FINDManualUI" parent="." instance=ExtResource("25_4pgat")]
+visible = false
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 self_modulate = Color(1, 0.898039, 0.72549, 1)
@@ -246,6 +247,8 @@ process_material = SubResource("ParticleProcessMaterial_4r6ek")
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_gc7u3")]
 visible = false
+
+[connection signal="gui_input" from="BackgroundTexture" to="BackgroundTexture" method="_on_gui_input"]
 
 [editable path="CareBoxUi"]
 [editable path="PlantSpawnLocation"]
