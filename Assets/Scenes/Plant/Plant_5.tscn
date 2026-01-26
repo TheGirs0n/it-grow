@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://byj86hj40u15q" path="res://Assets/Scripts/Plant/Plants/Plant_5.gd" id="1_ubaqk"]
 [ext_resource type="Resource" uid="uid://chbma6xr3y0kg" path="res://Assets/Sprites/Plants/Plant_5/Plant_5.tres" id="2_ubaqk"]
-[ext_resource type="Texture2D" uid="uid://bla0hb0vqkseh" path="res://Assets/Sprites/Plants/Plant_5/3.png" id="3_ubaqk"]
+[ext_resource type="Texture2D" uid="uid://bx7apy7h5o6uu" path="res://Assets/Sprites/Plants/Plant_5/1.png" id="3_ubaqk"]
 [ext_resource type="Script" uid="uid://ct0y602syert8" path="res://Assets/Scripts/Plant/PlantGoalContainer.gd" id="5_v6vod"]
 [ext_resource type="Texture2D" uid="uid://doijt2c3637fp" path="res://Assets/Sprites/кружочек для растения.png" id="6_ubaqk"]
 [ext_resource type="Texture2D" uid="uid://c54yprq3of0vk" path="res://Assets/Sprites/кружок с галочкой.png" id="7_d5dt0"]
 
 [node name="Plant_5" type="Area2D" node_paths=PackedStringArray("plant_texture", "plant_goal_container")]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_ubaqk")
 plant_resource = ExtResource("2_ubaqk")
 plant_texture = NodePath("TextureRect")

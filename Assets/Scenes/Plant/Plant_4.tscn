@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c54yprq3of0vk" path="res://Assets/Sprites/кружок с галочкой.png" id="7_t8tpo"]
 
 [node name="Plant_4" type="Area2D" node_paths=PackedStringArray("plant_texture", "plant_goal_container")]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_d4f8i")
 plant_resource = ExtResource("2_d4f8i")
 plant_texture = NodePath("TextureRect")
