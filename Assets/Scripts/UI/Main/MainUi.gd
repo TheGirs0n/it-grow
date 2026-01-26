@@ -45,6 +45,8 @@ func open_day_switcher(current_day : int):
 	find_box_circle_center.hide()
 	find_box_circle_center_add.hide()
 	info_tooltip_ui.hide_tooltip()
+	care_box_ui.clear_current_care_box_item()
+	find_box_ui.clear_current_find_box_item()
 
 func open_minigame():
 	open_lose_screen()

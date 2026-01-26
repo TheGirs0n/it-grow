@@ -15,24 +15,32 @@ script = ExtResource("1_3g6yn")
 
 [node name="Bag" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_irnhi")
+bus = &"SFX"
 
 [node name="BookClose" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_axgxb")
+bus = &"SFX"
 
 [node name="BookOpen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_1ppbi")
+bus = &"SFX"
 
 [node name="Knife" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_p5r6p")
+bus = &"SFX"
 
 [node name="Lose" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_1vbdh")
+bus = &"Music"
 
 [node name="RakeTake" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_2wj07")
+bus = &"SFX"
 
 [node name="RakeUse" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_b0u5p")
+bus = &"SFX"
 
 [node name="Win" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_ddi1i")
+bus = &"Music"

@@ -9,7 +9,9 @@ func set_current_care_box_item(item : CareBoxItem) -> void:
 	else:
 		current_care_box_item.set_default_mouse_on_item()
 		current_care_box_item = item
+		GlobalContext.main_ui_instance.find_box_ui.clear_current_find_box_item()
 	
 func clear_current_care_box_item():
-	current_care_box_item.set_default_mouse_on_item()
-	current_care_box_item = null
+	if current_care_box_item != null:
+		current_care_box_item.set_default_mouse_on_item()
+		current_care_box_item = null

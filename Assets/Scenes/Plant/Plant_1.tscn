@@ -90,7 +90,7 @@ expand_mode = 2
 stretch_mode = 5
 
 [node name="Timer" type="Timer" parent="GoalPlantContainer"]
-wait_time = 3.0
+wait_time = 1.5
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="GoalPlantContainer/Timer" to="GoalPlantContainer" method="_on_timer_timeout"]

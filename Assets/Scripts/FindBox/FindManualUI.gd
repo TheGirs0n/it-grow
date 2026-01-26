@@ -37,4 +37,5 @@ func change_text(new_first_page_id : int, new_second_page_id : int):
 
 
 func _on_close_pressed() -> void:
+	GlobalAudio.play_book_close()
 	hide()

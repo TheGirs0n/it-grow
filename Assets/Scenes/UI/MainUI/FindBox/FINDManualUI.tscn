@@ -48,7 +48,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("2_0lc3r")
 expand_mode = 3
 stretch_mode = 5
@@ -69,7 +68,7 @@ offset_right = 966.0
 offset_bottom = 487.0
 mouse_filter = 2
 
-[node name="Button" type="TextureButton" parent="."]
+[node name="Button" type="Button" parent="."]
 process_mode = 3
 layout_mode = 0
 offset_left = 880.0
@@ -78,19 +77,20 @@ offset_right = 1070.0
 offset_bottom = 666.0
 scale = Vector2(0.5, 0.5)
 action_mode = 0
-texture_normal = ExtResource("3_5ihha")
+icon = ExtResource("3_5ihha")
+flat = true
 
-[node name="Button2" type="TextureButton" parent="."]
+[node name="Button2" type="Button" parent="."]
 process_mode = 3
 layout_mode = 0
-offset_left = 193.0
-offset_top = 502.0
-offset_right = 383.0
-offset_bottom = 663.0
-scale = Vector2(0.5, 0.5)
+offset_left = 287.0
+offset_top = 504.0
+offset_right = 477.0
+offset_bottom = 665.0
+scale = Vector2(-0.5, 0.5)
 action_mode = 0
-texture_normal = ExtResource("3_5ihha")
-flip_h = true
+icon = ExtResource("3_5ihha")
+flat = true
 
 [node name="Button3" type="Button" parent="."]
 process_mode = 3

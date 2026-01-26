@@ -11,6 +11,6 @@ day_timer = NodePath("Timer")
 [node name="MainUi" parent="." instance=ExtResource("1_mkk7x")]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 30.0
 
 [connection signal="timeout" from="Timer" to="." method="day_timer_end"]

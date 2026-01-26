@@ -70,7 +70,6 @@ func reset_care_routine():
 
 
 func try_caring_plant(care_item : CareBoxItem):
-	
 	if !plant_care_stages.has(care_item.plant_care_type):
 		GlobalContext.main_ui_instance.show_tooltip("Кажется нужно попробовать что-то другое...")
 		decrease_grow_stage()
@@ -80,12 +79,17 @@ func try_caring_plant(care_item : CareBoxItem):
 	
 	if plant_care_stages[current_stage] == care_item.plant_care_type:
 		plant_care_stages_complete[current_stage] = true
+		
+		match care_item:
+			Rake:
+				GlobalAudio.play_rake_use()
+		
 		plant_goal_container.set_done_circle(current_stage)
 		plant_goal_container.show_all_circles(plant_care_stages.size())
 		GlobalContext.main_ui_instance.show_tooltip("Цветок растет прям на глазах!")
 	else:
 		decrease_grow_stage()
-		GlobalContext.main_ui_instance.show_tooltip("Навредила я цветку...")
+		GlobalContext.main_ui_instance.show_tooltip("Ох навредила я цветку...")
 
 func try_find_item(find_item : FindBoxItem):
 	match find_item.find_box_type:
@@ -94,18 +98,28 @@ func try_find_item(find_item : FindBoxItem):
 		GlobalEnums.PLANT_FIND_TYPE.BRAIN:
 			GlobalContext.main_ui_instance.show_tooltip(plant_energy)
 		GlobalEnums.PLANT_FIND_TYPE.KNIFE:
+			GlobalAudio.play_knife()
 			GlobalContext.main_ui_instance.open_find_box_center(plant_grow_stage_textures[plant_care_stages_index], plant_juice_density)
 		GlobalEnums.PLANT_FIND_TYPE.MAGNIFIER:
+			GlobalAudio.play_bag_sound()
 			GlobalContext.main_ui_instance.open_find_box_center(plant_grow_stage_textures[plant_care_stages_index], plant_leaf)
 
 
 func increase_grow_stage():
+	if plant_grow_stage_textures.size() == 1:
+		GlobalContext.main_ui_instance.show_tooltip("Цветок достиг своей абсолютной красоты!")
+		input_pickable = false
+		return
+	elif plant_care_stages_index == plant_grow_stage_textures.size() - 1:
+		GlobalContext.main_ui_instance.show_tooltip("Цветок достиг своей абсолютной красоты!")
+		input_pickable = false
+		return
+	
 	if plant_care_stages_index < plant_grow_stage_textures.size():
 		plant_care_stages_index += 1
 		plant_texture.texture = plant_grow_stage_textures[plant_care_stages_index]
 		reset_care_routine()
-	else:
-		GlobalContext.main_ui_instance.show_tooltip("Цветок достиг своей абсолютной красоты!")
+		
 
 func decrease_grow_stage():
 	if plant_care_stages_index > 0:
