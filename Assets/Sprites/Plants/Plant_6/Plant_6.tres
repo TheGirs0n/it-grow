@@ -22,5 +22,5 @@ plant_energy = "Не ощущаю никакой негативной энерг
 plant_leaf = ExtResource("5_131bx")
 plant_juice_density = ExtResource("4_dbw5y")
 plant_juice_color = ""
-plant_care_stages = Array[int]([1, 0, 2])
+plant_care_stages = Array[int]([1, 0, 1])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"

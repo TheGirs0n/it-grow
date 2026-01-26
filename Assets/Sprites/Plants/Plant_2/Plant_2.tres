@@ -10,7 +10,7 @@
 [resource]
 script = ExtResource("1_5nf5c")
 plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_uhi7o"), ExtResource("2_pn1px"), ExtResource("3_p2o3t")])
-plant_name = "\"Погибель царей\""
+plant_name = "\"Адское пламя\""
 plant_cool_name = "Ла Йорона Пылкая (Laloronna Ardens)"
 plant_description = "[b]\"Погибель царей\"[/b] - Редкий и красивый цветок, требующий крайне тщательного ухода. Важно тщательного рыхления почвы и небольшого полива.
 Активно цветет только в конце июля в течении 3-5 дней.
@@ -28,5 +28,5 @@ plant_energy = "Ай! Каждый раз чувствую будто обожг
 plant_leaf = ExtResource("5_oj35h")
 plant_juice_density = ExtResource("4_oab0u")
 plant_juice_color = ""
-plant_care_stages = Array[int]([0, 1, 1])
+plant_care_stages = Array[int]([0, 1, 2])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"

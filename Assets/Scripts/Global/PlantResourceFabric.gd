@@ -11,10 +11,10 @@ func reset_fabric():
 	
 
 func get_random_plant_resource() -> PlantTemplate:
-	var scene = plant_unique_resources.pick_random().instantiate() as PlantTemplate
+	var random_index = randi() % plant_unique_resources.size()
+	var scene = plant_unique_resources.pop_at(random_index)
 	
-	plant_unique_resources.pop_back()
-	return scene
+	return scene.instantiate() as PlantTemplate
 
 func get_first() -> PlantTemplate:
 	var scene = plant_unique_resources[0].instantiate() as PlantTemplate

@@ -27,5 +27,5 @@ plant_energy = "Источает нежную энергию схожую с д�
 plant_leaf = ExtResource("3_2akv8")
 plant_juice_density = ExtResource("2_ndmkg")
 plant_juice_color = ""
-plant_care_stages = Array[int]([0, 0, 1])
+plant_care_stages = Array[int]([0, 0, 0])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"

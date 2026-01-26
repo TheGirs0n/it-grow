@@ -25,5 +25,5 @@ plant_energy = "Камни поющие под луной, шепот песчи
 plant_leaf = ExtResource("5_36wk0")
 plant_juice_density = ExtResource("4_61fao")
 plant_juice_color = ""
-plant_care_stages = Array[int]([1, 1, 2])
+plant_care_stages = Array[int]([1, 2, 1])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"
