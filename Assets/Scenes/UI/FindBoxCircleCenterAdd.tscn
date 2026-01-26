@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cmfe60sphe8oc" path="res://Assets/Scripts/FindBox/FindBoxCircleCenterAdd.gd" id="1_2ost2"]
 [ext_resource type="PackedScene" uid="uid://cjw7mh2670qkx" path="res://Assets/Scenes/UI/MainUI/FindBox/FindBoxCircleUI.tscn" id="2_tpkqc"]
-[ext_resource type="Texture2D" uid="uid://g8e12bnyklah" path="res://Assets/Sprites/кружок.png" id="3_tpkqc"]
+[ext_resource type="Texture2D" uid="uid://ca83cgwm8w5ku" path="res://Assets/Sprites/колесо.png" id="3_tpkqc"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fl18i"]
 
