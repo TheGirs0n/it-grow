@@ -17,6 +17,7 @@ var start_attempts : int = 4
 var plants_in_game : Dictionary[PlantTemplate, bool]
 
 func _ready() -> void:
+	GlobalAudio.play_main_theme()
 	GlobalContext.game_manager_instance = self
 	first_entry()
 	

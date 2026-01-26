@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dr18log2dheqo"]
+[gd_scene load_steps=19 format=3 uid="uid://dr18log2dheqo"]
 
 [ext_resource type="Script" uid="uid://d2xluoqmeqmiw" path="res://Assets/Scripts/Global/GlobalAudio.gd" id="1_3g6yn"]
 [ext_resource type="AudioStream" uid="uid://de3r0ymyy2ys0" path="res://Assets/Audio/bag.mp3" id="2_irnhi"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://c0xegs2b3au2u" path="res://Assets/Audio/plants_grow.mp3" id="12_ggals"]
 [ext_resource type="AudioStream" uid="uid://d1eid8y5l0xdl" path="res://Assets/Audio/watering_use2.mp3" id="15_i0owu"]
 [ext_resource type="AudioStream" uid="uid://dnrc34h16uv8l" path="res://Assets/Audio/watering_take2.mp3" id="16_l68bw"]
+[ext_resource type="AudioStream" uid="uid://213blx5mp8yi" path="res://Assets/Audio/sweet potato star2.mp3" id="18_lm2kk"]
 
 [node name="GlobalAudio" type="Node"]
 script = ExtResource("1_3g6yn")
@@ -87,4 +88,8 @@ bus = &"SFX"
 
 [node name="Win" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_ddi1i")
+bus = &"Music"
+
+[node name="MainTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_lm2kk")
 bus = &"Music"

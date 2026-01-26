@@ -17,6 +17,10 @@ extends Node
 @onready var watering_can_use: AudioStreamPlayer = $WateringCanUse
 @onready var watering_can_take: AudioStreamPlayer = $WateringCanTake
 @onready var win: AudioStreamPlayer = $Win
+@onready var main_theme: AudioStreamPlayer = $MainTheme
+
+func play_main_theme():
+	main_theme.play()
 
 func play_page_next():
 	page_next.play()
