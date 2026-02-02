@@ -1,14 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://coa4eapun1x1n"]
+[gd_scene format=3 uid="uid://coa4eapun1x1n"]
 
 [ext_resource type="Script" uid="uid://ojaos2rqb4u3" path="res://Assets/Scripts/UI/Menus/MainMenuUi.gd" id="1_hias0"]
 [ext_resource type="PackedScene" uid="uid://bhtubvp72xrii" path="res://Assets/Scenes/UI/Menus/SettingsUI.tscn" id="2_1qjtm"]
-[ext_resource type="Texture2D" uid="uid://c4u6hqswlqh5e" path="res://Assets/Sprites/фон под меню.png" id="3_scatc"]
-[ext_resource type="Texture2D" uid="uid://dh4q757x6ikpm" path="res://Assets/Sprites/меню_покой.png" id="3_v0qps"]
-[ext_resource type="Texture2D" uid="uid://c04mjfdh1u00p" path="res://Assets/Sprites/меню_нажата.png" id="4_sokgu"]
-[ext_resource type="Texture2D" uid="uid://cnocbo04bj5yx" path="res://Assets/Sprites/меню_наведение.png" id="5_scatc"]
+[ext_resource type="Texture2D" uid="uid://c4u6hqswlqh5e" path="res://Assets/Sprites/UI/Backgrounds/фон под меню.png" id="3_scatc"]
+[ext_resource type="Texture2D" uid="uid://dh4q757x6ikpm" path="res://Assets/Sprites/UI/Buttons/MenuButton/меню_покой.png" id="3_v0qps"]
+[ext_resource type="Texture2D" uid="uid://c04mjfdh1u00p" path="res://Assets/Sprites/UI/Buttons/MenuButton/меню_нажата.png" id="4_sokgu"]
+[ext_resource type="Texture2D" uid="uid://cnocbo04bj5yx" path="res://Assets/Sprites/UI/Buttons/MenuButton/меню_наведение.png" id="5_scatc"]
 [ext_resource type="FontFile" uid="uid://bt1h3mvmsd3o1" path="res://Assets/Fonts/ofont.ru_Gnocchi.ttf" id="6_sokgu"]
+[ext_resource type="Texture2D" uid="uid://1hu77ui7wol0" path="res://Assets/Sprites/UI/Menus/Pause/круг.png" id="8_fuqgc"]
+[ext_resource type="Material" uid="uid://c5rn4m5p1qgbl" path="res://Assets/Resources/Particles/SumParticles.tres" id="9_cthjp"]
 
-[node name="MainMenuUi" type="Control"]
+[node name="MainMenuUi" type="Control" unique_id=1381761842]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -19,7 +21,7 @@ grow_vertical = 2
 script = ExtResource("1_hias0")
 settings_scene = ExtResource("2_1qjtm")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1052219399]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,7 +33,7 @@ texture = ExtResource("3_scatc")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1693549685]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4
@@ -40,7 +42,7 @@ anchor_right = 0.6
 anchor_bottom = 0.85
 alignment = 1
 
-[node name="StartGame" type="TextureButton" parent="VBoxContainer"]
+[node name="StartGame" type="TextureButton" parent="VBoxContainer" unique_id=1613635768]
 layout_mode = 2
 size_flags_vertical = 3
 action_mode = 0
@@ -50,7 +52,7 @@ texture_hover = ExtResource("5_scatc")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/StartGame"]
+[node name="ButtonText" type="RichTextLabel" parent="VBoxContainer/StartGame" unique_id=668442570]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,7 +66,7 @@ text = "Начать игру"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Settings" type="TextureButton" parent="VBoxContainer"]
+[node name="Settings" type="TextureButton" parent="VBoxContainer" unique_id=956013911]
 layout_mode = 2
 size_flags_vertical = 3
 action_mode = 0
@@ -74,7 +76,7 @@ texture_hover = ExtResource("5_scatc")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/Settings"]
+[node name="ButtonText" type="RichTextLabel" parent="VBoxContainer/Settings" unique_id=1006695637]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,7 +90,7 @@ text = "Настройки"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Exit" type="TextureButton" parent="VBoxContainer"]
+[node name="Exit" type="TextureButton" parent="VBoxContainer" unique_id=35620426]
 layout_mode = 2
 size_flags_vertical = 3
 action_mode = 0
@@ -98,7 +100,7 @@ texture_hover = ExtResource("5_scatc")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="VBoxContainer/Exit"]
+[node name="ButtonText" type="RichTextLabel" parent="VBoxContainer/Exit" unique_id=1457457986]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,6 +113,17 @@ bbcode_enabled = true
 text = "Выход"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=778596571]
+self_modulate = Color(1, 0.898039, 0.72549, 1)
+z_index = 11
+position = Vector2(574, 317)
+amount = 30
+texture = ExtResource("8_fuqgc")
+lifetime = 10.0
+preprocess = 10.0
+randomness = 0.5
+process_material = ExtResource("9_cthjp")
 
 [connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]

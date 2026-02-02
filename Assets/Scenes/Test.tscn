@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwig7ecv7xeop"]
-
-[ext_resource type="PackedScene" uid="uid://dwge7iku0cbsp" path="res://Assets/Scenes/UI/MainUI/MainUI.tscn" id="1_dufu2"]
-
-[node name="Test" type="Node"]
-
-[node name="MainUi" parent="." instance=ExtResource("1_dufu2")]

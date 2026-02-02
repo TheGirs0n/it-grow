@@ -1,25 +1,25 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8dx17jlh8o45"]
+[gd_scene format=3 uid="uid://b8dx17jlh8o45"]
 
 [ext_resource type="Script" uid="uid://c2cuq1cwjhk5f" path="res://Assets/Scripts/UI/Main/FindBoxUi.gd" id="1_piumh"]
 [ext_resource type="PackedScene" uid="uid://docjwe2mqn3sw" path="res://Assets/Scenes/UI/MainUI/FindBox/MagnifierUI.tscn" id="2_5n07k"]
-[ext_resource type="Texture2D" uid="uid://i53nmv00gts5" path="res://Assets/Sprites/ящик.png" id="2_mx07m"]
+[ext_resource type="Texture2D" uid="uid://i53nmv00gts5" path="res://Assets/Sprites/UI/FindBox/ящик.png" id="2_mx07m"]
 [ext_resource type="PackedScene" uid="uid://bi6mvswmjxjah" path="res://Assets/Scenes/UI/MainUI/FindBox/KnifeUI.tscn" id="3_01a3r"]
-[ext_resource type="Texture2D" uid="uid://biuaqxpajjie" path="res://Assets/Sprites/дневник бабушки.png" id="5_pq046"]
-[ext_resource type="Texture2D" uid="uid://cv212jhvn244h" path="res://Assets/Sprites/атлас.png" id="6_uxyva"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lm1jn"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pq046"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxyva"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rh74t"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mx07m"]
+[ext_resource type="Texture2D" uid="uid://biuaqxpajjie" path="res://Assets/Sprites/Books/дневник бабушки.png" id="5_pq046"]
+[ext_resource type="Texture2D" uid="uid://cv212jhvn244h" path="res://Assets/Sprites/Books/атлас.png" id="6_uxyva"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cj7kh"]
 
-[node name="FindBoxUi" type="Control"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mx07m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rh74t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxyva"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pq046"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lm1jn"]
+
+[node name="FindBoxUi" type="Control" unique_id=1020439154]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,7 +31,7 @@ grow_vertical = 2
 script = ExtResource("1_piumh")
 position_change = Vector2(325, 0)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BoxTexture" type="TextureRect" parent="." unique_id=1700449735]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,8 +43,8 @@ texture = ExtResource("2_mx07m")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="KnifeUi" parent="TextureRect" instance=ExtResource("3_01a3r")]
-layout_mode = 2
+[node name="KnifeUi" parent="BoxTexture" unique_id=1703049309 instance=ExtResource("3_01a3r")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -52,11 +52,13 @@ offset_left = 845.0
 offset_top = 110.0
 offset_right = 845.0
 offset_bottom = 446.0
+grow_horizontal = 1
+grow_vertical = 1
 rotation = 1.5708
 scale = Vector2(0.8, 0.8)
 
-[node name="MagnifierUi" parent="TextureRect" instance=ExtResource("2_5n07k")]
-layout_mode = 2
+[node name="MagnifierUi" parent="BoxTexture" unique_id=1746801084 instance=ExtResource("2_5n07k")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -64,10 +66,12 @@ offset_left = 538.0
 offset_top = 110.0
 offset_right = 538.0
 offset_bottom = 446.0
+grow_horizontal = 1
+grow_vertical = 1
 rotation = 1.5708
 scale = Vector2(0.8, 0.8)
 
-[node name="Button" type="Button" parent="TextureRect"]
+[node name="CareBookOpen" type="Button" parent="BoxTexture" unique_id=1120889768]
 layout_mode = 0
 offset_left = 303.0
 offset_top = 280.0
@@ -78,7 +82,7 @@ action_mode = 0
 icon = ExtResource("5_pq046")
 flat = true
 
-[node name="Button2" type="Button" parent="TextureRect"]
+[node name="FindBookOpen" type="Button" parent="BoxTexture" unique_id=1454669317]
 layout_mode = 0
 offset_left = 581.0
 offset_top = 280.0
@@ -89,24 +93,24 @@ action_mode = 0
 icon = ExtResource("6_uxyva")
 flat = true
 
-[node name="Button" type="Button" parent="."]
+[node name="MoveBox" type="Button" parent="." unique_id=613516118]
 layout_mode = 0
 offset_left = 899.0
 offset_top = 177.0
 offset_right = 961.0
 offset_bottom = 473.0
 mouse_filter = 1
-theme_override_styles/focus = SubResource("StyleBoxEmpty_lm1jn")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_pq046")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uxyva")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_rh74t")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mx07m")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cj7kh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mx07m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rh74t")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uxyva")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pq046")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lm1jn")
 action_mode = 0
 flat = true
 
-[connection signal="item_picked" from="TextureRect/KnifeUi" to="." method="set_current_find_box_item"]
-[connection signal="item_picked" from="TextureRect/MagnifierUi" to="." method="set_current_find_box_item"]
-[connection signal="pressed" from="TextureRect/Button" to="." method="_on_care_book_pressed"]
-[connection signal="pressed" from="TextureRect/Button2" to="." method="_on_find_book_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="item_picked" from="BoxTexture/KnifeUi" to="." method="set_current_find_box_item"]
+[connection signal="item_picked" from="BoxTexture/MagnifierUi" to="." method="set_current_find_box_item"]
+[connection signal="pressed" from="BoxTexture/CareBookOpen" to="." method="_on_care_book_pressed"]
+[connection signal="pressed" from="BoxTexture/FindBookOpen" to="." method="_on_find_book_pressed"]
+[connection signal="pressed" from="MoveBox" to="." method="_on_button_pressed"]

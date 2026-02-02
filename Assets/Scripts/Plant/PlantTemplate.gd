@@ -61,7 +61,6 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 				if GlobalContext.main_ui_instance.care_box_ui.current_care_box_item != null:
 					try_caring_plant(GlobalContext.main_ui_instance.care_box_ui.current_care_box_item)
 					GlobalContext.main_ui_instance.care_box_ui.clear_current_care_box_item()
-					return
 				
 				if GlobalContext.main_ui_instance.find_box_ui.current_find_box_item != null:
 					try_find_item(GlobalContext.main_ui_instance.find_box_ui.current_find_box_item)

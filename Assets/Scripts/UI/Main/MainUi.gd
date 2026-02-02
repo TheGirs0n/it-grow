@@ -17,7 +17,6 @@ class_name MainUI
 @export var find_manual : FindManual
 
 @export_group("Packed Scenes")
-@export var plant_scene : PackedScene
 @export var game_over_mini_game_ui : PackedScene
 @export var day_switcher_ui : PackedScene
 @export var victory_screen : PackedScene

@@ -1,30 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1hniy1uy60ww"]
+[gd_scene format=3 uid="uid://d1hniy1uy60ww"]
 
 [ext_resource type="Script" uid="uid://cfrm5xtduqybv" path="res://Assets/Scripts/Plant/Plants/Plant_6.gd" id="1_xxlem"]
-[ext_resource type="Resource" uid="uid://df3nl5youoy3h" path="res://Assets/Sprites/Plants/Plant_6/Plant_6.tres" id="2_xxlem"]
+[ext_resource type="Resource" uid="uid://df3nl5youoy3h" path="res://Assets/Resources/Plants/PlantsResources/Plant_6.tres" id="2_xxlem"]
 [ext_resource type="Texture2D" uid="uid://dy7pnxq5cjef4" path="res://Assets/Sprites/Plants/Plant_6/2.png" id="3_xxlem"]
 [ext_resource type="Script" uid="uid://ct0y602syert8" path="res://Assets/Scripts/Plant/PlantGoalContainer.gd" id="5_yu11q"]
-[ext_resource type="Texture2D" uid="uid://doijt2c3637fp" path="res://Assets/Sprites/кружочек для растения.png" id="6_xxlem"]
-[ext_resource type="Texture2D" uid="uid://c54yprq3of0vk" path="res://Assets/Sprites/кружок с галочкой.png" id="7_0okhj"]
+[ext_resource type="Texture2D" uid="uid://doijt2c3637fp" path="res://Assets/Sprites/UI/PlantsGrow/кружочек для растения.png" id="6_xxlem"]
+[ext_resource type="Texture2D" uid="uid://c54yprq3of0vk" path="res://Assets/Sprites/UI/PlantsGrow/кружок с галочкой.png" id="7_0okhj"]
 
-[node name="Plant_6" type="Area2D" node_paths=PackedStringArray("plant_texture", "plant_goal_container")]
+[node name="Plant_6" type="Area2D" unique_id=2001897008 node_paths=PackedStringArray("plant_texture", "plant_goal_container")]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_xxlem")
 plant_resource = ExtResource("2_xxlem")
 plant_texture = NodePath("TextureRect")
 plant_goal_container = NodePath("GoalPlantContainer")
 
-[node name="TextureRect" type="Sprite2D" parent="."]
+[node name="TextureRect" type="Sprite2D" parent="." unique_id=652356087]
 position = Vector2(-8, 3)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_xxlem")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2064980343]
 position = Vector2(-33.4619, 215.214)
 scale = Vector2(4.26907, 4.14256)
 polygon = PackedVector2Array(89.3548, -173.616, 53.906, 90.4721, -40.572, 90.4721, -73.2099, -173.616)
 
-[node name="GoalPlantContainer" type="HBoxContainer" parent="." node_paths=PackedStringArray("textures", "timer")]
+[node name="GoalPlantContainer" type="HBoxContainer" parent="." unique_id=1054003638 node_paths=PackedStringArray("textures", "timer")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -44,56 +44,56 @@ hollow_circle = ExtResource("6_xxlem")
 done_circle = ExtResource("7_0okhj")
 timer = NodePath("Timer")
 
-[node name="TextureRect" type="TextureRect" parent="GoalPlantContainer"]
+[node name="TextureRect" type="TextureRect" parent="GoalPlantContainer" unique_id=1088118339]
 visible = false
 layout_mode = 2
 texture = ExtResource("6_xxlem")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect2" type="TextureRect" parent="GoalPlantContainer"]
+[node name="TextureRect2" type="TextureRect" parent="GoalPlantContainer" unique_id=1307634516]
 visible = false
 layout_mode = 2
 texture = ExtResource("6_xxlem")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect3" type="TextureRect" parent="GoalPlantContainer"]
+[node name="TextureRect3" type="TextureRect" parent="GoalPlantContainer" unique_id=711543183]
 visible = false
 layout_mode = 2
 texture = ExtResource("6_xxlem")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect4" type="TextureRect" parent="GoalPlantContainer"]
+[node name="TextureRect4" type="TextureRect" parent="GoalPlantContainer" unique_id=1924432796]
 visible = false
 layout_mode = 2
 texture = ExtResource("6_xxlem")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect5" type="TextureRect" parent="GoalPlantContainer"]
+[node name="TextureRect5" type="TextureRect" parent="GoalPlantContainer" unique_id=1621501454]
 visible = false
 layout_mode = 2
 texture = ExtResource("6_xxlem")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect6" type="TextureRect" parent="GoalPlantContainer"]
+[node name="TextureRect6" type="TextureRect" parent="GoalPlantContainer" unique_id=1352404554]
 visible = false
 layout_mode = 2
 texture = ExtResource("6_xxlem")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect7" type="TextureRect" parent="GoalPlantContainer"]
+[node name="TextureRect7" type="TextureRect" parent="GoalPlantContainer" unique_id=1421283597]
 visible = false
 layout_mode = 2
 texture = ExtResource("6_xxlem")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Timer" type="Timer" parent="GoalPlantContainer"]
+[node name="Timer" type="Timer" parent="GoalPlantContainer" unique_id=1344193348]
 wait_time = 1.5
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

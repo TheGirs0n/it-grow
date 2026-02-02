@@ -42,3 +42,10 @@ func change_text(new_first_page_id : int, new_second_page_id : int):
 func _on_close_pressed() -> void:
 	GlobalAudio.play_book_close()
 	hide()
+
+
+func _on_background_texture_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_RIGHT:
+			if event.is_pressed():
+				_on_close_pressed()

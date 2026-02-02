@@ -1,16 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfho24p8x2acw"]
+[gd_scene format=3 uid="uid://cfho24p8x2acw"]
 
 [ext_resource type="Script" uid="uid://chr7abqfio5b3" path="res://Assets/Scripts/UI/Screens/VictoryScreenUI.gd" id="1_lab0t"]
-[ext_resource type="Texture2D" uid="uid://deryf5x8mgwt" path="res://Assets/Sprites/меню_победа.png" id="2_5yv4d"]
+[ext_resource type="Texture2D" uid="uid://deryf5x8mgwt" path="res://Assets/Sprites/UI/AfterGameScreens/меню_победа.png" id="2_5yv4d"]
 [ext_resource type="PackedScene" uid="uid://coa4eapun1x1n" path="res://Assets/Scenes/UI/Menus/MainMenuUI.tscn" id="2_cc06l"]
-[ext_resource type="Texture2D" uid="uid://dh4q757x6ikpm" path="res://Assets/Sprites/меню_покой.png" id="3_j204d"]
-[ext_resource type="Texture2D" uid="uid://c04mjfdh1u00p" path="res://Assets/Sprites/меню_нажата.png" id="4_cc06l"]
-[ext_resource type="Texture2D" uid="uid://cnocbo04bj5yx" path="res://Assets/Sprites/меню_наведение.png" id="5_q4pnk"]
+[ext_resource type="Texture2D" uid="uid://dh4q757x6ikpm" path="res://Assets/Sprites/UI/Buttons/MenuButton/меню_покой.png" id="3_j204d"]
+[ext_resource type="Texture2D" uid="uid://c04mjfdh1u00p" path="res://Assets/Sprites/UI/Buttons/MenuButton/меню_нажата.png" id="4_cc06l"]
+[ext_resource type="Texture2D" uid="uid://cnocbo04bj5yx" path="res://Assets/Sprites/UI/Buttons/MenuButton/меню_наведение.png" id="5_q4pnk"]
 [ext_resource type="FontFile" uid="uid://bt1h3mvmsd3o1" path="res://Assets/Fonts/ofont.ru_Gnocchi.ttf" id="7_q4pnk"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lab0t"]
 
-[node name="VictoryScreen" type="Control"]
+[node name="VictoryScreen" type="Control" unique_id=2024832065]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -21,7 +21,7 @@ grow_vertical = 2
 script = ExtResource("1_lab0t")
 main_menu_scene = ExtResource("2_cc06l")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BackgroundText" type="TextureRect" parent="." unique_id=576601173]
 self_modulate = Color(0, 0, 0, 0.333333)
 layout_mode = 1
 anchors_preset = 15
@@ -31,7 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_lab0t")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="VictoryScreen" type="TextureRect" parent="." unique_id=866476380]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2
@@ -42,7 +42,7 @@ texture = ExtResource("2_5yv4d")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Button" type="TextureButton" parent="TextureRect2"]
+[node name="Button" type="TextureButton" parent="VictoryScreen" unique_id=916570486]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.362
@@ -60,7 +60,7 @@ texture_hover = ExtResource("5_q4pnk")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect2/Button"]
+[node name="ButtonText" type="RichTextLabel" parent="VictoryScreen/Button" unique_id=613606322]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -80,7 +80,7 @@ text = "В меню"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="VicrotyScreen" type="RichTextLabel" parent="." unique_id=795599580]
 layout_mode = 0
 offset_left = 456.0
 offset_top = 344.0
@@ -93,4 +93,4 @@ text = "ПОБЕДА"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="TextureRect2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VictoryScreen/Button" to="." method="_on_button_pressed"]

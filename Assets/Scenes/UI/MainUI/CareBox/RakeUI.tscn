@@ -1,20 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwna4qi6grgnw"]
+[gd_scene format=3 uid="uid://dwna4qi6grgnw"]
 
 [ext_resource type="Script" uid="uid://bqw1es38vuhte" path="res://Assets/Scripts/CareBox/Rake.gd" id="1_81jx0"]
-[ext_resource type="Texture2D" uid="uid://bbwuv0pomk87e" path="res://Assets/Sprites/грабли_клик.png" id="2_0b5si"]
-[ext_resource type="Texture2D" uid="uid://b0s01ir3xxak1" path="res://Assets/Sprites/грабли.png" id="2_bontv"]
+[ext_resource type="Texture2D" uid="uid://bbwuv0pomk87e" path="res://Assets/Sprites/UI/CareBox/грабли_клик.png" id="2_0b5si"]
+[ext_resource type="Texture2D" uid="uid://b0s01ir3xxak1" path="res://Assets/Sprites/UI/CareBox/грабли.png" id="2_bontv"]
+[ext_resource type="Texture2D" uid="uid://bykljrrepbjpf" path="res://Assets/Sprites/UI/CareBox/грабли_клик_ds.png" id="4_ffwjn"]
 
-[node name="RakeUi" type="Area2D" node_paths=PackedStringArray("sprite")]
+[node name="RakeUi" type="Area2D" unique_id=809659541 node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_81jx0")
 plant_care_type = 1
 sprite = NodePath("TextureRect")
 clicked_item_icon = ExtResource("2_0b5si")
 normal_item_icon = ExtResource("2_bontv")
+mouse_icon = ExtResource("4_ffwjn")
 
-[node name="TextureRect" type="Sprite2D" parent="."]
+[node name="TextureRect" type="Sprite2D" parent="." unique_id=1154826882]
 texture = ExtResource("2_bontv")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=5718523]
 polygon = PackedVector2Array(-114, 485, -766, 126, 475, -432, 697, -300)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

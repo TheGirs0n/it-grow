@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpqkura5d3dq3"]
+[gd_scene format=3 uid="uid://cpqkura5d3dq3"]
 
 [ext_resource type="Script" uid="uid://1s2tj1qeojvf" path="res://Assets/Scripts/FindBox/Nose.gd" id="1_56unq"]
-[ext_resource type="Texture2D" uid="uid://blpk5n3na148p" path="res://Assets/Sprites/нос.png" id="2_pnoiy"]
+[ext_resource type="Texture2D" uid="uid://blpk5n3na148p" path="res://Assets/Sprites/UI/FindBox/нос.png" id="2_pnoiy"]
 
-[node name="NoseUi" type="Control" node_paths=PackedStringArray("texture")]
+[node name="NoseUi" type="Control" unique_id=2052597015 node_paths=PackedStringArray("texture")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +15,7 @@ texture = NodePath("TextureRect")
 clicked_item_icon = ExtResource("2_pnoiy")
 normal_item_icon = ExtResource("2_pnoiy")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=507871029]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,19 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca1c40tdy3kxw"]
+[gd_scene format=3 uid="uid://ca1c40tdy3kxw"]
 
 [ext_resource type="Script" uid="uid://v6im6v7hpl5w" path="res://Assets/Scripts/CareBox/WateringCan.gd" id="1_go6kh"]
-[ext_resource type="Texture2D" uid="uid://cf10npgqmr4hs" path="res://Assets/Sprites/лейка_клик.png" id="2_j6jq6"]
-[ext_resource type="Texture2D" uid="uid://61y4hpmu1nu0" path="res://Assets/Sprites/лейка.png" id="2_pdfpj"]
+[ext_resource type="Texture2D" uid="uid://cf10npgqmr4hs" path="res://Assets/Sprites/UI/CareBox/лейка_клик.png" id="2_j6jq6"]
+[ext_resource type="Texture2D" uid="uid://61y4hpmu1nu0" path="res://Assets/Sprites/UI/CareBox/лейка.png" id="2_pdfpj"]
 
-[node name="WateringCanUi" type="Area2D" node_paths=PackedStringArray("sprite")]
+[node name="WateringCanUi" type="Area2D" unique_id=457488117 node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_go6kh")
 sprite = NodePath("TextureRect")
 clicked_item_icon = ExtResource("2_j6jq6")
 normal_item_icon = ExtResource("2_pdfpj")
 
-[node name="TextureRect" type="Sprite2D" parent="."]
+[node name="TextureRect" type="Sprite2D" parent="." unique_id=1009740311]
 texture = ExtResource("2_pdfpj")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1688537031]
 polygon = PackedVector2Array(-118, -120, -255, 476, -18, 566, 264, 566, 475, 478, 407, -66, 284, -175, -52, -249)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

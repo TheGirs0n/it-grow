@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgg30oyjhveym"]
+[gd_scene format=3 uid="uid://dgg30oyjhveym"]
 
 [ext_resource type="Script" uid="uid://cmn6s8mt2nrhe" path="res://Assets/Scripts/Main/GameOverMiniGameUi.gd" id="1_7u46b"]
-[ext_resource type="Texture2D" uid="uid://2vpl4s2bod25" path="res://Assets/Sprites/галочка.png" id="2_4stnu"]
-[ext_resource type="Texture2D" uid="uid://bxsx8sm4isqrd" path="res://Assets/Sprites/подложка под кубики.png" id="2_elna4"]
-[ext_resource type="Texture2D" uid="uid://de17e3iq8v2jk" path="res://Assets/Sprites/крестик.png" id="3_ifmuy"]
+[ext_resource type="Texture2D" uid="uid://2vpl4s2bod25" path="res://Assets/Sprites/UI/Menus/галочка.png" id="2_4stnu"]
+[ext_resource type="Texture2D" uid="uid://bxsx8sm4isqrd" path="res://Assets/Sprites/UI/AdditionalMainElement/подложка под кубики.png" id="2_elna4"]
+[ext_resource type="Texture2D" uid="uid://de17e3iq8v2jk" path="res://Assets/Sprites/UI/Menus/крестик.png" id="3_ifmuy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rptop"]
 
@@ -11,7 +11,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sg2kt"]
 
-[node name="GameOverMiniGameUi" type="Control" node_paths=PackedStringArray("container", "dice_rounds", "number_next", "more_than_button", "equal_button", "less_than_button", "next_stage", "dice_number_text", "timer")]
+[node name="GameOverMiniGameUi" type="Control" unique_id=1705552447 node_paths=PackedStringArray("container", "dice_rounds", "number_next", "more_than_button", "equal_button", "less_than_button", "next_stage", "dice_number_text", "timer")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -32,7 +32,7 @@ next_stage = NodePath("NextStage")
 dice_number_text = NodePath("DiceTable/VBoxContainer/NumberText")
 timer = NodePath("Timer")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1789565317]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(1, 1, 1, 0.333333)
 layout_mode = 1
@@ -43,7 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_rptop")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=416003483]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25
@@ -52,41 +52,41 @@ anchor_right = 0.75
 anchor_bottom = 0.15
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer" unique_id=1988402414]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MoreButton" type="TextureButton" parent="HBoxContainer"]
+[node name="MoreButton" type="TextureButton" parent="HBoxContainer" unique_id=1722700513]
 layout_mode = 2
 size_flags_horizontal = 3
 action_mode = 0
 texture_normal = SubResource("PlaceholderTexture2D_yb5e4")
 stretch_mode = 5
 
-[node name="EqualButton" type="TextureButton" parent="HBoxContainer"]
+[node name="EqualButton" type="TextureButton" parent="HBoxContainer" unique_id=1674131081]
 layout_mode = 2
 size_flags_horizontal = 3
 action_mode = 0
 texture_normal = SubResource("PlaceholderTexture2D_yb5e4")
 stretch_mode = 5
 
-[node name="LessButton" type="TextureButton" parent="HBoxContainer"]
+[node name="LessButton" type="TextureButton" parent="HBoxContainer" unique_id=1906633834]
 layout_mode = 2
 size_flags_horizontal = 3
 action_mode = 0
 texture_normal = SubResource("PlaceholderTexture2D_yb5e4")
 stretch_mode = 5
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=285406500]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("PlaceholderTexture2D_sg2kt")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="DiceTable" type="TextureRect" parent="."]
+[node name="DiceTable" type="TextureRect" parent="." unique_id=126809642]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2
@@ -97,7 +97,7 @@ texture = ExtResource("2_elna4")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DiceTable"]
+[node name="VBoxContainer" type="VBoxContainer" parent="DiceTable" unique_id=575330056]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3
@@ -106,7 +106,7 @@ anchor_right = 0.7
 anchor_bottom = 0.25
 alignment = 1
 
-[node name="SumText" type="RichTextLabel" parent="DiceTable/VBoxContainer"]
+[node name="SumText" type="RichTextLabel" parent="DiceTable/VBoxContainer" unique_id=294701074]
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
@@ -114,14 +114,14 @@ text = "ВЫПАЛО"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NumberText" type="RichTextLabel" parent="DiceTable/VBoxContainer"]
+[node name="NumberText" type="RichTextLabel" parent="DiceTable/VBoxContainer" unique_id=1115754462]
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="DiceTable"]
+[node name="TextureRect" type="TextureRect" parent="DiceTable" unique_id=1589429731]
 layout_mode = 0
 offset_left = 173.6
 offset_top = 53.4
@@ -130,7 +130,7 @@ offset_bottom = 93.4
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect2" type="TextureRect" parent="DiceTable"]
+[node name="TextureRect2" type="TextureRect" parent="DiceTable" unique_id=712038906]
 layout_mode = 0
 offset_left = 134.6
 offset_top = 156.4
@@ -139,7 +139,7 @@ offset_bottom = 196.4
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect3" type="TextureRect" parent="DiceTable"]
+[node name="TextureRect3" type="TextureRect" parent="DiceTable" unique_id=355789061]
 layout_mode = 0
 offset_left = 174.6
 offset_top = 259.4
@@ -148,7 +148,7 @@ offset_bottom = 299.4
 expand_mode = 2
 stretch_mode = 5
 
-[node name="NextStage" type="Button" parent="."]
+[node name="NextStage" type="Button" parent="." unique_id=1461037996]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -161,7 +161,7 @@ offset_bottom = 8.0
 action_mode = 0
 text = "ДАЛЬШЕ"
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1535588490]
 wait_time = 3.0
 one_shot = true
 

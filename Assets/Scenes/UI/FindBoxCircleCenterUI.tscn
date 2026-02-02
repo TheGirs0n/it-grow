@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5ik6i28dk71g"]
+[gd_scene format=3 uid="uid://c5ik6i28dk71g"]
 
 [ext_resource type="Script" uid="uid://3yvxpr7ga3rp" path="res://Assets/Scripts/UI/Main/FindBoxCircleCenterUI.gd" id="1_dkdlt"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dkdlt"]
 
-[node name="FindBoxCircleCenter" type="Control" node_paths=PackedStringArray("plant_texture", "effect_texture")]
+[node name="FindBoxCircleCenter" type="Control" unique_id=167835984 node_paths=PackedStringArray("plant_texture", "effect_texture")]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
@@ -16,7 +16,7 @@ script = ExtResource("1_dkdlt")
 plant_texture = NodePath("PlantTexture")
 effect_texture = NodePath("EffectTexture")
 
-[node name="BackgroundText" type="TextureRect" parent="."]
+[node name="BackgroundText" type="TextureRect" parent="." unique_id=941206107]
 self_modulate = Color(0, 0, 0, 0.490196)
 layout_mode = 1
 anchors_preset = 15
@@ -26,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_dkdlt")
 
-[node name="PlantTexture" type="TextureRect" parent="."]
+[node name="PlantTexture" type="TextureRect" parent="." unique_id=1270639415]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.35
@@ -36,7 +36,7 @@ anchor_bottom = 0.8
 expand_mode = 3
 stretch_mode = 5
 
-[node name="EffectTexture" type="TextureRect" parent="."]
+[node name="EffectTexture" type="TextureRect" parent="." unique_id=852972895]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.35

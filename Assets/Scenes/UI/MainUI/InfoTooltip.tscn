@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhgdvrtlwo6cp"]
+[gd_scene format=3 uid="uid://dhgdvrtlwo6cp"]
 
 [ext_resource type="Script" uid="uid://dfok6n7flxk7r" path="res://Assets/Scripts/UI/Main/InfoTooltip.gd" id="1_rh8pd"]
-[ext_resource type="Texture2D" uid="uid://diqj6phslk6eh" path="res://Assets/Sprites/подложка под текст.png" id="2_jgmmo"]
+[ext_resource type="Texture2D" uid="uid://diqj6phslk6eh" path="res://Assets/Sprites/UI/Tooltip/подложка под текст.png" id="2_jgmmo"]
 [ext_resource type="FontFile" uid="uid://ypccknk0h50v" path="res://Assets/Fonts/ofont.ru_Daneehand.ttf" id="3_eb5m1"]
 
-[node name="InfoTooltip" type="Control" node_paths=PackedStringArray("info_text", "tooltip_timer")]
+[node name="InfoTooltip" type="Control" unique_id=729259903 node_paths=PackedStringArray("info_text", "tooltip_timer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,10 +12,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rh8pd")
-info_text = NodePath("TextureRect/RichTextLabel")
+info_text = NodePath("TooltipTexture/TooltipText")
 tooltip_timer = NodePath("Timer")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TooltipTexture" type="TextureRect" parent="." unique_id=1164320003]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,7 +27,7 @@ texture = ExtResource("2_jgmmo")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
+[node name="TooltipText" type="RichTextLabel" parent="TooltipTexture" unique_id=2004794138]
 self_modulate = Color(0.168627, 0.152941, 0.137255, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -41,7 +41,7 @@ bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1742598795]
 wait_time = 5.0
 
 [connection signal="timeout" from="Timer" to="." method="hide_tooltip"]

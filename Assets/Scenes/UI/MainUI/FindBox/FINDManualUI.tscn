@@ -1,37 +1,37 @@
-[gd_scene load_steps=18 format=3 uid="uid://br0k6xa3yuvwy"]
+[gd_scene format=3 uid="uid://br0k6xa3yuvwy"]
 
-[ext_resource type="Script" uid="uid://nwegp5j100kc" path="res://Assets/Scripts/FindBox/FindManualUI.gd" id="1_s75hp"]
-[ext_resource type="Texture2D" uid="uid://bmh54u8etih78" path="res://Assets/Sprites/открытый атлас.png" id="2_0lc3r"]
-[ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="2_jxvyf"]
-[ext_resource type="Resource" uid="uid://b2u68r8wlyy4c" path="res://Assets/Sprites/Plants/Plant_1/Plant_1.tres" id="3_4c7o5"]
-[ext_resource type="Texture2D" uid="uid://dld61efm1wtlx" path="res://Assets/Sprites/стрелочка для книги.png" id="3_5ihha"]
-[ext_resource type="Texture2D" uid="uid://de17e3iq8v2jk" path="res://Assets/Sprites/крестик.png" id="4_0lc3r"]
-[ext_resource type="Resource" uid="uid://cnw54jlm1xx4f" path="res://Assets/Sprites/Plants/Plant_2/Plant_2.tres" id="4_cww33"]
-[ext_resource type="Resource" uid="uid://ccc8retawxsrb" path="res://Assets/Sprites/Plants/Plant_3/Plant_3.tres" id="5_l7vr4"]
-[ext_resource type="Resource" uid="uid://bmfv0yyraceee" path="res://Assets/Sprites/Plants/Plant_4/Plant_4.tres" id="6_cfodt"]
-[ext_resource type="Resource" uid="uid://chbma6xr3y0kg" path="res://Assets/Sprites/Plants/Plant_5/Plant_5.tres" id="7_kvmf4"]
-[ext_resource type="Resource" uid="uid://df3nl5youoy3h" path="res://Assets/Sprites/Plants/Plant_6/Plant_6.tres" id="8_ae3bo"]
-[ext_resource type="Resource" uid="uid://bx538d5ydjea6" path="res://Assets/Sprites/Plants/Plant_7/Plant_7.tres" id="9_gg4xb"]
-[ext_resource type="Resource" uid="uid://16gs04dc6ukl" path="res://Assets/Sprites/Plants/Plant_8/Plant_8.tres" id="10_jarmi"]
-[ext_resource type="Resource" uid="uid://cb8mrihu2wb45" path="res://Assets/Sprites/Plants/Plant_9/Plant_9.tres" id="11_j7k57"]
-[ext_resource type="Resource" uid="uid://b4ap30fuu8y71" path="res://Assets/Sprites/Plants/Plant_10/Plant_10.tres" id="12_37mr4"]
-[ext_resource type="FontFile" uid="uid://s3mmxlx1oh0b" path="res://Assets/Fonts/ofont.ru_Theano Didot.ttf" id="14_4c7o5"]
+[ext_resource type="Script" uid="uid://nwegp5j100kc" path="res://Assets/Scripts/FindBox/FindManualUI.gd" id="1_tvuc1"]
+[ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="2_uncfq"]
+[ext_resource type="Resource" uid="uid://b2u68r8wlyy4c" path="res://Assets/Resources/Plants/PlantsResources/Plant_1.tres" id="3_t0rr2"]
+[ext_resource type="Resource" uid="uid://cnw54jlm1xx4f" path="res://Assets/Resources/Plants/PlantsResources/Plant_2.tres" id="4_fl6u3"]
+[ext_resource type="Resource" uid="uid://ccc8retawxsrb" path="res://Assets/Resources/Plants/PlantsResources/Plant_3.tres" id="5_xntpb"]
+[ext_resource type="Resource" uid="uid://bmfv0yyraceee" path="res://Assets/Resources/Plants/PlantsResources/Plant_4.tres" id="6_81tml"]
+[ext_resource type="Resource" uid="uid://chbma6xr3y0kg" path="res://Assets/Resources/Plants/PlantsResources/Plant_5.tres" id="7_lhbkp"]
+[ext_resource type="Resource" uid="uid://df3nl5youoy3h" path="res://Assets/Resources/Plants/PlantsResources/Plant_6.tres" id="8_4hw3y"]
+[ext_resource type="Resource" uid="uid://bx538d5ydjea6" path="res://Assets/Sprites/Plants/Plant_7/Plant_7.tres" id="9_mnvoq"]
+[ext_resource type="Resource" uid="uid://16gs04dc6ukl" path="res://Assets/Sprites/Plants/Plant_8/Plant_8.tres" id="10_r08w8"]
+[ext_resource type="Resource" uid="uid://cb8mrihu2wb45" path="res://Assets/Sprites/Plants/Plant_9/Plant_9.tres" id="11_7nii1"]
+[ext_resource type="Resource" uid="uid://b4ap30fuu8y71" path="res://Assets/Sprites/Plants/Plant_10/Plant_10.tres" id="12_jar8x"]
+[ext_resource type="Texture2D" uid="uid://bmh54u8etih78" path="res://Assets/Sprites/Books/открытый атлас.png" id="13_ah6nd"]
+[ext_resource type="FontFile" uid="uid://s3mmxlx1oh0b" path="res://Assets/Fonts/ofont.ru_Theano Didot.ttf" id="14_cswr3"]
+[ext_resource type="Texture2D" uid="uid://dld61efm1wtlx" path="res://Assets/Sprites/Books/стрелочка для книги.png" id="15_5k1w2"]
+[ext_resource type="Texture2D" uid="uid://de17e3iq8v2jk" path="res://Assets/Sprites/UI/Menus/крестик.png" id="16_fvnfo"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jxvyf"]
 
-[node name="FINDManualUI" type="Control" node_paths=PackedStringArray("first_text", "second_text")]
+[node name="FindManualUI" type="Control" unique_id=1920164889 node_paths=PackedStringArray("first_text", "second_text")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_s75hp")
-plant_description = Array[ExtResource("2_jxvyf")]([ExtResource("3_4c7o5"), ExtResource("4_cww33"), ExtResource("5_l7vr4"), ExtResource("6_cfodt"), ExtResource("7_kvmf4"), ExtResource("8_ae3bo"), ExtResource("9_gg4xb"), ExtResource("10_jarmi"), ExtResource("11_j7k57"), ExtResource("12_37mr4")])
-first_text = NodePath("RichTextLabel")
-second_text = NodePath("RichTextLabel2")
+script = ExtResource("1_tvuc1")
+plant_description = Array[ExtResource("2_uncfq")]([ExtResource("3_t0rr2"), ExtResource("4_fl6u3"), ExtResource("5_xntpb"), ExtResource("6_81tml"), ExtResource("7_lhbkp"), ExtResource("8_4hw3y"), ExtResource("9_mnvoq"), ExtResource("10_r08w8"), ExtResource("11_7nii1"), ExtResource("12_jar8x")])
+first_text = NodePath("LeftPageText")
+second_text = NodePath("RightPageText")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="BackgroundTexture" type="TextureRect" parent="." unique_id=1845082952]
 self_modulate = Color(0, 0, 0, 0.333333)
 layout_mode = 1
 anchors_preset = 15
@@ -39,21 +39,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 0
 texture = SubResource("PlaceholderTexture2D_jxvyf")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BookTexture" type="TextureRect" parent="." unique_id=129948010]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_0lc3r")
+texture = ExtResource("13_ah6nd")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="LeftPageText" type="RichTextLabel" parent="." unique_id=763223874]
 self_modulate = Color(0.168627, 0.152941, 0.137255, 1)
 layout_mode = 0
 offset_left = 201.0
@@ -61,11 +61,13 @@ offset_top = 51.0
 offset_right = 569.0
 offset_bottom = 487.0
 mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("14_4c7o5")
+theme_override_fonts/normal_font = ExtResource("14_cswr3")
+theme_override_fonts/bold_font = ExtResource("14_cswr3")
 theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="RightPageText" type="RichTextLabel" parent="." unique_id=898252442]
 self_modulate = Color(0.168627, 0.152941, 0.137255, 1)
 layout_mode = 0
 offset_left = 598.0
@@ -73,11 +75,13 @@ offset_top = 51.0
 offset_right = 966.0
 offset_bottom = 487.0
 mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("14_4c7o5")
+theme_override_fonts/normal_font = ExtResource("14_cswr3")
+theme_override_fonts/bold_font = ExtResource("14_cswr3")
 theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
 
-[node name="Button" type="Button" parent="."]
+[node name="NextPage" type="Button" parent="." unique_id=456408517]
 process_mode = 3
 layout_mode = 0
 offset_left = 880.0
@@ -86,10 +90,10 @@ offset_right = 1070.0
 offset_bottom = 666.0
 scale = Vector2(0.5, 0.5)
 action_mode = 0
-icon = ExtResource("3_5ihha")
+icon = ExtResource("15_5k1w2")
 flat = true
 
-[node name="Button2" type="Button" parent="."]
+[node name="PreviousPage" type="Button" parent="." unique_id=1305155922]
 process_mode = 3
 layout_mode = 0
 offset_left = 287.0
@@ -98,10 +102,10 @@ offset_right = 477.0
 offset_bottom = 665.0
 scale = Vector2(-0.5, 0.5)
 action_mode = 0
-icon = ExtResource("3_5ihha")
+icon = ExtResource("15_5k1w2")
 flat = true
 
-[node name="Button3" type="Button" parent="."]
+[node name="CloseBook" type="Button" parent="." unique_id=539837815]
 process_mode = 3
 layout_mode = 0
 offset_left = 1038.0
@@ -109,9 +113,10 @@ offset_top = 22.0
 offset_right = 1255.0
 offset_bottom = 252.0
 scale = Vector2(0.3, 0.3)
-icon = ExtResource("4_0lc3r")
+icon = ExtResource("16_fvnfo")
 flat = true
 
-[connection signal="pressed" from="Button" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_prev_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_close_pressed"]
+[connection signal="gui_input" from="BackgroundTexture" to="." method="_on_background_texture_gui_input"]
+[connection signal="pressed" from="NextPage" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="PreviousPage" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="CloseBook" to="." method="_on_close_pressed"]

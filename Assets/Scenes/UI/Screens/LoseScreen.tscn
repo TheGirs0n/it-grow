@@ -1,16 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://dc3g8h6t1jh5o"]
+[gd_scene format=3 uid="uid://dc3g8h6t1jh5o"]
 
 [ext_resource type="Script" uid="uid://cji8rubysqkms" path="res://Assets/Scripts/UI/Screens/LoseScreen.gd" id="1_pdjom"]
-[ext_resource type="Texture2D" uid="uid://daxnghm0ucpmd" path="res://Assets/Sprites/меню_поражение.png" id="2_fsnag"]
+[ext_resource type="Texture2D" uid="uid://daxnghm0ucpmd" path="res://Assets/Sprites/UI/AfterGameScreens/меню_поражение.png" id="2_fsnag"]
 [ext_resource type="PackedScene" uid="uid://coa4eapun1x1n" path="res://Assets/Scenes/UI/Menus/MainMenuUI.tscn" id="2_so6w8"]
-[ext_resource type="Texture2D" uid="uid://dh4q757x6ikpm" path="res://Assets/Sprites/меню_покой.png" id="4_68i64"]
-[ext_resource type="Texture2D" uid="uid://c04mjfdh1u00p" path="res://Assets/Sprites/меню_нажата.png" id="5_kioo0"]
-[ext_resource type="Texture2D" uid="uid://cnocbo04bj5yx" path="res://Assets/Sprites/меню_наведение.png" id="6_mh7vu"]
+[ext_resource type="Texture2D" uid="uid://dh4q757x6ikpm" path="res://Assets/Sprites/UI/Buttons/MenuButton/меню_покой.png" id="4_68i64"]
+[ext_resource type="Texture2D" uid="uid://c04mjfdh1u00p" path="res://Assets/Sprites/UI/Buttons/MenuButton/меню_нажата.png" id="5_kioo0"]
+[ext_resource type="Texture2D" uid="uid://cnocbo04bj5yx" path="res://Assets/Sprites/UI/Buttons/MenuButton/меню_наведение.png" id="6_mh7vu"]
 [ext_resource type="FontFile" uid="uid://bt1h3mvmsd3o1" path="res://Assets/Fonts/ofont.ru_Gnocchi.ttf" id="7_68i64"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ddphs"]
 
-[node name="LoseScreen" type="Control"]
+[node name="LoseScreen" type="Control" unique_id=1563666862]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -21,7 +21,7 @@ grow_vertical = 2
 script = ExtResource("1_pdjom")
 main_menu_scene = ExtResource("2_so6w8")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BackgroundTexture" type="TextureRect" parent="." unique_id=243712568]
 self_modulate = Color(0, 0, 0, 0.333333)
 layout_mode = 1
 anchors_preset = 15
@@ -31,7 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_ddphs")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="LoseScreenTexture" type="TextureRect" parent="." unique_id=2008756226]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2
@@ -43,7 +43,7 @@ texture = ExtResource("2_fsnag")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Button2" type="TextureButton" parent="TextureRect2"]
+[node name="InMenuButton" type="TextureButton" parent="LoseScreenTexture" unique_id=409025266]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.362
@@ -61,7 +61,7 @@ texture_hover = ExtResource("6_mh7vu")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect2/Button2"]
+[node name="ButtonText" type="RichTextLabel" parent="LoseScreenTexture/InMenuButton" unique_id=1192174318]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -81,7 +81,8 @@ text = "В меню"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="LoseText" type="RichTextLabel" parent="." unique_id=248555923]
+layout_mode = 0
 offset_left = 456.0
 offset_top = 344.0
 offset_right = 694.0
@@ -93,4 +94,4 @@ text = "ПОРАЖЕНИЕ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="TextureRect2/Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="LoseScreenTexture/InMenuButton" to="." method="_on_button_pressed"]

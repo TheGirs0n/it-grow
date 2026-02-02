@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjw7mh2670qkx"]
+[gd_scene format=3 uid="uid://cjw7mh2670qkx"]
 
 [ext_resource type="Script" uid="uid://cvg5c68rdo8nh" path="res://Assets/Scripts/FindBox/FindBoxCircleUi.gd" id="1_7k6u0"]
 [ext_resource type="PackedScene" uid="uid://cp36a7wv64vnd" path="res://Assets/Scenes/UI/MainUI/FindBox/BrainUI.tscn" id="1_u5o2k"]
 [ext_resource type="PackedScene" uid="uid://cpqkura5d3dq3" path="res://Assets/Scenes/UI/MainUI/FindBox/NoseUI.tscn" id="2_7k6u0"]
-[ext_resource type="Texture2D" uid="uid://1hu77ui7wol0" path="res://Assets/Sprites/круг.png" id="2_87cwq"]
+[ext_resource type="Texture2D" uid="uid://1hu77ui7wol0" path="res://Assets/Sprites/UI/Menus/Pause/круг.png" id="2_87cwq"]
 
-[node name="FindBoxCircleUi" type="TextureRect"]
+[node name="FindBoxCircleUi" type="TextureRect" unique_id=823781939]
 offset_right = 1202.0
 offset_bottom = 1202.0
 texture = ExtResource("2_87cwq")
@@ -13,7 +13,7 @@ expand_mode = 2
 stretch_mode = 5
 script = ExtResource("1_7k6u0")
 
-[node name="BrainUi" parent="." instance=ExtResource("1_u5o2k")]
+[node name="BrainUi" parent="." unique_id=725392408 instance=ExtResource("1_u5o2k")]
 layout_mode = 1
 offset_left = 768.0
 offset_top = 654.0
@@ -21,7 +21,7 @@ offset_right = 768.0
 offset_bottom = 654.0
 scale = Vector2(0.4, 0.4)
 
-[node name="NoseUi" parent="." instance=ExtResource("2_7k6u0")]
+[node name="NoseUi" parent="." unique_id=1874491174 instance=ExtResource("2_7k6u0")]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 840.0

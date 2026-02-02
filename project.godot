@@ -8,11 +8,16 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Grow Recipe"
+config/tags=PackedStringArray("done")
 run/main_scene="uid://coa4eapun1x1n"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://lkfo7qavkst2"
 
 [autoload]

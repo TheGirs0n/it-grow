@@ -1,21 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cf30ri6xtr4af"]
+[gd_scene format=3 uid="uid://cf30ri6xtr4af"]
 
 [ext_resource type="Script" uid="uid://n6mg4a1vqfhs" path="res://Assets/Scripts/UI/Main/PlantSpawnLocationUI.gd" id="1_x5vce"]
 
-[node name="PlantSpawnLocation" type="Node2D" node_paths=PackedStringArray("plant_location")]
+[node name="PlantSpawnLocation" type="Node2D" unique_id=662064274 node_paths=PackedStringArray("plant_location")]
 script = ExtResource("1_x5vce")
-plant_location = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3"), NodePath("Marker2D4"), NodePath("Marker2D5")]
+plant_location = [NodePath("Plant_1"), NodePath("Plant_2"), NodePath("Plant_3"), NodePath("Plant_4"), NodePath("Plant_5")]
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Plant_1" type="Marker2D" parent="." unique_id=200486788]
 
-[node name="Marker2D3" type="Marker2D" parent="."]
-position = Vector2(341, 0)
+[node name="Plant_2" type="Marker2D" parent="." unique_id=698353821]
+position = Vector2(150, 150)
 
-[node name="Marker2D5" type="Marker2D" parent="."]
-position = Vector2(643, 0)
+[node name="Plant_3" type="Marker2D" parent="." unique_id=1483886616]
+position = Vector2(300, 0)
 
-[node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(139, 172)
+[node name="Plant_4" type="Marker2D" parent="." unique_id=1962381551]
+position = Vector2(450, 150)
 
-[node name="Marker2D4" type="Marker2D" parent="."]
-position = Vector2(538, 171)
+[node name="Plant_5" type="Marker2D" parent="." unique_id=693431375]
+position = Vector2(600, 0)

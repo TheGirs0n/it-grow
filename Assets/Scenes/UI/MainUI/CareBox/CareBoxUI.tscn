@@ -1,25 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://df4il6aelqnrl"]
+[gd_scene format=3 uid="uid://df4il6aelqnrl"]
 
 [ext_resource type="Script" uid="uid://bf3f2nnlu632u" path="res://Assets/Scripts/UI/Main/CareBoxUi.gd" id="1_guj6r"]
 [ext_resource type="PackedScene" uid="uid://df7tedm3meajx" path="res://Assets/Scenes/UI/MainUI/CareBox/FertilizerUI.tscn" id="1_l2i4k"]
 [ext_resource type="PackedScene" uid="uid://dwna4qi6grgnw" path="res://Assets/Scenes/UI/MainUI/CareBox/RakeUI.tscn" id="2_guj6r"]
 [ext_resource type="PackedScene" uid="uid://ca1c40tdy3kxw" path="res://Assets/Scenes/UI/MainUI/CareBox/WateringCanUI.tscn" id="3_oxrnt"]
 
-[node name="CareBoxUi" type="Control"]
+[node name="CareBoxUi" type="Control" unique_id=1734709222]
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("1_guj6r")
 
-[node name="FertilizerUi" parent="." instance=ExtResource("1_l2i4k")]
+[node name="FertilizerUi" parent="." unique_id=909152215 instance=ExtResource("1_l2i4k")]
 position = Vector2(227, 424)
 scale = Vector2(0.1, 0.1)
 
-[node name="WateringCanUi" parent="." instance=ExtResource("3_oxrnt")]
+[node name="WateringCanUi" parent="." unique_id=671305869 instance=ExtResource("3_oxrnt")]
 position = Vector2(459, -30)
 scale = Vector2(0.1, 0.1)
 
-[node name="RakeUi" parent="." instance=ExtResource("2_guj6r")]
+[node name="RakeUi" parent="." unique_id=179360667 instance=ExtResource("2_guj6r")]
 position = Vector2(836, 442)
 scale = Vector2(0.1, 0.1)
 

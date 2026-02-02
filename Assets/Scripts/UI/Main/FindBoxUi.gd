@@ -29,6 +29,8 @@ func _on_button_pressed() -> void:
 		simple_tween = create_tween()
 		simple_tween.tween_property(self, "global_position", global_position + position_change, 0.3)
 		is_open = true
+		GlobalContext.main_ui_instance.care_box_ui.disable_input_for_items()
+		GlobalContext.main_ui_instance.care_box_ui.clear_current_care_box_item()
 	else:
 		if simple_tween:
 			simple_tween.kill()
@@ -36,6 +38,7 @@ func _on_button_pressed() -> void:
 		simple_tween = create_tween()
 		simple_tween.tween_property(self, "global_position", global_position - position_change, 0.3)
 		is_open = false
+		GlobalContext.main_ui_instance.care_box_ui.enable_input_for_items()
 
 
 func _on_care_book_pressed() -> void:

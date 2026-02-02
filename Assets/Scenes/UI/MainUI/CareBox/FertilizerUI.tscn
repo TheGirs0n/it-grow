@@ -1,20 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://df7tedm3meajx"]
+[gd_scene format=3 uid="uid://df7tedm3meajx"]
 
 [ext_resource type="Script" uid="uid://rtd7rktwbi8s" path="res://Assets/Scripts/CareBox/Fertilizer.gd" id="1_2oqmk"]
-[ext_resource type="Texture2D" uid="uid://7uil7tkr85io" path="res://Assets/Sprites/удобрение.png" id="2_jxct1"]
-[ext_resource type="Texture2D" uid="uid://dqtb245njs8di" path="res://Assets/Sprites/удобрение_клик.png" id="2_uf14v"]
+[ext_resource type="Texture2D" uid="uid://7uil7tkr85io" path="res://Assets/Sprites/UI/CareBox/удобрение.png" id="2_jxct1"]
+[ext_resource type="Texture2D" uid="uid://dqtb245njs8di" path="res://Assets/Sprites/UI/CareBox/удобрение_клик.png" id="2_uf14v"]
 
-[node name="FertilizerUi" type="Area2D" node_paths=PackedStringArray("sprite")]
+[node name="FertilizerUi" type="Area2D" unique_id=1936240599 node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_2oqmk")
 plant_care_type = 2
 sprite = NodePath("TextureRect")
 clicked_item_icon = ExtResource("2_uf14v")
 normal_item_icon = ExtResource("2_jxct1")
 
-[node name="TextureRect" type="Sprite2D" parent="."]
+[node name="TextureRect" type="Sprite2D" parent="." unique_id=311334264]
 texture = ExtResource("2_jxct1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1128929144]
 polygon = PackedVector2Array(520, 493, 4, 609, -534, 498, -265, -240, -423, -504, -119, -613, 303, -606, 218, -334)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
