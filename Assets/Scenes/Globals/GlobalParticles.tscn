@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://byd81xwemqrir"]
+
+[ext_resource type="Script" uid="uid://b4umxsmovxbct" path="res://Assets/Scripts/Global/GlobalParticles.gd" id="1_qt40g"]
+[ext_resource type="PackedScene" uid="uid://bnk2xpd7p6qr3" path="res://Assets/Scenes/Particles/NewPlantGrowParticles.tscn" id="2_qt40g"]
+
+[node name="GlobalParticles" type="Node" unique_id=2001563147]
+script = ExtResource("1_qt40g")
+new_plant_grow_stage = ExtResource("2_qt40g")

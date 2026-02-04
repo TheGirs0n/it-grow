@@ -18,3 +18,5 @@ texture = ExtResource("2_jxct1")
 polygon = PackedVector2Array(520, 493, 4, 609, -534, 498, -265, -240, -423, -504, -119, -613, 303, -606, 218, -334)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_mouse_enter"]
+[connection signal="mouse_exited" from="." to="." method="_mouse_exit"]

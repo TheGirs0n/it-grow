@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bnk2xpd7p6qr3"]
+
+[ext_resource type="Texture2D" uid="uid://brad21elftpcv" path="res://Assets/Sprites/Particles/ParticleCircle.png" id="1_3gr7g"]
+[ext_resource type="Material" uid="uid://bgi2dfyabys6r" path="res://Assets/Resources/Particles/NewGrowLevelParticle.tres" id="1_cu4ga"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" unique_id=1121348363]
+emitting = false
+amount = 16
+texture = ExtResource("1_3gr7g")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = ExtResource("1_cu4ga")

@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://i53nmv00gts5" path="res://Assets/Sprites/UI/FindBox/ящик.png" id="2_mx07m"]
 [ext_resource type="PackedScene" uid="uid://bi6mvswmjxjah" path="res://Assets/Scenes/UI/MainUI/FindBox/KnifeUI.tscn" id="3_01a3r"]
 [ext_resource type="Texture2D" uid="uid://biuaqxpajjie" path="res://Assets/Sprites/Books/дневник бабушки.png" id="5_pq046"]
+[ext_resource type="Script" uid="uid://bexj5h5v0b6mw" path="res://Assets/Scripts/UI/Main/CareBookTemp.gd" id="6_rh74t"]
 [ext_resource type="Texture2D" uid="uid://cv212jhvn244h" path="res://Assets/Sprites/Books/атлас.png" id="6_uxyva"]
+[ext_resource type="Script" uid="uid://yxhhnk3oalft" path="res://Assets/Scripts/UI/Main/FindBookTemp.gd" id="8_rh74t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cj7kh"]
 
@@ -29,7 +31,7 @@ offset_right = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_piumh")
-position_change = Vector2(325, 0)
+position_change = Vector2(315, 0)
 
 [node name="BoxTexture" type="TextureRect" parent="." unique_id=1700449735]
 layout_mode = 1
@@ -81,6 +83,7 @@ scale = Vector2(0.3, 0.3)
 action_mode = 0
 icon = ExtResource("5_pq046")
 flat = true
+script = ExtResource("6_rh74t")
 
 [node name="FindBookOpen" type="Button" parent="BoxTexture" unique_id=1454669317]
 layout_mode = 0
@@ -92,6 +95,7 @@ scale = Vector2(0.3, 0.3)
 action_mode = 0
 icon = ExtResource("6_uxyva")
 flat = true
+script = ExtResource("8_rh74t")
 
 [node name="MoveBox" type="Button" parent="." unique_id=613516118]
 layout_mode = 0
@@ -111,6 +115,12 @@ flat = true
 
 [connection signal="item_picked" from="BoxTexture/KnifeUi" to="." method="set_current_find_box_item"]
 [connection signal="item_picked" from="BoxTexture/MagnifierUi" to="." method="set_current_find_box_item"]
+[connection signal="mouse_entered" from="BoxTexture/CareBookOpen" to="BoxTexture/CareBookOpen" method="_mouse_enter"]
+[connection signal="mouse_exited" from="BoxTexture/CareBookOpen" to="BoxTexture/CareBookOpen" method="_mouse_exit"]
 [connection signal="pressed" from="BoxTexture/CareBookOpen" to="." method="_on_care_book_pressed"]
+[connection signal="mouse_entered" from="BoxTexture/FindBookOpen" to="BoxTexture/FindBookOpen" method="_mouse_enter"]
+[connection signal="mouse_exited" from="BoxTexture/FindBookOpen" to="BoxTexture/FindBookOpen" method="_mouse_exit"]
 [connection signal="pressed" from="BoxTexture/FindBookOpen" to="." method="_on_find_book_pressed"]
+[connection signal="mouse_entered" from="MoveBox" to="." method="_on_move_box_mouse_entered"]
+[connection signal="mouse_exited" from="MoveBox" to="." method="_on_move_box_mouse_exited"]
 [connection signal="pressed" from="MoveBox" to="." method="_on_button_pressed"]

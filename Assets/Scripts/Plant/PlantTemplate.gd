@@ -61,7 +61,8 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 				if GlobalContext.main_ui_instance.care_box_ui.current_care_box_item != null:
 					try_caring_plant(GlobalContext.main_ui_instance.care_box_ui.current_care_box_item)
 					GlobalContext.main_ui_instance.care_box_ui.clear_current_care_box_item()
-				
+					return
+					
 				if GlobalContext.main_ui_instance.find_box_ui.current_find_box_item != null:
 					try_find_item(GlobalContext.main_ui_instance.find_box_ui.current_find_box_item)
 					GlobalContext.main_ui_instance.find_box_ui.clear_current_find_box_item()
@@ -96,6 +97,7 @@ func try_caring_plant(care_item : CareBoxItem):
 		
 		plant_goal_container.set_done_circle(current_stage)
 		plant_goal_container.show_all_circles(plant_care_stages.size())
+		
 		GlobalContext.main_ui_instance.show_tooltip("Цветок растет прям на глазах!")
 	else:
 		decrease_grow_stage()
@@ -127,6 +129,7 @@ func increase_grow_stage():
 	
 	if plant_care_stages_index < plant_grow_stage_textures.size():
 		GlobalAudio.play_plants_grow()
+		GlobalParticles.spawn_particles(self)
 		plant_care_stages_index += 1
 		plant_texture.texture = plant_grow_stage_textures[plant_care_stages_index]
 		reset_care_routine()

@@ -17,3 +17,5 @@ texture = ExtResource("2_pdfpj")
 polygon = PackedVector2Array(-118, -120, -255, 476, -18, 566, 264, 566, 475, 478, 407, -66, 284, -175, -52, -249)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_mouse_enter"]
+[connection signal="mouse_exited" from="." to="." method="_mouse_exit"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlantResource" load_steps=7 format=3 uid="uid://df3nl5youoy3h"]
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://df3nl5youoy3h"]
 
 [ext_resource type="Texture2D" uid="uid://dhe4doyidv1qu" path="res://Assets/Sprites/Plants/Plant_6/1.png" id="1_01glc"]
 [ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="1_7tvtg"]
@@ -12,15 +12,14 @@ script = ExtResource("1_7tvtg")
 plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_01glc"), ExtResource("2_c486o"), ExtResource("3_dycvv")])
 plant_name = "Пауковница (настоящее название Цистридия)"
 plant_cool_name = "Цестроидия Скелетная (Cestroideae Skeletina)"
-plant_description = "[b]Пауковница (настоящее название Цистридия)[/b] не любит прямых солнечных лучей. Зачастую она растет в под деревьями, и для питания ей хватает опада.
+plant_description = "[color=#2b2723][b]Пауковница (настоящее название Цистридия)[/b] не любит прямых солнечных лучей. Зачастую она растет в под деревьями, и для питания ей хватает опада.
 Пауковницу лучше всего использовать на полную луну, в качестве ингридеента для проклятий на смерть, так как она обладает мощной подпиткой энергии земли.
 Любит корневой полив. Когда начинает давать первые цветы, лучше всего заняться пересадкой и сменой земли."
-plant_cool_description = "[b]Цестроидия Скелетная (Cestroideae Skeletina)[/b] - небольшое кустистое растение, активно плодоносит, вырашивая плоды в скелетированных коробочках, чашелистики которых напоминают паука. Плоды Цестродии съедобны, но  чаще растение используется исключительно в декоративных целях. Листья растения имеют форму сердца, за что и полюбились садоводами. 
+plant_cool_description = "[color=#2b2723][b]Цестроидия Скелетная (Cestroideae Skeletina)[/b] - небольшое кустистое растение, активно плодоносит, вырашивая плоды в скелетированных коробочках, чашелистики которых напоминают паука. Плоды Цестродии съедобны, но  чаще растение используется исключительно в декоративных целях. Листья растения имеют форму сердца, за что и полюбились садоводами. 
 "
 plant_smell = "Ну уж нет... Терпеть не могу пауков!!! Не хочу даже приближатся к этому!!!"
 plant_energy = "Не ощущаю никакой негативной энергии, даже странно для цветка с таким внешним видом..."
 plant_leaf = ExtResource("5_131bx")
 plant_juice_density = ExtResource("4_dbw5y")
-plant_juice_color = ""
 plant_care_stages = Array[int]([1, 0, 1])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"

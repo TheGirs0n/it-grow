@@ -95,6 +95,7 @@ stretch_mode = 5
 
 [node name="Timer" type="Timer" parent="GoalPlantContainer" unique_id=645591024]
 wait_time = 1.5
+one_shot = true
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="GoalPlantContainer/Timer" to="GoalPlantContainer" method="_on_timer_timeout"]

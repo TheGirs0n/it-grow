@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c54yprq3of0vk" path="res://Assets/Sprites/UI/PlantsGrow/кружок с галочкой.png" id="7_ebtgl"]
 
 [node name="Plant_3" type="Area2D" unique_id=15125371 node_paths=PackedStringArray("plant_texture", "plant_goal_container")]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_re1bg")
 plant_resource = ExtResource("2_re1bg")
 plant_texture = NodePath("TextureRect")
@@ -95,6 +95,7 @@ stretch_mode = 5
 
 [node name="Timer" type="Timer" parent="GoalPlantContainer" unique_id=192482913]
 wait_time = 1.5
+one_shot = true
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="GoalPlantContainer/Timer" to="GoalPlantContainer" method="_on_timer_timeout"]

@@ -27,6 +27,7 @@ SettingManager="*res://Assets/Scripts/Global/SettingManager.gd"
 GlobalEnums="*res://Assets/Scripts/Global/GlobalEnums.gd"
 PlantResourceFabric="*res://Assets/Scenes/Globals/PlantResourceFabric.tscn"
 GlobalAudio="*res://Assets/Scenes/Globals/GlobalAudio.tscn"
+GlobalParticles="*uid://byd81xwemqrir"
 
 [display]
 

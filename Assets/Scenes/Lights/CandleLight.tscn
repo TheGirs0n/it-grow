@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dirhxahh6jl45"]
+
+[ext_resource type="Script" uid="uid://ipsu418kfj7k" path="res://Assets/Scripts/Lights/CandleLight.gd" id="1_w1hmy"]
+
+[sub_resource type="Gradient" id="Gradient_mxj8y"]
+offsets = PackedFloat32Array(0.16158536, 0.4054878)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mxj8y"]
+gradient = SubResource("Gradient_mxj8y")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="CandleLight" type="PointLight2D" unique_id=266203819 node_paths=PackedStringArray("timer")]
+color = Color(0.628516, 0.37539405, 0.18362921, 1)
+range_z_min = 0
+range_layer_min = 1
+range_layer_max = 1
+texture = SubResource("GradientTexture2D_mxj8y")
+script = ExtResource("1_w1hmy")
+min_energy = 0.75
+max_energy = 1.25
+min_texture_scale = 0.8
+max_texture_scale = 1.2
+min_position_offset = Vector2(-2.5, -2.5)
+max_position_offset = Vector2(2.5, 2.5)
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="." unique_id=150270011]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="switch_light_parameters"]

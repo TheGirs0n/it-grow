@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlantResource" load_steps=7 format=3 uid="uid://chbma6xr3y0kg"]
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://chbma6xr3y0kg"]
 
 [ext_resource type="Texture2D" uid="uid://bx7apy7h5o6uu" path="res://Assets/Sprites/Plants/Plant_5/1.png" id="1_dls71"]
 [ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="1_vbrlj"]
@@ -12,16 +12,15 @@ script = ExtResource("1_vbrlj")
 plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_dls71"), ExtResource("2_6x1tm"), ExtResource("3_1pcld")])
 plant_name = "Малокровник"
 plant_cool_name = "Скандия Темная (Skandia Obscurus) она же Малокровник"
-plant_description = "[b]Малокровник[/b]. Ночное растение, с очень красивыми крупными бутонами. Чтоб правильно вырастить их здоровыми, обязатиельно требуется отсаживать их от земляных растений. Так как Малокровник не любит никакого воздействия на энергию земли.
+plant_description = "[color=#2b2723][b]Малокровник[/b]. Ночное растение, с очень красивыми крупными бутонами. Чтоб правильно вырастить их здоровыми, обязатиельно требуется отсаживать их от земляных растений. Так как Малокровник не любит никакого воздействия на энергию земли.
 Еще твоя бабка вырашивали их, как лекарстенные цветы. Соцветия хорошо растираются в крем лечат раны и останавливают кровь, но только если правильно созрели. Подкармливать ее нужно до момента появления первых листьев.
 Маленький секрет - чтоб бутон вызрел здоровым лучше опрыскивай водой сверху, а не заливай под корень."
-plant_cool_description = "[b]Скандия Темная (Skandia Obscurus)[/b] она же Малокровник - многолетний тип цветка. Созревает в середине сентября. Цветок даёт крупную темную ягоду которую очень легко перепутать с цветком. 
+plant_cool_description = "[color=#2b2723][b]Скандия Темная (Skandia Obscurus)[/b] она же Малокровник - многолетний тип цветка. Созревает в середине сентября. Цветок даёт крупную темную ягоду которую очень легко перепутать с цветком. 
 Растет в смешанных лесах, часто произрастая на полянах после вырубки древеьев. Растение поглашает большую част влаги посредством сбора дождевой воды в ягоду.
 Сок растения густой, белесого цвета, похож на клей, большая часть которого содержится в ягоде. "
 plant_smell = "Совершенно не имеет запаха. Даже удивительно!"
 plant_energy = "Липкая энергия. Обволакивающая, будто затягивающая в болото."
 plant_leaf = ExtResource("5_fmus1")
 plant_juice_density = ExtResource("4_f8onf")
-plant_juice_color = ""
 plant_care_stages = Array[int]([2, 2, 0])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"

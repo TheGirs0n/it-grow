@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlantResource" load_steps=7 format=3 uid="uid://cnw54jlm1xx4f"]
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://cnw54jlm1xx4f"]
 
 [ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="1_5nf5c"]
 [ext_resource type="Texture2D" uid="uid://dj5w37wicfs7c" path="res://Assets/Sprites/Plants/Plant_2/1 стадия.png" id="1_uhi7o"]
@@ -10,15 +10,15 @@
 [resource]
 script = ExtResource("1_5nf5c")
 plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_uhi7o"), ExtResource("2_pn1px"), ExtResource("3_p2o3t")])
-plant_name = "\"Адское пламя\""
-plant_cool_name = "Ла Йорона Пылкая (Laloronna Ardens)"
-plant_description = "[b]\"Погибель царей\"[/b] - Редкий и красивый цветок, требующий крайне тщательного ухода. Важно тщательного рыхления почвы и небольшого полива.
+plant_name = "[color=#2b2723]\"Адское пламя\""
+plant_cool_name = "[color=#2b2723]Ла Йорона Пылкая (Laloronna Ardens)"
+plant_description = "[color=#2b2723][b]\"Погибель царей\"[/b] - Редкий и красивый цветок, требующий крайне тщательного ухода. Важно тщательного рыхления почвы и небольшого полива.
 Активно цветет только в конце июля в течении 3-5 дней.
 Если и собирать его, то только в перчатках, так как сок обладет сильной стихией огня.
 Если добавлять в пламя для то оно усилится и станет только жарче.
 Удобрять его следует в течении всей жизни цветка!
 Настой из лепестков - отлично помогает против крыс и прочих редителей."
-plant_cool_description = "[b]Ла Йорона Пылкая (Laloronna Ardens)[/b] 
+plant_cool_description = "[color=#2b2723][b]Ла Йорона Пылкая (Laloronna Ardens)[/b] 
 Крайне ядовитое растение!!! Яркий угрожающий вид сразу говори об этом! Шипы становятся крайне твердыми с ростом цветка и преобретают черный цвет. Все части растения, обладают сильным ядом (особенно сок имеющий яркий желтый цвет с характерным металлическим запахом который может вызывать сильную головную боль)
 Активно првлекая ос типа Venenuma Flamma. Данный вид ос находится в симбиотических отношениях с данными цветами, и \"подкармливает\" их остатками добычи.
 "
@@ -27,6 +27,5 @@ plant_smell = "Обожаю этот аромат! Запах яркий, теп
 plant_energy = "Ай! Каждый раз чувствую будто обожглась как только подхожу к ней! Какая она все таки своенравная!"
 plant_leaf = ExtResource("5_oj35h")
 plant_juice_density = ExtResource("4_oab0u")
-plant_juice_color = ""
 plant_care_stages = Array[int]([0, 1, 2])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"

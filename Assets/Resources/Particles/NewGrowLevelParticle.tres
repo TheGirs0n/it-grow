@@ -1,0 +1,27 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://bgi2dfyabys6r"]
+
+[sub_resource type="Curve" id="Curve_ypsyx"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_81tpp"]
+curve = SubResource("Curve_ypsyx")
+
+[resource]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_min = -15.000016
+angular_velocity_max = 14.999984
+orbit_velocity_min = -0.09999991
+orbit_velocity_max = 0.1000001
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -15.000002
+radial_accel_max = 34.999996
+tangential_accel_min = -5.000002
+tangential_accel_max = 34.999996
+scale_min = 0.5
+scale_max = 1.5
+alpha_curve = SubResource("CurveTexture_81tpp")

@@ -14,7 +14,9 @@
 [ext_resource type="Script" uid="uid://dugccqtkvbf45" path="res://Assets/Scripts/UI/Main/BackgroundTextureUI.gd" id="8_4pgat"]
 [ext_resource type="Shader" uid="uid://doj24ha0xkt51" path="res://Assets/Sprites/Shaders/GrassUpLeftShader.tres" id="8_f6fh2"]
 [ext_resource type="Texture2D" uid="uid://dxkbg1xb788yo" path="res://Assets/Sprites/BackgroundPlants/растения правый верхний.png" id="8_i5g6b"]
+[ext_resource type="Texture2D" uid="uid://db6t5rpyefos1" path="res://Assets/Sprites/UI/AdditionalMainElement/свечка побольше.png" id="8_mxj8y"]
 [ext_resource type="Texture2D" uid="uid://cdg4nkktgm2l4" path="res://Assets/Sprites/BackgroundPlants/растение левый нижний.png" id="9_4r6ek"]
+[ext_resource type="Texture2D" uid="uid://b3k7ymportvxs" path="res://Assets/Sprites/UI/AdditionalMainElement/свечка поменьше.png" id="9_cl3s6"]
 [ext_resource type="Shader" uid="uid://dnqpenwykt6gf" path="res://Assets/Sprites/Shaders/GrassUpRightShader.tres" id="10_281o3"]
 [ext_resource type="Texture2D" uid="uid://c4kntb3xq6ht1" path="res://Assets/Sprites/BackgroundPlants/растение правый нижний.png" id="10_qxc7r"]
 [ext_resource type="PackedScene" uid="uid://brroeoa27ev13" path="res://Assets/Scenes/UI/MainUI/Main/AttemptsUi.tscn" id="11_06u7b"]
@@ -29,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://br0k6xa3yuvwy" path="res://Assets/Scenes/UI/MainUI/FindBox/FindManualUI.tscn" id="25_4pgat"]
 [ext_resource type="Texture2D" uid="uid://1hu77ui7wol0" path="res://Assets/Sprites/UI/Menus/Pause/круг.png" id="28_geo4o"]
 [ext_resource type="Material" uid="uid://c5rn4m5p1qgbl" path="res://Assets/Resources/Particles/SumParticles.tres" id="29_q6gnt"]
+[ext_resource type="PackedScene" uid="uid://dirhxahh6jl45" path="res://Assets/Scenes/Lights/CandleLight.tscn" id="32_cl3s6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_geo4o"]
 shader = ExtResource("8_f6fh2")
@@ -72,6 +75,26 @@ expand_mode = 3
 stretch_mode = 5
 script = ExtResource("8_4pgat")
 
+[node name="CandleBig" type="TextureRect" parent="." unique_id=1062711702]
+anchors_preset = -1
+anchor_left = 0.35
+anchor_right = 0.4
+anchor_bottom = 0.4
+mouse_filter = 2
+texture = ExtResource("8_mxj8y")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="CandleSmall" type="TextureRect" parent="." unique_id=845898742]
+anchors_preset = -1
+anchor_left = 0.3
+anchor_right = 0.3
+anchor_bottom = 0.3
+mouse_filter = 2
+texture = ExtResource("9_cl3s6")
+expand_mode = 3
+stretch_mode = 5
+
 [node name="UpLeft" type="TextureRect" parent="." unique_id=48130330]
 material = SubResource("ShaderMaterial_geo4o")
 offset_left = 5.0
@@ -107,10 +130,9 @@ texture = ExtResource("9_4r6ek")
 
 [node name="DayCounter" parent="." unique_id=634616480 instance=ExtResource("6_hc1y4")]
 anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.05
-anchor_right = 0.7
-anchor_bottom = 0.3
+anchor_left = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.25
 grow_horizontal = 1
 grow_vertical = 1
 mouse_filter = 2
@@ -156,7 +178,7 @@ grow_vertical = 1
 mouse_filter = 2
 
 [node name="PlantSpawnLocation" parent="." unique_id=220576351 instance=ExtResource("18_qxc7r")]
-position = Vector2(499, 375)
+position = Vector2(550, 375)
 
 [node name="DownRight" type="TextureRect" parent="." unique_id=1598473777]
 material = SubResource("ShaderMaterial_cl3s6")
@@ -203,6 +225,18 @@ process_material = ExtResource("29_q6gnt")
 
 [node name="PauseMenu" parent="." unique_id=1211643558 instance=ExtResource("3_gc7u3")]
 visible = false
+
+[node name="CandleLight" parent="." unique_id=266203819 instance=ExtResource("32_cl3s6")]
+position = Vector2(464, 186)
+
+[node name="CandleLight2" parent="." unique_id=163884539 instance=ExtResource("32_cl3s6")]
+position = Vector2(474, 465)
+
+[node name="CandleLight3" parent="." unique_id=15904247 instance=ExtResource("32_cl3s6")]
+position = Vector2(384, 133)
+
+[node name="CandleLight4" parent="." unique_id=1703193511 instance=ExtResource("32_cl3s6")]
+position = Vector2(415, 413)
 
 [connection signal="gui_input" from="BackgroundTexture" to="BackgroundTexture" method="_on_gui_input"]
 

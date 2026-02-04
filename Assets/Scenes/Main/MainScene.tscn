@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://c78io5h70qis6"]
+[gd_scene format=3 uid="uid://c78io5h70qis6"]
 
 [ext_resource type="PackedScene" uid="uid://dwge7iku0cbsp" path="res://Assets/Scenes/UI/MainUI/MainUI.tscn" id="1_mkk7x"]
 [ext_resource type="Script" uid="uid://dypvbsnr1qo6f" path="res://Assets/Scripts/Main/GameManager.gd" id="1_rqquv"]
 
-[node name="MainScene" type="Node" node_paths=PackedStringArray("day_timer")]
+[node name="MainScene" type="Node" unique_id=166748398 node_paths=PackedStringArray("day_timer")]
 process_mode = 1
 script = ExtResource("1_rqquv")
 day_timer = NodePath("Timer")
 
-[node name="MainUi" parent="." instance=ExtResource("1_mkk7x")]
+[node name="MainUi" parent="." unique_id=1574431787 instance=ExtResource("1_mkk7x")]
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1180077574]
 wait_time = 660.0
 
 [connection signal="timeout" from="Timer" to="." method="day_timer_end"]

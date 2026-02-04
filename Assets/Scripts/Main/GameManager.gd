@@ -42,7 +42,7 @@ func check_plants_grow():
 	var all_true = true
 	
 	for plant in plants_in_game:
-		if plants_in_game[plant] == false:  # или просто if not plants_in_game[plant]
+		if plants_in_game[plant] == false:  
 			all_true = false
 			break
 			
@@ -94,6 +94,5 @@ func day_timer_end() -> void:
 	if current_day < max_day:
 		current_day += 1
 		GlobalContext.main_ui_instance.open_day_switcher(current_day)
-		print(current_day)
 	else:
 		GlobalContext.main_ui_instance.open_victory_screen()

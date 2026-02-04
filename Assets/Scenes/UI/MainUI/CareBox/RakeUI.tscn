@@ -20,3 +20,5 @@ texture = ExtResource("2_bontv")
 polygon = PackedVector2Array(-114, 485, -766, 126, 475, -432, 697, -300)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_mouse_enter"]
+[connection signal="mouse_exited" from="." to="." method="_mouse_exit"]

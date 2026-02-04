@@ -1,4 +1,4 @@
-extends Node
+extends Control
 class_name FindBoxItem
 
 @export var find_box_type : GlobalEnums.PLANT_FIND_TYPE
@@ -9,6 +9,14 @@ class_name FindBoxItem
 
 signal item_picked(item : FindBoxItem)
 
+var mouse_entered_offset : Vector2 = Vector2(0, -15)
+var original_position : Vector2
+
+var tween : Tween
+
+func _ready() -> void:
+	original_position = position
+
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
@@ -16,6 +24,24 @@ func _gui_input(event: InputEvent) -> void:
 				item_picked.emit(self)
 				print("ITEM PICKED: " + self.name)
 				change_mouse_on_item()
+
+func _mouse_enter():
+	if tween:
+		tween.kill()
+		
+	tween = create_tween()
+	tween.set_trans(Tween.TRANS_QUAD)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position", original_position + mouse_entered_offset, 0.2)
+
+func _mouse_exit():
+	if tween:
+		tween.kill()
+		
+	tween = create_tween()
+	tween.set_trans(Tween.TRANS_QUAD)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position", original_position, 0.2)
 
 func change_mouse_on_item():
 	texture.texture = clicked_item_icon

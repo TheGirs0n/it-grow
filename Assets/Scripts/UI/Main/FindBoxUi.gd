@@ -7,6 +7,12 @@ var current_find_box_item : FindBoxItem = null
 var is_open = false
 var simple_tween : Tween
 
+var mouse_entered_offset : Vector2 = Vector2(15, 0)
+var original_position : Vector2
+
+func _ready() -> void:
+	original_position = position
+
 func set_current_find_box_item(item : FindBoxItem) -> void:
 	if current_find_box_item == null:
 		current_find_box_item = item
@@ -55,3 +61,29 @@ func _on_find_book_pressed() -> void:
 	
 	GlobalContext.main_ui_instance.care_box_ui.clear_current_care_box_item()
 	GlobalContext.main_ui_instance.find_box_ui.clear_current_find_box_item()
+
+
+func _on_move_box_mouse_entered() -> void:
+	if is_open:
+		return
+	
+	if simple_tween:
+		simple_tween.kill()
+		
+	simple_tween = create_tween()
+	simple_tween.set_trans(Tween.TRANS_QUAD)
+	simple_tween.set_ease(Tween.EASE_OUT)
+	simple_tween.tween_property(self, "position", original_position + mouse_entered_offset, 0.2)
+
+
+func _on_move_box_mouse_exited() -> void:
+	if is_open:
+		return
+	
+	if simple_tween:
+		simple_tween.kill()
+		
+	simple_tween = create_tween()
+	simple_tween.set_trans(Tween.TRANS_QUAD)
+	simple_tween.set_ease(Tween.EASE_OUT)
+	simple_tween.tween_property(self, "position", original_position, 0.2)

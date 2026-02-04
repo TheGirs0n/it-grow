@@ -55,7 +55,6 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="LeftPageText" type="RichTextLabel" parent="." unique_id=1472001093]
-self_modulate = Color(0.168627, 0.152941, 0.137255, 1)
 layout_mode = 0
 offset_left = 201.0
 offset_top = 51.0
@@ -69,7 +68,6 @@ theme_override_font_sizes/bold_font_size = 22
 bbcode_enabled = true
 
 [node name="RightPageText" type="RichTextLabel" parent="." unique_id=1176698766]
-self_modulate = Color(0.168627, 0.152941, 0.137255, 1)
 layout_mode = 0
 offset_left = 598.0
 offset_top = 51.0

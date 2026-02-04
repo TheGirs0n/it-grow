@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlantResource" load_steps=7 format=3 uid="uid://ccc8retawxsrb"]
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://ccc8retawxsrb"]
 
 [ext_resource type="Texture2D" uid="uid://bavpyoidf3hs" path="res://Assets/Sprites/Plants/Plant_3/1.png" id="1_2o5ui"]
 [ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="1_55rn8"]
@@ -12,10 +12,10 @@ script = ExtResource("1_55rn8")
 plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_2o5ui"), ExtResource("2_4hqqv"), ExtResource("3_61fao")])
 plant_name = "Хвостатка сизая"
 plant_cool_name = "Артемисия Иллариона (Artemisia Illarion)"
-plant_description = "[b]Хвостатка сизая[/b] - выращивать сложно, но не невозможно. Сильное растение стихии земли поэтому лучше всего чувствует себя в рыхлой почве, и может даже на обездоленной почве.
+plant_description = "[color=#2b2723][b]Хвостатка сизая[/b] - выращивать сложно, но не невозможно. Сильное растение стихии земли поэтому лучше всего чувствует себя в рыхлой почве, и может даже на обездоленной почве.
 Сок ягод помогает во время лихорадок, важно смешать три-четыре капли с настоянной на луне водой. Первый опыт показал что пока растение набирает силу, его очень просто залить. Попробую посадить его рядом с огненной стихией. 
 Сияние цветка отгоняет зло."
-plant_cool_description = "[b]Артемисия Иллариона (Artemisia Illarion)[/b] - пустынное кустарниковое растение. 
+plant_cool_description = "[color=#2b2723][b]Артемисия Иллариона (Artemisia Illarion)[/b] - пустынное кустарниковое растение. 
 В качестве места для роста часто использует каменистую почву, корневая система поверхностная. Листья растения острые
 Сок растения ядовит (При лунном свете еле заметно испускает голубоватое сияние), и используется в качестве седативного средства. Первые упоминания о применении Артемиссии восходят к 13 веку, и пришли к нам из церковных записей Присвятого Иллариона из Раонока.
 Белые соцветия формой напоминают хвост скорпиона.
@@ -24,6 +24,5 @@ plant_smell = "Горький, пыльный запах, от которого 
 plant_energy = "Камни поющие под луной, шепот песчинок. Хочется спать."
 plant_leaf = ExtResource("5_36wk0")
 plant_juice_density = ExtResource("4_61fao")
-plant_juice_color = ""
 plant_care_stages = Array[int]([1, 2, 1])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"
