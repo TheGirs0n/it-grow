@@ -15,7 +15,7 @@ var current_first_page = 0
 var current_second_page = 1
 
 func open_start():
-	change_text(start_first_page, start_second_page)
+	change_text(current_first_page, current_second_page)
 
 func _on_prev_pressed() -> void:
 	if current_first_page != 0:

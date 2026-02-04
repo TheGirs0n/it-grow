@@ -54,7 +54,8 @@ func apply_resolution(index : int, window_mode : int):
 		Vector2i(1280, 720),
 		Vector2i(1366, 768),
 		Vector2i(1600, 900),
-		Vector2i(1920, 1080)
+		Vector2i(1920, 1080),
+		Vector2i(2560, 1440)
 	]
 	
 	if index < 0 or index >= resolutions.size():

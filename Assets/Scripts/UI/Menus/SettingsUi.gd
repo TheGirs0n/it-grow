@@ -110,7 +110,7 @@ func on_decrease_resolution_mode() -> void:
 
 
 func on_increase_resolution_mode() -> void:
-	if current_resolution_mode_index < 3:
+	if current_resolution_mode_index < 4:
 		current_resolution_mode_index += 1
 		set_resolution_text(current_resolution_mode_index)
 
