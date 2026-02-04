@@ -19,7 +19,7 @@ plant_cool_description = "[color=#2b2723][b]Цестроидия Скелетн�
 "
 plant_smell = "Ну уж нет... Терпеть не могу пауков!!! Не хочу даже приближатся к этому!!!"
 plant_energy = "Не ощущаю никакой негативной энергии, даже странно для цветка с таким внешним видом..."
-plant_leaf = ExtResource("5_131bx")
-plant_juice_density = ExtResource("4_dbw5y")
+plant_leaf = Array[CompressedTexture2D]([ExtResource("5_131bx")])
+plant_juice_density = Array[CompressedTexture2D]([ExtResource("4_dbw5y")])
 plant_care_stages = Array[int]([1, 0, 1])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"

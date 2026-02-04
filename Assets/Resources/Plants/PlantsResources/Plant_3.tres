@@ -22,7 +22,7 @@ plant_cool_description = "[color=#2b2723][b]Артемисия Илларион�
 В простонородии известна как Скорпионник, Хвостушка горькая или Хвостатка Сизая"
 plant_smell = "Горький, пыльный запах, от которого я чувствую себя умиротворенно. "
 plant_energy = "Камни поющие под луной, шепот песчинок. Хочется спать."
-plant_leaf = ExtResource("5_36wk0")
-plant_juice_density = ExtResource("4_61fao")
+plant_leaf = Array[CompressedTexture2D]([ExtResource("5_36wk0")])
+plant_juice_density = Array[CompressedTexture2D]([ExtResource("4_61fao")])
 plant_care_stages = Array[int]([1, 2, 1])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"

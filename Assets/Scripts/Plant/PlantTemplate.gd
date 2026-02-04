@@ -12,9 +12,8 @@ var plant_description : String
 var plant_cool_description : String
 var plant_grow_stage_textures : Array[CompressedTexture2D]
 var plant_smell : String
-var plant_leaf : CompressedTexture2D
-var plant_juice_density : CompressedTexture2D
-var plant_juice_color : String
+var plant_leaf : Array[CompressedTexture2D]
+var plant_juice_density : Array[CompressedTexture2D]
 var plant_care_stages : Array[GlobalEnums.PLANT_CARE_TYPE]
 
 var plant_care_stages_complete : Array[bool]
@@ -32,7 +31,6 @@ func load_data_from_resource():
 	plant_smell = plant_resource.plant_smell
 	plant_leaf = plant_resource.plant_leaf
 	plant_juice_density = plant_resource.plant_juice_density
-	plant_juice_color = plant_resource.plant_juice_color
 	plant_care_stages = plant_resource.plant_care_stages
 	
 	plant_texture.texture = plant_grow_stage_textures[plant_care_stages_index]
@@ -111,10 +109,10 @@ func try_find_item(find_item : FindBoxItem):
 			GlobalContext.main_ui_instance.show_tooltip(plant_energy)
 		GlobalEnums.PLANT_FIND_TYPE.KNIFE:
 			GlobalAudio.play_knife()
-			GlobalContext.main_ui_instance.open_find_box_center(plant_grow_stage_textures[plant_care_stages_index], plant_juice_density)
+			GlobalContext.main_ui_instance.open_find_box_center(plant_grow_stage_textures[plant_care_stages_index], plant_juice_density[plant_care_stages_index])
 		GlobalEnums.PLANT_FIND_TYPE.MAGNIFIER:
 			GlobalAudio.play_bag_sound()
-			GlobalContext.main_ui_instance.open_find_box_center(plant_grow_stage_textures[plant_care_stages_index], plant_leaf)
+			GlobalContext.main_ui_instance.open_find_box_center(plant_grow_stage_textures[plant_care_stages_index], plant_leaf[plant_care_stages_index])
 
 
 func increase_grow_stage():

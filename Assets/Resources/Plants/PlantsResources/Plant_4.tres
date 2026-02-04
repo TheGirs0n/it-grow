@@ -18,7 +18,7 @@ plant_cool_description = "[color=#2b2723][b]Ариадисия Глянцева�
 plant_smell = "Бабушка очень любила что \"Мадам Шарлота\" напоминает ей о  офисе Леди Стейн. Тот-же утонченный аромат с нотками лилий. Но как по мне он пахнет смерью."
 plant_energy = "Не могу понять что источает цветок. Будто он вытягивает из меня силы, а не отдает.
 Эй, что там шевельнулось???"
-plant_leaf = ExtResource("5_x8caf")
-plant_juice_density = ExtResource("4_xtg7w")
+plant_leaf = Array[CompressedTexture2D]([ExtResource("5_x8caf")])
+plant_juice_density = Array[CompressedTexture2D]([ExtResource("4_xtg7w")])
 plant_care_stages = Array[int]([0, 2, 1])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"

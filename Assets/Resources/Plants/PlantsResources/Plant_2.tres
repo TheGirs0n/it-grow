@@ -25,7 +25,7 @@ plant_cool_description = "[color=#2b2723][b]Ла Йорона Пылкая (Lalo
 plant_smell = "Обожаю этот аромат! Запах яркий, теплый. Немного металлический. 
 Ой... Голова что-то разболелась... Неужели будет дождь"
 plant_energy = "Ай! Каждый раз чувствую будто обожглась как только подхожу к ней! Какая она все таки своенравная!"
-plant_leaf = ExtResource("5_oj35h")
-plant_juice_density = ExtResource("4_oab0u")
+plant_leaf = Array[CompressedTexture2D]([ExtResource("5_oj35h")])
+plant_juice_density = Array[CompressedTexture2D]([ExtResource("4_oab0u")])
 plant_care_stages = Array[int]([0, 1, 2])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"

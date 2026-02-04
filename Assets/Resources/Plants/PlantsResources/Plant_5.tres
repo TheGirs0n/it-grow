@@ -20,7 +20,7 @@ plant_cool_description = "[color=#2b2723][b]Скандия Темная (Skandia
 Сок растения густой, белесого цвета, похож на клей, большая часть которого содержится в ягоде. "
 plant_smell = "Совершенно не имеет запаха. Даже удивительно!"
 plant_energy = "Липкая энергия. Обволакивающая, будто затягивающая в болото."
-plant_leaf = ExtResource("5_fmus1")
-plant_juice_density = ExtResource("4_f8onf")
+plant_leaf = Array[CompressedTexture2D]([ExtResource("5_fmus1")])
+plant_juice_density = Array[CompressedTexture2D]([ExtResource("4_f8onf")])
 plant_care_stages = Array[int]([2, 2, 0])
 metadata/_custom_type_script = "uid://yxbu7vekeegj"
