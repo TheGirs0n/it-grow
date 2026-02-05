@@ -43,8 +43,12 @@ folder_colors={
 "res://Assets/Scenes/": "green",
 "res://Assets/Scripts/": "teal",
 "res://Assets/Sprites/": "blue",
-"res://Assets/Translation/": "blue"
+"res://Assets/Translation/": "purple"
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Assets/Translation/TRANSLATION.EN.translation", "res://Assets/Translation/TRANSLATION.RU.translation")
 
 [rendering]
 

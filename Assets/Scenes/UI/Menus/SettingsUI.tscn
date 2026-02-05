@@ -6,13 +6,23 @@
 [ext_resource type="Texture2D" uid="uid://batbb7jisf60y" path="res://Assets/Sprites/UI/Menus/Pause/ползунок.png" id="3_ik26v"]
 [ext_resource type="Texture2D" uid="uid://peoa6a7yw7i3" path="res://Assets/Sprites/UI/Menus/Pause/звук выкл.png" id="4_fv6cf"]
 [ext_resource type="Texture2D" uid="uid://cnoi8o1hex3np" path="res://Assets/Sprites/UI/Menus/Pause/стрелочка.png" id="5_68i8b"]
+[ext_resource type="Texture2D" uid="uid://bpjjc018u43t4" path="res://Assets/Sprites/UI/Menus/Pause/линия_ds.png" id="6_ea1xn"]
 [ext_resource type="Texture2D" uid="uid://dh4q757x6ikpm" path="res://Assets/Sprites/UI/Buttons/MenuButton/меню_покой.png" id="7_fv6cf"]
 [ext_resource type="Texture2D" uid="uid://c04mjfdh1u00p" path="res://Assets/Sprites/UI/Buttons/MenuButton/меню_нажата.png" id="8_ea1xn"]
 [ext_resource type="Texture2D" uid="uid://cnocbo04bj5yx" path="res://Assets/Sprites/UI/Buttons/MenuButton/меню_наведение.png" id="9_165ny"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1ii1u"]
 
-[node name="SettingsUi" type="Control" unique_id=936939857 node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider", "master_volume_text", "sfx_volume_text", "music_volume_text", "current_window_mode_text", "current_resolution_mode_text", "apply_button", "restore_defaults_button")]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_165ny"]
+content_margin_top = 15.0
+content_margin_bottom = 15.0
+texture = ExtResource("6_ea1xn")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ea1xn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_165ny"]
+
+[node name="SettingsUi" type="Control" unique_id=936939857 node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider", "master_mute_button", "sfx_mute_button", "music_mute_button", "master_volume_text", "sfx_volume_text", "music_volume_text", "current_window_mode_text", "current_resolution_mode_text", "language_toggle_button", "apply_button", "restore_defaults_button")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -24,13 +34,17 @@ script = ExtResource("1_1ii1u")
 master_slider = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer/MasterSlider")
 sfx_slider = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2/SFXSlider")
 music_slider = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3/MusicSlider")
+master_mute_button = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer/ToggleMasterMuteButton")
+sfx_mute_button = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2/ToggleSFXMuteButton")
+music_mute_button = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3/ToggleMusicMuteButton")
 master_volume_text = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer/RichTextLabel2")
 sfx_volume_text = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2/RichTextLabel2")
 music_volume_text = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3/RichTextLabel2")
 current_window_mode_text = NodePath("TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode/CurrentMode")
 current_resolution_mode_text = NodePath("TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode/CurrentMode")
 array_window_mode = Array[String](["ПОЛНЫЙ ЭКРАН", "В ОКНЕ"])
-array_resolution_mode = Array[String](["1280 x 720", "1366 x 768", "1600 x 900", "1920 x 1080"])
+array_resolution_mode = Array[String](["1280 x 720", "1366 x 768", "1600 x 900", "1920 x 1080", "2560 x 1440"])
+language_toggle_button = NodePath("TabContainer/ЯЗЫК/HBoxContainer/LanguageToggleButton")
 apply_button = NodePath("ButtonsContainer/ApplySettings")
 restore_defaults_button = NodePath("ButtonsContainer/RestoreDefaults")
 
@@ -92,10 +106,11 @@ text = "ОБЩАЯ ГРОМКОСТЬ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ToggleMuteButton" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer" unique_id=300483491]
+[node name="ToggleMasterMuteButton" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer" unique_id=300483491]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
+toggle_mode = true
 action_mode = 0
 texture_normal = ExtResource("2_pcxia")
 texture_pressed = ExtResource("4_fv6cf")
@@ -103,14 +118,18 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="MasterSlider" type="HSlider" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer" unique_id=1959922220]
+show_behind_parent = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
+size_flags_vertical = 1
 size_flags_stretch_ratio = 2.0
 theme_override_icons/grabber = ExtResource("3_ik26v")
 theme_override_icons/grabber_highlight = ExtResource("3_ik26v")
 theme_override_icons/grabber_disabled = ExtResource("3_ik26v")
 theme_override_icons/tick = ExtResource("3_ik26v")
+theme_override_styles/slider = SubResource("StyleBoxTexture_165ny")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_ea1xn")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_165ny")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer" unique_id=2091199051]
 layout_mode = 2
@@ -137,10 +156,11 @@ text = "ЗВУКОВЫЕ ЭФФЕКТЫ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ToggleMuteButton" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2" unique_id=1457808768]
+[node name="ToggleSFXMuteButton" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2" unique_id=1457808768]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
+toggle_mode = true
 action_mode = 0
 texture_normal = ExtResource("2_pcxia")
 texture_pressed = ExtResource("4_fv6cf")
@@ -148,14 +168,18 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="SFXSlider" type="HSlider" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2" unique_id=1025399011]
+show_behind_parent = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
+size_flags_vertical = 1
 size_flags_stretch_ratio = 2.0
 theme_override_icons/grabber = ExtResource("3_ik26v")
 theme_override_icons/grabber_highlight = ExtResource("3_ik26v")
 theme_override_icons/grabber_disabled = ExtResource("3_ik26v")
 theme_override_icons/tick = ExtResource("3_ik26v")
+theme_override_styles/slider = SubResource("StyleBoxTexture_165ny")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_ea1xn")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_165ny")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2" unique_id=853589081]
 layout_mode = 2
@@ -182,10 +206,11 @@ text = "ГРОМКОСТЬ МУЗЫКИ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ToggleMuteButton" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3" unique_id=59087237]
+[node name="ToggleMusicMuteButton" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3" unique_id=59087237]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
+toggle_mode = true
 action_mode = 0
 texture_normal = ExtResource("2_pcxia")
 texture_pressed = ExtResource("4_fv6cf")
@@ -193,14 +218,18 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="MusicSlider" type="HSlider" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3" unique_id=30322899]
+show_behind_parent = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
+size_flags_vertical = 1
 size_flags_stretch_ratio = 2.0
 theme_override_icons/grabber = ExtResource("3_ik26v")
 theme_override_icons/grabber_highlight = ExtResource("3_ik26v")
 theme_override_icons/grabber_disabled = ExtResource("3_ik26v")
 theme_override_icons/tick = ExtResource("3_ik26v")
+theme_override_styles/slider = SubResource("StyleBoxTexture_165ny")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_ea1xn")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_165ny")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3" unique_id=1390549602]
 layout_mode = 2
@@ -324,6 +353,27 @@ stretch_mode = 5
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/ЯЗЫК" unique_id=472136465]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/ЯЗЫК/HBoxContainer" unique_id=135734392]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LanguageToggleButton" type="CheckButton" parent="TabContainer/ЯЗЫК/HBoxContainer" unique_id=1992744740]
+layout_mode = 2
+action_mode = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/ЯЗЫК/HBoxContainer" unique_id=1975390280]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="ButtonsContainer" type="HBoxContainer" parent="." unique_id=1847004852]
 layout_mode = 1
