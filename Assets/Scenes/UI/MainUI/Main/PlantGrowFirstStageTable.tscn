@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d34nwntmgquvv"]
+
+[ext_resource type="Script" uid="uid://cqnm2jn8cjnow" path="res://Assets/Scenes/UI/MainUI/Main/PlantGrowFirstStageTable.gd" id="1_yumcv"]
+
+[node name="PlantGrowFirstStageTable" type="Control" unique_id=2095018742]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yumcv")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://bt1h3mvmsd3o1" path="res://Assets/Fonts/ofont.ru_Gnocchi.ttf" id="2_lcmdv"]
 [ext_resource type="Texture2D" uid="uid://c0wstkykacoaq" path="res://Assets/Sprites/UI/Menus/Pause/звук вкл.png" id="2_pcxia"]
 [ext_resource type="Texture2D" uid="uid://batbb7jisf60y" path="res://Assets/Sprites/UI/Menus/Pause/ползунок.png" id="3_ik26v"]
+[ext_resource type="Texture2D" uid="uid://peoa6a7yw7i3" path="res://Assets/Sprites/UI/Menus/Pause/звук выкл.png" id="4_fv6cf"]
 [ext_resource type="Texture2D" uid="uid://cnoi8o1hex3np" path="res://Assets/Sprites/UI/Menus/Pause/стрелочка.png" id="5_68i8b"]
 [ext_resource type="Texture2D" uid="uid://dh4q757x6ikpm" path="res://Assets/Sprites/UI/Buttons/MenuButton/меню_покой.png" id="7_fv6cf"]
 [ext_resource type="Texture2D" uid="uid://c04mjfdh1u00p" path="res://Assets/Sprites/UI/Buttons/MenuButton/меню_нажата.png" id="8_ea1xn"]
@@ -91,12 +92,13 @@ text = "ОБЩАЯ ГРОМКОСТЬ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer" unique_id=300483491]
+[node name="ToggleMuteButton" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer" unique_id=300483491]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
 action_mode = 0
 texture_normal = ExtResource("2_pcxia")
+texture_pressed = ExtResource("4_fv6cf")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -135,12 +137,13 @@ text = "ЗВУКОВЫЕ ЭФФЕКТЫ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2" unique_id=1457808768]
+[node name="ToggleMuteButton" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2" unique_id=1457808768]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
 action_mode = 0
 texture_normal = ExtResource("2_pcxia")
+texture_pressed = ExtResource("4_fv6cf")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -179,12 +182,13 @@ text = "ГРОМКОСТЬ МУЗЫКИ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3" unique_id=59087237]
+[node name="ToggleMuteButton" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3" unique_id=59087237]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
 action_mode = 0
 texture_normal = ExtResource("2_pcxia")
+texture_pressed = ExtResource("4_fv6cf")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -315,6 +319,11 @@ action_mode = 0
 texture_normal = ExtResource("5_68i8b")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="ЯЗЫК" type="TabBar" parent="TabContainer" unique_id=1501630538]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
 
 [node name="ButtonsContainer" type="HBoxContainer" parent="." unique_id=1847004852]
 layout_mode = 1
