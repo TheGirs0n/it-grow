@@ -6,7 +6,44 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cwxbd"]
 
-[node name="LoreMoment" type="Control" unique_id=628259105]
+[sub_resource type="Animation" id="Animation_6skwc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_sfuk1"]
+resource_name = "text_appear"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bc07q"]
+_data = {
+&"RESET": SubResource("Animation_6skwc"),
+&"text_appear": SubResource("Animation_sfuk1")
+}
+
+[node name="LoreMoment" type="Control" unique_id=628259105 node_paths=PackedStringArray("animation_player")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -17,6 +54,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_6skwc")
 main_scene = ExtResource("2_sfuk1")
+animation_player = NodePath("AnimationPlayer")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1361660223]
 self_modulate = Color(0, 0, 0, 1)
@@ -48,12 +86,13 @@ text = "Дорогая внучка, я очень рада, что ты пош�
 Помни все навыки уже есть в тебе - наше дело течет в твоей крови. Точно следуй моим инструкциям в последовательности по последовательности уходу за цветами и твой сад станет самым прекрасным."
 horizontal_alignment = 1
 vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
-[node name="Timer" type="Timer" parent="." unique_id=836224276]
-wait_time = 30.0
-one_shot = true
-autostart = true
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1856923301]
+libraries/ = SubResource("AnimationLibrary_bc07q")
+autoplay = &"text_appear"
 
 [connection signal="gui_input" from="TextureRect" to="." method="_on_gui_input"]
 [connection signal="gui_input" from="RichTextLabel" to="." method="_on_gui_input"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

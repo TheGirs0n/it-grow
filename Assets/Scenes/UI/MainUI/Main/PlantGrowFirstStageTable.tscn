@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d34nwntmgquvv"]
 
-[ext_resource type="Script" uid="uid://cqnm2jn8cjnow" path="res://Assets/Scenes/UI/MainUI/Main/PlantGrowFirstStageTable.gd" id="1_yumcv"]
+[ext_resource type="Script" uid="uid://cqnm2jn8cjnow" path="res://Assets/Scripts/UI/Main/PlantGrowFirstStageTable.gd" id="1_yumcv"]
 
 [node name="PlantGrowFirstStageTable" type="Control" unique_id=2095018742]
 layout_mode = 3

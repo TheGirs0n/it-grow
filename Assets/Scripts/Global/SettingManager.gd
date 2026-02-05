@@ -30,6 +30,7 @@ func apply_default_setting():
 	
 func apply_settings(master_volume: float, sfx_volume: float, music_volume: float,
 					window_mode: int, resolution: int):
+						
 	AudioServer.set_bus_volume_db(0, linear_to_db(master_volume / 100.0))
 	AudioServer.set_bus_volume_db(1, linear_to_db(sfx_volume / 100.0))
 	AudioServer.set_bus_volume_db(2, linear_to_db(music_volume / 100.0))
