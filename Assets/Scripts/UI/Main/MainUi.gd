@@ -70,6 +70,9 @@ func open_find_box_center(new_plant_texture : CompressedTexture2D, new_effect_te
 func open_find_box_center_add(new_plant_template : PlantTemplate):
 	find_box_circle_center_add.set_new_plant(new_plant_template)
 
+func open_find_box_center_full_grow(new_plant_template : PlantTemplate):
+	find_box_circle_center_add.set_plant_full_grow(new_plant_template)
+
 func open_care_manual():
 	care_manual.show()
 	care_manual.open_start()

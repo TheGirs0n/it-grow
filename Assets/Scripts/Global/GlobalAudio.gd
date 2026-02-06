@@ -18,6 +18,7 @@ extends Node
 @onready var watering_can_take: AudioStreamPlayer = $WateringCanTake
 @onready var win: AudioStreamPlayer = $Win
 @onready var main_theme: AudioStreamPlayer = $MainTheme
+@onready var button_hovered: AudioStreamPlayer = $ButtonHovered
 
 func play_main_theme():
 	main_theme.play()
@@ -72,3 +73,6 @@ func play_rake_use():
 	
 func play_win():
 	win.play()
+	
+func play_button_hover():
+	button_hovered.play()

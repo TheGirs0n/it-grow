@@ -19,6 +19,8 @@ var plant_care_stages : Array[GlobalEnums.PLANT_CARE_TYPE]
 var plant_care_stages_complete : Array[bool]
 var plant_care_stages_index = 0
 
+var is_plant_full_grow = false
+
 func _ready() -> void:
 	load_data_from_resource()
 
@@ -39,35 +41,50 @@ func load_data_from_resource():
 		plant_care_stages_complete.append(false)
 
 func _process(_delta: float) -> void:
+	if is_plant_full_grow:
+		return
+	
+	if plant_care_stages_index == plant_grow_stage_textures.size() - 1:
+		GlobalContext.main_ui_instance.show_tooltip("Цветок достиг своей абсолютной красоты!")
+		GlobalContext.game_manager_instance.set_plant_full(self)
+		is_plant_full_grow = true
+		return
+			
 	if plant_care_stages_complete.find(false) == -1:
 		increase_grow_stage()
 		return
 		
-	if input_pickable == true:
-		if plant_care_stages_index == plant_grow_stage_textures.size() - 1:
-			GlobalContext.main_ui_instance.show_tooltip("Цветок достиг своей абсолютной красоты!")
-			GlobalContext.game_manager_instance.set_plant_full(self)
-			input_pickable = false
-			return
-	
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.is_pressed():
-			
-				if GlobalContext.main_ui_instance.care_box_ui.current_care_box_item != null:
-					try_caring_plant(GlobalContext.main_ui_instance.care_box_ui.current_care_box_item)
-					GlobalContext.main_ui_instance.care_box_ui.clear_current_care_box_item()
-					return
+				if is_plant_full_grow == false:
+					if GlobalContext.main_ui_instance.care_box_ui.current_care_box_item != null:
+						try_caring_plant(GlobalContext.main_ui_instance.care_box_ui.current_care_box_item)
+						GlobalContext.main_ui_instance.care_box_ui.clear_current_care_box_item()
+						return
 					
-				if GlobalContext.main_ui_instance.find_box_ui.current_find_box_item != null:
-					try_find_item(GlobalContext.main_ui_instance.find_box_ui.current_find_box_item)
-					GlobalContext.main_ui_instance.find_box_ui.clear_current_find_box_item()
-					return
+					if GlobalContext.main_ui_instance.find_box_ui.current_find_box_item != null:
+						try_find_item(GlobalContext.main_ui_instance.find_box_ui.current_find_box_item)
+						GlobalContext.main_ui_instance.find_box_ui.clear_current_find_box_item()
+						return
 					
-				if GlobalContext.main_ui_instance.find_box_circle_center_add.visible == false:
-					GlobalContext.main_ui_instance.open_find_box_center_add(self)
+					if GlobalContext.main_ui_instance.find_box_circle_center_add.visible == false:
+						GlobalContext.main_ui_instance.open_find_box_center_add(self)
+				else:
+					if GlobalContext.main_ui_instance.care_box_ui.current_care_box_item != null:
+						GlobalContext.main_ui_instance.show_tooltip("За цветком больше не нужно ухаживать!")
+						GlobalContext.main_ui_instance.care_box_ui.clear_current_care_box_item()
+						return
+					
+					if GlobalContext.main_ui_instance.find_box_ui.current_find_box_item != null:
+						GlobalContext.main_ui_instance.show_tooltip("За цветком больше не нужно ухаживать!")
+						GlobalContext.main_ui_instance.find_box_ui.clear_current_find_box_item()
+						return
+					
+					if GlobalContext.main_ui_instance.find_box_circle_center_add.visible == false:
+						GlobalContext.main_ui_instance.open_find_box_center_full_grow(self)
 	
 func reset_care_routine():
 	plant_care_stages_complete.fill(false)
@@ -116,15 +133,6 @@ func try_find_item(find_item : FindBoxItem):
 
 
 func increase_grow_stage():
-	if plant_grow_stage_textures.size() == 1:
-		GlobalContext.main_ui_instance.show_tooltip("Цветок достиг своей абсолютной красоты!")
-		input_pickable = false
-		return
-	elif plant_care_stages_index == plant_grow_stage_textures.size() - 1:
-		GlobalContext.main_ui_instance.show_tooltip("Цветок достиг своей абсолютной красоты!")
-		input_pickable = false
-		return
-	
 	if plant_care_stages_index < plant_grow_stage_textures.size():
 		GlobalAudio.play_plants_grow()
 		GlobalParticles.spawn_particles(self)

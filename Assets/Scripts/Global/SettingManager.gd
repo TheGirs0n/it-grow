@@ -19,6 +19,7 @@ var default_language : String = "EN"
 func _enter_tree() -> void:
 	load_setting_at_startup()
 
+
 func load_setting_at_startup():
 	config_file = ConfigFile.new()
 	var is_have_config = config_file.load(config_path)
@@ -27,6 +28,7 @@ func load_setting_at_startup():
 		apply_default_setting()
 		
 	apply_setting_from_config()
+	
 	
 func apply_setting_from_config():
 	var master_volume : float = config_file.get_value("audio", "master_volume", default_master_volume)
@@ -53,6 +55,7 @@ func apply_default_setting():
 					default_music_volume, default_is_music_volume_mute,
 					default_window_mode, default_resolution_mode, default_language)
 	
+	
 func apply_settings(master_volume: float, is_master_volume_mute: bool, 
 					sfx_volume: float, is_sfx_volume_mute: bool, 
 					music_volume: float, is_music_volume_mute: bool,
@@ -70,6 +73,7 @@ func apply_settings(master_volume: float, is_master_volume_mute: bool,
 	apply_resolution(resolution_mode, window_mode)
 	apply_language(language)
 	
+	
 func apply_window_mode(mode_index : int):
 	match mode_index:
 		0:
@@ -78,6 +82,7 @@ func apply_window_mode(mode_index : int):
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 			center_window()
+		
 		
 func apply_resolution(index : int, window_mode : int):
 	if window_mode != 1:
@@ -97,8 +102,10 @@ func apply_resolution(index : int, window_mode : int):
 	DisplayServer.window_set_size(resolutions[index])
 	center_window()
 	
+	
 func apply_language(new_language : String):
 	TranslationServer.set_locale(new_language)
+	
 	
 func center_window() -> void:
 	var screen: Vector2i = DisplayServer.screen_get_size()

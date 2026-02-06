@@ -4,6 +4,12 @@ class_name MainMenuUI
 @export_group("Packed Scenes")
 @export var settings_scene : PackedScene
 
+
+func button_hovered():
+	if !GlobalAudio.button_hovered.playing:
+		GlobalAudio.play_button_hover()
+
+
 func _on_start_game_pressed() -> void:
 	print(GlobalContext.game_manager_instance)
 	if GlobalContext.game_manager_instance != null:

@@ -38,6 +38,11 @@ func _ready() -> void:
 	load_all_user_settings()
 	
 
+func button_hovered():
+	if !GlobalAudio.button_hovered.playing:
+		GlobalAudio.play_button_hover()
+
+
 func apply_and_save_settings() -> void:
 	SettingManager.save_settings(
 		master_slider.value, master_mute_button.button_pressed,
@@ -87,7 +92,6 @@ func restore_default_display():
 	
 	
 func restore_default_language():
-	var default_language : String = SettingManager.default_language
 	language_toggle_button.button_pressed = false
 	
 	

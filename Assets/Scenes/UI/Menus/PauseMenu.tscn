@@ -148,6 +148,9 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="mouse_entered" from="TextureRect/VBoxContainer/ContinueGame" to="." method="button_hovered"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/ContinueGame" to="." method="continue_button_game"]
+[connection signal="mouse_entered" from="TextureRect/VBoxContainer/Setting" to="." method="button_hovered"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Setting" to="." method="settings_button_pressed"]
+[connection signal="mouse_entered" from="TextureRect/VBoxContainer/Exit" to="." method="button_hovered"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Exit" to="." method="exit_button_pressed"]
