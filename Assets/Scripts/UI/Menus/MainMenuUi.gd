@@ -11,7 +11,6 @@ func button_hovered():
 
 
 func _on_start_game_pressed() -> void:
-	print(GlobalContext.game_manager_instance)
 	if GlobalContext.game_manager_instance != null:
 		GlobalContext.game_manager_instance.queue_free()
 	

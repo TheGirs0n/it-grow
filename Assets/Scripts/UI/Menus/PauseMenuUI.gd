@@ -24,4 +24,3 @@ func exit_button_pressed() -> void:
 	var main_menu_scene_new = main_menu_scene.instantiate() as MainMenuUI
 	get_tree().root.add_child(main_menu_scene_new)
 	GlobalContext.game_manager_instance.queue_free()
-	print(GlobalContext.game_manager_instance)

@@ -7,14 +7,18 @@ class_name DaySwitcherUI
 
 var tween : Tween
 
-func prepare_text(current_day : int):
+func _ready() -> void:
 	tween = create_tween()
-	tween.tween_property(self, "modulate:a", 0, 3)
-	
+	tween.tween_property(self, "modulate:a", 1, 3)
+
+func prepare_text(current_day : int):
 	current_day_text.text = str(current_day - 1)
 	next_day_text.text = str(current_day)
-	GlobalContext.game_manager_instance.new_day_parameters()
 	
 
 func close_day_switcher():
-	queue_free()
+	tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0, 3)
+	tween.tween_callback(queue_free)
+	GlobalContext.game_manager_instance.new_day_parameters()
+	GlobalContext.game_manager_instance.day_timer.paused = false

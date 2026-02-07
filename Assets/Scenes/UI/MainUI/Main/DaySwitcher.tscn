@@ -1,23 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsibl1xbekom5"]
+[gd_scene format=3 uid="uid://bsibl1xbekom5"]
 
 [ext_resource type="Script" uid="uid://dr8kw344yfqim" path="res://Assets/Scripts/UI/Main/DaySwitcherUI.gd" id="1_i43ed"]
 [ext_resource type="FontFile" uid="uid://bt1h3mvmsd3o1" path="res://Assets/Fonts/ofont.ru_Gnocchi.ttf" id="2_7bwro"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0cfgj"]
 
-[node name="DaySwitcher" type="Control" node_paths=PackedStringArray("current_day_text", "next_day_text")]
+[node name="DaySwitcher" type="Control" unique_id=1361652905 node_paths=PackedStringArray("current_day_text", "next_day_text")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 script = ExtResource("1_i43ed")
 current_day_text = NodePath("TextureRect/VBoxContainer/HBoxContainer/CurrentDay")
 next_day_text = NodePath("TextureRect/VBoxContainer/HBoxContainer/NextDay")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1787519675]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -25,18 +25,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 texture = SubResource("PlaceholderTexture2D_0cfgj")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect" unique_id=1397386732]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3
 anchor_top = 0.3
 anchor_right = 0.7
 anchor_bottom = 0.7
+mouse_filter = 0
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer" unique_id=1318515835]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_7bwro")
@@ -46,11 +48,12 @@ text = "ДЕНЬ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer" unique_id=491696542]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 0
 
-[node name="CurrentDay" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer"]
+[node name="CurrentDay" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer" unique_id=279906093]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/normal_font = ExtResource("2_7bwro")
@@ -60,7 +63,7 @@ text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Arrow" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer"]
+[node name="Arrow" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer" unique_id=1370981576]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/normal_font = ExtResource("2_7bwro")
@@ -70,7 +73,7 @@ text = "->"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NextDay" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer"]
+[node name="NextDay" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer" unique_id=2132016462]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/normal_font = ExtResource("2_7bwro")
@@ -80,7 +83,7 @@ text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=562906257]
 wait_time = 3.0
 one_shot = true
 autostart = true

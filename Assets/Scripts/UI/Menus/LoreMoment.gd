@@ -9,7 +9,6 @@ func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_RIGHT:
 			if event.is_pressed():
-				print(is_text_full_appeared)
 				try_close_lore_entrance()
 
 

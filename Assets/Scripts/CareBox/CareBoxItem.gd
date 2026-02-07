@@ -22,7 +22,6 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.is_pressed():
 				item_picked.emit(self)
-				print("ITEM PICKED: " + self.name)
 				change_mouse_on_item()
 
 func _mouse_enter():
