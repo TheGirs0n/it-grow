@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dykx0mp0loirm"]
+
+[ext_resource type="Script" uid="uid://b5s1ccwnirbvc" path="res://Assets/Scripts/UI/Tutorial.gd" id="1_0ouid"]
+[ext_resource type="PackedScene" uid="uid://cxom4lkpo8u1k" path="res://Assets/Scenes/UI/Menus/LoreMoment.tscn" id="2_rt6f8"]
+
+[node name="Tutorial" type="Control" unique_id=2055225823]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ouid")
+lore_scene = ExtResource("2_rt6f8")
