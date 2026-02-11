@@ -13,13 +13,14 @@
 [ext_resource type="Resource" uid="uid://cb8mrihu2wb45" path="res://Assets/Sprites/Plants/Plant_9/Plant_9.tres" id="11_7nii1"]
 [ext_resource type="Resource" uid="uid://b4ap30fuu8y71" path="res://Assets/Sprites/Plants/Plant_10/Plant_10.tres" id="12_jar8x"]
 [ext_resource type="Texture2D" uid="uid://bmh54u8etih78" path="res://Assets/Sprites/Books/открытый атлас.png" id="13_ah6nd"]
+[ext_resource type="Texture2D" uid="uid://cv212jhvn244h" path="res://Assets/Sprites/Books/атлас.png" id="13_uncfq"]
 [ext_resource type="FontFile" uid="uid://s3mmxlx1oh0b" path="res://Assets/Fonts/ofont.ru_Theano Didot.ttf" id="14_cswr3"]
 [ext_resource type="Texture2D" uid="uid://dld61efm1wtlx" path="res://Assets/Sprites/Books/стрелочка для книги.png" id="15_5k1w2"]
 [ext_resource type="Texture2D" uid="uid://de17e3iq8v2jk" path="res://Assets/Sprites/UI/Menus/крестик.png" id="16_fvnfo"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jxvyf"]
 
-[node name="FindManualUI" type="Control" unique_id=1920164889 node_paths=PackedStringArray("first_text", "second_text")]
+[node name="FindManualUI" type="Control" unique_id=1920164889 node_paths=PackedStringArray("book_texture", "first_text", "second_text", "prev_page_button", "next_page_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,8 +29,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tvuc1")
 plant_description = Array[ExtResource("2_uncfq")]([ExtResource("3_t0rr2"), ExtResource("4_fl6u3"), ExtResource("5_xntpb"), ExtResource("6_81tml"), ExtResource("7_lhbkp"), ExtResource("8_4hw3y"), ExtResource("9_mnvoq"), ExtResource("10_r08w8"), ExtResource("11_7nii1"), ExtResource("12_jar8x")])
+book_texture = NodePath("BookTexture")
+book_texture_title = ExtResource("13_uncfq")
+book_texture_open = ExtResource("13_ah6nd")
 first_text = NodePath("LeftPageText")
 second_text = NodePath("RightPageText")
+prev_page_button = NodePath("PreviousPage")
+next_page_button = NodePath("NextPage")
 
 [node name="BackgroundTexture" type="TextureRect" parent="." unique_id=1845082952]
 self_modulate = Color(0, 0, 0, 0.333333)

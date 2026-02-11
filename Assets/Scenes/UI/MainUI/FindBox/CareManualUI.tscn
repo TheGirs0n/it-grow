@@ -13,13 +13,14 @@
 [ext_resource type="Resource" uid="uid://cb8mrihu2wb45" path="res://Assets/Sprites/Plants/Plant_9/Plant_9.tres" id="11_m1ee1"]
 [ext_resource type="Resource" uid="uid://b4ap30fuu8y71" path="res://Assets/Sprites/Plants/Plant_10/Plant_10.tres" id="12_vxhsl"]
 [ext_resource type="Texture2D" uid="uid://tn4atwc63mf6" path="res://Assets/Sprites/Books/открытый дневник бабушки.png" id="13_gjjr2"]
+[ext_resource type="Texture2D" uid="uid://biuaqxpajjie" path="res://Assets/Sprites/Books/дневник бабушки.png" id="13_hl6wc"]
 [ext_resource type="FontFile" uid="uid://ypccknk0h50v" path="res://Assets/Fonts/ofont.ru_Daneehand.ttf" id="14_48iwm"]
 [ext_resource type="Texture2D" uid="uid://dld61efm1wtlx" path="res://Assets/Sprites/Books/стрелочка для книги.png" id="15_taypc"]
 [ext_resource type="Texture2D" uid="uid://de17e3iq8v2jk" path="res://Assets/Sprites/UI/Menus/крестик.png" id="16_nio3u"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pdst6"]
 
-[node name="CareManualUI" type="Control" unique_id=388613826 node_paths=PackedStringArray("first_text", "second_text")]
+[node name="CareManualUI" type="Control" unique_id=388613826 node_paths=PackedStringArray("book_texture", "first_text", "second_text", "prev_page_button", "next_page_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,8 +29,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_at3x7")
 plant_description = Array[ExtResource("2_hl6wc")]([ExtResource("3_h2fcc"), ExtResource("4_o4yns"), ExtResource("5_5jgbf"), ExtResource("6_ys1ue"), ExtResource("7_rp185"), ExtResource("8_wcor5"), ExtResource("9_f30eu"), ExtResource("10_gtti6"), ExtResource("11_m1ee1"), ExtResource("12_vxhsl")])
+book_texture = NodePath("BookTexture")
+book_texture_title = ExtResource("13_hl6wc")
+book_texture_open = ExtResource("13_gjjr2")
 first_text = NodePath("LeftPageText")
 second_text = NodePath("RightPageText")
+prev_page_button = NodePath("PreviousPage")
+next_page_button = NodePath("NextPage")
 
 [node name="BackgroundTexture" type="TextureRect" parent="." unique_id=121116476]
 self_modulate = Color(0, 0, 0, 0.333333)

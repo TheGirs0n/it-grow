@@ -17,13 +17,13 @@ class_name GameOverMiniGameUI
 
 @export_group("Next Stage Button")
 @export var next_stage : Button
+@export var exit_button : Button
 
 @export_group("Dice Value")
 @export var dice_number_text : RichTextLabel 
 
 @export_group("Balance Things")
 @export var max_round_for_win : int = 3
-@export var timer : Timer
 
 enum MINI_GAME_MODE{
 	MORE_THAN,
@@ -60,6 +60,7 @@ func prepare_mini_game():
 	current_score = 0
 	current_round = 1
 
+
 func reset_mini_game():
 	current_number = randi_range(5, 9) # подкрутить вероятности
 	number_next.text = str(current_number)
@@ -77,6 +78,7 @@ func reset_mini_game():
 	mini_game_mode = MINI_GAME_MODE.MORE_THAN
 	next_stage.hide()
 
+
 func _on_more_button_pressed() -> void:
 	mini_game_mode = MINI_GAME_MODE.MORE_THAN
 	
@@ -85,6 +87,7 @@ func _on_more_button_pressed() -> void:
 	more_than_button.disabled = true
 	
 	roll_dice()
+
 
 func _on_less_button_pressed() -> void:
 	mini_game_mode = MINI_GAME_MODE.LESS_THAN
@@ -95,6 +98,7 @@ func _on_less_button_pressed() -> void:
 	
 	roll_dice()
 
+
 func _on_equal_button_pressed() -> void:
 	mini_game_mode = MINI_GAME_MODE.EQUAL
 
@@ -103,7 +107,7 @@ func _on_equal_button_pressed() -> void:
 	equal_button.disabled = true
 
 	roll_dice()
-	
+
 
 func roll_dice():
 	var first_number = randi_range(1, 6)
@@ -116,29 +120,31 @@ func roll_dice():
 	match mini_game_mode:
 		MINI_GAME_MODE.MORE_THAN:
 			if sum > current_number:
-				dice_rounds[current_round].texture = win_round_texture
+				dice_rounds[current_round - 1].texture = win_round_texture
 				increase_score(1)
 			else:
-				dice_rounds[current_round].texture = lose_round_texture
+				dice_rounds[current_round - 1].texture = lose_round_texture
 		MINI_GAME_MODE.LESS_THAN:
 			if sum < current_number:
-				dice_rounds[current_round].texture = win_round_texture
+				dice_rounds[current_round - 1].texture = win_round_texture
 				increase_score(1)
 			else:
-				dice_rounds[current_round].texture = lose_round_texture
+				dice_rounds[current_round - 1].texture = lose_round_texture
 			pass
 		MINI_GAME_MODE.EQUAL:
 			if sum == current_number:
-				dice_rounds[current_round].texture = win_round_texture
+				dice_rounds[current_round - 1].texture = win_round_texture
 				increase_score(3)
 			else:
-				dice_rounds[current_round].texture = lose_round_texture
+				dice_rounds[current_round - 1].texture = lose_round_texture
 			pass
 	
 	check_win()
 
+
 func increase_score(incoming_score : int):
 	current_score += incoming_score
+
 
 func check_win():
 	if current_score >= 2:
@@ -160,17 +166,16 @@ func lose_game():
 	
 	container.hide()
 	next_stage.hide()
-	timer.start()
-	
+	exit_button.show()
+
 
 func win_game():
 	is_win = true
 	
 	container.hide()
 	next_stage.hide()
-	timer.start()
-	GlobalContext.game_manager_instance.continue_game()
-	GlobalContext.game_manager_instance.increase_current_attempts()
+	exit_button.show()
+	
 
 func _on_next_stage_pressed() -> void:
 	reset_mini_game()
@@ -181,3 +186,8 @@ func _on_timer_timeout() -> void:
 		queue_free()
 	else:
 		GlobalContext.main_ui_instance.open_lose_screen()
+
+
+func _on_exit_minigame_button_pressed() -> void:
+	GlobalContext.game_manager_instance.continue_game()
+	GlobalContext.game_manager_instance.increase_current_attempts()

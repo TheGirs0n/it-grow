@@ -11,7 +11,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sg2kt"]
 
-[node name="GameOverMiniGameUi" type="Control" unique_id=1705552447 node_paths=PackedStringArray("container", "dice_rounds", "number_next", "more_than_button", "equal_button", "less_than_button", "next_stage", "dice_number_text", "timer")]
+[node name="GameOverMiniGameUi" type="Control" unique_id=1705552447 node_paths=PackedStringArray("container", "dice_rounds", "number_next", "more_than_button", "equal_button", "less_than_button", "next_stage", "exit_button", "dice_number_text")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -29,8 +29,8 @@ more_than_button = NodePath("HBoxContainer/MoreButton")
 equal_button = NodePath("HBoxContainer/EqualButton")
 less_than_button = NodePath("HBoxContainer/LessButton")
 next_stage = NodePath("NextStage")
+exit_button = NodePath("ExitMinigameButton")
 dice_number_text = NodePath("DiceTable/VBoxContainer/NumberText")
-timer = NodePath("Timer")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1789565317]
 modulate = Color(0, 0, 0, 1)
@@ -55,6 +55,7 @@ alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer" unique_id=1988402414]
 layout_mode = 2
 size_flags_horizontal = 3
+bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -89,10 +90,10 @@ stretch_mode = 5
 [node name="DiceTable" type="TextureRect" parent="." unique_id=126809642]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.2
-anchor_top = 0.2
-anchor_right = 0.8
-anchor_bottom = 0.8
+anchor_left = 0.1
+anchor_top = 0.175
+anchor_right = 0.9
+anchor_bottom = 0.85
 texture = ExtResource("2_elna4")
 expand_mode = 2
 stretch_mode = 5
@@ -132,10 +133,10 @@ stretch_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="DiceTable" unique_id=712038906]
 layout_mode = 0
-offset_left = 134.6
-offset_top = 156.4
-offset_right = 174.6
-offset_bottom = 196.4
+offset_left = 135.6
+offset_top = 155.4
+offset_right = 175.6
+offset_bottom = 195.4
 expand_mode = 2
 stretch_mode = 5
 
@@ -161,12 +162,21 @@ offset_bottom = 8.0
 action_mode = 0
 text = "ДАЛЬШЕ"
 
-[node name="Timer" type="Timer" parent="." unique_id=1535588490]
-wait_time = 3.0
-one_shot = true
+[node name="ExitMinigameButton" type="Button" parent="." unique_id=1942516981]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.85
+anchor_right = 0.6
+anchor_bottom = 0.95
+offset_right = 8.0
+offset_bottom = 8.0
+action_mode = 0
+text = "ВЕРНУТЬСЯ В ИГРУ"
 
 [connection signal="pressed" from="HBoxContainer/MoreButton" to="." method="_on_more_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/EqualButton" to="." method="_on_equal_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/LessButton" to="." method="_on_less_button_pressed"]
 [connection signal="pressed" from="NextStage" to="." method="_on_next_stage_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="ExitMinigameButton" to="." method="_on_exit_minigame_button_pressed"]
