@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://bx538d5ydjea6"]
+
+[ext_resource type="Texture2D" uid="uid://cj8nri2l8x4m3" path="res://Assets/Sprites/Plants/Plant_7/1.png" id="1_ephvp"]
+[ext_resource type="Script" uid="uid://yxbu7vekeegj" path="res://Assets/Resources/PlateResource.gd" id="1_eskdr"]
+[ext_resource type="Texture2D" uid="uid://d1lh656u3wbsb" path="res://Assets/Sprites/Plants/Plant_7/2.png" id="2_lcf17"]
+[ext_resource type="Texture2D" uid="uid://c5u8eop8xj4o6" path="res://Assets/Sprites/Plants/Plant_7/3.png" id="3_x6mj5"]
+[ext_resource type="Texture2D" uid="uid://wi2gym4grxt" path="res://Assets/Sprites/Plants/Plant_7/нож.png" id="4_iwtqt"]
+[ext_resource type="Texture2D" uid="uid://cfl1ir3d4trxn" path="res://Assets/Sprites/Plants/Plant_7/лупа.png" id="5_dbfoj"]
+
+[resource]
+script = ExtResource("1_eskdr")
+plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_ephvp"), ExtResource("2_lcf17"), ExtResource("3_x6mj5")])
+plant_name = "PLANT_RESOURCE_NAME_7
+"
+plant_cool_name = "PLANT_RESOURCE_COOL_NAME_7
+"
+plant_description = "PLANT_RESOURCE_DESCRIPTION_7
+"
+plant_cool_description = "PLANT_RESOURCE_COOL_DESCRIPTION_7
+"
+plant_smell = "PLANT_RESOURCE_SMELL_7
+"
+plant_energy = "PLANT_RESOURCE_ENERGY_7
+"
+plant_leaf = Array[CompressedTexture2D]([ExtResource("5_dbfoj")])
+plant_juice_density = Array[CompressedTexture2D]([ExtResource("4_iwtqt")])
+plant_care_stages = Array[int]([2, 1, 0])
+metadata/_custom_type_script = "uid://yxbu7vekeegj"

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://x5vj8sx3avy1"]
 
 [ext_resource type="Script" uid="uid://d1k3uocky4xqy" path="res://Assets/Scripts/Plant/Plants/Plant_7.gd" id="1_j6dsg"]
-[ext_resource type="Resource" uid="uid://bx538d5ydjea6" path="res://Assets/Sprites/Plants/Plant_7/Plant_7.tres" id="2_j6dsg"]
+[ext_resource type="Resource" uid="uid://bx538d5ydjea6" path="res://Assets/Resources/Plants/PlantsResources/Plant_7.tres" id="2_j6dsg"]
 [ext_resource type="Texture2D" uid="uid://bm273b1ve82tx" path="res://Assets/Sprites/Plants/Plant_4/3.png" id="3_jfvoy"]
 [ext_resource type="Script" uid="uid://ct0y602syert8" path="res://Assets/Scripts/Plant/PlantGoalContainer.gd" id="5_mbn0l"]
 [ext_resource type="Texture2D" uid="uid://doijt2c3637fp" path="res://Assets/Sprites/UI/PlantsGrow/кружочек для растения.png" id="6_j6dsg"]
