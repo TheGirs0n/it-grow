@@ -10,18 +10,18 @@
 [resource]
 script = ExtResource("1_55rn8")
 plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_2o5ui"), ExtResource("2_4hqqv"), ExtResource("3_61fao")])
-plant_name = "Хвостатка сизая"
-plant_cool_name = "Артемисия Иллариона (Artemisia Illarion)"
-plant_description = "[color=#2b2723][b]Хвостатка сизая[/b] - выращивать сложно, но не невозможно. Сильное растение стихии земли поэтому лучше всего чувствует себя в рыхлой почве, и может даже на обездоленной почве.
-Сок ягод помогает во время лихорадок, важно смешать три-четыре капли с настоянной на луне водой. Первый опыт показал что пока растение набирает силу, его очень просто залить. Попробую посадить его рядом с огненной стихией. 
-Сияние цветка отгоняет зло."
-plant_cool_description = "[color=#2b2723][b]Артемисия Иллариона (Artemisia Illarion)[/b] - пустынное кустарниковое растение. 
-В качестве места для роста часто использует каменистую почву, корневая система поверхностная. Листья растения острые
-Сок растения ядовит (При лунном свете еле заметно испускает голубоватое сияние), и используется в качестве седативного средства. Первые упоминания о применении Артемиссии восходят к 13 веку, и пришли к нам из церковных записей Присвятого Иллариона из Раонока.
-Белые соцветия формой напоминают хвост скорпиона.
-В простонородии известна как Скорпионник, Хвостушка горькая или Хвостатка Сизая"
-plant_smell = "Горький, пыльный запах, от которого я чувствую себя умиротворенно. "
-plant_energy = "Камни поющие под луной, шепот песчинок. Хочется спать."
+plant_name = "PLANT_RESOURCE_NAME_3
+"
+plant_cool_name = "PLANT_RESOURCE_COOL_NAME_3
+"
+plant_description = "PLANT_RESOURCE_DESCRIPTION_3
+"
+plant_cool_description = "PLANT_RESOURCE_COOL_DESCRIPTION_3
+"
+plant_smell = "PLANT_RESOURCE_SMELL_3
+"
+plant_energy = "PLANT_RESOURCE_ENERGY_3
+"
 plant_leaf = Array[CompressedTexture2D]([ExtResource("5_36wk0")])
 plant_juice_density = Array[CompressedTexture2D]([ExtResource("4_61fao")])
 plant_care_stages = Array[int]([1, 2, 1])

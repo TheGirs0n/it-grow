@@ -10,16 +10,18 @@
 [resource]
 script = ExtResource("1_vbrlj")
 plant_grow_stage_textures = Array[CompressedTexture2D]([ExtResource("1_dls71"), ExtResource("2_6x1tm"), ExtResource("3_1pcld")])
-plant_name = "Малокровник"
-plant_cool_name = "Скандия Темная (Skandia Obscurus) она же Малокровник"
-plant_description = "[color=#2b2723][b]Малокровник[/b]. Ночное растение, с очень красивыми крупными бутонами. Чтоб правильно вырастить их здоровыми, обязатиельно требуется отсаживать их от земляных растений. Так как Малокровник не любит никакого воздействия на энергию земли.
-Еще твоя бабка вырашивали их, как лекарстенные цветы. Соцветия хорошо растираются в крем лечат раны и останавливают кровь, но только если правильно созрели. Подкармливать ее нужно до момента появления первых листьев.
-Маленький секрет - чтоб бутон вызрел здоровым лучше опрыскивай водой сверху, а не заливай под корень."
-plant_cool_description = "[color=#2b2723][b]Скандия Темная (Skandia Obscurus)[/b] она же Малокровник - многолетний тип цветка. Созревает в середине сентября. Цветок даёт крупную темную ягоду которую очень легко перепутать с цветком. 
-Растет в смешанных лесах, часто произрастая на полянах после вырубки древеьев. Растение поглашает большую част влаги посредством сбора дождевой воды в ягоду.
-Сок растения густой, белесого цвета, похож на клей, большая часть которого содержится в ягоде. "
-plant_smell = "Совершенно не имеет запаха. Даже удивительно!"
-plant_energy = "Липкая энергия. Обволакивающая, будто затягивающая в болото."
+plant_name = "PLANT_RESOURCE_NAME_5
+"
+plant_cool_name = "PLANT_RESOURCE_COOL_NAME_5
+"
+plant_description = "PLANT_RESOURCE_DESCRIPTION_5
+"
+plant_cool_description = "PLANT_RESOURCE_COOL_DESCRIPTION_5
+"
+plant_smell = "PLANT_RESOURCE_SMELL_5
+"
+plant_energy = "PLANT_RESOURCE_ENERGY_5
+"
 plant_leaf = Array[CompressedTexture2D]([ExtResource("5_fmus1")])
 plant_juice_density = Array[CompressedTexture2D]([ExtResource("4_f8onf")])
 plant_care_stages = Array[int]([2, 2, 0])
