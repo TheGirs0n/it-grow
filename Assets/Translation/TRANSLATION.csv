@@ -2,24 +2,117 @@
 START_GAME;НАЧАТЬ ИГРУ;START GAME
 SETTINGS;НАСТРОЙКИ;SETTINGS
 EXIT;ВЫХОД;EXIT
-STORY_CASE_1;ЯДРО ВЕЩЕСТВА ***** ОБЛАДАЕТ УСТОЙЧИВОЙ АКТИВНОСТЬЮ И НУЖДАЕТСЯ В ПОСТОЯННОМ МОНИТОРИНГЕ;THE CORE OF THE SUBSTANCE ***** IS ACTIVE AND NEEDS CONSTANT MONITORING
-STORY_CASE_2;КРИТИЧЕСКИ ВАЖНО ПОДДЕРЖИВАТЬ АКТИВНОСТЬ ЯДРА В СТАБИЛЬНОМ ДИАПАЗОНЕ, НЕ ДОПУСКАЯ ЕГО ПЕРЕГРУЗКИ ИЛИ РАЗРЯДКИ;IT IS CRITICAL TO MAINTAIN THE ACTIVITY OF THE CORE IN A STABLE RANGE, WITHOUT OVERLOADING OR UNLOADING
-STORY_BUTTON;ДАЛЬШЕ;GO ON
-TUTORIAL_CASE_1_1;ЯДРО ВЕЩЕСТВА ВЕДЕТ СЕБЯ ПО РАЗНОМУ В ЗАВИСИМОСТИ ОТ ВРЕМЕНИ СУТОК;THE SUBSTANCE’S CORE BEHAVES DIFFERENTLY DEPENDING ON THE TIME OF DAY
-TUTORIAL_CASE_1_2;ДЛЯ ПОДДЕРЖАНИЯ СТАБИЛЬНОЙ АКТИВНОСТИ ГЛАВНОГО ЯДРА ИСПОЛЬЗУЮТСЯ ВСПОМОГАТЕЛЬНЫЕ ЯДРА;SUPPORT CORES ARE USED TO MAINTAIN STABLE CORE ACTIVITY
-TUTORIAL_CASE_1_3;ДНЁМ ГЛАВНОМУ ЯДРУ НЕОБХОДИМО ПОСТАВЛЯТЬ ПОЛОЖИТЕЛЬНЫЕ ЗАРЯДЫ, А НОЧЬЮ - ОТРИЦАТЕЛЬНЫЕ;DURING THE DAY, THE MAIN CORE MUST BE SUPPLIED WITH POSITIVE CHARGES, AND AT NIGHT - NEGATIVE
-TUTORIAL_BUTTON_1;ДАЛЬШЕ;GO ON
-TUTORIAL_CASE_2_1;ВОТ ТАК НАСТУПАЕТ ПРОЦЕСС ИЗМЕНЕНИЯ ВРЕМЕНИ СУТОК;THE PROCESS OF CHANGING THE TIME OF DAY IS DONE LIKE THIS.
-TUTORIAL_CASE_2_2;…;…
-TUTORIAL_CASE_2_3;АХ ДА, ЗАБЫЛИ УПОМЯНУТЬ. ДНЁМ УНИЧТОЖЕНИЕ ОТРИЦАТЕЛЬНЫХ ЗАРЯДОВ ДАЁТ НАМ ЭНЕРГИЮ, А НОЧЬЮ ТО ЖЕ САМОЕ ДЕЛАЮТ ПОЛОЖИТЕЛЬНЫЕ.;OH, YES, WE FORGOT TO MENTION. DURING THE DAY, ELIMINATING NEGATIVE CHARGES GIVES US ENERGY, BUT AT NIGHT, THE POSITIVE ONES DO THE SAME.
-TUTORIAL_BUTTON_2;ПОЕХАЛИ;GET TO WORK
-UI_MAIN_TIMER_TEXT;ОСТАВШЕЕСЯ ВРЕМЯ;TIME LEFT
-UI_SWITCHER_MOD_TEXT_1;УМЕНЬШЕНИЕ ПОЛОЖИТЕЛЬНЫХ ОЧКОВ С ЯДЕР;DECREASE POSITIVE SCORE FROM CORE
-UI_SWITCHER_MOD_TEXT_2;УВЕЛИЧЕНИЕ ОТРИЦАТЕЛЬНЫХ ОЧКОВ С ЯДЕР;INCREASE NEGATIVE SCORE FROM CORE
-UI_SWITCHER_MOD_TEXT_3;УМЕНЬШЕНИЕ ВРЕМЕНИ ПОЯВЛЕНИЯ ЯДЕР;DECREASE CORE SPAWN TIME
-UI_SWITCHER_MOD_TEXT_4;УВЕЛИЧЕНИЕ МНОЖИТЕЛЯ СКОРОСТИ ЯДЕР;INCREASE CORE SPEED MULTIPLAYER
-UI_SWITCHER_SWITCH_BUTTON;СМЕНИТЬ ВРЕМЯ;SWITCH TIME
-UI_SWITCHER_TIME_TEXT;ДЕНЬ/НОЧЬ;DAY/NIGHT
+;;
+PLANT_RESOURCE_NAME_1;Медовичка;
+PLANT_RESOURCE_COOL_NAME_1;Медовичка Целебная (Melrotundum officinalis);
+PLANT_RESOURCE_DESCRIPTION_1;"""Медовичка - Неприхотливое растение, крайне простое в уходе. Растёт в неудобренной почве, но очень любит воду. Помогает при ранах и ожогах - сок ягод обладает заживляющими и противовоспалительными свойствами. Собирать лучше в начале сентября. Кора не дымит и очень плохо горит. Компонент для зелий с активным элементом воды! Не смешивать с натриевыми солями!!!
+Цветки Медовички, вплетённые в косы роженицы, помогут родить здорового и крепкого ребёнка, которому в жизни никогда не придётся столкнуться с пожарами.""";"Medovichka — an unpretentious plant, very easy to care for. Grows in unfertilised soil but loves water. Helps with wounds and burns — the berry juice has healing and anti-inflammatory properties. Best harvested in early September. The bark doesn't smoke and burns very poorly. An ingredient for potions with an active water element! Do not mix with sodium salts!!!
+Medovichka flowers, braided into a labouring woman's hair, will help her give birth to a healthy and strong child who will never have to face fires in their life."
+PLANT_RESOURCE_COOL_DESCRIPTION_1;"""Медовичка Целебная (Melrotundum officinalis)
+Неприхотливое растение, рода кризомеловых. Крайне прост в уходе, очень часто используется как декоративное растение. 
+Все семейство Булиальбовых чаще всего распространены среди заболоченых районов. Ствол растения очень быстро деревенеет, уже к появлению первых завезей. 
+Цветки мелкие голубого цвета быстро опадают. После созревания образуют белые сладкие плоды, пригодые в пищу.
+Листья растения небольшие и имеют форму сердца. 
+""";"Medovichka Healing (Melrotundum officinalis)
+An unpretentious plant of the Chrysomelaceae family, very easy to care for and commonly used as an ornamental plant.
+The entire Bulialbov family is most commonly found in swampy areas. The plant's stem hardens very quickly, already by the time the first ovaries appear.
+The flowers are small, blue, and fall off quickly. After ripening, they form white, sweet fruits that are edible.
+The plant's leaves are small and heart-shaped."
+PLANT_RESOURCE_SMELL_1;Имеет древесный тонкий аромат - бабушка всегда говорила, что он напоминает ей маму.;Has a subtle woody scent — grandmother always said it reminded her of her mother.
+PLANT_RESOURCE_ENERGY_1;Источает нежную энергию, схожую с движением ручья. Я будто слышу капли воды.;Radiates a gentle energy, reminiscent of a flowing stream. It's as if I can hear drops of water.
+PLANT_RESOURCE_NAME_2;«Адское пламя»;
+PLANT_RESOURCE_COOL_NAME_2;Ла Йорона Пылкая (Laloronna Ardens);
+PLANT_RESOURCE_DESCRIPTION_2;"«Адское пламя» - редкий и красивый цветок, требующий крайне тщательного ухода. Важно тщательно поливать и держать в рыхлой почве. Удобрять его следует в течение всей жизни цветка.
+Активно цветёт только в конце июля, в течение 3–5 дней. Если и собирать его, то только в перчатках - сок обладает сильной стихией огня. Если добавить в пламя, то оно усилится и станет только жарче.
+Настой из лепестков отлично помогает против крыс и прочих вредителей.";"""Hellfire"" — a rare and beautiful flower requiring extremely careful tending. It is important to water it thoroughly and keep it in loose soil. It should be fertilised throughout the entire life of the flower.
+It blooms actively only at the end of July, for 3–5 days. If you do harvest it, wear gloves — the sap carries a powerful fire element. If added to a flame, it will only grow stronger and hotter.
+A petal infusion works excellently against rats and other pests."
+PLANT_RESOURCE_COOL_DESCRIPTION_2;"Ла Йорона Пылкая (Laloronna Ardens)
+Крайне ядовитое растение! Яркий, угрожающий вид сразу говорит об этом. Шипы с ростом цветка становятся крайне твёрдыми и приобретают чёрный цвет. Все части растения обладают сильным ядом - особенно сок, имеющий яркий жёлтый цвет с характерным металлическим запахом, который может вызывать сильную головную боль.
+Активно привлекает ос вида Venenuma Flamma. Этот вид ос находится в симбиотических отношениях с этими цветами и «подкармливает» их остатками добычи.";"La Llorona Ardent (Laloronna Ardens)
+An extremely poisonous plant! Its bright, threatening appearance makes that immediately clear. The thorns become extremely hard as the flower grows and turn black. All parts of the plant carry a strong poison — especially the sap, which has a vivid yellow colour with a distinctive metallic smell that can cause severe headaches.
+Actively attracts wasps of the Venenuma Flamma species. This species of wasp exists in a symbiotic relationship with these flowers and ""feeds"" them with the remains of its prey."
+PLANT_RESOURCE_SMELL_2;Обожаю этот аромат! Запах яркий, тёплый. Немного металлический. Ой... Голова что-то разболелась... Неужели будет дождь?;I love this scent! The smell is vivid, warm. Slightly metallic. Oh... My head has started to ache... Could rain be on the way?
+PLANT_RESOURCE_ENERGY_2;Ай! Каждый раз чувствую, будто обожглась, как только подхожу к ней! Какая она всё-таки своенравная!;Ouch! Every time I feel as though I've burnt myself the moment I get close to it! What a wilful thing it is!
+PLANT_RESOURCE_NAME_3;Хвостатка сизая;
+PLANT_RESOURCE_COOL_NAME_3;Артемисия Иллариона (Artemisia Illarion);
+PLANT_RESOURCE_DESCRIPTION_3;"Хвостатка сизая - выращивать сложно, но не невозможно. Сильное растение стихии земли, поэтому лучше всего чувствует себя в рыхлой, хорошо удобренной почве. Рыхлить каждый третий день.
+Сок ягод помогает во время лихорадок - важно смешать три-четыре капли с настоянной на луне водой. Первый опыт показал, что пока растение набирает силу, его очень просто перелить. Попробую посадить его рядом с огненной стихией.
+Сияние цветка отгоняет зло.";"Dusty Tailthorn — difficult to grow, but not impossible. A strong earth element plant, so it thrives best in loose, well-fertilised soil. Loosen the soil every third day.
+The berry juice helps during fevers — it is important to mix three to four drops with water steeped under the moon. My first experience showed that while the plant is gaining strength, it is very easy to overwater. I'll try planting it near a fire element.
+The flower's glow wards off evil."
+PLANT_RESOURCE_COOL_DESCRIPTION_3;Артемисия Иллариона (Artemisia Illarion) - пустынное кустарниковое растение. В качестве места для роста часто использует каменистую почву, корневая система поверхностная. Листья растения острые. Сок растения ядовит (при лунном свете едва заметно испускает голубоватое сияние) и используется в качестве седативного средства. Первые упоминания о применении Артемисии восходят к 13 веку и пришли к нам из церковных записей Пресвятого Иллариона из Раонока. Белые соцветия формой напоминают хвост скорпиона. В просторечии известна как Скорпионник, Хвостушка горькая или Хвостатка Сизая.;Artemisia Illariona (Artemisia Illarion) — a desert shrub plant. It commonly grows in rocky soil, with a shallow root system. The leaves are sharp. The plant's sap is poisonous (in moonlight it emits a barely visible bluish glow) and is used as a sedative. The earliest mentions of Artemisia's use date back to the 13th century and come to us from the church records of Saint Illarion of Raonok. The white flower clusters are shaped like a scorpion's tail. Commonly known as Scorpionweed, Bitter Tailthorn, or Dusty Tailthorn.
+PLANT_RESOURCE_SMELL_3;Горький, пыльный запах, от которого я чувствую себя умиротворенно. ;A bitter, dusty smell that makes me feel at peace.
+PLANT_RESOURCE_ENERGY_3;Камни, поющие под луной, шепот песчинок. Хочется спать.;Stones singing under the moon, the whisper of sand. I want to sleep.
+PLANT_RESOURCE_NAME_4;«Мадам Шарлотта»;
+PLANT_RESOURCE_COOL_NAME_4;Ариадисия Глянцевая (Aryidáceae splendora);
+PLANT_RESOURCE_DESCRIPTION_4;"«Мадам Шарлотта» - моя любимица. Мне её подарила леди Элеонора на выставке в Брештене. Пусть у неё и нет целебных свойств, зато она приятно пахнет. Твой дедушка, наоборот, ненавидел её. Постоянно говорил, что я вожусь с ней.
+Если я умру раньше, прошу - позаботься о ней. Не забывай поливать её и подкармливать. Рыхли каждый третий день.";"""Madame Charlotte"" — my favourite. Lady Eleonora gave her to me at an exhibition in Breshten. She may have no healing properties, but she smells wonderful. Your grandfather, on the contrary, couldn't stand her. He always said I fussed over her too much.
+If I go first, please — take care of her. Don't forget to water and feed her. Loosen the soil every third day."
+PLANT_RESOURCE_COOL_DESCRIPTION_4;Ариадисия Глянцевая (Aryidáceae splendora) - один из самых уникальных цветков, произрастающих в жарких тропических регионах. Крайне светолюбива. Экспорт растений был запрещён в 1873 году в связи с открытием одного из необычайных свойств растения. Ариадисия - одно из немногих растений, что источает мощную некротическую энергию и выступает как вампир, поглощая жизненные силы людей. Благодаря такому свойству она вступает в необычные симбиотические отношения с пауками вида Necronetta, и те селятся в соцветиях, охраняя хозяина от паразитов. Чем больше энергии цветок поглощает, тем чище белизна бутона.;Glossy Ariadisia (Aryidáceae splendora) — one of the most unique flowers growing in hot tropical regions. Extremely light-loving. The export of the plant was banned in 1873 following the discovery of one of its extraordinary properties. Ariadisia is one of the few plants that radiates a powerful necrotic energy, acting as a vampire by absorbing the life force of people. Thanks to this property, it forms unusual symbiotic relationships with spiders of the Necronetta species, which settle in the flower clusters and protect their host from parasites. The more energy the flower absorbs, the purer the whiteness of its bud.
+PLANT_RESOURCE_SMELL_4;Утонченный аромат с нотками лилий, напоминает об офисе леди Стейн.;A refined scent with notes of lily, reminiscent of Lady Stein's office.
+PLANT_RESOURCE_ENERGY_4;Не могу понять, что источает цветок. Будто он вытягивает из меня силы, а не отдаёт. Эй, что там шевельнулось???;I can't understand what the flower is emanating. It feels as though it is drawing strength out of me rather than giving it. Hey, what was that moving over there???
+PLANT_RESOURCE_NAME_5;Малокровник;
+PLANT_RESOURCE_COOL_NAME_5;Скандия Тёмная (Skandia Obscurus);
+PLANT_RESOURCE_DESCRIPTION_5;"Малокровник - Ночное растение, с крупными, необычайно красивыми бутонами. Чтобы они росли здоровыми, непременно отсаживай его от земляных соседей - соседства не любит. К почве же, надо сказать, Малокровник неприхотлив, ровно сорняк: где посадишь, там и взойдёт.
+Я в своё время выращивала их как лекарственные. Соцветия, если растереть в крем, отлично затягивают раны и останавливают кровь, но только при условии, что бутоны вызрели правильно. А для этого требуется сперва ещё до появления первых листьев, подкормить под корень - это первое удобрение. Когда листья покажутся, подкормить снова, опять же под корень - это второе. И лишь затем, чтобы бутон налился силой, опрыскай сверху водой. Дальше растение справится само.";"Bloodwort — a night plant with large, extraordinarily beautiful buds. For them to grow healthy, make sure to keep it away from earth-dwelling neighbours — it doesn't like company. As for soil, Bloodwort is unpretentious, just like a weed: wherever you plant it, there it will grow.
+In my time I grew them as medicinal plants. The flower clusters, if ground into a cream, do an excellent job of closing wounds and stopping blood — but only if the buds have ripened properly. To achieve this, first, before the leaves have even appeared, feed it at the root — that is the first fertilising. When the leaves show, feed it again, at the root once more — that is the second. And only then, to let the bud fill with strength, spray it with water from above. After that the plant will manage on its own."
+PLANT_RESOURCE_COOL_DESCRIPTION_5;"Скандия Тёмная (Skandia Obscurus), она же Малокровник, - многолетний тип цветка. Созревает в середине сентября. Цветок даёт крупную тёмную ягоду, которую очень легко перепутать с бутоном.
+Растёт в смешанных лесах, часто произрастая на полянах после вырубки деревьев. Растение поглощает большую часть влаги посредством сбора дождевой воды в ягоду.
+Сок растения густой, белесого цвета, похож на клей - большая часть его содержится в ягоде.";"Dark Scandia (Skandia Obscurus), also known as Bloodwort, — a perennial type of flower. Ripens in mid-September. The flower produces a large, dark berry that is very easy to mistake for a bud.
+Grows in mixed forests, often appearing in clearings left after tree felling. The plant absorbs most of its moisture by collecting rainwater in the berry.
+The plant's sap is thick and off-white in colour, resembling glue — most of it is contained within the berry."
+PLANT_RESOURCE_SMELL_5;Совершенно не имеет запаха. Даже удивительно!;Has no scent whatsoever. Quite surprising!
+PLANT_RESOURCE_ENERGY_5;Липкая энергия. Обволакивающая, будто затягивающая в болото.;A sticky energy. Enveloping, as though pulling you into a swamp.
+PLANT_RESOURCE_NAME_6;Пауковница (настоящее название Цистридия);
+PLANT_RESOURCE_COOL_NAME_6;Цестроидия Скелетная (Cestroideae Skeletina);
+PLANT_RESOURCE_DESCRIPTION_6;"Пауковница (настоящее название Цистридия) - Прямых солнечных лучей не выносит - в природе селится под кронами деревьев, и для питания ей хватает опавшей листвы. В этом плане растение самостоятельное, почти не требует вмешательства.
+Однако если соберёшься использовать её в деле, запомни: наилучший эффект даёт полнолуние. Цистридия - сильный ингредиент для проклятий на смерть, в ней чувствуется тяжёлая, глубинная энергия земли.
+Уход сводится к немногому. Когда появятся первые бутоны, сперва обнови землю - аккуратно взрыхли и, если нужно, замени верхний слой. Затем полей под корень, она это любит. А после полива снова пройдись по поверхности, чтобы земля дышала.";"Spiderwort (true name Cistridia) — cannot tolerate direct sunlight — in nature it settles beneath the canopy of trees, and fallen leaves provide all the nourishment it needs. In this regard the plant is self-sufficient, requiring almost no intervention.
+However, if you intend to put it to use, remember: the best effect comes at the full moon. Cistridia is a powerful ingredient for death curses — it carries a heavy, deep-rooted earth energy.
+Care comes down to very little. When the first buds appear, start by refreshing the soil — loosen it carefully and, if needed, replace the top layer. Then water at the root, she likes that. And after watering, go over the surface once more so the soil can breathe."
+PLANT_RESOURCE_COOL_DESCRIPTION_6;Цестроидия Скелетная (Cestroideae Skeletina) - небольшое кустистое растение, активно плодоносит, выращивая плоды в скелетированных коробочках, чашелистики которых напоминают паука. Плоды Цестроидии съедобны, но чаще растение используется исключительно в декоративных целях. Листья растения имеют форму сердца, за что и полюбились садоводам.;Skeletal Cestroidia (Cestroideae Skeletina) — a small bushy plant that fruits actively, growing its produce in skeletal pods whose sepals resemble a spider. The fruits of Cestroidia are edible, but the plant is more commonly used purely for decorative purposes. The plant's leaves are heart-shaped, which is why gardeners have grown so fond of it.
+PLANT_RESOURCE_SMELL_6;Запах влажной почвы и мха в лесу после дождя, но с нотками чего-то тяжелого... Не могу понять...;The smell of damp soil and moss in a forest after rain, but with notes of something heavy... I can't quite place it...
+PLANT_RESOURCE_ENERGY_6;Какое-то давящее чувство, даже странно для цветка с таким внешним видом...;A somewhat oppressive feeling, strange for a flower with such an appearance...
+PLANT_RESOURCE_NAME_7;Огневица или Кровавик ;
+PLANT_RESOURCE_COOL_NAME_7;Артемисия Иллариона (Artemisia Illarion);
+PLANT_RESOURCE_DESCRIPTION_7;"Огневица или Кровавик - Ядовитая трава, заставляющая кровь пылать! Используется как компонент в проклятиях, связанных со стихией огня. Выращивать её дома в целом несложно, но я бы всё же не советовала. Однако если надумаешь - знай: Огневица предпочитает плотную почву, корни у неё слабые, стелются по поверхности, и повредить их легко.
+
+Поливай совсем немного, только чтобы слегка увлажнить землю. А затем проведи два курса удобрения - один за другим, чтобы поддержать цветение.";"Firebloom, or Bloodwort — a poisonous herb that sets the blood ablaze! Used as a component in curses related to the fire element. Growing it at home is not particularly difficult, but I would advise against it all the same. However, if you do decide to — know this: Firebloom prefers dense soil, its roots are weak and creep along the surface, making them easy to damage.
+Water it very sparingly, just enough to lightly moisten the soil. Then carry out two rounds of fertilising — one after the other, to support the flowering."
+PLANT_RESOURCE_COOL_DESCRIPTION_7;Кровавик дикий / Лаписангвис (Lapisanguinis ferus) - низкорослое травяное растение вида Лаписангвиса. Если не считать ярко-алый цвет, стебли Кровавика крайне легко спутать с травой. Однако если приглядеться, можно заметить, что на них зачастую расположено несколько небольших цветков. Настойка из Кровавика была популярна в период с 31 по 43 год как косметическое средство фирмы Элеоноры Стейн - в форме румян, которые заставляли кровь приливать к зоне, на которую были нанесены (однако эффект был крайне недолговечным).;Wild Bloodwort / Lapisanguis (Lapisanguinis ferus) — a low-growing herbaceous plant of the Lapisanguis species. Were it not for its vivid crimson colour, the stems of Wild Bloodwort would be extremely easy to mistake for ordinary grass. However, if you look closely, you can notice that they often bear several small flowers. A tincture from Wild Bloodwort was popular between years 31 and 43 as a cosmetic product by Eleonora Stein's company — in the form of a rouge that caused blood to rush to the area it was applied to (though the effect was extremely short-lived).
+PLANT_RESOURCE_SMELL_7;Особо не имеет запаха, однако почки испускают еле уловимый аромат дерева и пепла. Даже приятно... Интересно, а что будет, если ее поджечь?;Barely has any scent, though the buds emit a faint aroma of wood and ash. Rather pleasant actually... I wonder, what would happen if I set it alight?
+PLANT_RESOURCE_ENERGY_7;Настолько ярко пышет энергией пламени, что даже обжигает.;It radiates fire energy so intensely that it actually burns.
+PLANT_RESOURCE_NAME_8;Большая Велисса;
+PLANT_RESOURCE_COOL_NAME_8;Хвостатка Велис-Велия (Cauda Velis-Velia);
+PLANT_RESOURCE_DESCRIPTION_8;"""Большая Велисса"" - Еще один подарок леди Элеоноры. 
+Легенда гласит, что запах этого цветка столь прекрасен, что способен заставить забыть о любых невзгодах. Однако я, как ни старалась, так и не сумела добиться его полного цветения.
+Подкормка - основа здорового роста, это бесспорно. Но вот с землёй вышла промашка: сколько ни рыхли, она всё равно оставалась влажной. Впитывает воду он крайне медленно, и, кажется, именно в этом крылась моя ошибка.
+Попробуй иначе: сперва внеси удобрение, чтобы дать растению силу. Затем полей - совсем понемногу, учитывая его медлительность. И только после этого снова подкорми, чтобы закрепить эффект. Возможно, такой порядок пробудит наконец его истинный аромат.";"
+""Grand Velissa"" — another gift from Lady Eleonora.
+Legend has it that the scent of this flower is so beautiful it can make one forget all hardships. Yet no matter how hard I tried, I never managed to bring it to full bloom.
+Fertilising is the foundation of healthy growth, there is no question about that. But I made a mistake with the soil — no matter how much I loosened it, it stayed damp. It absorbs water extremely slowly, and I believe that is precisely where I went wrong.
+Try a different approach: first apply fertiliser to give the plant strength. Then water it — just a little, keeping its slowness in mind. And only after that fertilise once more to reinforce the effect. Perhaps this order will finally awaken its true scent."
+PLANT_RESOURCE_COOL_DESCRIPTION_8;"Хвостатка Велис-Велия (Cauda Velis-Velia) - обнаруженное в 18 веке супружеской парой ботаников Велисом и Велией Гербертина в субтропической зоне растение, представляющее собой нестелящийся цветок с мощной стержневой корневой системой. Имеет один крупный бутон с лепестками, имеющими характерные хвосты со светящимися люминесцентными кристаллическими образованиями в фазе полного созревания. Исследования показывают, что таким образом растение защищает себя от паразитов, используя магическое сияние, очищающее небольшую область вокруг себя от паразитических организмов.
+Среди садоводов и разводчиков особо популярен гибрид, известный под названием «Большая Велисса».";"Velis-Velia Tailthorn (Cauda Velis-Velia) — a plant discovered in the 18th century by the botanist couple Velis and Velia Gerbertina in a subtropical zone, representing a non-creeping flower with a powerful taproot system. It has a single large bud with petals bearing characteristic tails with glowing luminescent crystalline formations in the phase of full maturity. Research shows that in this way the plant protects itself from parasites, using a magical radiance that cleanses a small area around itself of parasitic organisms.
+Among gardeners and cultivators, a hybrid known as ""Grand Velissa"" is particularly popular."
+PLANT_RESOURCE_SMELL_8;Запах землистый, жду не дождусь когда цветок распустится. Интересно, какой он?;An earthy smell, I can't wait for the flower to bloom. I wonder what it will be like?
+PLANT_RESOURCE_ENERGY_8;Холодная энергетика, бьёт о мои пальцы, будто морские волны.;A cold energy, crashing against my fingers like ocean waves.
+PLANT_RESOURCE_NAME_9;Ведьмин Глаз (Спиральный глаз);
+PLANT_RESOURCE_COOL_NAME_9;Октавия Спиральная (Octavia Spiralis);
+PLANT_RESOURCE_DESCRIPTION_9;"Ведьмин Глаз (Спиральный глаз) - Сочетает в себе силы стихий воды и ветра. Говорят, когда Ведьмин глаз раскрывается, на землю приходят бури и шторма.
+Настой корня этого растения открывает то, что сокрыто. Но чтобы добиться такого эффекта, заготавливать корни следует в июне и вымачивать в воде вплоть до ноябрьских заморозков.
+В уходе растение неприхотливо, но требует внимания к двум вещам: любит корневую подкормку и корневой полив, особенно в период активного созревания «глаза». А вот рыхлить землю нужно только до того, как опадут ложноцветы - обычно они становятся желтыми перед этим.
+Мой тебе совет: сперва внеси удобрение под корень. Затем, пока ложноцветы ещё не опали, аккуратно прорыхли почву. И только после этого полей - тоже под корень, не задевая поверхность. Так силы воды и ветра придут в равновесие.";"Witch's Eye (Spiral Eye) — combines the forces of the water and wind elements. They say that when the Witch's Eye opens, storms and tempests come to the land.
+An infusion of this plant's root reveals what is hidden. But to achieve such an effect, the roots must be harvested in June and steeped in water all the way until the November frosts.
+The plant is unpretentious in its care, but requires attention to two things: it loves root fertilising and root watering, especially during the active ripening of the ""eye"". As for loosening the soil, this should only be done before the false flowers drop — they usually turn yellow just before that happens.
+My advice to you: first apply fertiliser at the root. Then, while the false flowers have not yet fallen, carefully loosen the soil. And only after that water it — also at the root, without disturbing the surface. This way the forces of water and wind will come into balance."
+PLANT_RESOURCE_COOL_DESCRIPTION_9;"Октавия Спиральная (Octavia Spiralis) - дикорастущий ядовитый цветок, запрещённый к культивированию из-за наличия в составе бутонов сильного дурманящего вещества, способного вызывать привыкание. В древности сок из Спиральной Октавии использовали в качестве фиолетового красителя. Октавию можно часто встретить в местах большого скопления магической энергии, заставляющей цветок приобретать удивительный спиральный паттерн роста лепестков.
+Октавия Спиральная считается одним из самых красивых цветков мира, и несмотря на запрет часто незаконно выращивается в домах высшего общества. Особенно статусно иметь такой цветок у светских дам.";"Spiral Octavia (Octavia Spiralis) — a wild-growing poisonous flower, banned from cultivation due to the presence of a powerful intoxicating substance in the buds that is capable of causing addiction. In ancient times the sap of Spiral Octavia was used as a purple dye. Octavia can often be found in places of high magical energy concentration, which causes the flower to develop a remarkable spiral pattern in the growth of its petals.
+Spiral Octavia is considered one of the most beautiful flowers in the world, and despite the ban is frequently grown illegally in the homes of high society. It is considered particularly prestigious to own such a flower among ladies of fashion."
+PLANT_RESOURCE_SMELL_9;Если сама ночь и имеет запах, то именно так она и пахнет. Свежо, будто после грозы, с нотками ежевики. ;If the night itself has a scent, then this is exactly how it smells. Fresh, as though after a storm, with notes of blackberry.
+PLANT_RESOURCE_ENERGY_9;Я не знаю, что это, но энергетика завораживает, будто меня закручивает в нескончаемый вихрь! Нужно подумать, как это можно использовать в работе!;I don't know what this is, but the energy is mesmerising — as though I am being spun into an endless whirlwind! I must think about how this could be put to use in my work!
+;;
 UI_PAUSE_TEXT;ПАУЗА;PAUSE
 UI_PAUSE_CONTINUE;ПРОДОЛЖИТЬ;CONTINUE
 UI_PAUSE_SETTINGS;НАСТРОЙКИ;SETTINGS
@@ -38,21 +131,3 @@ UI_SETTINGS_BAR_DISPLAY_WINDOW;РЕЖИМ ОКНА;WINDOW MODE
 UI_SETTINGS_BAR_DISPLAY_WINDOW_FIRST;ПОЛНЫЙ ЭКРАН;FULLSCREEN
 UI_SETTINGS_BAR_DISPLAY_WINDOW_SECOND;ОКОННЫЙ РЕЖИМ;WINDOWED
 UI_SETTINGS_BAR_DISPLAY_RESOLUTION;РАЗРЕШЕНИЕ ЭКРАНА;SCREEN RESOLUTION
-UI_GAME_OVER_DEATH_CAUSE_TEXT;ПРИЧИНА ПРОИГРЫША;LOSE CAUSE
-UI_GAME_OVER_STATISTIC_TEXT;ИГРОВАЯ СТАТИСТИКА;GAME STATS
-UI_GAME_OVER_DEATH_CAUSE_1;ПЕРЕГРУЗКА ЯДРА;CORE OVERCHARGE
-UI_GAME_OVER_DEATH_CAUSE_2;РАЗРЯДКА ЯДРА;CORE DISCHARGE
-UI_GAME_OVER_TIME_COUNT_TEXT;ДЕНЬ/НОЧЬ;DAY/NIGHT
-UI_GAME_OVER_RESTART_BUTTON;НАЧАТЬ ЗАНОВО;RESTART GAME
-UI_GAME_OVER_MAIN_MENU_BUTTON;В ГЛАВНОЕ МЕНЮ;GO TO MAIN MENU
-UI_GAME_OVER_SPEED_MULTIPLAYER_TEXT;МНОЖИТЕЛЬ СКОРОСТИ;SPEED MULTIPLAYER
-UI_GAME_OVER_SPAWN_TIME_TEXT;ВРЕМЯ ПОЯВЛЕНИЯ;SPAWN TIME
-UI_GAME_OVER_MINUS_POSITIVE_TEXT;КОЛ-ВО ПОЛОЖИТЕЛЬНЫХ ОЧКОВ;POSITIVE SCORE
-UI_GAME_OVER_PLUS_NEGATIVE_TEXT;КОЛ-ВО ОТРИЦАТЕЛЬНЫХ ОЧКОВ;NEGATIVE SCORE
-UI_CREDITS_TEXT;АВТОРЫ ИГРЫ;GAME AUTHORS
-UI_CREDITS_FIRST_TEXT;[color=white]ГЕЙМДИЗАЙН/ПРОГРАММИРОВАНИЕ[/color];[color=white]GAMEDESIGN/PROGRAMMING[/color]
-UI_CREDITS_FIRST_NAME;ТЛЕУМБЕТОВ ТИМУР; TLEUMBETOV TIMUR
-UI_CREDITS_SECOND_TEXT;[color=white]ВИЗУАЛ[/color];[color=white]VISUAL[/color]
-UI_CREDITS_SECOND_NAME; НИКИТИНА СОФЬЯ; NIKITINA SOFYA
-UI_CREDITS_THIRD_TEXT;[color=white]МУЗЫКА/ЗВУКИ[/color];[color=white]MUSIC/SOUNDS[/color]
-UI_CREDITS_THIRD_NAME; ЖЕЛЕЗКО ПАВЕЛ;ZHELEZKO PAVEL
