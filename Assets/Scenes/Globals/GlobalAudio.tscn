@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://213blx5mp8yi" path="res://Assets/Audio/sweet potato star2.mp3" id="18_lm2kk"]
 
 [node name="GlobalAudio" type="Node" unique_id=1322055415]
+process_mode = 3
 script = ExtResource("1_3g6yn")
 
 [node name="Bag" type="AudioStreamPlayer" parent="." unique_id=1311643019]

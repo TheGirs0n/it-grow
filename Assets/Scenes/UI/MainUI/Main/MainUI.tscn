@@ -213,6 +213,7 @@ visible = false
 visible = false
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=208170173]
+process_mode = 3
 self_modulate = Color(1, 0.898039, 0.72549, 1)
 z_index = 11
 position = Vector2(574, 317)
