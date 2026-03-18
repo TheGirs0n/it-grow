@@ -15,14 +15,11 @@ plant_texture = NodePath("TextureRect")
 plant_goal_container = NodePath("GoalPlantContainer")
 
 [node name="TextureRect" type="Sprite2D" parent="." unique_id=1033486503]
-position = Vector2(-8, 3)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_t8tpo")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=812478535]
-position = Vector2(-33.4619, 215.214)
-scale = Vector2(4.26907, 4.14256)
-polygon = PackedVector2Array(89.3548, -173.616, 45.3171, 80.0116, -28.8599, 80.8162, -73.2099, -173.616)
+polygon = PackedVector2Array(214.99998, -419.99997, 179.99998, 564.99994, -144.99998, 564.99994, -199.99998, -424.99997)
 
 [node name="GoalPlantContainer" type="HBoxContainer" parent="." unique_id=1082003628 node_paths=PackedStringArray("textures", "timer")]
 anchors_preset = 7

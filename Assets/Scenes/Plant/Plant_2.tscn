@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://du4rv5hyoe4bh" path="res://Assets/Scripts/Plant/Plants/Plant_2.gd" id="1_88pp7"]
 [ext_resource type="Resource" uid="uid://cnw54jlm1xx4f" path="res://Assets/Resources/Plants/PlantsResources/Plant_2.tres" id="2_88pp7"]
-[ext_resource type="Texture2D" uid="uid://dj5w37wicfs7c" path="res://Assets/Sprites/Plants/Plant_2/1 стадия.png" id="3_88pp7"]
+[ext_resource type="Texture2D" uid="uid://4fcj54454cra" path="res://Assets/Sprites/Plants/Plant_2/3 стадия.png" id="3_88pp7"]
 [ext_resource type="Script" uid="uid://ct0y602syert8" path="res://Assets/Scripts/Plant/PlantGoalContainer.gd" id="4_il5gk"]
 [ext_resource type="Texture2D" uid="uid://doijt2c3637fp" path="res://Assets/Sprites/UI/PlantsGrow/кружочек для растения.png" id="6_88pp7"]
 [ext_resource type="Texture2D" uid="uid://c54yprq3of0vk" path="res://Assets/Sprites/UI/PlantsGrow/кружок с галочкой.png" id="7_qvkxd"]
@@ -20,9 +20,7 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_88pp7")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=822201142]
-position = Vector2(-33.4619, 215.214)
-scale = Vector2(4.26907, 4.14256)
-polygon = PackedVector2Array(74.129, -85.506, 50.7828, 62.3091, -34.3255, 64.7231, -63.9963, -84.1381)
+polygon = PackedVector2Array(256, -308, 192, 524, -204, 520, -252, -324)
 
 [node name="GoalPlantContainer" type="HBoxContainer" parent="." unique_id=125841010 node_paths=PackedStringArray("textures", "timer")]
 anchors_preset = 7
