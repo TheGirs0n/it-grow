@@ -63,7 +63,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("6_sokgu")
 bbcode_enabled = true
-text = "Начать игру"
+text = "START_GAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -87,7 +87,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("6_sokgu")
 bbcode_enabled = true
-text = "Настройки"
+text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -111,7 +111,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("6_sokgu")
 bbcode_enabled = true
-text = "Выход"
+text = "EXIT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
