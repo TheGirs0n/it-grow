@@ -44,7 +44,7 @@ size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_7bwro")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
-text = "ДЕНЬ"
+text = "UI_DAY_SWITCHER_TEXT"
 horizontal_alignment = 1
 vertical_alignment = 1
 

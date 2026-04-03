@@ -6,7 +6,7 @@ class_name DayCounterUI
 @export var day_counter_number : RichTextLabel
 
 func set_day_counter_text(current_day : int):
-	day_counter_text.text = "ДЕНЬ - " + str(current_day)
+	day_counter_text.text = TranslationServer.translate("UI_DAY_TIMER_UPPER_TEXT") + str(current_day)
 	
 func set_day_counter_number(current_number : int):
-	day_counter_number.text = "ОСТАВШЕЕСЯ ВРЕМЯ ДНЯ - " + str(current_number)
+	day_counter_number.text = TranslationServer.translate("UI_DAY_TIMER_BOTTOM_TEXT") + str(current_number)

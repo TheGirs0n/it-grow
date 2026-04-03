@@ -69,8 +69,9 @@ func apply_settings(master_volume: float, is_master_volume_mute: bool,
 	AudioServer.set_bus_mute(1, is_sfx_volume_mute)
 	AudioServer.set_bus_mute(2, is_music_volume_mute)
 	
-	apply_window_mode(window_mode)
-	apply_resolution(resolution_mode, window_mode)
+	if OS.get_name() != "Web":
+		apply_window_mode(window_mode)
+		apply_resolution(resolution_mode, window_mode)
 	apply_language(language)
 	
 	

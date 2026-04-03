@@ -6,6 +6,7 @@ class_name LoseScreen
 func _ready() -> void:
 	GlobalAudio.play_lose()
 
+
 func _on_button_pressed() -> void:
 	GlobalContext.game_manager_instance.queue_free()
 	var scene = main_menu_scene.instantiate() as MainMenuUI

@@ -17,6 +17,7 @@ class_name SettingsUI
 @export var music_volume_text : RichTextLabel
 
 @export_group("Display Setting")
+@export var display_tab_bar : TabBar
 @export var current_window_mode_text : RichTextLabel
 @export var current_resolution_mode_text : RichTextLabel
 @export var array_window_mode : Array[String]
@@ -37,6 +38,8 @@ var current_language : String = "EN"
 func _ready() -> void:
 	load_all_user_settings()
 	
+	if OS.get_name() == "Web":
+		display_tab_bar.hide()
 
 func button_hovered():
 	if !GlobalAudio.button_hovered.playing:
@@ -44,12 +47,19 @@ func button_hovered():
 
 
 func apply_and_save_settings() -> void:
-	SettingManager.save_settings(
-		master_slider.value, master_mute_button.button_pressed,
-		sfx_slider.value, sfx_mute_button.button_pressed,
-		music_slider.value, music_mute_button.button_pressed,
-		current_window_mode_index, current_resolution_mode_index,
-		current_language)
+	if OS.get_name() == "Web":
+		SettingManager.apply_settings(master_slider.value, master_mute_button.button_pressed,
+			sfx_slider.value, sfx_mute_button.button_pressed,
+			music_slider.value, music_mute_button.button_pressed,
+			current_window_mode_index, current_resolution_mode_index,
+			current_language)
+	elif OS.get_name() != "Web":
+		SettingManager.save_settings(
+			master_slider.value, master_mute_button.button_pressed,
+			sfx_slider.value, sfx_mute_button.button_pressed,
+			music_slider.value, music_mute_button.button_pressed,
+			current_window_mode_index, current_resolution_mode_index,
+			current_language)
 
 
 func restore_defaults() -> void:
@@ -106,6 +116,7 @@ func load_audio_settings():
 	sfx_slider.value = SettingManager.get_sfx_volume()
 	music_slider.value = SettingManager.get_music_volume()
 	update_volume_text()
+
 
 func load_audio_mute_settings():
 	master_mute_button.button_pressed = SettingManager.get_master_volume_mute()

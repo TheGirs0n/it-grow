@@ -25,16 +25,20 @@ class_name MainUI
 func _ready() -> void:
 	GlobalContext.main_ui_instance = self
 	
+	
 func _exit_tree() -> void:
 	GlobalContext.main_ui_instance = null
 
+
 func settings_scene_open():
 	hide_pause()
+
 
 func spawn_plant_on_new_day(new_plant_scene : PlantTemplate):
 	GlobalAudio.play_new_plant()
 	GlobalContext.game_manager_instance.add_plant(new_plant_scene)
 	plant_spawn_location.set_plant_on_first_enable(new_plant_scene)
+
 
 func open_day_switcher(current_day : int):
 	var scene = day_switcher_ui.instantiate() as DaySwitcherUI
@@ -49,23 +53,31 @@ func open_day_switcher(current_day : int):
 	care_box_ui.clear_current_care_box_item()
 	find_box_ui.clear_current_find_box_item()
 
+
 func open_minigame():
-	open_lose_screen()
+	#open_lose_screen()
+	var scene = game_over_mini_game_ui.instantiate() as GameOverMiniGameUI
+	self.add_child(scene)
+
 
 func open_victory_screen():
 	var scene = victory_screen.instantiate() as VictoryScreen
 	self.add_child(scene)
 
+
 func open_lose_screen():
 	var scene = lose_screen.instantiate() as LoseScreen
 	self.add_child(scene)
+
 
 func show_tooltip(text_in_tooltip : String):
 	info_tooltip_ui.change_text(text_in_tooltip)
 	info_tooltip_ui.show_tooltip()
 
+
 func open_find_box_center(new_plant_texture : CompressedTexture2D, new_effect_texture : CompressedTexture2D):
 	find_box_circle_center.show_circle(new_plant_texture, new_effect_texture)
+
 
 func open_find_box_center_add(new_plant_template : PlantTemplate):
 	find_box_circle_center_add.set_new_plant(new_plant_template)
@@ -73,16 +85,20 @@ func open_find_box_center_add(new_plant_template : PlantTemplate):
 func open_find_box_center_full_grow(new_plant_template : PlantTemplate):
 	find_box_circle_center_add.set_plant_full_grow(new_plant_template)
 
+
 func open_care_manual():
 	care_manual.show()
 	care_manual.open_start()
+	
 	
 func open_find_manual():
 	find_manual.show()
 	find_manual.open_start()
 
+
 func open_pause():
 	pause_menu_ui.show()
+	
 	
 func hide_pause():
 	pause_menu_ui.hide()

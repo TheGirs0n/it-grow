@@ -166,8 +166,8 @@ func lose_game():
 	
 	container.hide()
 	next_stage.hide()
-	exit_button.show()
-
+	#exit_button.show()
+	GlobalContext.main_ui_instance.open_lose_screen()
 
 func win_game():
 	is_win = true
@@ -191,3 +191,4 @@ func _on_timer_timeout() -> void:
 func _on_exit_minigame_button_pressed() -> void:
 	GlobalContext.game_manager_instance.continue_game()
 	GlobalContext.game_manager_instance.increase_current_attempts()
+	self.queue_free()

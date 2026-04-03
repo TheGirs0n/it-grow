@@ -22,7 +22,7 @@ texture = ExtResource("6_ea1xn")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_165ny"]
 
-[node name="SettingsUi" type="Control" unique_id=936939857 node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider", "master_mute_button", "sfx_mute_button", "music_mute_button", "master_volume_text", "sfx_volume_text", "music_volume_text", "current_window_mode_text", "current_resolution_mode_text", "language_toggle_button", "apply_button", "restore_defaults_button")]
+[node name="SettingsUi" type="Control" unique_id=936939857 node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider", "master_mute_button", "sfx_mute_button", "music_mute_button", "master_volume_text", "sfx_volume_text", "music_volume_text", "display_tab_bar", "current_window_mode_text", "current_resolution_mode_text", "language_toggle_button", "apply_button", "restore_defaults_button")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -31,20 +31,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1ii1u")
-master_slider = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer/MasterSlider")
-sfx_slider = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2/SFXSlider")
-music_slider = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3/MusicSlider")
-master_mute_button = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer/ToggleMasterMuteButton")
-sfx_mute_button = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2/ToggleSFXMuteButton")
-music_mute_button = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3/ToggleMusicMuteButton")
-master_volume_text = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer/RichTextLabel2")
-sfx_volume_text = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2/RichTextLabel2")
-music_volume_text = NodePath("TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3/RichTextLabel2")
-current_window_mode_text = NodePath("TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode/CurrentMode")
-current_resolution_mode_text = NodePath("TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode/CurrentMode")
-array_window_mode = Array[String](["ПОЛНЫЙ ЭКРАН", "В ОКНЕ"])
+master_slider = NodePath("TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MasterBoxContainer/MasterSlider")
+sfx_slider = NodePath("TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/SFXBoxContainer2/SFXSlider")
+music_slider = NodePath("TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MusicBoxContainer3/MusicSlider")
+master_mute_button = NodePath("TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MasterBoxContainer/ToggleMasterMuteButton")
+sfx_mute_button = NodePath("TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/SFXBoxContainer2/ToggleSFXMuteButton")
+music_mute_button = NodePath("TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MusicBoxContainer3/ToggleMusicMuteButton")
+master_volume_text = NodePath("TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MasterBoxContainer/RichTextLabel2")
+sfx_volume_text = NodePath("TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/SFXBoxContainer2/RichTextLabel2")
+music_volume_text = NodePath("TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MusicBoxContainer3/RichTextLabel2")
+display_tab_bar = NodePath("TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME")
+current_window_mode_text = NodePath("TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/WindowMode/CurrentMode")
+current_resolution_mode_text = NodePath("TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/ResolutionMode/CurrentMode")
+array_window_mode = Array[String](["UI_SETTINGS_BAR_DISPLAY_WINDOW_FIRST", "UI_SETTINGS_BAR_DISPLAY_WINDOW_SECOND"])
 array_resolution_mode = Array[String](["1280 x 720", "1366 x 768", "1600 x 900", "1920 x 1080", "2560 x 1440"])
-language_toggle_button = NodePath("TabContainer/ЯЗЫК/HBoxContainer/LanguageToggleButton")
+language_toggle_button = NodePath("TabContainer/UI_SETTINGS_LANGUAGE_BAR_NAME/HBoxContainer/LanguageToggleButton")
 apply_button = NodePath("ButtonsContainer/ApplySettings")
 restore_defaults_button = NodePath("ButtonsContainer/RestoreDefaults")
 
@@ -68,13 +69,14 @@ anchor_right = 0.85
 anchor_bottom = 0.7
 theme_override_fonts/font = ExtResource("2_lcmdv")
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 
-[node name="АУДИО" type="TabBar" parent="TabContainer" unique_id=633709512]
+[node name="UI_SETTINGS_SOUND_BAR_NAME" type="TabBar" parent="TabContainer" unique_id=633709512]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/АУДИО" unique_id=2044657421]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME" unique_id=2044657421]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -86,27 +88,27 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/АУДИО/MarginContainer" unique_id=308922741]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer" unique_id=308922741]
 layout_mode = 2
 theme_override_constants/separation = 25
 alignment = 1
 
-[node name="MasterBoxContainer" type="HBoxContainer" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer" unique_id=1923220763]
+[node name="MasterBoxContainer" type="HBoxContainer" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer" unique_id=1923220763]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer" unique_id=1887620471]
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MasterBoxContainer" unique_id=1887620471]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
-text = "ОБЩАЯ ГРОМКОСТЬ"
+text = "UI_SETTINGS_BAR_SOUND_MASTER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ToggleMasterMuteButton" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer" unique_id=300483491]
+[node name="ToggleMasterMuteButton" type="TextureButton" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MasterBoxContainer" unique_id=300483491]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
@@ -117,7 +119,7 @@ texture_pressed = ExtResource("4_fv6cf")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="MasterSlider" type="HSlider" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer" unique_id=1959922220]
+[node name="MasterSlider" type="HSlider" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MasterBoxContainer" unique_id=1959922220]
 show_behind_parent = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -131,7 +133,7 @@ theme_override_styles/slider = SubResource("StyleBoxTexture_165ny")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_ea1xn")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_165ny")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer" unique_id=2091199051]
+[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MasterBoxContainer" unique_id=2091199051]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
@@ -141,22 +143,22 @@ text = "0%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SFXBoxContainer2" type="HBoxContainer" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer" unique_id=891567408]
+[node name="SFXBoxContainer2" type="HBoxContainer" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer" unique_id=891567408]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2" unique_id=1642612214]
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/SFXBoxContainer2" unique_id=1642612214]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
-text = "ЗВУКОВЫЕ ЭФФЕКТЫ"
+text = "UI_SETTINGS_BAR_SOUND_SFX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ToggleSFXMuteButton" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2" unique_id=1457808768]
+[node name="ToggleSFXMuteButton" type="TextureButton" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/SFXBoxContainer2" unique_id=1457808768]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
@@ -167,7 +169,7 @@ texture_pressed = ExtResource("4_fv6cf")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="SFXSlider" type="HSlider" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2" unique_id=1025399011]
+[node name="SFXSlider" type="HSlider" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/SFXBoxContainer2" unique_id=1025399011]
 show_behind_parent = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -181,7 +183,7 @@ theme_override_styles/slider = SubResource("StyleBoxTexture_165ny")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_ea1xn")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_165ny")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2" unique_id=853589081]
+[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/SFXBoxContainer2" unique_id=853589081]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
@@ -191,22 +193,22 @@ text = "0%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MusicBoxContainer3" type="HBoxContainer" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer" unique_id=1993963311]
+[node name="MusicBoxContainer3" type="HBoxContainer" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer" unique_id=1993963311]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3" unique_id=452025482]
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MusicBoxContainer3" unique_id=452025482]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
-text = "ГРОМКОСТЬ МУЗЫКИ"
+text = "UI_SETTINGS_BAR_SOUND_MUSIC"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ToggleMusicMuteButton" type="TextureButton" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3" unique_id=59087237]
+[node name="ToggleMusicMuteButton" type="TextureButton" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MusicBoxContainer3" unique_id=59087237]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
@@ -217,7 +219,7 @@ texture_pressed = ExtResource("4_fv6cf")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="MusicSlider" type="HSlider" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3" unique_id=30322899]
+[node name="MusicSlider" type="HSlider" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MusicBoxContainer3" unique_id=30322899]
 show_behind_parent = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -231,7 +233,7 @@ theme_override_styles/slider = SubResource("StyleBoxTexture_165ny")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_ea1xn")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_165ny")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3" unique_id=1390549602]
+[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MusicBoxContainer3" unique_id=1390549602]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
@@ -241,12 +243,11 @@ text = "0%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ЭКРАН" type="TabBar" parent="TabContainer" unique_id=1561599512]
-visible = false
+[node name="UI_SETTINGS_DISPLAY_BAR_NAME" type="TabBar" parent="TabContainer" unique_id=1561599512]
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/ЭКРАН" unique_id=1950041689]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME" unique_id=1950041689]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -258,27 +259,27 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/ЭКРАН/MarginContainer" unique_id=1926839526]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer" unique_id=1926839526]
 layout_mode = 2
 theme_override_constants/separation = 35
 alignment = 1
 
-[node name="WindowMode" type="HBoxContainer" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer" unique_id=708274999]
+[node name="WindowMode" type="HBoxContainer" parent="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer" unique_id=708274999]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode" unique_id=702313191]
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/WindowMode" unique_id=702313191]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
-text = "РЕЖИМ ОКНА"
+text = "UI_SETTINGS_BAR_DISPLAY_WINDOW"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LeftButton" type="TextureButton" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode" unique_id=1877717900]
+[node name="LeftButton" type="TextureButton" parent="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/WindowMode" unique_id=1877717900]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
@@ -288,7 +289,7 @@ ignore_texture_size = true
 stretch_mode = 5
 flip_h = true
 
-[node name="CurrentMode" type="RichTextLabel" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode" unique_id=1127043244]
+[node name="CurrentMode" type="RichTextLabel" parent="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/WindowMode" unique_id=1127043244]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -297,7 +298,7 @@ bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RightButton" type="TextureButton" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode" unique_id=950940856]
+[node name="RightButton" type="TextureButton" parent="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/WindowMode" unique_id=950940856]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
@@ -306,22 +307,22 @@ texture_normal = ExtResource("5_68i8b")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="ResolutionMode" type="HBoxContainer" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer" unique_id=1537110443]
+[node name="ResolutionMode" type="HBoxContainer" parent="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer" unique_id=1537110443]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode" unique_id=1987745322]
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/ResolutionMode" unique_id=1987745322]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
-text = "РАЗРЕШЕНИЕ ЭКРАНА"
+text = "UI_SETTINGS_BAR_DISPLAY_RESOLUTION"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LeftButton" type="TextureButton" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode" unique_id=1418954540]
+[node name="LeftButton" type="TextureButton" parent="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/ResolutionMode" unique_id=1418954540]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
@@ -331,7 +332,7 @@ ignore_texture_size = true
 stretch_mode = 5
 flip_h = true
 
-[node name="CurrentMode" type="RichTextLabel" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode" unique_id=279884555]
+[node name="CurrentMode" type="RichTextLabel" parent="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/ResolutionMode" unique_id=279884555]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -340,7 +341,7 @@ bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RightButton" type="TextureButton" parent="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode" unique_id=1372334833]
+[node name="RightButton" type="TextureButton" parent="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/ResolutionMode" unique_id=1372334833]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
@@ -349,12 +350,12 @@ texture_normal = ExtResource("5_68i8b")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="ЯЗЫК" type="TabBar" parent="TabContainer" unique_id=1501630538]
+[node name="UI_SETTINGS_LANGUAGE_BAR_NAME" type="TabBar" parent="TabContainer" unique_id=1501630538]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/ЯЗЫК" unique_id=472136465]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/UI_SETTINGS_LANGUAGE_BAR_NAME" unique_id=472136465]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -363,17 +364,21 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/ЯЗЫК/HBoxContainer" unique_id=135734392]
+[node name="VBoxContainer" type="TextureRect" parent="TabContainer/UI_SETTINGS_LANGUAGE_BAR_NAME/HBoxContainer" unique_id=1058033537]
 layout_mode = 2
 size_flags_horizontal = 3
+expand_mode = 3
+stretch_mode = 5
 
-[node name="LanguageToggleButton" type="CheckButton" parent="TabContainer/ЯЗЫК/HBoxContainer" unique_id=1992744740]
+[node name="LanguageToggleButton" type="CheckButton" parent="TabContainer/UI_SETTINGS_LANGUAGE_BAR_NAME/HBoxContainer" unique_id=1992744740]
 layout_mode = 2
 action_mode = 0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/ЯЗЫК/HBoxContainer" unique_id=1975390280]
+[node name="VBoxContainer2" type="TextureRect" parent="TabContainer/UI_SETTINGS_LANGUAGE_BAR_NAME/HBoxContainer" unique_id=1388694892]
 layout_mode = 2
 size_flags_horizontal = 3
+expand_mode = 3
+stretch_mode = 5
 
 [node name="ButtonsContainer" type="HBoxContainer" parent="." unique_id=1847004852]
 layout_mode = 1
@@ -413,7 +418,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
-text = "Применить"
+text = "UI_SETTINGS_APPLY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -443,7 +448,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
-text = "По умолчанию"
+text = "UI_SETTINGS_RESTORE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -477,17 +482,17 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_lcmdv")
 bbcode_enabled = true
-text = "Выход"
+text = "UI_SETTINGS_EXIT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="value_changed" from="TabContainer/АУДИО/MarginContainer/VBoxContainer/MasterBoxContainer/MasterSlider" to="." method="on_value_text_update"]
-[connection signal="value_changed" from="TabContainer/АУДИО/MarginContainer/VBoxContainer/SFXBoxContainer2/SFXSlider" to="." method="on_value_text_update"]
-[connection signal="value_changed" from="TabContainer/АУДИО/MarginContainer/VBoxContainer/MusicBoxContainer3/MusicSlider" to="." method="on_value_text_update"]
-[connection signal="pressed" from="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode/LeftButton" to="." method="on_decrease_window_mode"]
-[connection signal="pressed" from="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/WindowMode/RightButton" to="." method="on_increase_window_mode"]
-[connection signal="pressed" from="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode/LeftButton" to="." method="on_decrease_resolution_mode"]
-[connection signal="pressed" from="TabContainer/ЭКРАН/MarginContainer/VBoxContainer/ResolutionMode/RightButton" to="." method="on_increase_resolution_mode"]
+[connection signal="value_changed" from="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MasterBoxContainer/MasterSlider" to="." method="on_value_text_update"]
+[connection signal="value_changed" from="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/SFXBoxContainer2/SFXSlider" to="." method="on_value_text_update"]
+[connection signal="value_changed" from="TabContainer/UI_SETTINGS_SOUND_BAR_NAME/MarginContainer/VBoxContainer/MusicBoxContainer3/MusicSlider" to="." method="on_value_text_update"]
+[connection signal="pressed" from="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/WindowMode/LeftButton" to="." method="on_decrease_window_mode"]
+[connection signal="pressed" from="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/WindowMode/RightButton" to="." method="on_increase_window_mode"]
+[connection signal="pressed" from="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/ResolutionMode/LeftButton" to="." method="on_decrease_resolution_mode"]
+[connection signal="pressed" from="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/ResolutionMode/RightButton" to="." method="on_increase_resolution_mode"]
 [connection signal="mouse_entered" from="ButtonsContainer/ApplySettings" to="." method="button_hovered"]
 [connection signal="pressed" from="ButtonsContainer/ApplySettings" to="." method="apply_and_save_settings"]
 [connection signal="mouse_entered" from="ButtonsContainer/RestoreDefaults" to="." method="button_hovered"]

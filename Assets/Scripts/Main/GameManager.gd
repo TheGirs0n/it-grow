@@ -100,6 +100,7 @@ func decrease_current_attempts():
 		get_tree().paused = true
 		GlobalContext.main_ui_instance.open_minigame()
 
+
 func day_timer_end() -> void:
 	if current_day < max_day:
 		current_day += 1
