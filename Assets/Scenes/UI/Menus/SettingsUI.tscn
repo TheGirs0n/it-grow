@@ -22,7 +22,7 @@ texture = ExtResource("6_ea1xn")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_165ny"]
 
-[node name="SettingsUi" type="Control" unique_id=936939857 node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider", "master_mute_button", "sfx_mute_button", "music_mute_button", "master_volume_text", "sfx_volume_text", "music_volume_text", "display_tab_bar", "current_window_mode_text", "current_resolution_mode_text", "language_toggle_button", "apply_button", "restore_defaults_button")]
+[node name="SettingsUi" type="Control" unique_id=936939857 node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider", "master_mute_button", "sfx_mute_button", "music_mute_button", "master_volume_text", "sfx_volume_text", "music_volume_text", "display_tab_bar", "current_window_mode_text", "current_resolution_mode_text", "apply_button", "restore_defaults_button")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -45,7 +45,6 @@ current_window_mode_text = NodePath("TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/M
 current_resolution_mode_text = NodePath("TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/ResolutionMode/CurrentMode")
 array_window_mode = Array[String](["UI_SETTINGS_BAR_DISPLAY_WINDOW_FIRST", "UI_SETTINGS_BAR_DISPLAY_WINDOW_SECOND"])
 array_resolution_mode = Array[String](["1280 x 720", "1366 x 768", "1600 x 900", "1920 x 1080", "2560 x 1440"])
-language_toggle_button = NodePath("TabContainer/UI_SETTINGS_LANGUAGE_BAR_NAME/HBoxContainer/LanguageToggleButton")
 apply_button = NodePath("ButtonsContainer/ApplySettings")
 restore_defaults_button = NodePath("ButtonsContainer/RestoreDefaults")
 
@@ -69,7 +68,7 @@ anchor_right = 0.85
 anchor_bottom = 0.7
 theme_override_fonts/font = ExtResource("2_lcmdv")
 tab_alignment = 1
-current_tab = 1
+current_tab = 2
 
 [node name="UI_SETTINGS_SOUND_BAR_NAME" type="TabBar" parent="TabContainer" unique_id=633709512]
 visible = false
@@ -244,6 +243,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="UI_SETTINGS_DISPLAY_BAR_NAME" type="TabBar" parent="TabContainer" unique_id=1561599512]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -351,7 +351,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="UI_SETTINGS_LANGUAGE_BAR_NAME" type="TabBar" parent="TabContainer" unique_id=1501630538]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -364,20 +363,16 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="VBoxContainer" type="TextureRect" parent="TabContainer/UI_SETTINGS_LANGUAGE_BAR_NAME/HBoxContainer" unique_id=1058033537]
+[node name="VBoxContainer" type="TextureButton" parent="TabContainer/UI_SETTINGS_LANGUAGE_BAR_NAME/HBoxContainer" unique_id=505106196]
 layout_mode = 2
 size_flags_horizontal = 3
-expand_mode = 3
+action_mode = 0
 stretch_mode = 5
 
-[node name="LanguageToggleButton" type="CheckButton" parent="TabContainer/UI_SETTINGS_LANGUAGE_BAR_NAME/HBoxContainer" unique_id=1992744740]
-layout_mode = 2
-action_mode = 0
-
-[node name="VBoxContainer2" type="TextureRect" parent="TabContainer/UI_SETTINGS_LANGUAGE_BAR_NAME/HBoxContainer" unique_id=1388694892]
+[node name="VBoxContainer2" type="TextureButton" parent="TabContainer/UI_SETTINGS_LANGUAGE_BAR_NAME/HBoxContainer" unique_id=1172207652]
 layout_mode = 2
 size_flags_horizontal = 3
-expand_mode = 3
+action_mode = 0
 stretch_mode = 5
 
 [node name="ButtonsContainer" type="HBoxContainer" parent="." unique_id=1847004852]
@@ -493,6 +488,8 @@ vertical_alignment = 1
 [connection signal="pressed" from="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/WindowMode/RightButton" to="." method="on_increase_window_mode"]
 [connection signal="pressed" from="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/ResolutionMode/LeftButton" to="." method="on_decrease_resolution_mode"]
 [connection signal="pressed" from="TabContainer/UI_SETTINGS_DISPLAY_BAR_NAME/MarginContainer/VBoxContainer/ResolutionMode/RightButton" to="." method="on_increase_resolution_mode"]
+[connection signal="pressed" from="TabContainer/UI_SETTINGS_LANGUAGE_BAR_NAME/HBoxContainer/VBoxContainer" to="." method="_on_en_language_pressed"]
+[connection signal="pressed" from="TabContainer/UI_SETTINGS_LANGUAGE_BAR_NAME/HBoxContainer/VBoxContainer2" to="." method="_on_ru_language_pressed"]
 [connection signal="mouse_entered" from="ButtonsContainer/ApplySettings" to="." method="button_hovered"]
 [connection signal="pressed" from="ButtonsContainer/ApplySettings" to="." method="apply_and_save_settings"]
 [connection signal="mouse_entered" from="ButtonsContainer/RestoreDefaults" to="." method="button_hovered"]

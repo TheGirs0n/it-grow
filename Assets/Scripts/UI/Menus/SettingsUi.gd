@@ -23,8 +23,6 @@ class_name SettingsUI
 @export var array_window_mode : Array[String]
 @export var array_resolution_mode : Array[String]
 
-@export_group("Language Setting")
-@export var language_toggle_button : CheckButton
 
 @export_group("Control Buttons")
 @export var apply_button : TextureButton
@@ -66,7 +64,6 @@ func restore_defaults() -> void:
 	restore_default_audio_value()
 	restore_default_audio_mute()
 	restore_default_display()
-	restore_default_language()
 	
 	apply_and_save_settings()
 
@@ -100,16 +97,12 @@ func restore_default_display():
 	set_window_text(default_window_mode)
 	set_resolution_text(default_resolution_mode)
 	
-	
-func restore_default_language():
-	language_toggle_button.button_pressed = false
-	
-	
+
 func load_all_user_settings():
 	load_audio_settings()
 	load_audio_mute_settings()
 	load_display_settings()
-	load_language_settings()
+
 	
 func load_audio_settings():
 	master_slider.value = SettingManager.get_master_volume()
@@ -136,14 +129,6 @@ func load_display_settings():
 
 	set_window_text(window_mode)
 	set_resolution_text(resolution)
-
-
-func load_language_settings():
-	var language = SettingManager.get_language()
-	if language == "EN":
-		language_toggle_button.button_pressed = false
-	else:
-		language_toggle_button.button_pressed = true
 
 
 func on_value_text_update(_value: float) -> void:
@@ -188,3 +173,13 @@ func _on_close_button_pressed() -> void:
 	if GlobalContext.main_ui_instance != null:
 		GlobalContext.main_ui_instance.open_pause()
 	queue_free()
+
+
+func _on_en_language_pressed() -> void:
+	SettingManager.apply_language("EN")
+	current_language = "EN"
+
+
+func _on_ru_language_pressed() -> void:
+	SettingManager.apply_language("RU")
+	current_language = "RU"
