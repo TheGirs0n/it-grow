@@ -14,7 +14,7 @@ var default_is_music_volume_mute : bool = false
 var default_window_mode : int = 1
 var default_resolution_mode : int = 0
 
-var default_language : String = "EN"
+var default_language : String = "en"
 
 func _enter_tree() -> void:
 	load_setting_at_startup()

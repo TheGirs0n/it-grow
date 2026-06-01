@@ -1,12 +1,15 @@
 extends TextureRect
-
-
+class_name BackgroundTextureUI
+ 
+ 
 func _on_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_RIGHT:
-			if event.is_pressed():
-				if GlobalContext.main_ui_instance.find_box_ui.current_find_box_item != null:
-					GlobalContext.main_ui_instance.find_box_ui.clear_current_find_box_item()
-	
-				if GlobalContext.main_ui_instance.care_box_ui.current_care_box_item != null:
-					GlobalContext.main_ui_instance.care_box_ui.clear_current_care_box_item()
+	if not (event is InputEventMouseButton):
+		return
+	if event.button_index != MOUSE_BUTTON_RIGHT or not event.is_pressed():
+		return
+ 
+	# FIX: убран GlobalContext → EventBus
+	# MainUI уже подписан на эти сигналы и вызывает clear на нужных компонентах
+	EventBus.find_item_clear_requested.emit()
+	EventBus.care_item_clear_requested.emit()
+ 
