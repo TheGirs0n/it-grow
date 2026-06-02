@@ -17,6 +17,9 @@ signal day_switcher_close_requested()
 
 # --- Попытки ---
 signal attempts_updated(current: int)
+# FIX: добавлен сигнал для увеличения попыток из мини-игры
+# GameManager подписан на него и вызывает increase_current_attempts()
+signal attempts_increase_requested()
 
 # --- Растения ---
 signal plant_registered(plant: PlantTemplate)

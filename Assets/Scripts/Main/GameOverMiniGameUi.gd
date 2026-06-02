@@ -1,13 +1,6 @@
 extends Control
 class_name GameOverMiniGameUI
 
-## Исправлены:
-##   - is_win в check_win() всегда был false: устанавливался только внутри win_game(),
-##     который вызывался после проверки → заменено на проверку current_score >= 1
-##   - max_round_for_win экспортировался, но нигде не использовался → теперь применяется
-##   - Мёртвые pass после реального кода в match-ветках → удалены
-##   - GlobalContext убран → EventBus
-
 @export_group("Container")
 @export var container: HBoxContainer
 
@@ -126,7 +119,6 @@ func roll_dice() -> void:
 				increase_score(1)
 			else:
 				dice_rounds[current_round - 1].texture = lose_round_texture
-			# FIX: убран мёртвый pass
 
 		MINI_GAME_MODE.EQUAL:
 			if sum == current_number:
@@ -134,7 +126,6 @@ func roll_dice() -> void:
 				increase_score(3)
 			else:
 				dice_rounds[current_round - 1].texture = lose_round_texture
-			# FIX: убран мёртвый pass
 
 	check_win()
 
@@ -144,13 +135,10 @@ func increase_score(incoming_score: int) -> void:
 
 
 func check_win() -> void:
-	# Победа с набором 2+ очков в любой момент
 	if current_score >= 2:
 		win_game()
 		return
 
-	# FIX: использован max_round_for_win вместо хардкода 3
-	# FIX: is_win здесь всегда был false — заменено на реальную проверку очков
 	if current_round >= max_round_for_win:
 		if current_score >= 1:
 			win_game()
@@ -164,7 +152,6 @@ func check_win() -> void:
 func lose_game() -> void:
 	container.hide()
 	next_stage.hide()
-	# FIX: убран GlobalContext → EventBus
 	EventBus.game_over_lost.emit()
 
 
@@ -179,12 +166,12 @@ func _on_next_stage_pressed() -> void:
 
 
 func _on_timer_timeout() -> void:
-	# Таймер срабатывает после победы — даём игроку продолжить
 	queue_free()
 
 
 func _on_exit_minigame_button_pressed() -> void:
-	# FIX: убран GlobalContext → EventBus
 	EventBus.game_continued.emit()
-	EventBus.attempts_updated.emit(0)
+	# FIX: было attempts_updated.emit(0) — неверно, устанавливало счётчик в 0
+	# Теперь эмитим сигнал, GameManager сам вызовет increase_current_attempts()
+	EventBus.attempts_increase_requested.emit()
 	queue_free()

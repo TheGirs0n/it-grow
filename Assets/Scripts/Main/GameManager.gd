@@ -1,11 +1,11 @@
 extends Node
 class_name GameManager
 
-## Исправлены:
-##   - GlobalContext убран → setup(main_ui) + EventBus
-##   - ESC через is_key_pressed(_process) каждый кадр → _unhandled_input
-##   - Самоссылка GlobalContext.game_manager_instance.day_timer → self.day_timer
-##   - _process больше не дёргает MainUI напрямую → EventBus.day_timer_tick
+## Исправлено:
+##   - first_entry() убран из _ready() → перенесён в конец setup()
+##     Причина: в Godot дочерние _ready() вызываются раньше родительского MainScene._ready(),
+##     поэтому emit new_day_started происходил до подписки MainUI → растение не появлялось.
+##   - Добавлена подписка на EventBus.attempts_increase_requested
 
 @export_group("Balance")
 @export var max_attempts: int = 4
@@ -28,6 +28,9 @@ var _main_ui: MainUI
 func setup(main_ui: MainUI) -> void:
 	_main_ui = main_ui
 	_wire_events()
+	# FIX: first_entry перенесён сюда из _ready()
+	# На момент вызова setup() MainUI уже подписана на EventBus → сигналы доходят
+	first_entry()
 
 
 func _wire_events() -> void:
@@ -36,20 +39,20 @@ func _wire_events() -> void:
 	EventBus.plant_registered.connect(add_plant)
 	EventBus.plant_fully_grown.connect(set_plant_full)
 	EventBus.plant_grow_failed.connect(decrease_current_attempts)
+	# FIX: подписка на новый сигнал из мини-игры
+	EventBus.attempts_increase_requested.connect(increase_current_attempts)
 
 
 func _ready() -> void:
 	GlobalAudio.play_main_theme()
-	first_entry()
+	# FIX: first_entry() убран отсюда — перенесён в setup()
 
 
 func _process(_delta: float) -> void:
-	# Обновляем таймер каждый кадр — только через EventBus, без прямого вызова UI
 	EventBus.day_timer_tick.emit(day_timer.time_left)
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	# FIX: is_key_pressed в _process срабатывал каждый кадр удержания
 	if event.is_action_pressed("ui_cancel"):
 		pause_game()
 
@@ -76,7 +79,7 @@ func first_entry() -> void:
 
 	continue_game()
 	PlantResourceFabric.reset_fabric()
-	var plant : PlantTemplate = PlantResourceFabric.get_first()
+	var plant: PlantTemplate = PlantResourceFabric.get_first()
 
 	day_timer.start()
 	EventBus.new_day_started.emit(current_day, plant)
@@ -115,7 +118,6 @@ func decrease_current_attempts() -> void:
 func day_timer_end() -> void:
 	if current_day < max_day:
 		current_day += 1
-		# FIX: self.day_timer вместо GlobalContext.game_manager_instance.day_timer
 		day_timer.paused = true
 		_main_ui.open_day_switcher(current_day)
 	else:
