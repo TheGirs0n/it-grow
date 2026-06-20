@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dykx0mp0loirm"]
 
-[ext_resource type="Script" uid="uid://b5s1ccwnirbvc" path="res://Assets/Scripts/UI/Tutorial.gd" id="1_0ouid"]
+[ext_resource type="Script" uid="uid://b5s1ccwnirbvc" path="res://Assets/Scripts/UI/Tutorial/Tutorial.gd" id="1_0ouid"]
 [ext_resource type="PackedScene" uid="uid://cxom4lkpo8u1k" path="res://Assets/Scenes/UI/Menus/LoreMoment.tscn" id="2_rt6f8"]
 
 [node name="Tutorial" type="Control" unique_id=2055225823]

@@ -15,6 +15,8 @@ var original_position: Vector2
 var _care_box_ui: CareBoxUI
 var _main_ui: MainUI
 
+@onready var _move_box: Button = $MoveBox
+
 
 func _ready() -> void:
 	original_position = position
@@ -92,3 +94,29 @@ func _on_move_box_mouse_exited() -> void:
 	simple_tween.set_trans(Tween.TRANS_QUAD)
 	simple_tween.set_ease(Tween.EASE_OUT)
 	simple_tween.tween_property(self, "position", original_position, 0.2)
+
+
+# --- Хелперы для обучения ---
+
+## Программно закрывает ящик (если открыт) и возвращает доступ к инструментам ухода.
+## Обучение вызывает перед фазой ухода, чтобы не оставлять care-инструменты заблокированными.
+func close_box() -> void:
+	if not is_open:
+		return
+	if simple_tween:
+		simple_tween.kill()
+	simple_tween = create_tween()
+	simple_tween.tween_property(self, "global_position", global_position - position_change, 0.3)
+	is_open = false
+	_care_box_ui.enable_input_for_items()
+
+
+## Экранная позиция «ручки» ящика — обучение наводит на неё стрелку-подсказку
+func get_handle_screen_position() -> Vector2:
+	return _move_box.get_global_transform_with_canvas().origin
+
+
+## Блокирует/разблокирует открытие ящика. Обучение запирает его на фазе ухода,
+## чтобы игрок случайно не отключил инструменты ухода, открыв ящик.
+func set_handle_enabled(enabled: bool) -> void:
+	_move_box.disabled = not enabled

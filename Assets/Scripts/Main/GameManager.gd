@@ -22,6 +22,10 @@ var start_attempts: int = 4
 
 var plants_in_game: Dictionary
 
+# Включается composition root'ом (MainScene) при первом запуске.
+# В этом режиме таймер дня стартует на паузе — обучение снимает её сигналом tutorial_finished.
+var tutorial_mode: bool = false
+
 var _main_ui: MainUI
 
 
@@ -41,6 +45,8 @@ func _wire_events() -> void:
 	EventBus.plant_grow_failed.connect(decrease_current_attempts)
 	# FIX: подписка на новый сигнал из мини-игры
 	EventBus.attempts_increase_requested.connect(increase_current_attempts)
+	# Обучение завершено — снимаем паузу таймера дня
+	EventBus.tutorial_finished.connect(_on_tutorial_finished)
 
 
 func _ready() -> void:
@@ -82,7 +88,14 @@ func first_entry() -> void:
 	var plant: PlantTemplate = PlantResourceFabric.get_first()
 
 	day_timer.start()
+	# В режиме обучения замораживаем отсчёт — без давления времени на первом цветке
+	if tutorial_mode:
+		day_timer.paused = true
 	EventBus.new_day_started.emit(current_day, plant)
+
+
+func _on_tutorial_finished() -> void:
+	day_timer.paused = false
 
 
 func new_day_parameters() -> void:

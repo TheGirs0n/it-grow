@@ -20,3 +20,12 @@ func set_plant_on_first_enable(plant_template: PlantTemplate) -> void:
 			# Передаём MainUI растению после добавления в дерево
 			plant_template.setup(_main_ui)
 			return
+
+
+## Текущее растение на грядке — нужно обучению для построения шагов гайда
+func get_current_plant() -> PlantTemplate:
+	for spawn_point in plant_location:
+		for child in spawn_point.get_children():
+			if child is PlantTemplate:
+				return child
+	return null

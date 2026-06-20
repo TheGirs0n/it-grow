@@ -16,9 +16,16 @@ var default_resolution_mode : int = 0
 
 var default_language : String = "en"
 
+var default_is_tutorial_completed : bool = false
+
 func _enter_tree() -> void:
 	load_setting_at_startup()
 
+
+func set_tutorial_completed(value : bool) -> void:
+	config_file.set_value("game", "tutorial_completed", value)
+	config_file.save(config_path)
+	
 
 func load_setting_at_startup():
 	config_file = ConfigFile.new()

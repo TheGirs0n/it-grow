@@ -42,3 +42,25 @@ func enable_input_for_items() -> void:
 	fertilizer_ui.input_pickable = true
 	watering_can_ui.input_pickable = true
 	rake_ui.input_pickable = true
+
+
+# --- Хелперы для обучения ---
+
+## Оставляет кликабельным только инструмент нужного типа (для гайда по уходу)
+func set_only_enabled(care_type: GlobalEnums.PLANT_CARE_TYPE) -> void:
+	fertilizer_ui.input_pickable = care_type == GlobalEnums.PLANT_CARE_TYPE.FERTILIZER
+	watering_can_ui.input_pickable = care_type == GlobalEnums.PLANT_CARE_TYPE.WATERING_CAN
+	rake_ui.input_pickable = care_type == GlobalEnums.PLANT_CARE_TYPE.RAKE
+
+
+## Экранная позиция инструмента — обучение наводит на неё стрелку-подсказку
+func get_item_screen_position(care_type: GlobalEnums.PLANT_CARE_TYPE) -> Vector2:
+	var item: Node2D
+	match care_type:
+		GlobalEnums.PLANT_CARE_TYPE.FERTILIZER:
+			item = fertilizer_ui
+		GlobalEnums.PLANT_CARE_TYPE.RAKE:
+			item = rake_ui
+		GlobalEnums.PLANT_CARE_TYPE.WATERING_CAN:
+			item = watering_can_ui
+	return item.get_global_transform_with_canvas().origin

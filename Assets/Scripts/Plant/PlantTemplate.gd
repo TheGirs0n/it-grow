@@ -113,6 +113,8 @@ func try_caring_plant(care_item: CareBoxItem) -> void:
 
 	if plant_care_stages[current_stage] == care_item.plant_care_type:
 		plant_care_stages_complete[current_stage] = true
+		# Сигнал для обучения: один верный шаг ухода выполнен
+		EventBus.plant_care_stage_completed.emit()
 
 		match care_item.plant_care_type:
 			GlobalEnums.PLANT_CARE_TYPE.FERTILIZER:

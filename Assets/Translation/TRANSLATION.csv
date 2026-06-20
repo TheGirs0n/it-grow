@@ -137,3 +137,10 @@ UI_DAY_TIMER_BOTTOM_TEXT;ОСТАВШЕЕСЯ ВРЕМЯ ДНЯ - ;REMAINING DAY
 UI_LOSE_SCREEN_TEXT;ПОРАЖЕНИЕ;LOSE
 UI_WIN_SCREEN_TEXT;ПОБЕДА;WIN
 UI_TO_MENU_TEXT;В МЕНЮ;GO TO MENU
+TUTORIAL_INTRO;Привет! Это твой первый цветок. Давай вместе научимся за ним ухаживать.;Hi! This is your first flower. Let's learn how to take care of it together.
+TUTORIAL_INVESTIGATE;Сначала изучи цветок. Потяни за ящик инструментов и осмотри цветок (например, лупой).;First, examine the flower. Pull out the tool box and inspect the flower (for example, with the magnifier).
+TUTORIAL_BOOK_TIP;Инструменты подсказывают свойства цветка. Сверяй их с книгой ухода, чтобы понять, что ему нужно.;The tools reveal the flower's traits. Compare them with the care book to find out what it needs.
+TUTORIAL_CARE_WATERING;Возьми лейку и полей цветок — затем нажми на него.;Take the watering can and water the flower — then click on it.
+TUTORIAL_CARE_RAKE;Возьми грабли и взрыхли землю — затем нажми на цветок.;Take the rake and loosen the soil — then click on the flower.
+TUTORIAL_CARE_FERTILIZER;Возьми удобрение и подкорми цветок — затем нажми на него.;Take the fertilizer and feed the flower — then click on it.
+TUTORIAL_OUTRO;Отлично получается! Дальше справишься сам — доведи цветок до конца, пока идёт день.;Great job! You can handle the rest — finish growing the flower before the day ends.

@@ -25,6 +25,13 @@ signal attempts_increase_requested()
 signal plant_registered(plant: PlantTemplate)
 signal plant_fully_grown(plant: PlantTemplate)
 signal plant_grow_failed()
+# Эмитится при каждом успешно выполненном шаге ухода (одна верная стадия).
+# Нужен обучению для пошагового детекта действий игрока.
+signal plant_care_stage_completed()
+
+# --- Обучение ---
+# Обучение завершено (пройдено или пропущено) — GameManager снимает паузу таймера дня.
+signal tutorial_finished()
 
 # --- UI ---
 signal tooltip_show(text: String)
