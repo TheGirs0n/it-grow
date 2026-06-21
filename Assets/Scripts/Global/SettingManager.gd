@@ -22,6 +22,10 @@ func _enter_tree() -> void:
 	load_setting_at_startup()
 
 
+func is_tutorial_completed() -> bool:
+	return config_file.get_value("game", "tutorial_completed", default_is_tutorial_completed)
+
+
 func set_tutorial_completed(value : bool) -> void:
 	config_file.set_value("game", "tutorial_completed", value)
 	config_file.save(config_path)
